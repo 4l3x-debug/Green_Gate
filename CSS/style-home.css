@@ -1,78 +1,209 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
-
+@keyframes pular{
+	50%{
+		transform: translateY(-10px);
+		-webkit-transform: translateY(-10px);
+	}
+	100%{
+		transform: translateY(-10px);
+		-webkit-transform: translateY(-10px);
+	}
+}
 *{
 	margin: 0;
 	padding: 0;
 }
-header{
-	width: 100%;
-	max-width: 1380px;
-	height: 100px;
-	padding-top: 25px;
-}
 a{
-	text-decoration: none;
 	color: #000;
+	text-decoration: none;
 }
 footer{
-	padding: 30px 0 30px 30px;
 	background-color: #000;
+	height: 250px;
+}
+header{
+	height: 100px;
+	width: 100%;
 }
 li,div{
   display:inline-block;
   text-align: right;
 }
-#topicos{
-	list-style: none;
-	font-size: 20px;
-	font-family: 'Gowun Batang', serif;
+main{
+	background-color: #FFF;
+	height: 500px;
 }
-.menu_direito{
-	position: relative;
-	bottom: 15px;
-	margin:3px;
-}
-#slogan{
+#atualizacao p{
 	color: #FFF;
+	font-family: 'Gowun Batang', serif;
+	font-size: 15px;
+	position: relative;
+	text-align: center;
+	@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+	@keyframes pular{
+		50%{
+			transform: translateY(-10px);
+			-webkit-transform: translateY(-10px);
+		}
+		100%{
+			transform: translateY(-10px);
+			-webkit-transform: translateY(-10px);
+		}
+	}
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	a{
+		color: #000;
+		text-decoration: none;
+	}
+	footer{
+		background-color: #000;
+		height: 250px;
+	}
+	header{
+		height: 100px;
+		width: 100%;
+	}
+	li,div{
+	  display:inline-block;
+	  text-align: right;
+	}
+	main{
+		background-color: #FFF;
+		height: 500px;
+	}
+	#atualizacao p{
+		color: #FFF;
+		font-family: 'Gowun Batang', serif;
+		font-size: 15px;
+		position: relative;
+		text-align: center;
+		top: 160px;
+	}
+	#icones li{
+		padding: 10px;
+	}
+	#icones li a i{
+		color: #FFF;
+		position: relative;
+		left: 1200px;
+		top: 90px;
+	}
+	#icones li a i:hover{
+		animation: pular 1s;
+		color: #C3CE64;  
+	}
+	#slogan p{
+		color: #FFF;
+		font-family: 'Gowun Batang', serif;
+		font-size: 25px;
+		position: absolute;
+		width: 210px;
+		height: 130px;
+		text-align: center;
+		padding-top: 13px;
+	}
+	#topicos{
+		list-style: none;
+		font-size: 20px;
+		font-family: 'Gowun Batang', serif;
+	}
+	.btn{
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		margin-bottom: 20px;
+	}
+	
+	.btn a button{
+		width: 150px;
+		height: 50px;
+		background-color: transparent;
+		border: 2.5px solid #FFF;
+		border-radius: 10px;
+		color: #FFF;
+		font-family: 'Gowun Batang', serif;
+		font-size: 20pt;
+	}
+	.btn a button:hover{
+		background-color: #c5f173;
+	}
+	
+	.btn a {
+		text-decoration: none;
+	}
+	.cabecalho{
+		padding: 15px 0 15px 0;
+		margin: 0 20px 0 20px;
+	}
+	.container-slide {
+		width: 100%;
+		background-color: #C3CE64;
+		height: 470px;
+		position: relative;
+		top: 2px;
+	}
+	.menu_direito{
+		position: relative;
+		bottom: 15px;
+		left: 780px;
+		padding-left: 15px;
+	}
+	.menu_direito a i{
+		font-size: 28px;
+	}
+	.menu_direito a:hover{
+		color: #C3CE64;  
+	}
+	.menu_esquerdo{
+		position: relative;
+		bottom: 15px;
+		margin:3px;
+	}
+	.menu_esquerdo a:hover{
+		color: #C3CE64; 
+	}
+	.rodape{
+		margin: 0 30px 0 30px;
+	}
+	.sombra i{
+		font-size: 30px;
+	}	top: 160px;
 }
 #icones li{
 	padding: 10px;
 }
 #icones li a i{
 	color: #FFF;
+	position: relative;
+	left: 1200px;
+	top: 90px;
 }
 #icones li a i:hover{
+	animation: pular 1s;
 	color: #C3CE64;  
 }
-.sombra i{
+#slogan p{
+	color: #FFF;
+	font-family: 'Gowun Batang', serif;
 	font-size: 25px;
+	position: absolute;
+	width: 210px;
+	height: 130px;
+	text-align: center;
+	padding-top: 13px;
 }
-.menu_esquerdo{
-	position: relative;
-	bottom: 15px;
-	left: 665px;
-	padding-left: 15px;
-}
-.menu_direito a{
-	transition: 1s;
-}
-.menu_esquerdo a{
-	transition: 1s;
-}
-.menu_direito a:hover{
-	color: #C3CE64; 
-}
-.menu_esquerdo a i{
-	font-size: 25px;
-}
-.menu_esquerdo a:hover{
-	color: #C3CE64;  
-}
-.container-slide {
-	width: 100%;
-	background-color: #C3CE64;
-	height: 470px;
-	position: relative;
+#topicos{
+	list-style: none;
+	font-size: 20px;
+	font-family: 'Gowun Batang', serif;
 }
 .btn{
 	width: 100px;
@@ -89,13 +220,12 @@ li,div{
 .btn a button{
 	width: 150px;
 	height: 50px;
-	background-color: #00000000;
-	border: 3px solid #FFF;
-	border-radius: 9px;
-	color: #000;
+	background-color: transparent;
+	border: 2.5px solid #FFF;
+	border-radius: 10px;
+	color: #FFF;
 	font-family: 'Gowun Batang', serif;
 	font-size: 20pt;
-	transition: 1s;
 }
 .btn a button:hover{
 	background-color: #c5f173;
@@ -103,4 +233,41 @@ li,div{
 
 .btn a {
 	text-decoration: none;
+}
+.cabecalho{
+	padding: 15px 0 15px 0;
+	margin: 0 20px 0 20px;
+}
+.container-slide {
+	width: 100%;
+	background-color: #C3CE64;
+	height: 470px;
+	position: relative;
+	top: 2px;
+}
+.menu_direito{
+	position: relative;
+	bottom: 15px;
+	left: 780px;
+	padding-left: 15px;
+}
+.menu_direito a i{
+	font-size: 28px;
+}
+.menu_direito a:hover{
+	color: #C3CE64;  
+}
+.menu_esquerdo{
+	position: relative;
+	bottom: 15px;
+	margin:3px;
+}
+.menu_esquerdo a:hover{
+	color: #C3CE64; 
+}
+.rodape{
+	margin: 0 30px 0 30px;
+}
+.sombra i{
+	font-size: 30px;
 }

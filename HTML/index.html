@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="cabecalho">
 
             <ul id="topicos">
 
@@ -18,15 +18,15 @@
                     </figure>
                 </li>
 
-                <li class="menu_direito"><a href="index.php">Home</a></li>
-                <li class="menu_direito"><a href="#" class="sombra">Lojas</a></li>
-                <li class="menu_direito"><a href="#" class="sombra">Sobre</a></li>
-                <li class="menu_direito"><a href="#" class="sombra">Suporte</a></li>
+                <li class="menu_esquerdo"><a href="index.php" class="sombra">Home</a></li>
+                <li class="menu_esquerdo"><a href="#" class="sombra">Lojas</a></li>
+                <li class="menu_esquerdo"><a href="#" class="sombra">Sobre</a></li>
+                <li class="menu_esquerdo"><a href="#" class="sombra">Suporte</a></li>
 
                 <div>  
-                    <li class="menu_esquerdo"><a href="#" class="sombra"><i class="fas fa-user-circle"></i></a></li>
-                    <li class="menu_esquerdo"><a href="#" class="sombra"><i class="fas fa-search"></i></a></li>
-                    <li class="menu_esquerdo"><a href="#" class="sombra"><i class="fas fa-shopping-bag"></i></a></li>
+                    <li class="menu_direito"><a href="#" class="sombra"><i class="fas fa-user-circle"></i></a></li>
+                    <li class="menu_direito"><a href="#" class="sombra"><i class="fas fa-search"></i></a></li>
+                    <li class="menu_direito"><a href="#" class="sombra"><i class="fas fa-shopping-bag"></i></a></li>
                 </div>
             </ul>
         </nav>
@@ -47,18 +47,23 @@
     </main>
 
     <footer>
-        <nav>
-          <ul id="icones">
-            <li>
-              <section>
-                <p id="slogan">Para quem se compromete com o Meio Ambiente!</p>
-              </section>
-            </li>
-            <li><a href="#" class="sombra"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="#" class="sombra"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#" class="sombra"><i class="fas fa-envelope"></i></a></li>
-          </ul>
-        </nav>  
+        <div class="rodape">
+	        <nav>	
+	          <ul id="icones">
+	            <li>
+	              <div id="slogan">
+	                <p>Para quem se compromete com o Meio Ambiente!</p>
+	              </div>
+	            </li>
+	            <li><a href="#" class="sombra"><i class="fab fa-facebook"></i></a></li>
+	            <li><a href="#" class="sombra"><i class="fab fa-instagram"></i></a></li>
+	            <li><a href="#" class="sombra"><i class="fas fa-envelope"></i></a></li>
+	          </ul>
+	        </nav>
+        </div>
+        <section id="atualizacao">
+        	<p>© Green Gate 2021</p>
+        </section>  
       </footer>
 
   </body>
