@@ -14,19 +14,39 @@ a{
 	text-decoration: none;
 	color: #000;
 }
-#topicos{
-	list-style: none;
-	font-size: 20px;
-	font-family: 'Gowun Batang', serif;
+footer{
+	padding: 30px 0 30px 30px;
+	background-color: #000;
 }
 li,div{
   display:inline-block;
   text-align: right;
 }
+#topicos{
+	list-style: none;
+	font-size: 20px;
+	font-family: 'Gowun Batang', serif;
+}
 .menu_direito{
 	position: relative;
 	bottom: 15px;
 	margin:3px;
+}
+#slogan{
+	color: #FFF;
+}
+#icones li{
+	padding: 10px;
+	position: relative;
+}
+#icones li a i{
+	color: #FFF;
+}
+#icones li a i:hover{
+	color: #C3CE64;  
+}
+.sombra i{
+	font-size: 25px;
 }
 .menu_esquerdo{
 	position: relative;
