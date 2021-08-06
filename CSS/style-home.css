@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+
 *{
-	margin: 0 auto;
+	margin: 0;
 	padding: 0;
 }
 header{
-	padding: 30px 30px 0 30px;
+	width: 100%;
+	max-width: 1380px;
+	height: 100px;
+	padding-top: 25px;
 }
 a{
 	text-decoration: none;
@@ -12,7 +17,7 @@ a{
 #topicos{
 	list-style: none;
 	font-size: 20px;
-	font-family: Serif;
+	font-family: 'Gowun Batang', serif;
 }
 li,div{
   display:inline-block;
@@ -20,18 +25,63 @@ li,div{
 }
 .menu_direito{
 	position: relative;
-	bottom: 10px;
+	bottom: 15px;
 	margin:3px;
 }
 .menu_esquerdo{
 	position: relative;
-	bottom: 10px;
-	left: 620px;
-	padding: 15px;
+	bottom: 15px;
+	left: 665px;
+	padding-left: 15px;
+}
+.menu_direito a{
+	transition: 1s;
+}
+.menu_esquerdo a{
+	transition: 1s;
 }
 .menu_direito a:hover{
 	color: #C3CE64; 
 }
 .menu_esquerdo a i{
 	font-size: 25px;
+}
+.menu_esquerdo a:hover{
+	color: #C3CE64;  
+}
+.container-slide {
+	width: 100%;
+	background-color: #C3CE64;
+	height: 470px;
+	position: relative;
+}
+.btn{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+.btn a button{
+	width: 150px;
+	height: 50px;
+	background-color: #00000000;
+	border: 3px solid #FFF;
+	border-radius: 9px;
+	color: #000;
+	font-family: 'Gowun Batang', serif;
+	font-size: 20pt;
+	transition: 1s;
+}
+.btn a button:hover{
+	background-color: #c5f173;
+}
+
+.btn a {
+	text-decoration: none;
 }
