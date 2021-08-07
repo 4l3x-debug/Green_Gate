@@ -74,7 +74,7 @@ a{
 /*Conteudo*/
 .main-conteudo{
     position: relative;
-    max-width: 1410px;
+    max-width: 1600px;
     width: 100%;
     top: 120px;
     left: 0;
@@ -114,3 +114,7 @@ a{
 }
 
 /*Rodapé*/
+footer{
+    position: relative;
+    z-index: 1;
+}
