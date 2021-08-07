@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+a{
+    text-decoration: none;
+}
+
+/*Barra-Navegação*/
+.main-nav{
+    max-width: 1400px;
+    width: 100%;
+}
+.main-nav nav{
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.logo {
+    position: relative;
+    top: 15px;
+    left: 20px;
+}
+
+.lista-menu ul{
+    list-style: none;
+    position: absolute;
+    top: 40px;
+    left: 300px;
+}
+
+.lista-menu ul li{
+    float: left;
+    padding-right: 25px;
+}
+
+.lista-menu ul li a {
+    color: #000;
+    font-family: 'Gowun Batang', serif;
+    font-weight: bolder;
+    font-size: 15pt;
+    transition: 1s;
+}
+
+.lista-menu ul li a:hover {
+    color: #C3CE64;
+}
+
+.figuras {
+    position: absolute;
+    float: right;
+    right: 25px;
+    top: 40px;
+}
+.figuras a{
+    color: #000;
+    transition: 1s;
+}
+.figuras a:hover{
+    color: #C3CE64;
+}
+.figuras a i{
+    font-size: 25px;
+    padding-right: 25px;
+}
+
+/*Conteudo*/
+.main-conteudo{
+    position: relative;
+    max-width: 1410px;
+    width: 100%;
+    top: 120px;
+    left: 0;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+.conteudo{
+    width: 100%;
+    height: 450px;
+    background-color: #c3ce64;
+}
+.conteudo a{
+    color: #000;
+}
+
+.conteudo a button{
+    height: 50px;
+    width: 120px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    margin-bottom: 50px;
+    font-family: 'Gowun Batang', serif;
+    font-size: 15pt;
+    background-color: #00000000;
+    border: 3px solid #FFF; 
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.main-conteudo a button:hover{
+    background-color: #dce3a5;
+}
+
+/*Rodapé*/
