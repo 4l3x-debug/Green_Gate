@@ -29,6 +29,7 @@ main{
 	font-size: 15px;
 	position: relative;
 	text-align: center;
+}
 	*{
 		margin: 0;
 		padding: 0;
@@ -153,8 +154,8 @@ main{
 	}
 	.sombra i{
 		font-size: 30px;
-	}	top: 160px;
-}
+		top: 160px;
+	}
 #icones li{
 	padding: 10px;
 }
