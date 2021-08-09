@@ -20,7 +20,7 @@
 
           <form action="#" method="POST">
             <p><input type="text" name="email" placeholder="E-mail" class="respostas_login"></p>
-            <p><input type="text" name="senha" placeholder="Senha" class="respostas_login"></p>
+            <p><input type="password" name="senha" placeholder="Senha" class="respostas_login"></p>
             <input type="submit" name="Entrar" value="Entrar" id="botao_login">
           </form>
 
