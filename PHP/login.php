@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Green Gate | Login</title>
     <link rel="stylesheet" type="text/css" href="../CSS/style-login.css">
+    <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
   </head>
   <body>
     <header>
@@ -13,6 +14,7 @@
           <span>Tipo de Usuário:</span>
 
           <select id="tipo_de_usuario" name="tipo_de_usuario">
+            <option Selected value disable="">Selecione</option>
             <option value="Administrador">Administrador</option>
             <option value="Consumidor">Consumidor</option>
             <option value="Produtor">Produtor</option>
@@ -24,7 +26,7 @@
             <input type="submit" name="Entrar" value="Entrar" id="botao_login">
           </form>
 
-          <div id="cadastro_login">
+          <div class="cadastro_login">
             <p><a href="#">Cadastre-se no Green Gate</a></p>
           </div>
 
