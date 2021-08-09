@@ -1,5 +1,5 @@
 @keyframes mover_onda1{
-    from{
+    from {
     transform: translateX(-2000px);
     }
 }
@@ -49,7 +49,7 @@ input{
 }
 #cadastro_login{
 	position: absolute;
-	top: 72%;
+	top: 74%;
 	left: 42.5%;
 }
 #cadastro_login p a{
@@ -61,21 +61,38 @@ input{
 	font-family: Caviar Dreams;
 	border-radius: 30px;
 	width: 26%;
-    height: 60%;
+    height: 70%;
 	z-index: 1;
 	text-align: center;
 }
 #login form{
 	position: absolute;
 	left: 41%;
-	top: 38%;
+	top: 39.3%;
 	line-height: 4em;
+}
+#login span {
+    position: absolute;
+    right: 50%;
+    top: 33%;
+}
+#tipo_de_usuario{
+	border: 0;
+    font-family: Caviar Dreams;
+    box-shadow: 3px 3px 3px 0 #e5e4e2;
+    border-radius: 20px;
+    width: 125px;
+    height: 30px;
+    position: absolute;
+    top: 32%;
+    right: 40.5%;
+    padding: 0 0 0 12px;
 }
 #titulo{
 	font-size: 200%;
 	color: #143601;
 	position: absolute;
-	top: 27%;
+	top: 21%;
 	right: 46%;
 }
 .ondas{

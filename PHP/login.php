@@ -8,17 +8,26 @@
   <body>
     <header>
       <div id="login">
-        <section>
           <strong><p id="titulo">LOGIN</p></strong>
+
+          <span>Tipo de Usuário:</span>
+
+          <select id="tipo_de_usuario" name="tipo_de_usuario">
+            <option value="Administrador">Administrador</option>
+            <option value="Consumidor">Consumidor</option>
+            <option value="Produtor">Produtor</option>
+          </select>
+
           <form action="#" method="POST">
             <p><input type="text" name="email" placeholder="E-mail" class="respostas_login"></p>
             <p><input type="text" name="senha" placeholder="Senha" class="respostas_login"></p>
             <input type="submit" name="Entrar" value="Entrar" id="botao_login">
           </form>
+
           <div id="cadastro_login">
             <p><a href="#">Cadastre-se no Green Gate</a></p>
           </div>
-        </section>
+
       </div>
 
       <svg
