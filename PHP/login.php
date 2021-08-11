@@ -49,29 +49,3 @@
 </body>
 
 </html>
-
-<?php
-include('conexao.php');
-
-if (isset($_POST['entrar'])) {
-  $usuario = ($_POST['tipo_de_usuario']);
-  $email = ($_POST['email']);
-  $senha = ($_POST['senha']);
-
-  if ($usuario == 'Administrador') {
-    $consultar = "select id_adm, email, senha from dados_adm where email='" . $email . "' and senha='" . $senha . "';";
-  } else if ($usuario == 'Consumidor') {
-    $consultar = "select id_cons, email, senha from dados_consumidor where email='" . $email . "' and senha='" . $senha . "';";
-  } else if ($usuario == 'Produtor') {
-    $consultar = "select id_prod, email, senha from dados_produtor where email='" . $email . "' and senha='" . $senha . "';";
-  } else {
-    echo ("<script>window.alert('Erro: Usuario Desconhecido')</script>");
-    header('Location: login.php');
-  }
-}
-$query_log = mysqli_query($conectar, $consultar);
-
-if ($query_log) {
-  header("location: index.php");
-}
-?>
