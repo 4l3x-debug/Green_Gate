@@ -199,3 +199,18 @@ a{
     top: 40px;
     left: 300px;
 }
+
+.imagens{
+    position: absolute;
+    max-width: 1600px;
+    width: 100%;
+    top: 150px;
+}
+
+.imagens div{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    top: 10px;
+    background-color: #c3ce64;
+}
