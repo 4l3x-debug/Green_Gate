@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
   <title>Green Gate | Login</title>
-  <link rel="stylesheet" type="text/css" href="../CSS/style-login.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/login.css">
   <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
 </head>
-
 <body>
-  <header>
-    <div id="login">
-      <strong>
-        <p id="titulo">LOGIN</p>
-      </strong>
+  <section>
+    <div class="main-login">
+      <h1>LOGIN</h1>
 
-      <span>Tipo de Usuário:</span>
-      <select id="tipo_de_usuario" name="tipo_de_usuario">
-        <option Selected value disable="">Selecione</option>
-        <option value="Administrador">Administrador</option>
-        <option value="Consumidor">Consumidor</option>
-        <option value="Produtor">Produtor</option>
-      </select>
+      <form name="login" method="POST">
 
-      <form action="#" method="POST">
+        <p>Selecione o usuário</p>
+        <select>
+          <option selected value disabled="">Selecione</option>
+          <option value="adm">Administrador</option>
+          <option value="prod">Produtor</option>
+          <option value="cons">Consumidor</option>
+        </select>
 
-        <p><input type="text" name="email" placeholder="E-mail" class="respostas_login"></p>
+        <div class="email">
+          <input type="email" name="email" placeholder="Email">
+        </div>
 
-        <p><input type="password" name="senha" placeholder="Senha" class="respostas_login"></p>
+        <div class="senha">
+          <input type="password" name="senha" placeholder="Senha">
+        </div>
 
-        <input type="submit" name="entrar" value="Entrar" id="botao_login">
+        <div class="btn">
+          <input type="submit" name="concluir" value="Concluir">
+        </div>
+
+        <div class="cadastro">
+          <a href="#">Cadastre-se no Green Gate</a>
+        </div>
+
       </form>
 
-      <div class="cadastro_login">
-        <p><a href="#">Cadastre-se no Green Gate</a></p>
-      </div>
-
     </div>
+  </section>
 
     <svg class="ondas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20962 10601">
       <path class="primeira_onda" fill="#90a955" d="M27489 8635c504 1667 831 3818-27 5680s-2901 3434-6193 3904-7834-161-12155-589c-4321-427-8421-649-10976-1537-2555-889-3565-2443-4071-4061-505-1619-505-3302 938-4835 1442-1533 4327-2916 6274-3122s2958 764 3877 1522 1746 1304 2738 1382 2148-312 2976-730 1327-864 2136-1014c810-151 1929-6 2757 206s1363 490 1978 775c614 284 1308 574 1947 535s1223-407 1935-875c712-469 1552-1037 2240-1266 688-228 1223-117 1832 530 608 646 1290 1828 1794 3495z" />
@@ -45,7 +49,5 @@
 
       <path class="terceira_onda" fill="#ECF39E" d="M30706 11822c-291 731-653 1801-1548 2972-895 1170-2321 2441-4988 3026-2667 586-6574 485-10469 541s-7778 268-10906-256-5501-1784-6906-3382c-1404-1598-1840-3533-1957-4910-118-1377 82-2195 1029-2854 946-659 2637-1158 4033-1002s2495 968 3440 1630 1737 1175 2905 1086c1169-89 2714-780 3810-1332 1095-552 1740-965 2665-820s2130 848 3110 1360c980 513 1734 837 2458 672s1416-819 2179-1050 1597-40 3058 269c1461 310 3550 739 5069 1177 1519 437 2469 883 2998 1112 529 228 639 240 584 440-55 201-274 591-564 1321z" />
     </svg>
-  </header>
 </body>
-
 </html>
