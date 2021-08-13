@@ -45,12 +45,11 @@
 
 
     <section class="slide_carrosel">
-    	<div class="box_lojas">
-    		<figure>
-                <img src="" alt="">
-                <img src="" alt="">
-            </figure>
-    	</div>
+		<div class="box_lojas one">
+		    <figure>
+		        <img class="lojas" src="#" alt="">
+		    </figure>
+		</div>
     </section>
 
     <!-- Rodapé -->
@@ -73,5 +72,6 @@
         <div class="direitos">
             <p>© Green Gate 2021</p>
         </div>
+
 </body>
 </html>
