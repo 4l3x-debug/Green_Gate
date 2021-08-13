@@ -23,6 +23,7 @@
  	margin: 0;
     padding: 0;
     box-sizing: border-box;
+	font-family: Caviar Dreams;
 }
 
 section{
@@ -37,42 +38,46 @@ section{
 
 input{
 	outline: 0;
-	font-family: Caviar Dreams;
 	padding-left: 10px;
 }
 
 .main-login{
 	z-index: 1;
 	background-color: #FFF;
-	height: 420px;
-	width: 350px;
-	border-radius: 10px;
+	height: 70%;
+	width: 26%;
+	border-radius: 30px;
 	position: relative;
-	box-shadow: 2px 2px 5px 5px #53535350;
 	/*1349 500*/
 }
 
 .main-login h1{
-	font-family: 'Gowun Batang', serif;
-	font-size: 25pt;
+	font-size: 200%;
 	color: #143601;
-	position: relative;
-	top: 10px;
+	position: absolute;
+	top: 8%;
+	right: 35.5%;
 }
 
 .main-login p{
-	font-family: Caviar Dreams;
-	font-size: 17px;
+	font-size: 16px;
 	color: #000;
 	position: absolute;
-	left: 35px;
-	top: 90px;
+	left: 50px;
+	top: 112px;
 }
 
 .main-login select{
+	border: 0;
+	font-family: Caviar Dreams;
+	box-shadow: 3px 3px 3px 0 #e5e4e2;
+	border-radius: 20px;
+	width: 120px;
+	height: 30px;
 	position: absolute;
-	right: 45px;
-	top: 92px;
+	padding: 0 0 0 9px;
+	top: 104px;
+	right: 60px;
 }
 
 .email{
@@ -85,10 +90,16 @@ input{
 }
 
 .email input{
+	border: 0;
+	font-family: Caviar Dreams;
+	box-shadow: 3px 3px 3px 0 #e5e4e2;
+	border-radius: 20px;
 	width: 250px;
-	height: 30px;
-	border-radius: 5px;
-	border: 2px solid #a7a7a7;
+	height: 35px;
+	position: absolute;
+	top: 19px;
+	right: 16%;
+	padding: 0 0 0 12px;
 }
 
 .senha{
@@ -101,15 +112,21 @@ input{
 }
 
 .senha input{
+	border: 0;
+	font-family: Caviar Dreams;
+	box-shadow: 3px 3px 3px 0 #e5e4e2;
+	border-radius: 20px;
 	width: 250px;
-	height: 30px;
-	border-radius: 5px;
-	border: 2px solid #a7a7a7;
+	height: 35px;
+	position: absolute;
+	top: 34px;
+	right: 16%;
+	padding: 0 0 0 12px;
 }
 
 .btn{
 	position: absolute;
-	top: 280px;
+	top: 312px;
 	left: 0;
 	right: 0;
 	margin-left: auto;
@@ -117,22 +134,21 @@ input{
 }
 
 .btn input{
+	border: 0;
+	border-radius: 30px;
+	width: 250px;
 	height: 35px;
-	width: 170px;
-	font-family: 'Gowun Batang', serif;
-	font-size: 15pt;
-	padding: 0;
-	margin: 0;
-	background-color: #649a46;
+	position: relative;
+	top: -5px;
+	right: 1%;
 	color: #FFF;
-	border: none;
-	text-align: center;
-	border-radius: 10px;
-	transition: 1s;
+	cursor: pointer;
+	background-color: #C3CE64;
+	transition: box-shadow 0.3s cubic-bezier(0, 1.01, 0.37, 1.01);
 }
 
 .btn input:hover {
-	background-color: #3d5d0c;
+	box-shadow: 0 0 0 2px #C3CE64;
 }
 
 .cadastro{
@@ -146,10 +162,13 @@ input{
 
 .cadastro a{
 	text-decoration: none;
-	font-family: 'Gowun Batang', serif;
-	font-size: 15pt;
-	color: #000;
-	transition: 1s;
+    font-size: 18px;
+    position: absolute;
+    width: 270px;
+    height: 28px;
+	top: 30px;
+	right: 13%;
+    color: #000;
 }
 
 .cadastro a:hover{
