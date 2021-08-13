@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Green Gate | Login</title>
-  <link rel="stylesheet" type="text/css" href="../CSS/login.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/style-login.css">
   <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
 </head>
 <body>
