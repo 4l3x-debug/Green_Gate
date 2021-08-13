@@ -26,7 +26,7 @@
                 <div class="lista-menu">
                     <ul>
                         <li><a href="">Home</a></li>
-                        <li><a href="">Loja</a></li>
+                        <li><a href="../PHP/lojas.php">Loja</a></li>
                         <li><a href="">Sobre</a></li>
                         <li><a href="">Suporte</a></li>
                     </ul>
