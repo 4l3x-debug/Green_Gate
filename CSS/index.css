@@ -48,7 +48,6 @@ a{
     font-family: 'Gowun Batang', serif;
     font-weight: bolder;
     font-size: 15pt;
-    transition: 1s;
 }
 
 .lista-menu ul li a:hover {
@@ -63,7 +62,6 @@ a{
 }
 .figuras a{
     color: #000;
-    transition: 1s;
 }
 .figuras a:hover{
     color: #8082e2;
@@ -109,7 +107,6 @@ a{
     background-color: #00000000;
     border: 3px solid #FFF; 
     border-radius: 20px;
-    transition: 1s;
 }
 
 .main-conteudo a button:hover{
@@ -164,7 +161,6 @@ a{
 .footer-icon a i{
     font-size: 30px;
     padding-right: 20px;
-    transition: 1s;
 }
 
 .fa-facebook:hover{
