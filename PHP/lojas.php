@@ -31,7 +31,7 @@
 
                 <div class="figuras">
                     <a href=""><i class="fas fa-search"></i></a>
-                    <a href="../PHP/login.php"><i class="fas fa-user-circle"></i></a>
+                    <a href="login.php"><i class="fas fa-user-circle"></i></a>
                     <a href=""><i class="fas fa-shopping-bag"></i></a>
                 </div>
             </nav>
@@ -46,7 +46,10 @@
 
     <section class="slide_carrosel">
     	<div class="box_lojas">
-    		
+    		<figure>
+                <img src="" alt="">
+                <img src="" alt="">
+            </figure>
     	</div>
     </section>
 
