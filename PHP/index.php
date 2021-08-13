@@ -58,11 +58,16 @@
     </section>
 
     <section class="imagens">
-        <div>
-            <img src="../IMG/Imagem1.png" alt="Imagem sabonete"
-            id="img1">
-            <img src="../IMG/Imagem2.png" alt="Imagem Sabonete" id="img2">
-            <img src="../IMG/Imagem3.png" alt="Imagem Sabonete sustentavél" id="img3">
+        <div id="box-imagem">
+            <div class="box-shadow-imagem">
+                <a href="#"><img src="../IMG/Imagem1.png" alt="Imagem sabonete" id="img1"></a>
+            </div>
+            <div class="box-shadow-imagem">
+                <a href="#"><img src="../IMG/Imagem2.png" alt="Imagem Sabonete" id="img2"></a>
+            </div>
+            <div class="box-shadow-imagem">
+                <a href="#"><img src="../IMG/Imagem3.png" alt="Imagem Sabonete sustentavél" id="img3"></a>
+            </div>
         </div>
     </section>
     

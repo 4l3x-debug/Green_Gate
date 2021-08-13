@@ -88,7 +88,7 @@ a{
     height: 500px;
     position: relative;
     top: 0px;
-    background-color: #c3ce64;
+    background-color: #ECFCAA;
 }
 
 .conteudo a button{
@@ -105,15 +105,54 @@ a{
     font-size: 15pt;
     color: #FFF;
     background-color: #00000000;
-    border: 3px solid #FFF; 
-    border-radius: 20px;
+    border: 2px solid #FFF; 
+    border-radius: 2px;
 }
 
 .main-conteudo a button:hover{
     background-color: #FFF;
-    color: #000;
+    color: #c3ce64;
     font-weight: bolder;
 }
+.imagens {
+    position: relative;
+    max-width: 1600px;
+    width: 100%;
+    top: 100px;
+}
+
+.imagens #box-imagem {
+    position: relative;
+    top: 0px;
+    height: 500px;
+    background-color: #FFF;
+}
+
+.box-shadow-imagem {
+    width: 407px;
+    height: 250px;
+    display: inline-block;
+    border-radius: 20px;
+    position: relative;
+    top: 120px;
+    left: 33px;
+    margin-left: 15px;
+}
+
+.box-shadow-imagem a img {
+    width: 407px;
+    height: 250px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px 0 #e5e4e2;
+}
+
+.box-shadow-imagem:hover{
+    background-color: #000;
+}
+
+.box-shadow-imagem a img:hover{
+    opacity: 50%;
+}    
 
 /*Rodapé*/
 .main-footer{
@@ -195,30 +234,6 @@ a{
     position: absolute;
     top: 40px;
     left: 300px;
-}
-
-.imagens {
-    position: relative;
-    max-width: 1600px;
-    width: 100%;
-    top: 100px;
-}
-
-.imagens div {
-    position: relative;
-    top: 0px;
-    background-image: linear-gradient(180deg, #c1da73, #ACED68);
-    height: 500px;
-}
-
-.imagens div img {
-    border-radius: 20px;
-    box-shadow: 5px 2px 20px 3px #00000050;
-    width: 407px;
-    height: 250px;
-    margin: 20px;
-    display: inline-block;
-    margin-top: 120px;
 }
 
 /*Slide*/
