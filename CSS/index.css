@@ -154,6 +154,14 @@ a{
     opacity: 50%;
 }    
 
+.anuncio{
+    width: 100%;
+    height:400px;
+    position: relative;
+    top: 100px;
+    background-image: url(../IMG/anuncio.png);
+}
+
 /*Rodapé*/
 .main-footer{
     max-width: 1600px;

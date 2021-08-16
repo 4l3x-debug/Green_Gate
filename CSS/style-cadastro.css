@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: 0;	
+}
+
+
+.tela {
+	width: 100%;
+	height: 100vw;
+} 
+
+
+.back {
+	width: 100%;
+	height: 100vw;
+
+}
+
+
+.tela {
+	background-repeat: no-repeat;
+ 	background-size: 100%;
+	background-position: center center;
+	height: 100vh;
+	width: 100%;
+	max-width: 1920px;
+	max-height: 1200px;
+	animation: animate 25s ease-in infinite; 
+}
+	
+
+@keyframes animate{
+
+	0% {
+		background-image: url(../IMG/img1.jpg);
+	}
+	25%{
+		background-image: url(../IMG/img2.jpg);
+	}
+	50%{
+		background-image: url(../IMG/img3.jpg);
+	}
+	75%{
+		background-image: url(../IMG/img4.jpg);
+	}
+	100%{
+		background-image: url(../IMG/img5.jpg);
+	}
+}
+
+main {
+
+	width: 50vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-left: 16px;
+	align-content: center;
+}
+
+main h1 {
+	font-family: Poppins;
+	margin-top: 6rem;
+	color: #363636;
+	font-size: 1.3rem;
+	text-align: center;
+	margin-bottom: 15px;  
+}
+
+.enviar {
+	margin-top: 7px;
+	align-items: center;
+	padding: 10px;
+}
+
+.imagens img {
+	margin-top: 12rem;
+	width: 400px;
+	height: 400px;
+}
+
+main form {
+	display: flex;
+	flex-direction: column; 
+	align-items: center;
+	font-family: Hind Madurai;
+
+}
+
+main form label {
+	display: flex;
+	flex-direction: column;
+
+}
+
+main form label span {
+	margin-top: 1rem;
+	font-size: 1rem;
+	font-family: Hind Madurai;
+}
+
+main form input[type="text"] {
+	padding: 7px;
+	margin-top: 1px;
+	width: 240px;
+	outline: none;
+	border-top: none;
+	border-left: none;
+	border-right: none; 
+	border-bottom: 1px solid #C0C0C0;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	background: #F8F8FF;
+	margin-bottom: 5px;
+	
+}
+main form input[type="submit"] {
+	border: none;
+	border-radius: 25px;
+	margin-top: 30px;
+	padding: 15px 20px;
+	background: #00FF7F;
+	font-family: Poppins;
+	font-size: 0.9rem;
+	cursor: pointer;
+	width: 240px;
+	margin-bottom: 2px;
+}
+
+main form input[type="text"]:hover {
+	border-bottom: 2px solid #00FF7F;
+	transition-property: border-color;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in;
+}
+
+main form input[type="submit"]:hover{
+	background-color: #00FA9A;
+	transition-property: background-color;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in;
+}
+
+.logo img {
+	position: absolute;
+	margin-top: 7rem; 
+	height: 90px; 
+	width: 90px;
+	margin-left: 320px;
+	clip-path: circle(50%);
+	margin-bottom: 5px;
+	z-index: +1;
+	top: -55px;
+	left: 343px;
+}
+
+div {
+	position: absolute;
+	margin-top: 100px;
+	margin-left: 50vw;
+	align-items: center;
+	height: 555px;
+	width: 380px;
+	background: white;
+	border-radius: 5px;
+	align-content: center;
+	top: -50px;
+}
+
+hr {
+	margin-top: 25px;
+	margin-left: 95px;
+	margin-bottom: -10px;
+}
+
+.or {
+	font-family: Hind Madurai;
+	margin-left: 174px;
+	background-color: white;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+.msg {
+	position: relative;
+	margin-top: 5px;
+	margin-left: 100px;
+}
+
+.link {
+	text-decoration: none;
+	color: #808080;
+}
+
+
+
+
+
+

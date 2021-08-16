@@ -34,7 +34,7 @@
         </div>
 
         <div class="cadastro">
-          <a href="#">Cadastre-se no Green Gate</a>
+          <a href="cadastro.php">Cadastre-se no Green Gate</a>
         </div>
 
       </form>

@@ -25,16 +25,16 @@
 
                 <div class="lista-menu">
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="../PHP/lojas.php">Loja</a></li>
-                        <li><a href="">Sobre</a></li>
-                        <li><a href="">Suporte</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="lojas.php">Loja</a></li>
+                        <li><a href="sobre.php">Sobre</a></li>
+                        <li><a href="suporte.php">Suporte</a></li>
                     </ul>
                 </div>
 
                 <div class="figuras">
                     <a href=""><i class="fas fa-search"></i></a>
-                    <a href="../PHP/login.php"><i class="fas fa-user-circle"></i></a>
+                    <a href="login.php"><i class="fas fa-user-circle"></i></a>
                     <a href=""><i class="fas fa-shopping-bag"></i></a>
                 </div>
             </nav>
@@ -67,6 +67,22 @@
             </div>
             <div class="box-shadow-imagem">
                 <a href="#"><img src="../IMG/Imagem3.png" alt="Imagem Sabonete sustentavél" id="img3"></a>
+            </div>
+        </div>
+    </section>
+
+        <div class="anuncio"></div>
+
+    <section class="imagens">
+        <div id="box-imagem">
+            <div class="box-shadow-imagem">
+                <a href="#"><img src="../IMG/Imagem4.png" alt="Imagem sabonete" id="img1"></a>
+            </div>
+            <div class="box-shadow-imagem">
+                <a href="#"><img src="../IMG/Imagem5.png" alt="Imagem Sabonete" id="img2"></a>
+            </div>
+            <div class="box-shadow-imagem">
+                <a href="#"><img src="../IMG/Imagem6.png" alt="Imagem Sabonete sustentavél" id="img3"></a>
             </div>
         </div>
     </section>
