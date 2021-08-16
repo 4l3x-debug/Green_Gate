@@ -119,13 +119,13 @@ a{
     max-width: 1600px;
     width: 100%;
     top: 100px;
+    background-color: #fefae0;
 }
 
 .imagens #box-imagem {
     position: relative;
     top: 0px;
     height: 500px;
-    background-color: #FFF;
 }
 
 .box-shadow-imagem {
