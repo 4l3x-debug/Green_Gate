@@ -15,17 +15,16 @@
             <nav>
                 <div class="logo">
                     <figure>
-                        <a href="../HTML/index
-                        .html"><img src="../IMG/logotipo.png" alt="Logotipo"></a>
+                        <a href="index.php"><img src="../IMG/logotipo.png" alt="Logotipo"></a>
                     </figure>
                 </div>
 
                 <div class="lista-menu">
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Loja</a></li>
-                        <li><a href="">Sobre</a></li>
-                        <li><a href="">Suporte</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="lojas.php">Loja</a></li>
+                        <li><a href="sobre.php">Sobre</a></li>
+                        <li><a href="suporte.php">Suporte</a></li>
                     </ul>
                 </div>
 
