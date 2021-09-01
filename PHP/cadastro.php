@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 	<title>Green Gate | Cadastro </title>
 	<meta charset="utf-8">
@@ -14,7 +14,7 @@
 
 		<h1> Cadastre-se no Green Gate! </h1>
 
-		<form action="" method="POST" class="formulario-cadastro">
+		<form method="POST" class="formulario-cadastro">
 
 			<div class="linha primeira">
 				Nome:
@@ -24,7 +24,7 @@
 
 			<div class="linha segunda">
 				E-mail:
-				<input type="email" name="usuario" id="usuario">
+				<input type="email" name="email" id="usuario">
 			</div>	
 
 			<div class="linha terceira">
@@ -32,7 +32,7 @@
 				<input type="password" name="senha" id="senha">
 
 				Confirmação:
-				<input type="password" name="senha" id="senha">
+				<input type="password" name="senha-confirmacao" id="senha">
 			</div>	
 
 			<div class="linha quarta">
@@ -48,21 +48,21 @@
 	        	<input type="text" name="telefone">
 
 	        	CPF:
-	        	<input type="text" name="CPF"><br>
+	        	<input type="text" name="cpf"><br>
 
 	        </div>
 
 	        <div class="linha sexta">
 
 	        	Tipo de Usuário:
-				<select>
+				<select name="usuario">
 			        <option selected value disabled="">Selecione</option>
-			        <option value="prod">Produtor</option>
-			        <option value="cons">Consumidor</option>
+			        <option value=1>Produtor</option>
+			        <option value=2>Consumidor</option>
 			    </select>
 
 		        Gênero:
-			    <select>
+			    <select name="genero">
 			        <option selected value disabled="">Selecione</option>
 			        <option value="F">Feminino</option>
 			        <option value="M">Masculino</option>
@@ -89,3 +89,51 @@
 
 </body>
 </html>
+
+<?php
+	include('conexao.php');
+
+	if (isset($_POST['cadastrar'])) {
+		$nome = $_POST['nome'];
+		$email = $_POST['email'];
+		$senha = $_POST['senha'];
+		$confimacao = $_POST['senha-confirmacao'];
+		$usuario = $_POST['usuario'];
+		$data_nascimento = $_POST['data'];
+		$celular = $_POST['telefone'];
+		$cpf = $_POST['cpf'];
+		$genero = $_POST['genero'];
+		$data_cadastro = date("Y-m-d");
+		$data_americana = date("Y-m-d", strtotime($data_nascimento));
+
+		if ($usuario == 1) {
+			if ($senha == $confimacao) {
+				$adicionar = "insert into usuario (nome, email, senha, usuario, celular, data_nascimento, data_cadastro, genero, cpf) values ('".$nome."', '".$email."', '".$senha."', ".$usuario.", '".$celular."', '".$data_americana."', '".$data_cadastro."', '".$genero."', '".$cpf."');";
+
+				$query_cadastro = mysqli_query($conectar, $adicionar);
+
+				if ($query_cadastro) {
+					header('location: login.php');
+				}else{
+					header('location: cadastro.php');
+				}
+			}
+		}else if ($usuario == 2) {
+			if ($senha == $confimacao) {
+				if ($senha == $confimacao) {
+					$adicionar = "insert into usuario (nome, email, senha, usuario, celular, data_nascimento, data_cadastro, genero, cpf) values ('".$nome."', '".$email."', '".$senha."', ".$usuario.", '".$celular."', '".$data_americana."', '".$data_cadastro."', '".$genero."', '".$cpf."');";
+
+					$query_cadastro = mysqli_query($conectar, $adicionar);
+
+					if ($query_cadastro) {
+						header('location: login.php');
+					}else{
+						header('location: cadastro.php');
+					}
+				}
+			}
+		}else{
+			
+		}
+	}
+?>
