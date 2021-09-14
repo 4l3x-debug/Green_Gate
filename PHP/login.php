@@ -14,11 +14,11 @@
       <form name="login" method="POST">
 
         <p>Tipo de Usuário:</p>
-        <select>
+        <select name="usuario">
           <option selected value disabled="">Selecione</option>
-          <option value="adm">Administrador</option>
-          <option value="prod">Produtor</option>
-          <option value="cons">Consumidor</option>
+          <option value=0>Administrador</option>
+          <option value=1>Produtor</option>
+          <option value=2>Consumidor</option>
         </select>
 
         <div class="email">
@@ -30,7 +30,7 @@
         </div>
 
         <div class="btn">
-          <input type="submit" name="Entrar" value="Entrar">
+          <input type="submit" name="entrar" value="Entrar">
         </div>
 
         <div class="cadastro">
@@ -52,3 +52,52 @@
 
 </body>
 </html>
+
+<?php
+  session_start();
+  include('conexao.php');
+
+  if (isset($_POST['entrar'])) {
+    $usuario = mysqli_real_escape_string($conectar, $_POST['usuario']);
+    $email = mysqli_real_escape_string($conectar, $_POST['email']);
+    $senha = mysqli_real_escape_string($conectar, $_POST['senha']);
+
+    if ($usuario == 0) {
+      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha = '".$senha."' and usuario = 0;";
+
+      $query_select = mysqli_query($conectar, $select);
+
+      $rows = mysqli_num_rows($query_select);
+
+      if ($rows == 1) {
+        header('location: painel_adm.php');
+      }else{
+        header('location: login.php');
+      }
+    }else if ($usuario == 1) {
+      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha = '".$senha."' and usuario = 1;";
+
+      $query_select = mysqli_query($conectar, $select);
+
+      $rows = mysqli_num_rows($query_select);
+
+      if ($rows == 1) {
+        header('location: painel_produtor.php');
+      }else{
+        header('location: login.php');
+      }
+    }else if ($usuario == 2) {
+      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha = '".$senha."' and usuario = 2;";
+
+      $query_select = mysqli_query($conectar, $select);
+
+      $rows = mysqli_num_rows($query_select);
+
+      if ($rows == 1) {
+        header('location: painel_consumidor.php');
+      }else{
+        header('location: login.php');
+      }
+    }
+  }
+?>
