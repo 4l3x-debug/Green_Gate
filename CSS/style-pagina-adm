@@ -7,7 +7,7 @@
 	z-index: 1;
 	background-color: #FFF;
 	position: relative;
-	height: 700px;
+	height: 720px;
 	font-family: Caviar Dreams;
 	font-size: 20px;
 	border-top: 1px solid #ebebeb;
@@ -16,7 +16,7 @@
 
 .main.articles{
 	width: 80%;
-	height: 200px;
+	height: 702px;
 	position: absolute;
 }
 
@@ -54,14 +54,38 @@
 	background-color: #FAFAFA;
 }
 .article{
-	width: 92%;
-	position: relative;
-	left: 40px;
-	top: 40px;
-	border-radius: 30px;
-
-}
-.article.um{
 	background-color: #FFF;
+	width: 217px;
 	height: 300px;
+	border-radius: 30px;
+	display: inline-block;
+	position: relative;
+}
+
+.article.primeiro{
+	top: 40px;
+}
+
+.article.segundo{
+	top: 80px;
+}
+
+.article img{
+	border-radius: 30px;
+}
+
+.article.um{
+	left: 40px;
+}
+
+.article.dois{
+	left: 80px;
+}
+
+.article.tres{
+	left: 120px;
+}
+
+.article.quarto{
+	left: 160px;
 }

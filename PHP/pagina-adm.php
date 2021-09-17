@@ -37,12 +37,12 @@
                 <li><a href="#"><i class="fas fa-store-alt"></i>
                     Lojas
                 </a></li>
-                <li><a href="#"><i class="far fa-check-square"></i> 
+                <li><a href="pagina_adm_aprovacoes.php"><i class="far fa-check-square"></i> 
                     Aprovações</a></li>   
-                <li><a href="#"><i class="fas fa-tasks"></i>
+                <li><a href="pagina_adm_avaliacoes.php"><i class="fas fa-tasks"></i>
                     Avaliações
                 </a></li>
-                <li><a href="#"><i class="fas fa-headset"></i>
+                <li><a href="pagina_adm_suporte.php"><i class="fas fa-headset"></i>
                     Suporte
                 </a></li>      
             </ul>
@@ -51,7 +51,29 @@
 
     <!-- Conteúdo -->
         <section class="main articles">
-            <article class="article um">
+            <article class="article primeiro um">  
+                <img src="../IMG/meu_eco_bebe.jpg" alt="meu_eco_bebe"> 
+            </article>
+            <article class="article primeiro dois">
+                <img src="../IMG/insecta.png" alt="insecta">
+            </article>
+            <article class="article primeiro tres">
+                 <img src="../IMG/babu.png" alt="babu">
+            </article>
+            <article class="article primeiro quarto">
+                <img src="../IMG/feito_brasil.png" alt="feito_brasil">
+            </article>
+            <article class="article segundo um"> 
+                <img src="../IMG/campo_largo.png" alt="campo_largo"> 
+            </article>
+            <article class="article segundo dois">
+                <img src="../IMG/urban_flowers.png" alt="urban_flowers">
+            </article>
+            <article class="article segundo tres">
+                <img src="../IMG/eva.png" alt="eva">
+            </article>
+            <article class="article segundo quarto">
+                <img src="../IMG/timirim.png" alt="timirim">
             </article>
         </section>
     </main>    
