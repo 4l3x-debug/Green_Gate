@@ -7,7 +7,7 @@
 	z-index: 1;
 	background-color: #FFF;
 	position: relative;
-	height: 720px;
+	height: 850px;
 	font-family: Caviar Dreams;
 	font-size: 20px;
 	border-top: 1px solid #ebebeb;
@@ -16,8 +16,21 @@
 
 .main.articles{
 	width: 80%;
-	height: 702px;
+	height: 722px;
 	position: absolute;
+	font-family: Caviar Dreams;
+}
+
+.main.articles h1{
+	padding: 45px 0 0 60px;
+}
+
+.article:hover{
+	background-color: #000;
+}
+
+.main.articles img:hover{
+	opacity: 50%;
 }
 
 .main.aside nav{
@@ -41,9 +54,13 @@
 	position: relative;
 }
 
-.icon-aside li a i{
+.icon-aside i{
 	color: #dee69b;
 	font-size: 23px;
+}
+
+.icon-aside a{
+	color: #000;
 }
 
 .icon-aside li,strong{
@@ -67,7 +84,7 @@
 }
 
 .article.segundo{
-	top: 80px;
+	top: 90px;
 }
 
 .article img{
@@ -88,4 +105,16 @@
 
 .article.quarto{
 	left: 160px;
+}
+
+.modal{
+	width: 500px;
+	height: 500px;
+	background-color: #FFF;
+	position: absolute;
+	top: 43%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 30px;
+	display: none;
 }

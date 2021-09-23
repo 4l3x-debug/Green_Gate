@@ -34,23 +34,25 @@
     	<nav>
     		<ul class="icon-aside">
                 <strong>Categorias</strong>
-                <li><a href="#"><i class="fas fa-store-alt"></i>
+                <a href="pagina_adm.php"><li><i class="fas fa-store-alt"></i>
                     Lojas
-                </a></li>
-                <li><a href="pagina_adm_aprovacoes.php"><i class="far fa-check-square"></i> 
-                    Aprovações</a></li>   
-                <li><a href="pagina_adm_avaliacoes.php"><i class="fas fa-tasks"></i>
+                </li></a>
+                <a href="pagina_adm_aprovacoes.php"><li><i class="far fa-check-square"></i> 
+                    Aprovações
+                </li></a>   
+                <a href="pagina_adm_avaliacoes.php"><li><i class="fas fa-tasks"></i>
                     Avaliações
-                </a></li>
-                <li><a href="pagina_adm_suporte.php"><i class="fas fa-headset"></i>
+                </li></a>
+                <a href="pagina_adm_suporte.php"><li><i class="fas fa-headset"></i>
                     Suporte
-                </a></li>      
+                </li></a>      
             </ul>
     	</nav>
     </aside>
 
     <!-- Conteúdo -->
         <section class="main articles">
+            <h1>Lista de Lojas</h1>
             <article class="article primeiro um">  
                 <img src="../IMG/meu_eco_bebe.jpg" alt="meu_eco_bebe"> 
             </article>
@@ -77,6 +79,10 @@
             </article>
         </section>
     </main>    
+
+    <!-- Modal -->
+        
+
 
     <!-- Rodapé -->
 
