@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<<<<<<< HEAD
     <head>
         <title>Lojas</title>
         <meta charset="utf-8">
@@ -34,7 +33,6 @@
                     </div>
                 </nav>
         </header>
-=======
 <head>
 	<meta charset="utf-8">
 	<title>Green Gate | Lojas</title>
@@ -45,7 +43,6 @@
 </head>
 <body>
         <!-- Cabeçalho -->
->>>>>>> origin/main
 
         <section>
             <div class="container-site">
@@ -66,7 +63,6 @@
         </section>
 
         <section class="principais-produtos">
-=======
     </header>
 
     <!-- Banner -->
@@ -253,8 +249,6 @@
 
 
     <!-- Rodapé -->
->>>>>>> origin/main
-
             <span> Categorias mais pesquisadas </span>
             <a href="#" class="mais-produtos"> Ver todos os Produtos </a>
             
