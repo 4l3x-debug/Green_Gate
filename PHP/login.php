@@ -58,10 +58,14 @@
   if (isset($_POST['entrar'])) {
     $usuario = mysqli_real_escape_string($conectar, $_POST['usuario']);
     $email = mysqli_real_escape_string($conectar, $_POST['email']);
-    $senha = mysqli_real_escape_string($conectar, $_POST['senha']);
+    $senha = mysqli_real_escape_string($conectar, md5($_POST['senha']));
 
     if ($usuario == 0) {
+<<<<<<< HEAD
       $select = "select id_usuario, nome from usuario where email = '".$email."' and senha= md5('".$senha."') and usuario = 0;";
+=======
+      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha = '".$senha."' and usuario= 0;";
+>>>>>>> origin/main
 
       $query_select = mysqli_query($conectar, $select);
 

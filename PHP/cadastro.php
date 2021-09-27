@@ -118,7 +118,11 @@
 		}else if ($usuario == 2) {
 			if ($senha == $confimacao) {
 				if ($senha == $confimacao) {
+<<<<<<< HEAD
 					$adicionar = 'insert into usuario (nome, email, senha, usuario, celular, data_nascimento, data_cadastro, genero, cpf) values ("'.$nome.'", "'.$email.'", "'.md5($senha).'", '.$usuario.', "'.$celular.'", "'.$data_americana.'", "'.$data_cadastro.'", "'.$genero.'", "'.$cpf.'");';
+=======
+					$adicionar = 'insert into usuario (nome, email, senha, usuario, celular, data_nascimento, data_cadastro, genero, cpf) values ("'.$nome.'", "'.$email.'", "'.$senha.'", '.$usuario.', "'.$celular.'", "'.$data_americana.'", "'.$data_cadastro.'", "'.$genero.'", "'.$cpf.'");';
+>>>>>>> origin/main
 
 					$query_cadastro = mysqli_query($conectar, $adicionar);
 
