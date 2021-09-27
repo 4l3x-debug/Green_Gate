@@ -87,9 +87,6 @@
     </svg>
 	
 
-</body>
-</html>
-
 <?php
 	include('conexao.php');
 
@@ -108,7 +105,7 @@
 
 		if ($usuario == 1) {
 			if ($senha == $confimacao) {
-				$adicionar = "insert into usuario (nome, email, senha, usuario, celular, data_nascimento, data_cadastro, genero, cpf) values ('".$nome."', '".$email."', '".$senha."', ".$usuario.", '".$celular."', '".$data_americana."', '".$data_cadastro."', '".$genero."', '".$cpf."');";
+				$adicionar = 'insert into usuario (nome, email, senha, usuario, celular, data_nascimento, data_cadastro, genero, cpf) values ("'.$nome.'", "'.$email.'", "'.md5($senha).'", '.$usuario.', "'.$celular.'", "'.$data_americana.'", "'.$data_cadastro.'", "'.$genero.'", "'.$cpf.'");';
 
 				$query_cadastro = mysqli_query($conectar, $adicionar);
 
@@ -121,7 +118,7 @@
 		}else if ($usuario == 2) {
 			if ($senha == $confimacao) {
 				if ($senha == $confimacao) {
-					$adicionar = "insert into usuario (nome, email, senha, usuario, celular, data_nascimento, data_cadastro, genero, cpf) values ('".$nome."', '".$email."', '".$senha."', ".$usuario.", '".$celular."', '".$data_americana."', '".$data_cadastro."', '".$genero."', '".$cpf."');";
+					$adicionar = 'insert into usuario (nome, email, senha, usuario, celular, data_nascimento, data_cadastro, genero, cpf) values ("'.$nome.'", "'.$email.'", "'.md5($senha).'", '.$usuario.', "'.$celular.'", "'.$data_americana.'", "'.$data_cadastro.'", "'.$genero.'", "'.$cpf.'");';
 
 					$query_cadastro = mysqli_query($conectar, $adicionar);
 
@@ -137,3 +134,6 @@
 		}
 	}
 ?>
+
+</body>
+</html>

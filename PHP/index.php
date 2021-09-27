@@ -57,8 +57,8 @@
 
     </section>
 
-    <section class="imagens">
-        <div id="box-imagem">
+    <section class="imagem_1">
+        <div id="box-imagem_1">
             <div class="box-shadow-imagem">
                 <a href="#"><img src="../IMG/Imagem1.png" alt="Imagem sabonete" id="img1"></a>
             </div>
@@ -71,10 +71,12 @@
         </div>
     </section>
 
+    <div class="box-anuncio">
         <div class="anuncio"></div>
+    </div>
 
-    <section class="imagens">
-        <div id="box-imagem">
+    <section class="imagem_2">
+        <div id="box-imagem_2">
             <div class="box-shadow-imagem">
                 <a href="#"><img src="../IMG/Imagem4.png" alt="Imagem sabonete" id="img1"></a>
             </div>
@@ -110,3 +112,8 @@
     </footer>
 </body>
 </html>
+
+<?php
+    session_start();
+    
+?>

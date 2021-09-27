@@ -50,8 +50,6 @@
       <path class="terceira_onda" fill="#ECF39E" d="M30706 11822c-291 731-653 1801-1548 2972-895 1170-2321 2441-4988 3026-2667 586-6574 485-10469 541s-7778 268-10906-256-5501-1784-6906-3382c-1404-1598-1840-3533-1957-4910-118-1377 82-2195 1029-2854 946-659 2637-1158 4033-1002s2495 968 3440 1630 1737 1175 2905 1086c1169-89 2714-780 3810-1332 1095-552 1740-965 2665-820s2130 848 3110 1360c980 513 1734 837 2458 672s1416-819 2179-1050 1597-40 3058 269c1461 310 3550 739 5069 1177 1519 437 2469 883 2998 1112 529 228 639 240 584 440-55 201-274 591-564 1321z" />
     </svg>
 
-</body>
-</html>
 
 <?php
   session_start();
@@ -63,37 +61,40 @@
     $senha = mysqli_real_escape_string($conectar, $_POST['senha']);
 
     if ($usuario == 0) {
-      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha = '".$senha."' and usuario = 0;";
+      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha= md5('".$senha."') and usuario = 0;";
 
       $query_select = mysqli_query($conectar, $select);
 
       $rows = mysqli_num_rows($query_select);
 
       if ($rows == 1) {
+        $_SESSION['usuario'] = $usuario;
         header('location: painel_adm.php');
       }else{
         header('location: login.php');
       }
     }else if ($usuario == 1) {
-      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha = '".$senha."' and usuario = 1;";
+      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha= md5('".$senha."') and usuario = 1;";
 
       $query_select = mysqli_query($conectar, $select);
 
       $rows = mysqli_num_rows($query_select);
 
       if ($rows == 1) {
+        $_SESSION['usuario'] = $usuario;
         header('location: painel_produtor.php');
       }else{
         header('location: login.php');
       }
     }else if ($usuario == 2) {
-      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha = '".$senha."' and usuario = 2;";
+      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha= md5('".$senha."') and usuario = 2;";
 
       $query_select = mysqli_query($conectar, $select);
 
       $rows = mysqli_num_rows($query_select);
 
       if ($rows == 1) {
+        $_SESSION['usuario'] = $usuario;
         header('location: painel_consumidor.php');
       }else{
         header('location: login.php');
@@ -101,3 +102,5 @@
     }
   }
 ?>
+</body>
+</html>
