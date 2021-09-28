@@ -11,6 +11,16 @@ body{
 	position: relative;
 }
 
+.banner img{
+	width: 90%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /*Seção Lojas*/
 
 .main-lojas{
@@ -20,6 +30,7 @@ body{
 	display: flex;
 	justify-content: center;
 	padding: 70px 0 70px 0;
+	position: relative;
 }
 
 .lojas{
