@@ -61,8 +61,6 @@
     $senha = mysqli_real_escape_string($conectar, md5($_POST['senha']));
 
     if ($usuario == 0) {
-      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha= md5('".$senha."') and usuario = 0;";
-      
       $select = "select id_usuario, nome from usuario where email = '".$email."' and senha = '".$senha."' and usuario= 0;";
 
       $query_select = mysqli_query($conectar, $select);
@@ -70,33 +68,32 @@
       $rows = mysqli_num_rows($query_select);
 
       if ($rows == 1) {
-        $_SESSION['usuario'] = $usuario;
         header('location: painel_adm.php');
       }else{
         header('location: login.php');
       }
     }else if ($usuario == 1) {
-      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha= md5('".$senha."') and usuario = 1;";
+      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha = '".$senha."' and usuario = 1;";
 
       $query_select = mysqli_query($conectar, $select);
 
       $rows = mysqli_num_rows($query_select);
 
       if ($rows == 1) {
-        $_SESSION['usuario'] = $usuario;
-        header('location: painel_produtor.php');
+        $dados = mysqli_fetch_array($query_select);
+        $_SESSION['id_usuario'] = $dados['id_usuario'];
+        header('location: cadastro_empresa.php');
       }else{
         header('location: login.php');
       }
     }else if ($usuario == 2) {
-      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha= md5('".$senha."') and usuario = 2;";
+      $select = "select id_usuario, nome from usuario where email = '".$email."' and senha = '".$senha."' and usuario = 2;";
 
       $query_select = mysqli_query($conectar, $select);
 
       $rows = mysqli_num_rows($query_select);
 
       if ($rows == 1) {
-        $_SESSION['usuario'] = $usuario;
         header('location: painel_consumidor.php');
       }else{
         header('location: login.php');
