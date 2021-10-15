@@ -14,16 +14,16 @@
 
 		<h1> Cadastre-se sua Empresa! </h1>
 
-		<form method="POST" class="formulario-cadastro">
+		<form method="POST" class="formulario-cadastro" enctype="multipart/form-data">
 
-			<div class="linha primeira">
+			<div class="linha borda primeira">
 
 				Nome da Empresa:
 				<input type="text" name="nome_empresa" id="nome">
 
 			</div>
 
-			<div class="linha segunda">
+			<div class="linha borda segunda">
 
 				Razão Social:
 				<input type="text" name="razao_social" id="razao">
@@ -31,7 +31,7 @@
 			</div>	
 
 
-			<div class="linha terceira">
+			<div class="linha borda terceira">
 
 				E-mail Comercial:
 				<input type="email" name="email_comercial" id="email">
@@ -39,7 +39,7 @@
 			</div>	
 
 
-	        <div class="linha quarta">
+	        <div class="linha borda quarta">
 
 	        	Telefone:
 	        	<input type="text" name="telefone">
@@ -49,7 +49,7 @@
 
 	        </div>
 
-	        <div class="linha quinta">
+	        <div class="linha borda quinta">
 
 	        	CEP:
 	        	<input type="text" name="cep" id="cep">
@@ -59,10 +59,17 @@
 
 	        </div>
 
-	        <div class="linha sexta">
+	        <div class="linha borda sexta">
 
 	        	Logradouro:
 	        	<input type="text" name="logradouro" id="logradouro">
+
+	        </div>
+
+	        <div class="linha setima">	
+
+	        	Logo:
+	        	<input type="file" name="logo" id="logo">
 
 
 	        </div>			
@@ -85,11 +92,10 @@
 	
 
 <?php
+	include('conexao.php');
 
 	session_start();
 	if(!isset($_SESSION['entrar'])){
-
-	include('conexao.php');
 
 	function get_endereco($cep){
 	$cep = preg_replace("/[^0-9]/","",$cep);
@@ -114,25 +120,63 @@
 			$endereco = (get_endereco($cep_empresa));
 			$estado = $endereco->uf;
 			$cidade = $endereco->localidade;
+			$logo = $_FILES["logo"];
+
 
 			$id = $_SESSION['id_usuario'];
-			$sql_id = 'select *from usuario where id_usuario = "$id"';
-			$resul = mysqli_query($conectar, $sql_id);
-			$id_produtor = mysqli_fetch_array($resul);
+			$sql = 'select *from usuario where id_usuario = '.$id.';';
+			$resul = mysqli_query($conectar, $sql);
+			$dados = mysqli_fetch_array($resul);
 
-			$adicionar = 'insert into empresa (nome_empresa, email, telefone, cnpj, razao, cep, estado, cidade, bairro, data_cadastro, id_produtor) values ("'.$nome.'", "'.$email.'", "'.$celular.'", "'.$cnpj.'", "'.$razao_social.'", "'.$cep_empresa.'", "'.$estado.'", "'.$cidade.'", "'.$bairro.'", "'.$data_cadastro.'", '.$id.');';
+			if(!empty($logo["name"])){
+
+				$largura = 1302;
+				$altura = 1800;
+				$tamanho = 2048000;
+
+				if(!preg_match("/^image\/(pjpeg|jpeg|png|gif|bmp)$/", $logo["type"])){
+					echo('Isso não é uma imagem.');
+				}
+
+				$dimensoes = getimagesize($logo["tmp_name"]);
+
+				if($dimensoes[0] > $largura){
+					echo ('A largura da imagem não deve ultrapassar de '.$largura.' pixels');
+				}
+
+				if($dimensoes[1] > $altura){
+					echo ('A altura da imagem não deve ultrapassar de '.$altura.' pixels');
+				}
+
+				if($logo["size"] > $tamanho){
+					echo('A imagem deve ter no máximo '.$tamanho.' bytes');
+				}
+
+				preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $logo["name"], $ext);
+
+				$nome_imagem = md5(uniqid(time())) . "." . $ext[1];
+
+				$caminho_imagem = "../IMG/" . $nome_imagem;
+
+				move_uploaded_file($logo["tmp_name"], $caminho_imagem);
+
+
+			$adicionar = 'insert into empresa (nome_empresa, email, telefone, cnpj, razao, cep, estado, cidade, bairro, logo, data_cadastro, id_produtor) values ("'.$nome.'", "'.$email.'", "'.$celular.'", "'.$cnpj.'", "'.$razao_social.'", "'.$cep_empresa.'", "'.$estado.'", "'.$cidade.'", "'.$bairro.'", "'.$nome_imagem.'", "'.$data_cadastro.'", '.$id.');';
 
 			$sql_cadastro_empresa = mysqli_query($conectar,$adicionar);
 
 			if($sql_cadastro_empresa){
-				header('location:pagina_loja.php');
+				header('location:painel_produtor.php');
 			}
 			else{
-				header('location: pagina_produtor.php');
+				header('location: cadastro_empresa.php');
+			}
+
+			}else{
 			}
 
 		}else{
-		}	
+		}
 
 
 	}

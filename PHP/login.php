@@ -68,6 +68,8 @@
       $rows = mysqli_num_rows($query_select);
 
       if ($rows == 1) {
+        $dados = mysqli_fetch_array($query_select);
+        $_SESSION['id_usuario'] = $dados['id_usuario'];
         header('location: painel_adm.php');
       }else{
         header('location: login.php');
@@ -82,7 +84,7 @@
       if ($rows == 1) {
         $dados = mysqli_fetch_array($query_select);
         $_SESSION['id_usuario'] = $dados['id_usuario'];
-        header('location: cadastro_empresa.php');
+        header('location: painel_produtor.php');
       }else{
         header('location: login.php');
       }
@@ -94,6 +96,8 @@
       $rows = mysqli_num_rows($query_select);
 
       if ($rows == 1) {
+        $dados = mysqli_fetch_array($query_select);
+        $_SESSION['id_usuario'] = $dados['id_usuario'];
         header('location: painel_consumidor.php');
       }else{
         header('location: login.php');
