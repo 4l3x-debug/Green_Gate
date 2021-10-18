@@ -1,0 +1,45 @@
+.editar-perfil form {
+    display: flex;
+    justify-content: center;
+    line-height: 80px;
+    top: 70px;
+    position: relative;
+    font-size: 19px;
+}
+
+.editar-perfil td{
+	width: 205px;
+}
+
+.editar-perfil input, .editar-perfil select{
+	outline: 0;
+	font-family: Caviar Dreams;
+	padding-left: 10px;
+	font-size: 15px;
+	height: 30px;
+	width: 200px;
+	border-radius: 2px;
+	border: 1px solid #ebebeb;
+}
+
+.editar-perfil select{
+	width: 213px;
+}
+
+.main-aside-produtor{
+	height: 710px;
+}
+
+.botao input{
+	color: #FFF;
+	background-color: #C3CE64;
+	border-radius: 30px;
+	width: 96%;
+	height: 34px;
+	cursor: pointer;
+	transition: box-shadow 0.3s cubic-bezier(0, 1.01, 0.37, 1.01);
+}
+
+.botao input:hover{
+	box-shadow: 0 0 0 2px #C3CE64;
+}

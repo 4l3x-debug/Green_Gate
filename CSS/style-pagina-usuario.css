@@ -1,0 +1,71 @@
+body{
+	font-family: Caviar Dreams;
+}
+
+.pagina-usuario{
+	position: relative;
+	width: 100%;
+	height: 590px;
+	padding-top: 30px;
+}
+
+.nome-usuario{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	font-size: 23px;
+	line-height: 90px;
+}
+
+.fundo-foto-usuario{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.foto-usuario{
+	width: 180px;
+	height: 180px;
+	border-radius: 100px;
+	background-color: #FFF;
+}
+
+.dados-usuario{
+	font-size: 18px;
+}
+
+.pagina-usuario a {
+    color: #000;
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    z-index: 1;
+}
+
+.pagina-usuario p{
+	float: right;
+	width: 100px;
+	position: relative;
+	height: 30px;
+	right: 80px;
+	top: 25px;
+	border: 1px solid #777;
+	border-radius: 5px;
+}
+
+table{
+	position: relative;
+	top: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+tr{
+	line-height: 90px;
+}
+
+td{
+	text-align: center;
+	width: 300px;
+}

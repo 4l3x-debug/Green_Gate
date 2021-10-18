@@ -5,8 +5,8 @@ h1{
 }
   
 input, select {
-	border: 0;
-	padding-left: 10px;
+	  border: 0;
+	  padding-left: 10px;
 }
   
 .box-cadastro {
@@ -20,57 +20,47 @@ input, select {
 }
   
 .formulario-cadastro {
-	line-height: 62px;
+	line-height: 70px;
 	position: relative;
 	top: 19px;
 }
   
 .botao-cadastro {
-	color: #FFF;
-	background-color: #C3CE64;
-	border-radius: 30px;
-	width: 96%;
-	height: 34px;
-	cursor: pointer;
-	transition: box-shadow 0.3s cubic-bezier(0, 1.01, 0.37, 1.01);
+	  color: #FFF;
+	  background-color: #C3CE64;
+	  border-radius: 30px;
+	  width: 96%;
+	  height: 34px;
+	  cursor: pointer;
+	  transition: box-shadow 0.3s cubic-bezier(0, 1.01, 0.37, 1.01);
 }
   
 .botao-cadastro:hover{
 	box-shadow: 0 0 0 2px #C3CE64;
 }
   
-.linha.borda input, select{
+.linha input, select{
 	height: 25px;
 	border-bottom: 1px solid #ebebeb;
 }
   
-.linha.primeira input{
-	width: 75%;
-}
-
-.linha.segunda input{
-  	width: 81.3%;
+.linha.primeira input, .linha.segunda input{
+	width: 88%;
 }
   
 .linha.terceira input {
-	width: 77%;
+	width: 34%;
 }
   
 .linha.quarta input {
-	width: 39.4%;
+	width: 69%;
 }
-    
+  
 .linha.quinta input {
-	width: 41.8%;
+	  width: 39%;
 }
   
-.linha.sexta input {
-	width: 83%;
+.linha.sexta select {
+	  width: 31%;
 }
   
-.linha.setima{
-	float: left;
-}
-
-
-

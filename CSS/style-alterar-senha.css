@@ -1,0 +1,14 @@
+.fundo-senha, .fundo-editar-perfil{
+	background-color: #FFF;
+	border-radius: 20px;
+	position: relative;
+	top: 100px;
+}
+
+.perguntas{
+	padding-left: 15px;
+}
+
+.respostas{
+	padding-right: 15px;
+}
