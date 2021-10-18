@@ -2,11 +2,10 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>Green Gate | Página Suporte</title>
+        <title>Green Gate | Página Usuário</title>
         <link rel="stylesheet" href="../CSS/index.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-pagina-adm.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor-suporte.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/pagina_usuario.css">
         <link rel="stylesheet" href="../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
     </head>
@@ -50,74 +49,61 @@
         </section>
     </header>
 
-    <!-- Menu para Administrar -->
-
-    <main>
-    <aside class="main-aside-produtor">
-        <nav>
-            <ul class="icon-aside">
-                <strong>Categorias</strong>
-                <a href="painel_produtor.php"><li><i class="fas fa-store-alt"></i>
-                    Lojas
-                </li></a>
-                <a href="login_empresa.php"><li><i class="fas fa-wrench"></i>
-                    Administrar
-                </li></a>
-                <a href="painel_produtor_suporte.php"><li><i class="fas fa-headset"></i>
-                    Suporte
-                </li></a>
-                <a href="invalido.php"><li><i class="fas fa-sign-out-alt"></i>
-                    Sair
-                </li></a>         
-            </ul>
-        </nav>
-    </aside>
-
     <!-- Conteúdo -->
 
-        <section class="main mensagem">
 
-            <div class="formulario-suporte">
-                <h1>Suporte</h1>
-                <form action="#" method="POST">
+    <section class="pagina-usuario">
 
-                    <div class="linha primeira">
-                        Assunto:
-                        <input type="text" name="assunto">
-                    </div>
+    <p>
+        <a href="editar_perfil_produtor.php">Editar Perfil</a>
+    </p>     
 
-                    <div class="linha segunda">
-                        <textarea name="conteudo"></textarea>
-                    </div>
+    <div class="fundo-foto-usuario">
+        <div class="foto-usuario">
+        </div>
+    </div>
 
-                    <div class="botao">
-                        <i class="fas fa-paper-plane"><input type="submit" name="enviar" value=""></i>
-                    </div>
+    <div class="nome-usuario">
 
-                </form>
+    <?php
+
+    echo $dados_usuario['nome'];
+
+    ?>
+
+    </div>
+
+    <table>
+
+        <tr>
+
+            <div class="dados-usuario primeira">
+
+            <td> Email: <?php echo $dados_usuario['email']; ?> </td>
+            <td> CPF: <?php echo $dados_usuario['cpf']; ?> </td>
+            <td> Data de Cadastro: <?php echo $dados_usuario['data_cadastro']; ?> </td>    
+
             </div>
 
-        </section>
+        </tr>
 
-        <?php
+        <tr>    
 
-        if(isset($_POST['enviar'])){
-            $assunto = $_POST['assunto'];
-            $conteudo = $_POST['conteudo'];
-            $data_envio = date("Y-m-d");
+            <div class="dados-usuario segunda">
 
-            $sql_suporte = 'insert into suporte(assunto,conteudo,data_envio,id_usuario) values ("'.$assunto.'","'.$conteudo.'","'.$data_envio.'",'.$id.');';
-            $suporte = mysqli_query($conectar,$sql_suporte);
+            <td> Gênero: <?php  
 
-            if($suporte){
-                echo ('<script>window.alert("Enviado com sucesso!");window.location="painel_produtor_suporte.php"</script>');
-            }else{
-                echo ('<script>window.alert("Erro ao enviar!");window.location="painel_produtor_suporte.php"</script>');
-            }
+            if($dados_usuario['genero'] == 'M'){ echo ("Masculino"); }else { echo("Feminino");} ?> </td>
+            <td> Telefone: <?php echo $dados_usuario['celular']; ?> </td>
+            <td> Data de Nascimento: <?php echo $dados_usuario['data_nascimento']; ?> </td>
+                
+            </div>
 
-        }else{}
+        </tr>    
 
-        ?>   
+    </table>
+        
+    </section>
 
     <!-- Rodapé -->
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Green Gate | Cadastro </title>
+	<title>Green Gate | Cadastro Empresa</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../CSS/style-cadastro-empresa.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/style-login.css">

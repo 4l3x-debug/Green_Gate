@@ -2,7 +2,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <title>Green Gate | Login</title>
+    <title>Green Gate | Login Empresa</title>
     <link rel="stylesheet" type="text/css" href="../CSS/style-login.css">
     <link rel="stylesheet" type="text/css" href="../CSS/style-login-empresa.css">
     <link rel="stylesheet" href="../FONTAW/css/all.css">
@@ -51,7 +51,7 @@
 <?php
 
   if (isset($_POST['entrar_empresa'])) {
-    $cnpj = md5($_POST['cnpj']);
+    $cnpj = $_POST['cnpj'];
     $senha = md5($_POST['senha']);
 
     $sql_usuario = 'select * from usuario where id_usuario = '.$id.';';

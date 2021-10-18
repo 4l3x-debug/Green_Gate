@@ -80,10 +80,6 @@
         </section>
     </main>    
 
-    <!-- Modal -->
-        
-
-
     <!-- Rodapé -->
 
     <footer class="main-footer">
