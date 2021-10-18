@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Green Gate | Editar Perfil</title>
         <link rel="stylesheet" href="../CSS/index.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-pagina-adm.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style-painel-adm.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-editar-perfil-produtor.css">
         <link rel="stylesheet" href="../FONTAW/css/all.css">

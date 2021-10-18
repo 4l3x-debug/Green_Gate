@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Green Gate | Página Administrador</title>
         <link rel="stylesheet" href="../CSS/index.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-pagina-adm.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style-painel-adm.css">
     	<link rel="stylesheet" href="../FONTAW/css/all.css">
     	<link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
 	</head>
