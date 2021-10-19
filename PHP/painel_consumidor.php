@@ -66,7 +66,7 @@
 
     <!-- Menu Lateral Oculto -->
 
-        <script type="text/javascript" src="../JS/script.js"></script>
+        <script type="text/javascript" src="../JS/script_painel_consumidor.js"></script>
 
         <aside id="menuOculto" class="menuOculto">
             <a href="javascript: void(0)" class="btnFechar" onclick="fecharNav()"><i class="fas fa-times"></i></a>
