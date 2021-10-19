@@ -80,7 +80,7 @@
 
 
     <p>
-        <a href="editar_perfil_produtor.php">Editar Perfil</a>
+        <a href="editar_perfil_consumidor.php">Editar Perfil</a>
     </p>     
 
     <div class="fundo-foto-usuario">
