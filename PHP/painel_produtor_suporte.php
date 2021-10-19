@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Green Gate | Página Suporte</title>
-        <link rel="stylesheet" href="../CSS/index.css">
+        <link rel="stylesheet" href="../CSS/style-index.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-adm.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor-suporte.css">
@@ -102,6 +102,13 @@
         <?php
 
         if(isset($_POST['enviar'])){
+
+            if(empty($_POST['assunto']) or empty($_POST['conteudo'])){
+
+                echo ('<script>window.alert("Preencha os campos do formulário!");window.location="painel_produtor_suporte.php"</script>');
+
+            }else{
+
             $assunto = $_POST['assunto'];
             $conteudo = $_POST['conteudo'];
             $data_envio = date("Y-m-d");
@@ -113,6 +120,8 @@
                 echo ('<script>window.alert("Enviado com sucesso!");window.location="painel_produtor_suporte.php"</script>');
             }else{
                 echo ('<script>window.alert("Erro ao enviar!");window.location="painel_produtor_suporte.php"</script>');
+            }
+
             }
 
         }else{}

@@ -108,6 +108,12 @@
 
 
 		if (isset($_POST['cadastrar'])) {
+
+			if(empty($_POST['nome_empresa']) or empty($_POST['razao_social']) or empty($_POST['email_comercial']) or empty($_POST['cnpj']) or empty(['cep']) or empty($_POST['bairro']) or empty($_POST['logradouro']) or empty($_FILES['logo'])){
+
+				echo ('<script>window.alert("Preencha os campos!");window.location="cadastro_empresa.php"</script>');
+			}else{
+
 			$nome = $_POST['nome_empresa'];
 			$razao_social = $_POST['razao_social'];
 			$email = $_POST['email_comercial'];
@@ -156,7 +162,7 @@
 
 				$nome_imagem = md5(uniqid(time())) . "." . $ext[1];
 
-				$caminho_imagem = "../IMG/" . $nome_imagem;
+				$caminho_imagem = "../IMG/Imagem_Empresa/Logo_Empresa/" . $nome_imagem;
 
 				move_uploaded_file($logo["tmp_name"], $caminho_imagem);
 
@@ -165,14 +171,16 @@
 
 			$sql_cadastro_empresa = mysqli_query($conectar,$adicionar);
 
-			if($sql_cadastro_empresa){
-				header('location:painel_produtor.php');
-			}
-			else{
-				header('location: cadastro_empresa.php');
-			}
+				if($sql_cadastro_empresa){
+					header('location:painel_produtor.php');
+				}
+				else{
+					header('location: cadastro_empresa.php');
+				}
 
 			}else{
+			}
+
 			}
 
 		}else{

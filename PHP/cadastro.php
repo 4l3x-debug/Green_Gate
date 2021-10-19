@@ -91,6 +91,13 @@
 	include('conexao.php');
 
 	if (isset($_POST['cadastrar'])) {
+
+		if(empty($_POST['nome']) or empty($_POST['email']) or empty($_POST['senha']) or empty($_POST['senha-confirmacao'])  or empty($_POST['usuario']) or empty($_POST['data']) or empty($_POST['cpf']) or empty($_POST['genero'])){
+
+			echo ('<script>window.alert("Preencha os campos!");window.location="cadastro.php"</script>');
+
+		}else{
+
 		$nome = $_POST['nome'];
 		$email = $_POST['email'];
 		$senha = $_POST['senha'];
@@ -110,9 +117,9 @@
 				$query_cadastro = mysqli_query($conectar, $adicionar);
 
 				if ($query_cadastro) {
-					header('location: login.php');
+					echo ('<script>window.alert("Cadastro efetuado com sucesso!");window.location="login.php"</script>');
 				}else{
-					header('location: cadastro.php');
+					echo ('<script>window.alert("Erro ao se cadastrar!");window.location="cadastro.php"</script>');
 				}
 			}
 		}else if ($usuario == 2) {
@@ -123,16 +130,19 @@
 					$query_cadastro = mysqli_query($conectar, $adicionar);
 
 					if ($query_cadastro) {
-						header('location: login.php');
+						echo ('<script>window.alert("Cadastro efetuado com sucesso!");window.location="login.php"</script>');
 					}else{
-						header('location: cadastro.php');
+						echo ('<script>window.alert("Erro ao se cadastrar!");window.location="cadastro.php"</script>');
 					}
 				}
 			}
-		}else{
-			
+
+		}else{}
+
 		}
-	}
+
+	}else{}
+
 ?>
 
 </body>
