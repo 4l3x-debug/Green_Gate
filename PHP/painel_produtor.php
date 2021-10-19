@@ -59,7 +59,7 @@
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
                     </a>
-                    <a href=""><i class="far fa-bell"></i></a>
+                    <a href="notificacoes_produtor.php"><i class="far fa-bell"></i></a>
                 </div>
             </nav>
         </section>

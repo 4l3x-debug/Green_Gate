@@ -2,10 +2,10 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>Green Gate | Página Usuário</title>
+        <title>Green Gate | Notificações</title>
         <link rel="stylesheet" href="../CSS/style-index.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-pagina-usuario.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/pagina_usuario.css">
         <link rel="stylesheet" href="../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
     </head>
@@ -43,7 +43,7 @@
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
                     </a>
-                    <a href="notificacoes_produtor.php"><i class="far fa-bell"></i></a>
+                    <a href="notificacoes.php"><i class="far fa-bell"></i></a>
                 </div>
             </nav>
         </section>
@@ -54,55 +54,6 @@
 
     <section class="pagina-usuario">
 
-    <p>
-        <a href="editar_perfil_produtor.php">Editar Perfil</a>
-    </p>     
-
-    <div class="fundo-foto-usuario">
-        <div class="foto-usuario">
-        </div>
-    </div>
-
-    <div class="nome-usuario">
-
-    <?php
-
-    echo $dados_usuario['nome'];
-
-    ?>
-
-    </div>
-
-    <table>
-
-        <tr>
-
-            <div class="dados-usuario primeira">
-
-            <td> Email: <?php echo $dados_usuario['email']; ?> </td>
-            <td> CPF: <?php echo $dados_usuario['cpf']; ?> </td>
-            <td> Data de Cadastro: <?php echo $dados_usuario['data_cadastro']; ?> </td>    
-
-            </div>
-
-        </tr>
-
-        <tr>    
-
-            <div class="dados-usuario segunda">
-
-            <td> Gênero: <?php  
-
-            if($dados_usuario['genero'] == 'M'){ echo ("Masculino"); }else { echo("Feminino");} ?> </td>
-            <td> Telefone: <?php echo $dados_usuario['celular']; ?> </td>
-            <td> Data de Nascimento: <?php echo $dados_usuario['data_nascimento']; ?> </td>
-                
-            </div>
-
-        </tr>    
-
-    </table>
-        
     </section>
 
     <!-- Rodapé -->
