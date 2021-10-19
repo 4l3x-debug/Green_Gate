@@ -106,7 +106,7 @@
                 <article class="espacamento">
 
                 <?php
-                    echo ('<img src="../IMG/'.$dados_empresa['logo'].'"alt=Logo"/>');
+                    echo ('<img src="../IMG/Imagem_Empresa/Logo_Empresa/'.$dados_empresa['logo'].'"alt=Logo"/>');
                 ?> 
 
                 </article>  
