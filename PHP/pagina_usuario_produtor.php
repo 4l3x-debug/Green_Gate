@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>Green Gate | Página Usuário</title>
-        <link rel="stylesheet" href="../CSS/style-index.css">
+        <link rel="stylesheet" href="../CSS/index.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-pagina-usuario.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/pagina_usuario.css">
         <link rel="stylesheet" href="../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
     </head>
@@ -43,7 +43,7 @@
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
                     </a>
-                    <a href="notificacoes_produtor.php"><i class="far fa-bell"></i></a>
+                    <a href="notificacoes.php"><i class="far fa-bell"></i></a>
                 </div>
             </nav>
         </section>

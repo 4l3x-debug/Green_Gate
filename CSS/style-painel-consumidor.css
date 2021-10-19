@@ -1,0 +1,54 @@
+.pagina-usuario{
+	height: 620px;
+}
+
+.pagina-usuario p, a{
+	top: 0;
+
+}
+
+.menuOculto{
+	height: 95.41%;
+	width: 0;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	background-color: #ADAD7B;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 30px;
+	line-height: 50px;
+}
+
+.menuOculto a{
+	position: relative;
+	text-decoration: none;
+	padding: 20px 0 0 32px;
+	font-size: 23px;
+	color: #FFF;
+	display: flex;
+	justify-content: left;
+	transition: 0.3s;
+	left: 0;
+}
+
+.icon i{
+	padding: 15px 13px 0 0;
+}
+
+.btnFechar i{
+	position: absolute;
+	font-size: 23px;
+	top: 0;
+	right: 35px;
+}
+
+#principal{
+	padding-left: 30px;
+	transition: margin-left 0.3s;
+}
+
+@media screen and(max-height: 450px){
+	.menuOculto{padding-top: 15px;}
+	.menuOculto a{font-size: 18;}
+}
