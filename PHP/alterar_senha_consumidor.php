@@ -2,12 +2,12 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>Green Gate | Deletar</title>
+        <title>Green Gate | Segurança</title>
         <link rel="stylesheet" href="../CSS/style-index.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-adm.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-editar-perfil-produtor.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-deletar-produtor.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style-editar-perfil.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style-alterar-senha.css">
         <link rel="stylesheet" href="../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
     </head>
@@ -37,12 +37,13 @@
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="pagina_usuario_produtor.php"><i class="fas fa-user-circle"></i>
+                    <a href="painel_consumidor.php"><i class="fas fa-user-circle"></i>
                         <div class="usuario">
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
                     </a>
                     <a href="notificacoes_produtor.php"><i class="far fa-bell"></i></a>
+                    <a href=""><i class="fas fa-shopping-bag"></i></a>
                 </div>
             </nav>
         </section>
@@ -55,13 +56,13 @@
         <nav>
             <ul class="icon-aside">
                 <strong>Categorias</strong>
-                <a href="editar_perfil_produtor.php"><li><i class="fas fa-user-edit"></i>
+                <a href="editar_perfil_consumidor.php"><li><i class="fas fa-user-edit"></i>
                     Perfil
                 </li></a>
-                <a href="alterar_senha.php"><li><i class="fas fa-user-lock"></i>
+                <a href="alterar_senha_consumidor.php"><li><i class="fas fa-user-lock"></i>
                     Segurança
                 </li></a>
-                <a href="deletar_produtor.php"><li><i class="fas fa-user-times"></i>
+                <a href="deletar_consumidor.php"><li><i class="fas fa-user-times"></i>
                     Deletar
                 </li></a>
                 <a href="invalido.php"><li><i class="fas fa-sign-out-alt"></i>
@@ -73,60 +74,66 @@
 
     <!-- Conteúdo -->
 
-        <section class="main deletar-produtor">
+        <section class="main editar-perfil">
 
-        <table align="center">
-            
-            <tr>
-                <td>Nome</td>
-                <td>Data do Cadastro</td>
-                <td>Excluir</td>
-            </tr>
+            <form action="#" method="POST">
 
-        <?php
+                <table class="fundo-senha">
 
-            $sql_empresas = 'select * from empresa where id_produtor='.$id.';';
-            $resul = mysqli_query($conectar,$sql_empresas);
+                <tr>
+                    <td class="perguntas">Senha antiga:</td>
+                    <td class="respostas"><input type="password" name="senha_antiga"></td>
+                </tr>
 
-            while($con = mysqli_fetch_array($resul)){
-                echo('<tr class="dados"><td>'.$con['nome_empresa'].'</td><td>'.$con['data_cadastro'].'</td><td><a href="delete.php?del='.$con['id_empresa'].'"><i class="fas fa-trash"></i></a></td></tr>');
-            }    
-        ?>
+                <tr>
+                    <td class="perguntas">Nova senha:</td> 
+                    <td class="respostas"><input type="password" name="nova_senha"></td>
+                </tr>
+                
+                <tr>
+                    <td class="perguntas">Confirmação:</td>
+                    <td class="respostas"><input type="password" name="confirmacao"></td>
+                </tr>
 
-        </table>
+                <tr>
+                    <td class="botao" colspan="2" align="center"><input type="submit" name="salvar" value="Salvar"></td>
+                </tr>
 
-        <div class="deletar-perfil">
+                </table>
 
-
-            <p>Deletar Perfil</p>
-            <spam>Ao excluir o perfil os dados serão apagados, ou seja não será possível recuperar as informações.</spam>
-            <div class="botao-excluir">
-                <i class="fas fa-eraser">
-                    <form action="#" method="POST">
-                        <input type="submit" name="deletar" value="">
-                    </form>                
-                </i>
-            </div>
-        
-        </div>
+            </form>
 
         </section>
 
-        <?php
+    <?php
 
-        if(isset($_POST['deletar'])){
+    if(isset($_POST['salvar'])){
+        $senha_antiga = $_POST['senha_antiga'];
+        $nova_senha = $_POST['nova_senha'];
+        $confirmacao = $_POST['confirmacao'];
 
-            $sql_deletar_conta = 'delete from usuario where usuario.id_usuario='.$id.';';
-            $deletar_conta = mysqli_query($conectar, $sql_deletar_conta);
+        if($confirmacao == $nova_senha){
+            if($dados_usuario['senha'] == md5($senha_antiga)){
 
-            if($deletar_conta){
-                echo ('<script>window.alert("Apagado com sucesso!");window.location="index.php"</script>');
+                $sql_update_senha = 'update usuario set senha="'.md5($nova_senha).'" where usuario.id_usuario='.$id.';';
+                $update_senha = mysqli_query($conectar,$sql_update_senha);
+
+                if($update_senha){
+                    echo ('<script>window.alert("Senha alterada com sucesso!");window.location="alterar_senha.php"</script>');
+                }else{
+                    echo ('<script>window.alert("Erro ao salvar!");window.location="alterar_senha.php"</script>');
+                }
+
             }else{
-                echo ('<script>window.alert("Erro ao apagar!");window.location="deletar_produtor.php"</script>');
+                echo ('<script>window.alert("Erro na senha antiga!");window.location="alterar_senha.php"</script>');
             }
-        }
 
-        ?>
+        }else{    
+            echo ('<script>window.alert("Erro na confirmação da nova senha!");window.location="alterar_senha.php"</script>');
+        }
+    }    
+
+    ?>    
 
     <!-- Rodapé -->
 

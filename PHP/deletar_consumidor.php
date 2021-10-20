@@ -37,12 +37,13 @@
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="pagina_usuario_produtor.php"><i class="fas fa-user-circle"></i>
+                    <a href="painel_consumidor.php"><i class="fas fa-user-circle"></i>
                         <div class="usuario">
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
                     </a>
                     <a href="notificacoes_produtor.php"><i class="far fa-bell"></i></a>
+                    <a href=""><i class="fas fa-shopping-bag"></i></a>
                 </div>
             </nav>
         </section>
@@ -55,13 +56,13 @@
         <nav>
             <ul class="icon-aside">
                 <strong>Categorias</strong>
-                <a href="editar_perfil_produtor.php"><li><i class="fas fa-user-edit"></i>
+                <a href="editar_perfil_consumidor.php"><li><i class="fas fa-user-edit"></i>
                     Perfil
                 </li></a>
-                <a href="alterar_senha.php"><li><i class="fas fa-user-lock"></i>
+                <a href="alterar_senha_consumidor.php"><li><i class="fas fa-user-lock"></i>
                     Segurança
                 </li></a>
-                <a href="deletar_produtor.php"><li><i class="fas fa-user-times"></i>
+                <a href="deletar_consumidor.php"><li><i class="fas fa-user-times"></i>
                     Deletar
                 </li></a>
                 <a href="invalido.php"><li><i class="fas fa-sign-out-alt"></i>
@@ -74,26 +75,6 @@
     <!-- Conteúdo -->
 
         <section class="main deletar-produtor">
-
-        <table align="center">
-            
-            <tr>
-                <td>Nome</td>
-                <td>Data do Cadastro</td>
-                <td>Excluir</td>
-            </tr>
-
-        <?php
-
-            $sql_empresas = 'select * from empresa where id_produtor='.$id.';';
-            $resul = mysqli_query($conectar,$sql_empresas);
-
-            while($con = mysqli_fetch_array($resul)){
-                echo('<tr class="dados"><td>'.$con['nome_empresa'].'</td><td>'.$con['data_cadastro'].'</td><td><a href="delete.php?del='.$con['id_empresa'].'"><i class="fas fa-trash"></i></a></td></tr>');
-            }    
-        ?>
-
-        </table>
 
         <div class="deletar-perfil">
 
