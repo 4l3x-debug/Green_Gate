@@ -71,6 +71,7 @@
 	bottom: -15px;
 	right: -16px;
 	opacity: 0%;
+	cursor: pointer;
 }
 
 .fa-paper-plane{
@@ -83,6 +84,6 @@
 
 .botao:hover{
 	transition: ease-out;
-    transition-duration: 0.2s;
+    transition-duration: 0.1s;
     transform: scale(105%);
 }

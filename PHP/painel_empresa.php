@@ -2,10 +2,12 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="utf-8">
-		<title>Green Gate | Página Administrador</title>
+		<title>Green Gate | Página Empresa</title>
         <link rel="stylesheet" href="../CSS/style-index.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-adm.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style-pagina-usuario.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style-painel-consumidor.css">
     	<link rel="stylesheet" href="../FONTAW/css/all.css">
     	<link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
 	</head>
@@ -28,7 +30,7 @@
 
             if($dados_usuario['usuario'] == 1){
                 
-                $sql_empresa = 'select nome_empresa from empresa where cnpj='.$cnpj_empresa.';';
+                $sql_empresa = 'select * from empresa where cnpj='.$cnpj_empresa.';';
                 $resul_empresa = mysqli_query($conectar, $sql_empresa);
                 $dados_empresa = mysqli_fetch_array($resul_empresa);
 
@@ -56,38 +58,75 @@
         </section>
     </header>
 
+    <!-- Conteúdo -->
+
+        <section class="pagina-usuario">
+
     <!-- Menu para Administrar -->
 
-    <main>
-    <aside class="main aside">
-    	<nav>
-    		<ul class="icon-aside">
-                <strong>Categorias</strong>
-                <a href="pagina_empresa.php"><li><i class="fas fa-store-alt"></i>
-                    Loja
-                </li></a>
-                <a href="pagina_empresa_produtos.php"><li><i class="fas fa-tags"></i> 
-                    Produtos
-                </li></a>   
-                <a href="pagina_empresa_avaliacoes.php"><li><i class="fas fa-tasks"></i>
-                    Avaliações
-                </li></a>
-                <a href="pagina_empresa_suporte.php"><li><i class="fas fa-headset"></i>
-                    Suporte
-                </li></a>      
-            </ul>
-    	</nav>
-    </aside>
+        <script type="text/javascript" src="../JS/script_painel_consumidor.js"></script>
 
-    <!-- Conteúdo -->
-        <section class="main articles">
+        <aside id="menuOculto" class="menuOculto">
+            <a href="javascript: void(0)" class="btnFechar" onclick="fecharNav()"><i class="fas fa-times"></i></a>
+            <a href="" class="icon"><i class="fas fa-store-alt"></i>Loja</a>
+            <a href="" class="icon"><i class="fas fa-tags"></i>Produtos</a>
+            <a href="" class="icon"><i class="fas fa-tasks"></i>Avalizações</a>
+            <a href="" class="icon"><i class="fas fa-headset"></i>Suporte</a>
+        </aside>
+
+        <section id="principal">
+            <span style="font-size: 30px; cursor:pointer; color: #ADAD7B;" onclick="abrirNav()">&#9776;</span>
         </section>
-    </main>    
 
-    <!-- Modal -->
+        <p>
+        <a href="editar_perfil_empresa.php">Editar Perfil</a>
+    </p>     
+
+    <div class="fundo-foto-usuario">
+        <div class="foto-usuario">
+        </div>
+    </div>
+
+    <div class="nome-usuario">
+
+    <?php
+
+    echo $dados_empresa['nome_empresa'];
+
+    ?>
+
+    </div>
+
+    <table>
+
+        <tr>
+
+            <div class="dados-usuario primeira">
+
+            <td> Razão Social: <?php echo $dados_empresa['razao']; ?> </td>
+            <td> CNPJ: <?php echo $dados_empresa['cnpj']; ?> </td>
+            <td> Data de Cadastro: <?php echo $dados_empresa['data_cadastro']; ?> </td>    
+
+            </div>
+
+        </tr>
+
+        <tr>    
+
+            <div class="dados-usuario segunda">
+
+            <td> Email: <?php echo $dados_empresa['email']; ?> </td>
+            <td> Telefone: <?php echo $dados_empresa['telefone']; ?> </td>
+            <td> CEP: <?php echo $dados_empresa['cep']; ?> </td>
+                
+            </div>
+
+        </tr>    
+
+    </table>
+
+        </section>
         
-
-
     <!-- Rodapé -->
 
     <footer class="main-footer">
@@ -117,7 +156,7 @@
 
             }else{
                 unset($_SESSION['entrar_empresa']);
-                header('location:invalido.php');
+                header('location:painel_produtor.php');
             }
 
         }else{
