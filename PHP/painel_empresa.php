@@ -25,6 +25,8 @@
                 $sql_usuario = 'select *from usuario where id_usuario='.$id.';';
                 $resul_usuario = mysqli_query($conectar, $sql_usuario);
                 $dados_usuario = mysqli_fetch_array($resul_usuario);
+
+            if($dados_usuario['usuario'] == 1){
                 
                 $sql_empresa = 'select nome_empresa from empresa where cnpj='.$cnpj_empresa.';';
                 $resul_empresa = mysqli_query($conectar, $sql_empresa);
@@ -109,6 +111,10 @@
     </footer>
 
     <?php
+            }else{
+                header('location:invalido.php');
+            }
+
             }else{
                 unset($_SESSION['entrar_empresa']);
                 header('location:invalido.php');

@@ -24,6 +24,8 @@
         $resul_usuario = mysqli_query($conectar, $sql_usuario);
         $dados_usuario = mysqli_fetch_array($resul_usuario);
 
+        if($dados_usuario['usuario'] == 2){
+
     ?>
 
     <!-- Cabeçalho -->
@@ -132,6 +134,10 @@
     </footer>  
 
     <?php
+
+    }else{
+        header('location:invalido.php');
+    }
 
     }else{
         unset($_SESSION['entrar']);

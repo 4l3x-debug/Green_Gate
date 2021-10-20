@@ -22,6 +22,8 @@
         $resul_usuario = mysqli_query($conectar, $sql_usuario);
         $dados_usuario = mysqli_fetch_array($resul_usuario);
 
+        if($dados_usuario['usuario'] == 1){
+
         $sql_total = 'select * from empresa where id_produtor ='.$id.';';
         $resul_total = mysqli_query($conectar, $sql_total);
 
@@ -129,10 +131,14 @@
 
     <?php
 
-    }else{
-        unset($_SESSION['entrar']);
-        header('location:invalido.php');
-    }
+        }else{
+            header('location:invalido.php');
+        }
+
+        }else{
+            unset($_SESSION['entrar']);
+            header('location:invalido.php');
+        }
 
     ?>
 

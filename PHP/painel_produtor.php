@@ -18,6 +18,13 @@
         session_start();
         if(!isset($_SESSION['entrar'])){
 
+        $id = $_SESSION['id_usuario'];
+        $sql_usuario = 'select * from usuario where id_usuario = '.$id.';';
+        $resul_usuario = mysqli_query($conectar, $sql_usuario);
+        $dados_usuario = mysqli_fetch_array($resul_usuario);
+
+        if($dados_usuario['usuario'] == 1){
+
         $limite = 4;
 
         if(!isset($_GET['pag'])){
@@ -27,11 +34,6 @@
         }
 
         $inicio = ($pagina * $limite) - $limite;
-
-        $id = $_SESSION['id_usuario'];
-        $sql_usuario = 'select * from usuario where id_usuario = '.$id.';';
-        $resul_usuario = mysqli_query($conectar, $sql_usuario);
-        $dados_usuario = mysqli_fetch_array($resul_usuario);
 
         $sql_empresa = 'select * from empresa where id_produtor = '.$id.' limit '.$inicio.','.$limite.' ;';
         $resul_empresa = mysqli_query($conectar, $sql_empresa);
@@ -170,8 +172,11 @@
 
     <?php
 
+    }else{
+        header('location:invalido.php');
     }
-    else{
+
+    }else{
         unset($_SESSION['entrar']);
         header('location:invalido.php');
     }

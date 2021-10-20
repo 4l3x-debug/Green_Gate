@@ -18,6 +18,12 @@
 
         $id = $_SESSION['id_usuario'];
 
+        $sql_usuario = 'select * from usuario where id_usuario = '.$id.';';
+        $resul_usuario = mysqli_query($conectar, $sql_usuario);
+        $dados_usuario = mysqli_fetch_array($resul_usuario);
+
+        if($dados_usuario['usuario'] == 1){
+
   ?>
 
   <section class="section-empresa">
@@ -54,10 +60,6 @@
     $cnpj = $_POST['cnpj'];
     $senha = md5($_POST['senha']);
 
-    $sql_usuario = 'select * from usuario where id_usuario = '.$id.';';
-    $resul_usuario = mysqli_query($conectar, $sql_usuario);
-    $dados_usuario = mysqli_fetch_array($resul_usuario);
-
     if($senha == $dados_usuario['senha']){
 
       $_SESSION['cnpj_empresa']= $_POST['cnpj'];
@@ -71,8 +73,12 @@
   }
 
   }else{
-      unset($_SESSION['entrar']);
-      header('location:invalido.php');
+    header('location:invalido.php');
+  }
+
+  }else{
+    unset($_SESSION['entrar']);
+    header('location:invalido.php');
   }
 
 ?>
