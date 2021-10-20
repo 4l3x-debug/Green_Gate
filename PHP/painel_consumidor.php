@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="pagina_usuario_consumidor.php"><i class="fas fa-user-circle"></i>
+                    <a href="painel_consumidor.php"><i class="fas fa-user-circle"></i>
                         <div class="usuario">
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
@@ -80,7 +80,7 @@
 
 
     <p>
-        <a href="editar_perfil_consumidor.php">Editar Perfil</a>
+        <a href="editar_perfil.php">Editar Perfil</a>
     </p>     
 
     <div class="fundo-foto-usuario">

@@ -55,7 +55,7 @@
     <section class="pagina-usuario">
 
     <p>
-        <a href="editar_perfil_produtor.php">Editar Perfil</a>
+        <a href="editar_perfil.php">Editar Perfil</a>
     </p>     
 
     <div class="fundo-foto-usuario">
