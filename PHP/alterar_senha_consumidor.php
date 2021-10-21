@@ -53,6 +53,7 @@
 
     <!-- Menu para Administrar -->
 
+    <main>
     <aside class="main-aside-produtor">
         <nav>
             <ul class="icon-aside">
@@ -106,6 +107,8 @@
 
         </section>
 
+    </main>
+
     <?php
 
     if(isset($_POST['salvar'])){
@@ -156,7 +159,7 @@
         <div class="direitos">
             <p>© Green Gate 2021</p>
         </div>
-    </footer>  
+    </footer>
 
     <?php
 

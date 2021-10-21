@@ -94,7 +94,7 @@
         </div>
 
         </section>
-
+    </main>
         <?php
 
         if(isset($_POST['deletar'])){

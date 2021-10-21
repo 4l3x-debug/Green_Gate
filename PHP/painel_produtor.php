@@ -146,7 +146,9 @@
 
             </p>
 
-        </section>   
+        </section>  
+        
+    </main>
 
     <!-- Rodapé -->
 

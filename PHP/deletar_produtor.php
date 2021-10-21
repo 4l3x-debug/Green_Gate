@@ -113,6 +113,8 @@
         </div>
 
         </section>
+    
+    </main>
 
         <?php
 

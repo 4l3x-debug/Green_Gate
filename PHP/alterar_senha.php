@@ -114,6 +114,7 @@
             </form>
 
         </section>
+    </main>    
 
     <?php
 

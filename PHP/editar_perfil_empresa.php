@@ -150,6 +150,8 @@
 
         </section>
 
+    </main>
+
     <?php
 
     if(isset($_POST['salvar'])){
