@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/style-index.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style-index.css">
     <link rel="stylesheet" href="../FONTAW/css/all.css">
     <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
     <title>Green Gate</title>

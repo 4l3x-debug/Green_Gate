@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Green Gate | Segurança</title>
-        <link rel="stylesheet" href="../CSS/style-index.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style-index.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-adm.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-editar-perfil.css">

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Green Gate | Lojas</title>
-	<link rel="stylesheet" href="../CSS/style-index.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/style-index.css">
     <link rel="stylesheet" type="text/css" href="../CSS/style-lojas.css">
     <link rel="stylesheet" href="../FONTAW/css/all.css">
     <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
