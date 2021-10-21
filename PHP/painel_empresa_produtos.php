@@ -9,7 +9,6 @@
         <link rel="stylesheet" type="text/css" href="../CSS/style-pagina-usuario.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-consumidor.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-empresa-produtos.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/painel-empresa-produtos.css">
     	<link rel="stylesheet" href="../FONTAW/css/all.css">
     	<link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
 
