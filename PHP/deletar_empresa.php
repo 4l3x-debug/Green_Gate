@@ -87,7 +87,7 @@
 
 
             <p>Deletar Empresa</p>
-            <spam>Ao excluir o perfil os dados serão apagados, ou seja não será possível recuperar as informações.</spam>
+            <span>Ao excluir o perfil os dados serão apagados, ou seja não será possível recuperar as informações.</span>
             <div class="botao-excluir">
                 <i class="fas fa-eraser">
                     <form action="#" method="POST">
