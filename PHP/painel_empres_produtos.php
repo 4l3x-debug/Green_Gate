@@ -2,12 +2,13 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="utf-8">
-		<title>Green Gate | Página Empresa</title>
+		<title>Green Gate | Página Produtos</title>
         <link rel="stylesheet" href="../CSS/style-index.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-adm.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-pagina-usuario.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-consumidor.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style-painel-empresa-produtos.css">
     	<link rel="stylesheet" href="../FONTAW/css/all.css">
     	<link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
 	</head>
@@ -79,53 +80,51 @@
             <span style="font-size: 30px; cursor:pointer; color: #ADAD7B;" onclick="abrirNav()">&#9776;</span>
         </section>
 
-        <p>
-        <a href="editar_perfil_empresa.php">Editar Perfil</a>
-    </p>     
+        <div class="adicionar-produtos">
 
-    <div class="fundo-foto-usuario">
-        <div class="foto-usuario">
-        </div>
-    </div>
+            <h3>Adicionar Produtos</h3>
+            
+            <form action="#" method="POST">
+                    
+            <div class="primeira">
 
-    <div class="nome-usuario">
-
-    <?php
-
-    echo $dados_empresa['nome_empresa'];
-
-    ?>
-
-    </div>
-
-    <table>
-
-        <tr>
-
-            <div class="dados-usuario primeira">
-
-            <td> Razão Social: <?php echo $dados_empresa['razao']; ?> </td>
-            <td> CNPJ: <?php echo $dados_empresa['cnpj']; ?> </td>
-            <td> Data de Cadastro: <?php echo $dados_empresa['data_cadastro']; ?> </td>    
+                Nome:
+                <input type="text" name="nome_produto">
+                
+                Marca:
+                <input type="text" name="marca">
 
             </div>
 
-        </tr>
+            <div class="segunda">
+                
+                Descrição:
+                <input type="text" name="descricao">
 
-        <tr>    
+            </div>
 
-            <div class="dados-usuario segunda">
+            <div class="terceira">
+                
+                Data de Validade:
+                <input type="date" name="data_validade">
 
-            <td> Email: <?php echo $dados_empresa['email']; ?> </td>
-            <td> Telefone: <?php echo $dados_empresa['telefone']; ?> </td>
-            <td> CEP: <?php echo $dados_empresa['cep']; ?> </td>
+                Preço:
+                <input type="text" name="preco">
+
+            </div>
+
+            <div class="quarta">
+
+                <div class="botao"><i class="fas fa-leaf">
+                    <input type="submit" name="inserir" value="">
+                </i></div>
                 
             </div>
 
-        </tr>    
+            </form>
 
-    </table>
-
+        </div>
+       
         </section>
         
     <!-- Rodapé -->

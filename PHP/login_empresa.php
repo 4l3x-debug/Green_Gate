@@ -24,6 +24,9 @@
 
         if($dados_usuario['usuario'] == 1){
 
+        $sql_empresa = 'select cnpj from empresa where id_produtor='.$id.';';
+        $resul_empresa = mysqli_query($conectar, $sql_empresa);
+
   ?>
 
   <section class="section-empresa">
@@ -56,21 +59,21 @@
 
 <?php
 
-  if (isset($_POST['entrar_empresa'])) {
-    $cnpj = $_POST['cnpj'];
-    $senha = md5($_POST['senha']);
+    if (isset($_POST['entrar_empresa'])) {
+      $cnpj = mysqli_real_escape_string($conectar, $_POST['cnpj']);
+      $senha = mysqli_real_escape_string($conectar, md5($_POST['senha']));
 
-    if($senha == $dados_usuario['senha']){
+      if($senha == $dados_usuario['senha']){
 
-      $_SESSION['cnpj_empresa']= $_POST['cnpj'];
-      header('location:painel_empresa.php');
+        $_SESSION['cnpj_empresa']= $_POST['cnpj'];
+        header('location:painel_empresa.php');
+
+      }else{
+        header('location:login_empresa.php');
+      }
 
     }else{
-      header('location:login_empresa.php');
     }
-
-  }else{
-  }
 
   }else{
     header('location:invalido.php');

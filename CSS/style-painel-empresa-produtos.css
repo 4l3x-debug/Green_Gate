@@ -1,0 +1,94 @@
+.adicionar-produtos{
+	background-color: #FFF;
+	height: 293px;
+	width: 602px;
+	position: relative;
+	top: 30px;
+	left: 380px;
+	display: flex;
+	justify-content: center;
+	border-radius: 20px;
+	box-shadow: 3px 3px 3px 3px #DCDCDC;
+}
+
+.adicionar-produtos h3{
+	position: absolute;
+	top: 20px;
+	z-index: 2;
+	font-size: 140%;
+}
+
+form{
+	width: 88%;
+	height: 50%;
+	position: absolute;
+	font-size: 19px;
+	left: 6%;
+	top: 25%;
+	line-height: 50px;
+}
+
+.primeira input, .segunda input, .terceira input{
+	border-bottom: 1px solid #ebebeb;
+	outline: 0;
+	height: 25px;
+	font-family: Caviar Dreams;
+	font-size: 15px;
+}
+
+.primeira input{
+	width: 37%;
+}
+
+.segunda input{
+	width: 81%;
+}
+
+.terceira{
+	height: 50px;
+}
+
+.terceira input{
+	width: 27.5%;
+}
+
+.quarta{
+	width: 450px;
+	height: 50px;
+}
+
+.botao{
+	position: relative;
+	width: 55px;
+	height: 55px;
+	border-radius: 30px;
+	background-color: #C3CE64;
+	float: right;
+	left: 143px;
+	color: #FFF;
+}
+
+.botao i{
+	position: absolute;
+	font-size: 22px;
+	right: 27%;
+	top: 28%;
+}
+
+.botao input{
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	border-radius: 30px;
+	right: -11px;
+	bottom: -18px;
+	opacity: 0%;
+	cursor: pointer;
+}
+
+
+.botao:hover{
+	transition: ease-out;
+    transition-duration: 0.2s;
+    transform: scale(105%);
+}
