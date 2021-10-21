@@ -53,7 +53,6 @@
 
     <!-- Menu para Administrar -->
 
-    <main>
     <aside class="main-aside-produtor">
         <nav>
             <ul class="icon-aside">
