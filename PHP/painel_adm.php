@@ -34,16 +34,16 @@
     	<nav>
     		<ul class="icon-aside">
                 <strong>Categorias</strong>
-                <a href="painel_adm.php"><li><i class="fas fa-store-alt"></i>
+                <a href="pagina_adm.php"><li><i class="fas fa-store-alt"></i>
                     Lojas
                 </li></a>
-                <a href="painel_adm_aprovacoes.php"><li><i class="far fa-check-square"></i> 
+                <a href="pagina_adm_aprovacoes.php"><li><i class="far fa-check-square"></i> 
                     Aprovações
                 </li></a>   
-                <a href="painel_adm_avaliacoes.php"><li><i class="fas fa-tasks"></i>
+                <a href="pagina_adm_avaliacoes.php"><li><i class="fas fa-tasks"></i>
                     Avaliações
                 </li></a>
-                <a href="painel_adm_suporte.php"><li><i class="fas fa-headset"></i>
+                <a href="pagina_adm_suporte.php"><li><i class="fas fa-headset"></i>
                     Suporte
                 </li></a>      
             </ul>
