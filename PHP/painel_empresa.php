@@ -3,13 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Green Gate | Página Empresa</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/style-index.css">
+        <link rel="stylesheet" href="../CSS/style-index.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-adm.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-pagina-usuario.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-consumidor.css">
     	<link rel="stylesheet" href="../FONTAW/css/all.css">
     	<link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
+
 	</head>
 	<body class="corpo-pagina-adm">
 
@@ -85,6 +86,7 @@
 
     <div class="fundo-foto-usuario">
         <div class="foto-usuario">
+            <?php echo ('<img src="../IMG/Imagem_Empresa/Logo_Empresa/'.$dados_empresa['logo'].'"alt=Logo"/>'); ?>
         </div>
     </div>
 

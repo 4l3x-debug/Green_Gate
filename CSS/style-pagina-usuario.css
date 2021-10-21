@@ -69,3 +69,11 @@ td{
 	text-align: center;
 	width: 300px;
 }
+
+.foto-usuario img{
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 100px;
+}
