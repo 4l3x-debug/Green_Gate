@@ -71,7 +71,7 @@
             <a href="javascript: void(0)" class="btnFechar" onclick="fecharNav()"><i class="fas fa-times"></i></a>
             <a href="#" class="icon"><i class="fas fa-store-alt"></i>Loja</a>
             <a href="painel_empresa_produtos.php" class="icon"><i class="fas fa-tags"></i>Produtos</a>
-            <a href="painel_empresa_avaliacoes.php" class="icon"><i class="fas fa-tasks"></i>Avalizações</a>
+            <a href="painel_empresa_avaliacoes.php" class="icon"><i class="fas fa-tasks"></i>Avaliações</a>
             <a href="painel_empresa_suporte.php" class="icon"><i class="fas fa-headset"></i>Suporte</a>
         </aside>
 

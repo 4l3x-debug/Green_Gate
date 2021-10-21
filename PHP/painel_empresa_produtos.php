@@ -70,9 +70,9 @@
 
         <aside id="menuOculto" class="menuOculto">
             <a href="javascript: void(0)" class="btnFechar" onclick="fecharNav()"><i class="fas fa-times"></i></a>
-            <a href="#" class="icon"><i class="fas fa-store-alt"></i>Loja</a>
-            <a href="painel_empresa_produtos.php" class="icon"><i class="fas fa-tags"></i>Produtos</a>
-            <a href="painel_empresa_avaliacoes.php" class="icon"><i class="fas fa-tasks"></i>Avalizações</a>
+            <a href="painel_empresa.php" class="icon"><i class="fas fa-store-alt"></i>Loja</a>
+            <a href="#" class="icon"><i class="fas fa-tags"></i>Produtos</a>
+            <a href="painel_empresa_avaliacoes.php" class="icon"><i class="fas fa-tasks"></i>Avaliações</a>
             <a href="painel_empresa_suporte.php" class="icon"><i class="fas fa-headset"></i>Suporte</a>
         </aside>
 
@@ -84,7 +84,7 @@
 
             <h3>Adicionar Produtos</h3>
             
-            <form action="#" method="POST">
+        <form action="#" method="POST">
                     
             <div class="primeira">
 
@@ -121,7 +121,7 @@
                 
             </div>
 
-            </form>
+        </form>
 
         </div>
        
@@ -150,6 +150,27 @@
     </footer>
 
     <?php
+
+        if(isset($_POST['inserir'])){
+            $nome_prod = $_POST['nome_produto'];
+            $marca = $_POST['marca'];
+            $descricao = $_POST['descricao'];
+            $data_validade = $_POST['data_validade'];
+            $preco = $_POST['preco'];
+
+            $sql_produtos = 'insert into produto (nome_prod, marca, data_validade, descricao, preco, id_empresa) values ("'.$nome_prod.'", "'.$marca.'", "'.$data_validade.'", "'.$descricao.'", '.$preco.', '.$dados_empresa['id_empresa'].');';
+            $adicionar_produto = mysqli_query($conectar, $sql_produtos);
+
+                if($adicionar_produto){
+                    echo ('<script>window.alert("Produto inserido com sucesso!");window.location="painel_painel_produtos.php"</script>');
+                }else{
+                    echo ('<script>window.alert("Erro ao inserir o produto!");window.location="painel_painel_produtos.php"</script>');
+                }
+
+
+        }else{}
+
+
             }else{
                 header('location:invalido.php');
             }

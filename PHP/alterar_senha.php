@@ -11,6 +11,15 @@
         <link rel="stylesheet" href="../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
     </head>
+
+    <style type="text/css">
+    
+    .editar-perfil td{
+        width: 160px;
+    }
+
+    </style>
+
     <body class="corpo-painel-produtor">
 
     <?php
