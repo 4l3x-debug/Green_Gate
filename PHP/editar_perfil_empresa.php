@@ -80,7 +80,7 @@
                 <a href="deletar_empresa.php"><li><i class="fas fa-user-times"></i>
                     Deletar
                 </li></a>
-                <a href="invalido.php"><li><i class="fas fa-sign-out-alt"></i>
+                <a href="painel_produtor.php"><li><i class="fas fa-sign-out-alt"></i>
                     Sair
                 </li></a>         
             </ul>
