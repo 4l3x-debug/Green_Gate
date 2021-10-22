@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>Green Gate | Página Suporte</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/style-index.css">
+        <link rel="stylesheet" href="../CSS/style-index.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-adm.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor-suporte.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-pagina-usuario.css">
+            <link rel="stylesheet" type="text/css" href="../CSS/style-pagina-usuario.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-consumidor.css">
         <link rel="stylesheet" href="../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="pagina_usuario_produtor.php"><i class="fas fa-user-circle"></i>
+                    <a href="painel_empresa.php"><i class="fas fa-user-circle"></i>
                         <div class="usuario">
                             <?php echo $dados_empresa['nome_empresa']; ?>        
                         </div>
