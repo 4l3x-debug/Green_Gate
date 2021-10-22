@@ -14,7 +14,7 @@
 
 		<h1> Cadastre-se no Green Gate! </h1>
 
-		<form method="POST" class="formulario-cadastro">
+		<form method="POST" class="formulario-cadastro" enctype="multipart/form-data">
 
 			<div class="linha primeira">
 				Nome:
@@ -48,7 +48,7 @@
 	        	<input type="text" name="telefone">
 
 	        	CPF:
-	        	<input type="text" name="cpf"><br>
+	        	<input type="text" name="cpf">
 
 	        </div>
 
@@ -68,7 +68,14 @@
 			        <option value="M">Masculino</option>
 			    </select>		
 
-	        </div>		
+	        </div>	
+
+	        <div class="linha setima">
+	        	
+	        	Imagem:
+	        	<input type="file" name="imagem">
+
+	        </div>	
 
 				<input type="submit" name="cadastrar" value="Cadastrar" class="botao-cadastro">	
 
@@ -109,10 +116,44 @@
 		$genero = $_POST['genero'];
 		$data_cadastro = date("Y-m-d");
 		$data_americana = date("Y-m-d", strtotime($data_nascimento));
+		$foto = $_FILES["imagem"];
+
+			if(!empty($foto["name"])){
+
+				$largura = 1500;
+				$altura = 1500;
+				$tamanho = 2048000;
+
+				if(!preg_match("/^image\/(pjpeg|jpeg|png|gif|bmp)$/", $foto["type"])){
+					echo('Isso não é uma imagem.');
+				}
+
+				$dimensoes = getimagesize($foto["tmp_name"]);
+
+				if($dimensoes[0] > $largura){
+					echo ('A largura da imagem não deve ultrapassar de '.$largura.' pixels');
+				}
+
+				if($dimensoes[1] > $altura){
+					echo ('A altura da imagem não deve ultrapassar de '.$altura.' pixels');
+				}
+
+				if($foto["size"] > $tamanho){
+					echo('A imagem deve ter no máximo '.$tamanho.' bytes');
+				}
+
+				preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $foto["name"], $ext);
+
+				$nome_imagem = md5(uniqid(time())) . "." . $ext[1];
+
+				$caminho_imagem = "../IMG/Imagem_Usuario/" . $nome_imagem;
+
+				move_uploaded_file($foto["tmp_name"], $caminho_imagem);
+
 
 		if ($usuario == 1) {
 			if ($senha == $confimacao) {
-				$adicionar = 'insert into usuario (nome, email, senha, usuario, celular, data_nascimento, data_cadastro, genero, cpf) values ("'.$nome.'", "'.$email.'", "'.md5($senha).'", '.$usuario.', "'.$celular.'", "'.$data_americana.'", "'.$data_cadastro.'", "'.$genero.'", "'.$cpf.'");';
+				$adicionar = 'insert into usuario (nome, email, senha, usuario, celular, data_nascimento, data_cadastro, genero, cpf, imagem) values ("'.$nome.'", "'.$email.'", "'.md5($senha).'", '.$usuario.', "'.$celular.'", "'.$data_americana.'", "'.$data_cadastro.'", "'.$genero.'", "'.$cpf.'", "'.$nome_imagem.'");';
 
 				$query_cadastro = mysqli_query($conectar, $adicionar);
 
@@ -121,27 +162,31 @@
 				}else{
 					echo ('<script>window.alert("Erro ao se cadastrar!");window.location="cadastro.php"</script>');
 				}
+			}else{
+				echo ('<script>window.alert("As senhas estão incompatíveis!");window.location="cadastro.php"</script>');
 			}
+
 		}else if ($usuario == 2) {
 			if ($senha == $confimacao) {
-				if ($senha == $confimacao) {
-					$adicionar = 'insert into usuario (nome, email, senha, usuario, celular, data_nascimento, data_cadastro, genero, cpf) values ("'.$nome.'", "'.$email.'", "'.md5($senha).'", '.$usuario.', "'.$celular.'", "'.$data_americana.'", "'.$data_cadastro.'", "'.$genero.'", "'.$cpf.'");';
+				$adicionar = 'insert into usuario (nome, email, senha, usuario, celular, data_nascimento, data_cadastro, genero, cpf, imagem) values ("'.$nome.'", "'.$email.'", "'.md5($senha).'", '.$usuario.', "'.$celular.'", "'.$data_americana.'", "'.$data_cadastro.'", "'.$genero.'", "'.$cpf.'", "'.$nome_imagem.'");';
 
-					$query_cadastro = mysqli_query($conectar, $adicionar);
+				$query_cadastro = mysqli_query($conectar, $adicionar);
 
-					if ($query_cadastro) {
-						echo ('<script>window.alert("Cadastro efetuado com sucesso!");window.location="login.php"</script>');
-					}else{
-						echo ('<script>window.alert("Erro ao se cadastrar!");window.location="cadastro.php"</script>');
-					}
+				if ($query_cadastro) {
+					echo ('<script>window.alert("Cadastro efetuado com sucesso!");window.location="login.php"</script>');
+				}else{
+					echo ('<script>window.alert("Erro ao se cadastrar!");window.location="cadastro.php"</script>');
 				}
+			}else{
+				echo ('<script>window.alert("As senhas estão incompatíveis!");window.location="cadastro.php"</script>');
 			}
-
 		}else{}
 
-		}
+			}
+			
+			}
 
-	}else{}
+		}
 
 ?>
 

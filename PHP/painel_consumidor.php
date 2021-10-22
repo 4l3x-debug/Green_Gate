@@ -89,6 +89,7 @@
 
     <div class="fundo-foto-usuario">
         <div class="foto-usuario">
+            <?php echo ('<img src="../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'"alt="'.$dados_usuario['nome'].'"/>'); ?>
         </div>
     </div>
 

@@ -41,26 +41,37 @@ input, select {
   
 .linha input, select{
 	height: 25px;
-	border-bottom: 1px solid #ebebeb;
 }
   
 .linha.primeira input, .linha.segunda input{
 	width: 88%;
+	border-bottom: 1px solid #ebebeb;
 }
   
 .linha.terceira input {
 	width: 34%;
+	border-bottom: 1px solid #ebebeb;
 }
   
 .linha.quarta input {
 	width: 69%;
+	border-bottom: 1px solid #ebebeb;
 }
   
 .linha.quinta input {
-	  width: 39%;
+	width: 39%;
+	border-bottom: 1px solid #ebebeb;
 }
   
 .linha.sexta select {
-	  width: 31%;
+	width: 31.5%;
+	border-bottom: 1px solid #ebebeb;
 }
   
+.linha.setima input {
+	width: 84.5%;
+}
+
+.linha {
+    height: 62px;
+}

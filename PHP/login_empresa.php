@@ -76,6 +76,7 @@
     }
 
   }else{
+    echo ('<script>window.alert("CPF inválido!");window.location="login.php"</script>');
     header('location:invalido.php');
   }
 
