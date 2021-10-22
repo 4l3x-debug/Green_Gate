@@ -62,7 +62,7 @@ a{
 .figuras a{
     color: #000;
 }
-.figuras a:hover{
+.figuras a:hover, .figuras-empresa a:hover{
     color: #8082e2;
 
 }
