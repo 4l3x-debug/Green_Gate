@@ -11,6 +11,17 @@
     	<link rel="stylesheet" href="../FONTAW/css/all.css">
     	<link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
 
+        <style type="text/css">
+        .foto-usuario img{
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 100px;
+        }
+
+        </style>
+
 	</head>
 	<body class="corpo-pagina-adm">
 
@@ -50,10 +61,10 @@
                 </div>
 
                 <div class="figuras-empresa">
-                	<a href=""><i class="fas fa-user-circle"></i></a>
+                	<a href=""><i class="fas fa-user-circle"></i>
                         <div class="empresa">
-                            <?php echo $dados_empresa['nome_empresa']; ?>        
-                        </div>
+                            <?php echo $dados_empresa['nome_empresa']; ?>
+                        </div></a>
                     <a href=""><i class="far fa-bell"></i></a>
                 </div>
             </nav>
