@@ -9,6 +9,13 @@
     <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
 </head>
 <body>
+
+    <?php
+
+        include('conexao.php');
+
+    ?>
+
         <!-- Cabeçalho -->
 
         <section class="main-nav">
@@ -45,31 +52,20 @@
     <!-- Seção de Lojas -->
 
     <section class="main-lojas">
-        <div class="espacamento-lojas">
-            <a href="meu_eco_bebe.php"><article class="lojas">  
-                <img src="../IMG/loja_1.png" alt="meu_eco_bebe"> 
-            </article></a>
-        </div>    
-        <div class="espacamento-lojas">
-            <a href="insecta.php"><article class="lojas">
-                <img src="../IMG/loja_2.png" alt="insecta">
-            </article></a>
-        </div>
-        <div class="espacamento-lojas">
-            <a href="babu.php"><article class="lojas">
-                <img src="../IMG/loja_3.png" alt="babu">
-            </article></a>
-        </div>
-        <div class="espacamento-lojas">
-            <a href="campo_largo.php"><article class="lojas"> 
-                <img src="../IMG/loja_4.png" alt="campo_largo"> 
-            </article></a>
-        </div>
-        <div class="espacamento-lojas">
-            <a href="urban_flowers.php"><article class="lojas">
-                <img src="../IMG/loja_5.png" alt="urban_flowers">
-            </article></a>
-        </div>
+
+            <?php
+
+                $sql_empresa = 'select * from empresa order by nome_empresa ASC;';
+                $resul_empresa = mysqli_query($conectar, $sql_empresa);
+
+                while($dados_empresa = mysqli_fetch_array($resul_empresa)){
+                    echo ('<div class="espacamento-lojas"><a href=""><article class="lojas">
+                    <img src="../IMG/Imagem_Empresa/Logo_Empresa/'.$dados_empresa['logo'].'" alt="'.$dados_empresa['nome_empresa'].'">
+                    </article></a></div>');
+                }
+
+            ?>    
+
     </section>
 
     <!-- Categorias Lojas -->
