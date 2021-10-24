@@ -205,6 +205,8 @@
             $preco = $_POST['preco'];
             $imagem = $_FILES["imagem"];
 
+            $preco = str_replace(',','.', $preco);
+
             if(empty($imagem["name"])){
 
                 $largura = 1500;

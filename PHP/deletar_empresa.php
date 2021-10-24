@@ -66,7 +66,7 @@
         <nav>
             <ul class="icon-aside">
                 <strong>Categorias</strong>
-                <a href="editar_perfil_consumidor.php"><li><i class="fas fa-user-edit"></i>
+                <a href="editar_perfil_empresa.php"><li><i class="fas fa-user-edit"></i>
                     Perfil
                 </li></a>
                 <a href="deletar_consumidor.php"><li><i class="fas fa-user-times"></i>
