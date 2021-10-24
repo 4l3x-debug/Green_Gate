@@ -2,13 +2,14 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>Green Gate | Página Produtor</title>
+        <title>Green Gate | Deletar</title>
         <link rel="stylesheet" type="text/css" href="../CSS/style-index.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-adm.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style-editar-perfil-produtor.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style-deletar-produtor.css">
         <link rel="stylesheet" href="../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
-
     </head>
     <body class="corpo-painel-produtor">
 
@@ -25,23 +26,6 @@
 
         if($dados_usuario['usuario'] == 0){
 
-        $limite = 4;
-
-        if(!isset($_GET['pag'])){
-            $pagina = 1;
-        }else{
-            $pagina = $_GET['pag'];
-        }
-
-        $inicio = ($pagina * $limite) - $limite;
-
-        $sql_empresa = 'select * from empresa order by nome_empresa ASC limit '.$inicio.','.$limite.' ;';
-        $resul_empresa = mysqli_query($conectar, $sql_empresa);
-
-        $sql_total = 'select * from empresa;';
-        $resul_total = mysqli_query($conectar, $sql_total);
-        $total_registros = mysqli_num_rows($resul_total);
-
     ?>
 
     <!-- Cabeçalho -->
@@ -55,7 +39,7 @@
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="pagina_usuario_adm.php"><i class="fas fa-user-circle"></i>
+                    <a href="painel_consumidor.php"><i class="fas fa-user-circle"></i>
                         <div class="usuario">
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
@@ -73,77 +57,58 @@
         <nav>
             <ul class="icon-aside">
                 <strong>Categorias</strong>
-                <a href="painel_adm.php"><li><i class="fas fa-store-alt"></i>
-                    Lojas
+                <a href="editar_perfil_adm.php"><li><i class="fas fa-user-edit"></i>
+                    Perfil
                 </li></a>
-                <a href="painel_adm_aprovacoes.php"><li><i class="far fa-check-square"></i> 
-                    Aprovações
-                </li></a>   
-                <a href="painel_adm_avaliacoes.php"><li><i class="fas fa-tasks"></i>
-                    Avaliações
+                <a href="alterar_senha_adm.php"><li><i class="fas fa-user-lock"></i>
+                    Segurança
+                </li></a>
+                <a href="deletar_adm.php"><li><i class="fas fa-user-times"></i>
+                    Deletar
                 </li></a>
                 <a href="invalido.php"><li><i class="fas fa-sign-out-alt"></i>
                     Sair
-                </li></a>       
+                </li></a>         
             </ul>
         </nav>
     </aside>
 
     <!-- Conteúdo -->
 
-        <section class="main lojas">
-            <h1>Lojas</h1>
+        <section class="main deletar-produtor">
 
-            <div class="paginacao-lojas">
+        <div class="deletar-perfil">
 
-                <?php
-                    while($dados_empresa = mysqli_fetch_array($resul_empresa)){
-                ?>
 
-                <article class="espacamento">
-
-                <?php
-                    echo ('<img src="../IMG/Imagem_Empresa/Logo_Empresa/'.$dados_empresa['logo'].'"alt=Logo">');
-                ?> 
-
-                </article>  
-
-                <?php
-                    }
-                ?>
-
+            <p>Deletar Perfil</p>
+            <span>Ao excluir o perfil os dados serão apagados, ou seja não será possível recuperar as informações.</span>
+            <div class="botao-excluir">
+                <i class="fas fa-eraser">
+                    <form action="#" method="POST">
+                        <input type="submit" name="deletar" value="">
+                    </form>                
+                </i>
             </div>
-
-            <p class="paginacao">
-
-                <?php
-
-                    $total_paginas = ($total_registros + 3) / $limite;
-
-
-                    $anterior = $pagina - 1;
-                    $proximo = $pagina + 1;
-
-                    if($pagina>1){
-                        echo ('<a class="espacamento-antes" href="painel_adm.php?pag='.$anterior.'"><</a>');
-                    }
-
-
-                    for($cont=1;$cont<=$total_paginas;$cont++){
-                        echo('<a class="espacamento-paginas" href="painel_adm.php?pag='.$cont.'">'.$cont.'</a>');
-                    }
-
-                    if($pagina<$total_paginas){
-                        echo ('<a class="espacamento-depois" href="painel_adm.php?pag='.$proximo.'">></a>');
-                    }
-
-                ?>
-
-            </p>
-
-        </section>  
         
+        </div>
+
+        </section>
     </main>
+        <?php
+
+        if(isset($_POST['deletar'])){
+
+            $sql_deletar_conta = 'delete from usuario where usuario.id_usuario='.$id.';';
+            $deletar_conta = mysqli_query($conectar, $sql_deletar_conta);
+
+            if($deletar_conta){
+                echo ('<script>window.alert("Apagado com sucesso!");window.location="index.php"</script>');
+            }else{
+                echo ('<script>window.alert("Erro ao apagar!");window.location="deletar_produtor.php"</script>');
+            }
+        }
+
+        ?>
 
     <!-- Rodapé -->
 
@@ -165,7 +130,7 @@
         <div class="direitos">
             <p>© Green Gate 2021</p>
         </div>
-    </footer>
+    </footer>  
 
     <?php
 
