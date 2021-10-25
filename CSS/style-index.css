@@ -102,15 +102,15 @@ a{
     font-family: 'Gowun Batang', serif;
     font-size: 15pt;
     color: #FFF;
-    background-color: #00000000;
-    border: 2px solid #FFF; 
-    border-radius: 2px;
+    background-color: #5eaf44; 
+    border-radius: 10px;
+    transition: 0.5s;
+    font-weight: bolder;
 }
 
 .main-conteudo a button:hover{
-    background-color: #FFF;
-    color: #c3ce64;
-    font-weight: bolder;
+    background-color: #2f6e1b;
+    color: #FFF;
 }
 .imagem_1 {
     position: relative;
