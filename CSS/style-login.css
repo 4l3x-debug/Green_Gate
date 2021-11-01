@@ -1,10 +1,12 @@
 body{
 	font-family: Caviar Dreams;
+	background: #fefae0;
 }
 
 .container-fluid, .login, .email, .btn-login, .cadastro{
 	display: flex;
 	justify-content: center;
+	z-index: 1;
 } 
 		
 .container-fluid{
@@ -115,4 +117,41 @@ body{
 .cadastro a{
 	text-decoration: none;
 	color: #000;
+}
+
+@keyframes mover_onda1{
+    from {
+    	transform: translateX(-2000px);
+  	}
+}
+
+@keyframes mover_onda2{
+   	from{
+    	transform: translateX(-1800px);
+	}
+}
+
+@keyframes mover_onda3{
+	from{
+		transform: translateX(-1600px);
+	}
+}
+
+.ondas{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.primeira_onda{
+	animation: mover_onda1 3s ease-in-out infinite alternate;
+}
+
+.segunda_onda{
+	animation: mover_onda2 2.5s ease-in-out infinite alternate;
+}
+
+.terceira_onda{
+	animation: mover_onda3 3s ease-in-out infinite alternate;
 }
