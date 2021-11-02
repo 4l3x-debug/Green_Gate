@@ -73,7 +73,7 @@
     $senha = mysqli_real_escape_string($conectar, md5($_POST['senha']));
 
         if ($usuario == 0) {
-          $select = "select id_pf_fisico, nome from pf_fisico where email = '".$email."' and senha = '".$senha."' and tp_usuario = 0;";
+          $select = "select id_pf_fisico, nome from pf_fisico where email = '".$email."' and senha = '".$senha."';";
 
             $query_select = mysqli_query($conectar, $select);
 
@@ -82,7 +82,7 @@
             if ($rows == 1) {
               $dados = mysqli_fetch_array($query_select);
               $_SESSION['id_usuario'] = $dados['id_pf_fisico'];
-              header('location: painel_adm.php');
+              header('location: Administrador/painel_adm.php');
             }else{
               header('location: login.php');
             }
@@ -90,17 +90,17 @@
         }else if ($usuario == 1) {
           $select = "select id_pf_juridico, nome from pf_juridico where email = '".$email."' and senha = '".$senha."';";
 
-          $query_select = mysqli_query($conectar, $select);
+            $query_select = mysqli_query($conectar, $select);
 
-          $rows = mysqli_num_rows($query_select);
+            $rows = mysqli_num_rows($query_select);
 
-          if ($rows == 1) {
-            $dados = mysqli_fetch_array($query_select);
-            $_SESSION['id_usuario'] = $dados['id_pf_juridico'];
-            header('location: painel_produtor.php');
-          }else{
-            header('location: login.php');
-          }
+            if ($rows == 1) {
+              $dados = mysqli_fetch_array($query_select);
+              $_SESSION['id_usuario'] = $dados['id_pf_juridico'];
+              header('location: Produtor/painel_produtor.php');
+            }else{
+              header('location: login.php');
+            }
 
         }else if ($usuario == 2) {
           $select = "select id_pf_fisico, nome from pf_fisico where email = '".$email."' and senha = '".$senha."';";
@@ -112,7 +112,7 @@
           if ($rows == 1) {
             $dados = mysqli_fetch_array($query_select);
             $_SESSION['id_usuario'] = $dados['id_pf_fisico'];
-            header('location: painel_consumidor.php');
+            header('location: Consumidor/painel_consumidor.php');
           }else{
             header('location: login.php');
           }
@@ -127,7 +127,7 @@
           if ($rows == 1) {
               $dados = mysqli_fetch_array($query_select);
               $_SESSION['id_usuario'] = $dados['id_pf_juridico'];
-              header('location: painel_produtor_consumidor.php');
+              header('location: Produtor_Consumidor/painel_produtor_consumidor.php');
           }else{
               header('location: login.php');
            }

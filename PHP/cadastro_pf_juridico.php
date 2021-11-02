@@ -112,13 +112,13 @@
 						</div>
 					</div>
 
-					<div class="row data-nascimento">
+					<div class="row razao">
 						<div class="col-sm-3">
-							Data de Nasc:
+							Razão Social:
 						</div>
 
 						<div class="col-sm-9">
-							<input type="date" name="data">
+							<input type="text" name="razao">
 						</div>
 					</div>
 					
@@ -158,7 +158,7 @@
 
 	if (isset($_POST['cadastrar'])) { // if cadastrar
 
-		if(empty($_POST['nome']) or empty($_POST['email']) or empty($_POST['senha']) or empty($_POST['senha-confirmacao'])  or empty($_POST['usuario'])){ // if empty
+		if(empty($_POST['nome']) or empty($_POST['email']) or empty($_POST['senha']) or empty($_POST['senha-confirmacao'])  or empty($_POST['usuario']) or empty($_POST['razao'])){ // if empty
 
 			echo ('<script>window.alert("Preencha os campos!");window.location="cadastro_pf_juridico.php"</script>');
 
@@ -170,11 +170,10 @@
 		$confimacao = $_POST['senha-confirmacao'];
 		$cnpj = $_POST['cnpj'];
 		$usuario = $_POST['usuario'];
-		$data_nascimento = $_POST['data'];
+		$razao = $_POST['razao'];
 		$celular = $_POST['telefone'];
 		$genero = $_POST['genero'];
 		$data_cadastro = date("Y-m-d");
-		$data_americana = date("Y-m-d", strtotime($data_nascimento));
 
 		if($genero == "F"){
 
@@ -188,7 +187,7 @@
 
 		if ($senha == $confimacao) { // if senha
 
-			$adicionar = 'insert into pf_juridico (nome, email, senha, tp_usuario, cnpj, celular, data_nascimento, data_cadastro, genero, imagem) values ("'.$nome.'", "'.$email.'", "'.md5($senha).'", '.$usuario.', "'.$cnpj.'", "'.$celular.'", "'.$data_americana.'", "'.$data_cadastro.'", "'.$genero.'", "'.$nome_imagem.'");';
+			$adicionar = 'insert into pf_juridico (nome, email, senha, tp_usuario, cnpj, celular, razao, data_cadastro, genero, imagem) values ("'.$nome.'", "'.$email.'", "'.md5($senha).'", '.$usuario.', "'.$cnpj.'", "'.$celular.'", "'.$razao.'", "'.$data_cadastro.'", "'.$genero.'", "'.$nome_imagem.'");';
 
 			$query_cadastro = mysqli_query($conectar, $adicionar);
 
