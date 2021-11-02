@@ -74,8 +74,9 @@ a{
 }
 
 #all{
+    max-width: 1600px;
     height: 700px;
-    width: 100vw;
+    width: 100%;
     background: #fdfaef;
     position: absolute;
 }
@@ -85,7 +86,7 @@ a{
     width: 1300px;
     border: 1px solid white;
     box-shadow: 1px 2px 5px #b9b194;
-    margin-left: 5vw;
+    margin-left: 1em;
     margin-top: 50px;
     background: rgb(255, 255, 255);
 }

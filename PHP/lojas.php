@@ -55,7 +55,7 @@
 
             <?php
 
-                $sql_empresa = 'select * from pf_juridico order by nome ASC;';
+                $sql_empresa = 'select * from pf_juridico order by id_pf_juridico ASC;';
                 $resul_empresa = mysqli_query($conectar, $sql_empresa);
 
                 while($dados_empresa = mysqli_fetch_array($resul_empresa)){
@@ -127,98 +127,27 @@
                 </article></a>
             </div>
         </div>
-
-        <section class="produtos-casa">
-            <h2>Para sua casa</h2>
-
-                <div class="container-casa">
-                    <div class="info">  
-                        <img src="../IMG/prod_canudo.jpg" alt="produto1">  
-                        <span class="preco"> R$ 29,99 </span>  
-                        <p><a href="" class="descricao"> Kit 4 Canudos Inox + Saco Reciclável</a></p>
-                    </div>
-                    <div class="info">  
-                        <img src="../IMG/prod_ecobag.png" alt="produto2">  
-                        <span class="preco"> R$ 35,00 </span>
-                        <p><a href="" class="descricao"> 1 Sacola Sustetável</a></p>
-                    </div>
-                    <div class="info">
-                        <img src="../IMG/prod_escova.jpg" alt="produto3">
-                        <span class="preco"> R$ 15,00 </span>
-                        <p><a href="" class="descricao"> Kit 5 Escovas de Bambu</a></p>
-                    </div>
-                    <div class="info">
-                        <img src="../IMG/prod_copo.jpg" alt="produto4">
-                        <span class="preco"> R$ 14,99 </span>
-                        <p><a href="" class="descricao"> Kit 10 Copos Recicláveis</a></p>
-                    </div>  
-                </div>
-
-        </section>
-
-        <section class="produtos-recentes">
-            <h2>Produtos Colocados Recentemente</h2>
-            <div class="container-recente">
-                    <div class="info um">  
-                        <img src="../IMG/prod_camiseta.jpg" alt="camiseta">  
-                        <span class="preco"> R$ 19,00 </span>  
-                        <p><a href="" class="descricao"> Camiseta 100% Algodão</a></p>
-                    </div>
-                    <div class="info">  
-                        <img src="../IMG/prod_copo-festa.png" alt="copos">  
-                        <span class="preco"> R$ 2,50 </span>
-                        <p><a href="" class="descricao"> 1 Copa | Reciclável</a></p>
-                    </div>
-                    <div class="info">
-                        <img src="../IMG/prod_kitbemglo.png" alt="kit_bemglo">
-                        <span class="preco"> R$ 39,99 </span>
-                        <p><a href="" class="descricao"> Kit Bemglô</a></p>
-                    </div>
-                    <div class="info">
-                        <img src="../IMG/prod_camiseta2.jpg" alt="camisa">
-                        <span class="preco"> R$ 10,00 </span>
-                        <p><a href="" class="descricao"> Camiseta Branca | Algodão</a></p>
-                    </div>  
-            </div>
-
-        </section>
-
-        <section class="sessao-propaganda">
-            <img class="propaganda" src="../IMG/Bee-Green_fundo.gif" alt="">
-        </section>
-
-        <section class="sessao-estilo">
-            <h2>Produtos Estilosos</h2>
-            <div class="container-estilo">
-                    <div class="info um">  
-                        <img src="../IMG/prod_camiseta.jpg" alt="camiseta">  
-                        <span class="preco"> R$ 19,00 </span>  
-                        <p><a href="" class="descricao"> Camiseta 100% Algodão</a></p>
-                    </div>
-                    <div class="info">  
-                        <img src="../IMG/prod_copo-festa.png" alt="copos">  
-                        <span class="preco"> R$ 34,99 </span>
-                        <p><a href="" class="descricao"> Camiseta Azul | Reciclável </a></p>
-                    </div>
-                    <div class="info">
-                        <img src="../IMG/prod_kitbemglo.png" alt="kit_bemglo">
-                        <span class="preco"> R$ 49,00 </span>
-                        <p><a href="" class="descricao"> Camiseta Colcci </a></p>
-                    </div>
-                    <div class="info">
-                        <img src="../IMG/prod_camiseta2.jpg" alt="camisa">
-                        <span class="preco"> R$ 50,00 </span>
-                        <p><a href="" class="descricao"> Camiseta Arroz | Algodão</a></p>
-                    </div>  
-            </div>
-
-        </section>
-
     </section>
+    <h2 id="todos-produtos"> Todos os Produtos </h2> <br>
+    <section class="sessao-produtos">
+        <?php
+            $sql_select = 'SELECT * FROM produto ORDER BY id_produto ASC;';
+            $sql_query = mysqli_query($conectar, $sql_select);
 
+            while($dados_produto = mysqli_fetch_array($sql_query)){
+                echo ('<div class="container-produtos"> <div class="info">  
+                <img src="../IMG/'.$dados_produto['imagem'].'" alt="'.$dados_produto['imagem'].'">  
+                <span class="preco"> R$'.$dados_produto['preco'].'</span>
+                <p><a href="produto.php?id_produto='.$dados_produto['id_produto'].'" class="descricao">'.$dados_produto['nome_produto'].'</a></p>
+            </div> </div>');
+            }
+        ?>
+        <div class="paginas">
+            
+        </div>
+        </section>
 
     <!-- Rodapé -->
-
     <footer class="main-footer">
         <section class="cont-footer">
             <div>

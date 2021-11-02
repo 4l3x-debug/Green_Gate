@@ -1,5 +1,19 @@
 <?php
     session_start();
+
+    include("conexao.php");
+
+    $sql = 'select * from produto where id_produto = '.$_GET['id_produto'].';';
+    $query = mysqli_query($conectar, $sql);
+
+    while ($dados_produto = mysqli_fetch_array($query)) {
+        $nome_produto = $dados_produto['nome_produto'];
+        $marca = $dados_produto['marca'];
+        $preco = $dados_produto['preco'];
+        $descricao = $dados_produto['descricao'];
+        $data_validade = $dados_produto['dt_validade'];
+        $imagem = $dados_produto['imagem'];
+
 ?>
 
 <!DOCTYPE html>
@@ -45,16 +59,26 @@
     <section class="sessao-produto">
 
         <div class="container-produto">
-            <img src="prod_kitbemglo.png"> 
+            <?php
+                echo('<img src="../IMG/'.$imagem.'" alt="'.$imagem.'">');
+            ?>
         </div>
         
         <div class="container-info"> 
 
             <br><br>
-            <span id="nome-produto"> Kit Bemglô </span> <br>
+            <span id="nome-produto">
+                 <?php
+                    echo($nome_produto);
+                 ?>
+            </span><br>
 
             <div id="preco-space">
-                <span id="cifra"> R$ </span> <span id="preco"> 40,00 </span> 
+                <span id="cifra"> R$ </span> <span id="preco">
+                    <?php
+                        echo($preco);
+                    ?> 
+                </span> 
             </div>
 
             <div class="espaco-botao" href="compra.php">
@@ -70,7 +94,11 @@
             <div class="detalhes"> 
                 <h2> Detalhes do produto </h2> <br>
                 <span> 
-                    O Kit Bemglô Sustentável contém um canudo curvado de Aço Inox reutilizável, escovinha de limpeza + 1 saquinho de tecido  100% algodão, com  barbante na boca para fechamento. Podem ir na lava-louças, são resistentes e possuem alta durabilidade. São seguros para uso com bebidas e comida.
+                    <?php
+                        echo($descricao."<br>");
+                        echo("Marca: ".$marca);
+                        }
+                    ?>
                 </span>
             </div>      
         </div>

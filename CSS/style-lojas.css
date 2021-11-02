@@ -96,14 +96,17 @@ body{
 
 .secao-produtos{
 	width: 100%;
-	height: 2900px;
+	height: 80vh;
 	position: relative;
-	font-family: Caviar Dreams;
+	font-family: 'Caviar Dreams';
 }
 
 .secao-produtos h2, .produtos-casa h2{
 	position: absolute;
-	left: 140px;
+    margin-left: 110px;
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
 }
 
 .tamanho-produtos{
@@ -142,33 +145,40 @@ body{
     transform: scale(101%);
 }
 
-/*Para sua Casa*/
-
-.produtos-casa {
-    width: 100%;
-    height: 530px;
-    position: relative;
-
-}
-
 /*Style Vinicius*/
 
-.container-casa{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 401px;
-    position: absolute;
-	top: 70px;
+#todos-produtos{
+    margin-left: 110px;
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
 }
 
-.container-casa img {
-    height: 250px;
+.sessao-produtos{
+    display: flex;
+    justify-content: left;
+    margin-left: 110px;
+    width: 1200px;
+    max-width: 1200px;
+    height: 802px;
+    margin-bottom: 70px;
+    flex-wrap: wrap;
+}
+
+.container-produtos{
+    height: 401px;
+    width: 251px;
+    padding: 0px 20px 0px 20px;
+    margin-bottom: 30px;
+}
+
+.container-produtos img {
+    height: 150px;
     width: 250px;
     margin-bottom: 40px;
 }
 
-.container-casa img:hover {
+.container-produtos img:hover {
     transform: scale(101%);
     transition-duration: 1s;
     box-shadow: 0 0 0 1px rgba(64,87,109,.07),0 2px 12px rgba(53,71,90,.2);
@@ -217,35 +227,6 @@ body{
     font-size: 1.6rem;
     margin-top: -10px;
     margin-left: 20px;
-}
-
-/*Produtos Recente*/
-
-.produtos-recentes {
-    width: 100%;
-    height: 550px;
-    position: relative;
-}
-
-.container-recente{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 401px;
-    position: absolute;
-	top: 70px;
-}
-
-.container-recente img {
-    height: 250px;
-    width: 250px;
-    margin-bottom: 40px;
-}
-
-.container-recente img:hover {
-    transform: scale(101%);
-    transition-duration: 1s;
-    box-shadow: 0 0 0 1px rgba(64,87,109,.07),0 2px 12px rgba(53,71,90,.2);
 }
 
 /*Propaganda*/
