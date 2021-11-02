@@ -130,36 +130,29 @@
 
         <section class="produtos-casa">
             <h2>Para sua casa</h2>
-            <form action="produto.php" method="post">
 
                 <div class="container-casa">
-                    <div class="info um">  
+                    <div class="info">  
                         <img src="../IMG/prod_canudo.jpg" alt="produto1">  
-                        <span class="preco" name="valor"> R$ 29,99 </span>  
-                        <p><a href="" class="descricao" name="nome_produto"> Kit 4 Canudos Inox + Saco Reciclável</a></p>
-                        <input type="submit" name="comprar" value="Comprar">
+                        <span class="preco"> R$ 29,99 </span>  
+                        <p><a href="" class="descricao"> Kit 4 Canudos Inox + Saco Reciclável</a></p>
                     </div>
                     <div class="info">  
                         <img src="../IMG/prod_ecobag.png" alt="produto2">  
-                        <span class="preco" name="valor"> R$ 35,00 </span>
-                        <p><a href="" class="descricao" name="nome_produto"> 1 Sacola Sustetável</a></p>
-                        <input type="submit" name="comprar" value="Comprar">
+                        <span class="preco"> R$ 35,00 </span>
+                        <p><a href="" class="descricao"> 1 Sacola Sustetável</a></p>
                     </div>
                     <div class="info">
                         <img src="../IMG/prod_escova.jpg" alt="produto3">
-                        <span class="preco" name="valor"> R$ 15,00 </span>
-                        <p><a href="" class="descricao" name="nome_produto"> Kit 5 Escovas de Bambu</a></p>
-                        <input type="submit" name="comprar" value="Comprar">
+                        <span class="preco"> R$ 15,00 </span>
+                        <p><a href="" class="descricao"> Kit 5 Escovas de Bambu</a></p>
                     </div>
                     <div class="info">
                         <img src="../IMG/prod_copo.jpg" alt="produto4">
-                        <span class="preco" name="valor"> R$ 14,99 </span>
-                        <p><a href="" class="descricao" name="nome_produto"> Kit 10 Copos Recicláveis</a></p>
-                        <input type="submit" name="comprar" value="Comprar">
+                        <span class="preco"> R$ 14,99 </span>
+                        <p><a href="" class="descricao"> Kit 10 Copos Recicláveis</a></p>
                     </div>  
                 </div>
-            
-            </form>
 
         </section>
 
@@ -244,6 +237,5 @@
         <div class="direitos">
             <p>© Green Gate 2021</p>
         </div>
-
 </body>
 </html>
