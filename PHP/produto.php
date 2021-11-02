@@ -1,12 +1,5 @@
 <?php
     session_start();
-    
-    /* Resgate do banco */
-
-    /* Nome */
-    $nome_produto = "Kit Bemglô";
-
-    $sql = 'select * from produto where nome = "'.$nome_produto.'";';
 ?>
 
 <!DOCTYPE html>
