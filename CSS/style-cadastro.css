@@ -1,77 +1,127 @@
-h1{
-	font-size: 165%;
-	position: relative;
-	top: 25px;
+body{
+	font-family: Caviar Dreams;
 }
-  
-input, select {
-	  border: 0;
-	  padding-left: 10px;
-}
-  
-.box-cadastro {
-	z-index: 1;
-	background-color: #FFF;
-	height: 87%;
-	width: 53%;
-	border-radius: 30px;
-	position: relative;
-	padding: 0 71px 0 71px;
-}
-  
-.formulario-cadastro {
-	line-height: 70px;
-	position: relative;
-	top: 19px;
-}
-  
-.botao-cadastro {
-	  color: #FFF;
-	  background-color: #C3CE64;
-	  border-radius: 30px;
-	  width: 96%;
-	  height: 34px;
-	  cursor: pointer;
-	  transition: box-shadow 0.3s cubic-bezier(0, 1.01, 0.37, 1.01);
-}
-  
-.botao-cadastro:hover{
-	box-shadow: 0 0 0 2px #C3CE64;
-}
-  
-.linha input, select{
-	height: 25px;
-}
-  
-.linha.primeira input, .linha.segunda input{
-	width: 88%;
-	border-bottom: 1px solid #ebebeb;
-}
-  
-.linha.terceira input {
-	width: 34%;
-	border-bottom: 1px solid #ebebeb;
-}
-  
-.linha.quarta input {
-	width: 69%;
-	border-bottom: 1px solid #ebebeb;
-}
-  
-.linha.quinta input {
-	width: 39%;
-	border-bottom: 1px solid #ebebeb;
-}
-  
-.linha.sexta select {
-	width: 31.5%;
-	border-bottom: 1px solid #ebebeb;
-}
-  
-.linha.setima input {
-	width: 84.5%;
+	
+.container-fluid{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
 }
 
-.linha {
-    height: 62px;
+.cadastro{
+	background-color: #FFF;
+	height: 400px;
+	top: 19%;
+	border-radius: 30px;
+	margin: 0 10px 0 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.componentes-cadastro{
+	margin-top: 25px;
+}
+
+.componentes-cadastro h4{
+	text-align: center;
+	font-size: 22px;
+}
+
+.nome, .email, .senha, .confirmacao, .telefone, .perguntas, .btn-parte1{
+	height: 60px;
+	width: 100%;
+	position: relative;
+	top: 5px;
+	left: 10px;
+}
+
+.respostas{
+	height: 60px;
+	width: 100%;
+	position: relative;
+}
+
+.btn-parte1{
+	top: 15px;
+	display: flex;
+	justify-content: center;
+}
+
+.nome input, .email input, .senha input, .confirmacao input, .telefone input{
+	border: 0;
+	outline: 0;
+	height: 30px;
+	width: 100%;
+	border-bottom: 1px solid #ebebeb;
+	font-size: 15px;
+}
+
+.col-sm-2{
+	padding-top: 7px;
+}
+
+.perguntas, .respostas{
+	text-align: center;
+}
+
+.btn{
+	border: 0;
+	border-radius: 30px;
+	width: 46px;
+	height: 46px;
+	background-color: #C3CE64;
+	padding: 0;
+}
+
+.btn input, .btn i{
+	position: absolute;
+}
+
+.btn input{
+	height: 46px;
+	width: 46px;
+	border-radius: 30px;
+	right: -11px;
+	opacity: 0%;
+	bottom: -11px;
+}
+
+.btn i{
+	color: #FFF;
+	font-size: 25px;
+	right: 11px;
+	top: 10px;	
+}
+
+#primeira{
+	display: block;
+}
+
+#segunda{
+	display: none;
+}
+
+#terceira{
+	display: none;
+}
+
+.tp-usuario, .data-nascimento, .genero, .cpf, .cnpj{
+    height: 75px;
+	position: relative;
+	top: 15px;
+}
+
+.tp-usuario select, .data-nascimento input, .genero select, .cpf input, .cnpj input{
+	border: 0;
+	outline: 0;
+	height: 30px;
+	width: 100%;
+	border-bottom: 1px solid #ebebeb;
+	font-size: 15px;
+	top: 10px;
+}
+
+.col-sm-1.btn {
+	    margin: 0 15px;
 }
