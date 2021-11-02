@@ -3,31 +3,35 @@
     <head>
         <meta charset="utf-8">
         <title>Green Gate | Página Usuário</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/style-index.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-pagina-usuario.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-painel-consumidor.css">
-        <link rel="stylesheet" href="../FONTAW/css/all.css">
-        <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-index.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-produtor.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-pagina-usuario.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-consumidor.css">
+        <link rel="stylesheet" href="../../FONTAW/css/all.css">
+        <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
+
+        <style type="text/css">
+            .foto-usuario img{
+                display: flex;
+                justify-content: center;
+            }
+        </style>
         
     </head>
     <body class="corpo-painel-produtor">
 
     <?php
-        include('conexao.php');
+        include('../conexao.php');
 
         session_start();
         if(!isset($_SESSION['entrar'])){
 
         $id = $_SESSION['id_usuario'];
-        $sql_usuario = 'select * from usuario where id_usuario = '.$id.';';
+        $sql_usuario = 'select * from pf_fisico where id_pf_fisico = '.$id.';';
         $resul_usuario = mysqli_query($conectar, $sql_usuario);
         $dados_usuario = mysqli_fetch_array($resul_usuario);
 
-        if($dados_usuario['usuario'] == 2){
-
-        $sql_total = 'select * from empresa where id_produtor ='.$id.';';
-        $resul_total = mysqli_query($conectar, $sql_total);
+        if($dados_usuario['tp_usuario'] == 2){
 
     ?>
 
@@ -37,27 +41,26 @@
             <nav>
                 <div class="logo">
                     <figure>
-                        <a href="index.php"><img src="../IMG/logotipo.png" alt="Logotipo"></a>
+                        <a href="../index.php"><img src="../../IMG/logotipo.png" alt="Logotipo"></a>
                     </figure>
                 </div>
 
                 <div class="lista-menu">
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="lojas.php">Loja</a></li>
-                        <li><a href="sobre.php">Sobre</a></li>
-                        <li><a href="suporte.php">Suporte</a></li>
+                        <li><a href="../index.php">Home</a></li>
+                        <li><a href="../lojas.php">Loja</a></li>
+                        <li><a href="../sobre.php">Sobre</a></li>
+                        <li><a href="../suporte.php">Suporte</a></li>
                     </ul>
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="painel_consumidor.php"><i class="fas fa-user-circle"></i>
+                    <a href="#"><i class="fas fa-user-circle"></i>
                         <div class="usuario">
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
                     </a>
-                    <a href="notificacoes.php"><i class="far fa-bell"></i></a>
-                    <a href=""><i class="fas fa-shopping-bag"></i></a>
+                    <a href="../notificacoes.php"><i class="far fa-bell"></i></a>
                 </div>
             </nav>
         </section>
@@ -70,12 +73,12 @@
 
     <!-- Menu Lateral Oculto -->
 
-        <script type="text/javascript" src="../JS/script_painel_consumidor.js"></script>
+        <script type="text/javascript" src="../../JS/script_painel_consumidor.js"></script>
 
         <aside id="menuOculto" class="menuOculto">
             <a href="javascript: void(0)" class="btnFechar" onclick="fecharNav()"><i class="fas fa-times"></i></a>
-            <a href="" class="icon"><i class="fas fa-boxes"></i>Pedidos</a>
-            <a href="" class="icon"><i class="fas fa-headset"></i>Suporte</a>
+            <a href="lojas.php" class="icon"><i class="fas fa-boxes"></i>Pedidos</a>
+            <a href="aprovacoes.php" class="icon"><i class="fas fa-headset"></i>Suporte</a>
         </aside>
 
         <section id="principal">
@@ -84,12 +87,12 @@
 
 
     <p>
-        <a href="editar_perfil_consumidor.php">Editar Perfil</a>
+        <a href="editar_perfil.php">Editar Perfil</a>
     </p>     
 
     <div class="fundo-foto-usuario">
         <div class="foto-usuario">
-            <?php echo ('<img src="../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'"alt="'.$dados_usuario['nome'].'"/>'); ?>
+            <?php echo ('<img src="../../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'"alt="'.$dados_usuario['nome'].'"/>'); ?>
         </div>
     </div>
 
@@ -160,12 +163,12 @@
         <?php
 
         }else{
-            header('location:invalido.php');
+            header('location:../invalido.php');
         }
 
         }else{
             unset($_SESSION['entrar']);
-            header('location:invalido.php');
+            header('location:../invalido.php');
         }
 
         ?>
