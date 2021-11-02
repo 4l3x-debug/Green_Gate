@@ -3,27 +3,27 @@
     <head>
         <meta charset="utf-8">
         <title>Green Gate | Editar Perfil</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/style-index.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-painel-adm.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style-editar-perfil.css">
-        <link rel="stylesheet" href="../FONTAW/css/all.css">
-        <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-index.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-adm.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-produtor.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-editar-perfil.css">
+        <link rel="stylesheet" href="../../FONTAW/css/all.css">
+        <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
     </head>
     <body class="corpo-painel-produtor">
 
     <?php
-        include('conexao.php');
+        include('../conexao.php');
 
         session_start();
         if(!isset($_SESSION['entrar'])){
 
         $id = $_SESSION['id_usuario'];
-        $sql_usuario = 'select * from usuario where id_usuario = '.$id.';';
+        $sql_usuario = 'select * from pf_fisico where id_pf_fisico = '.$id.';';
         $resul_usuario = mysqli_query($conectar, $sql_usuario);
         $dados_usuario = mysqli_fetch_array($resul_usuario);
 
-        if($dados_usuario['usuario'] == 0){
+        if($dados_usuario['tp_usuario'] == 0){
 
     ?>
 
@@ -33,17 +33,17 @@
             <nav>
                 <div class="logo">
                     <figure>
-                        <a href="index.php"><img src="../IMG/logotipo.png" alt="Logotipo"></a>
+                        <a href="../index.php"><img src="../../IMG/logotipo.png" alt="Logotipo"></a>
                     </figure>
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="pagina_usuario_adm.php"><i class="fas fa-user-circle"></i>
+                    <a href="painel_adm.php"><i class="fas fa-user-circle"></i>
                         <div class="usuario">
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
                     </a>
-                    <a href="notificacoes.php"><i class="far fa-bell"></i></a>
+                    <a href="../notificacoes.php"><i class="far fa-bell"></i></a>
                 </div>
             </nav>
         </section>
@@ -56,16 +56,16 @@
         <nav>
             <ul class="icon-aside">
                 <strong>Categorias</strong>
-                <a href="editar_perfil_adm.php"><li><i class="fas fa-user-edit"></i>
+                <a href="#"><li><i class="fas fa-user-edit"></i>
                     Perfil
                 </li></a>
-                <a href="alterar_senha_adm.php"><li><i class="fas fa-user-lock"></i>
+                <a href="alterar_senha.php"><li><i class="fas fa-user-lock"></i>
                     Segurança
                 </li></a>
-                <a href="deletar_adm.php"><li><i class="fas fa-user-times"></i>
+                <a href="deletar.php"><li><i class="fas fa-user-times"></i>
                     Deletar
                 </li></a>
-                <a href="invalido.php"><li><i class="fas fa-sign-out-alt"></i>
+                <a href="../invalido.php"><li><i class="fas fa-sign-out-alt"></i>
                     Sair
                 </li></a>         
             </ul>
@@ -138,13 +138,13 @@
         $genero = $_POST['genero'];
         $cpf = $_POST['cpf'];
 
-        $sql_update = 'update usuario set nome="'.$nome.'", email="'.$email.'", celular="'.$telefone.'", data_nascimento="'.$data_nascimento.'", genero="'.$genero.'", cpf="'.$cpf.'" where usuario.id_usuario='.$id.';';
-        $update = mysqli_query($conectar,$sql_update);
+        $sql_update = 'update pf_fisico set nome="'.$nome.'", email="'.$email.'", celular="'.$telefone.'", data_nascimento="'.$data_nascimento.'", genero="'.$genero.'", cpf="'.$cpf.'" where pf_fisico.id_pf_fisico='.$id.';';
+        $update = mysqli_query($conectar, $sql_update);
 
         if($update){
-            echo ('<script>window.alert("Mudança feita com sucesso!");window.location="editar_perfil_produtor.php"</script>');
+            echo ('<script>window.alert("Mudança feita com sucesso!");window.location="editar_perfil.php"</script>');
         }else{
-            echo ('<script>window.alert("Erro ao salvar!");window.location="editar_perfil_produtor.php"</script>');
+            echo ('<script>window.alert("Erro ao salvar!");window.location="editar_perfil.php"</script>');
         }
 
     }
@@ -176,12 +176,12 @@
     <?php
 
     }else{
-        header('location:invalido.php');
+        header('location:../invalido.php');
     }
 
     }else{
         unset($_SESSION['entrar']);
-        header('location:invalido.php');
+        header('location:../invalido.php');
     }
 
     ?>
