@@ -29,7 +29,7 @@
             </div>  
 
             <div class="col"> 
-              <select>
+              <select name="usuario">
                 <option selected value disabled="">Selecione</option>
                     <option value="0">Administrador</option>
                     <option value="1">Produtor</option>
