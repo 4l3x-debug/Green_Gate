@@ -55,12 +55,12 @@
 
             <?php
 
-                $sql_empresa = 'select * from empresa order by nome_empresa ASC;';
+                $sql_empresa = 'select * from pf_juridico order by nome ASC;';
                 $resul_empresa = mysqli_query($conectar, $sql_empresa);
 
                 while($dados_empresa = mysqli_fetch_array($resul_empresa)){
                     echo ('<div class="espacamento-lojas"><a href=""><article class="lojas">
-                    <img src="../IMG/Imagem_Empresa/Logo_Empresa/'.$dados_empresa['logo'].'" alt="'.$dados_empresa['nome_empresa'].'">
+                    <img src="../IMG/Imagem_Empresa/Logo_Empresa/'.$dados_empresa['imagem'].'" alt="'.$dados_empresa['nome'].'">
                     </article></a></div>');
                 }
 
@@ -109,7 +109,7 @@
 
     <section class="secao-produtos">
         <h2>Produtos mais pesquisados</h2>
-
+        
         <div class="tamanho-produtos">
             <div class="espacamento-produtos">
                 <a href="#"><article class="produtos">
@@ -130,28 +130,36 @@
 
         <section class="produtos-casa">
             <h2>Para sua casa</h2>
-            <div class="container-casa">
+            <form action="produto.php" method="post">
+
+                <div class="container-casa">
                     <div class="info um">  
                         <img src="../IMG/prod_canudo.jpg" alt="produto1">  
-                        <span class="preco"> R$ 29,99 </span>  
-                        <p><a href="" class="descricao"> Kit 4 Canudos Inox + Saco Reciclável</a></p>
+                        <span class="preco" name="valor"> R$ 29,99 </span>  
+                        <p><a href="" class="descricao" name="nome_produto"> Kit 4 Canudos Inox + Saco Reciclável</a></p>
+                        <input type="submit" name="comprar" value="Comprar">
                     </div>
                     <div class="info">  
                         <img src="../IMG/prod_ecobag.png" alt="produto2">  
-                        <span class="preco"> R$ 35,00 </span>
-                        <p><a href="" class="descricao"> 1 Sacola Sustetável</a></p>
+                        <span class="preco" name="valor"> R$ 35,00 </span>
+                        <p><a href="" class="descricao" name="nome_produto"> 1 Sacola Sustetável</a></p>
+                        <input type="submit" name="comprar" value="Comprar">
                     </div>
                     <div class="info">
                         <img src="../IMG/prod_escova.jpg" alt="produto3">
-                        <span class="preco"> R$ 15,00 </span>
-                        <p><a href="" class="descricao"> Kit 5 Escovas de Bambu</a></p>
+                        <span class="preco" name="valor"> R$ 15,00 </span>
+                        <p><a href="" class="descricao" name="nome_produto"> Kit 5 Escovas de Bambu</a></p>
+                        <input type="submit" name="comprar" value="Comprar">
                     </div>
                     <div class="info">
                         <img src="../IMG/prod_copo.jpg" alt="produto4">
-                        <span class="preco"> R$ 14,99 </span>
-                        <p><a href="" class="descricao"> Kit 10 Copos Recicláveis</a></p>
+                        <span class="preco" name="valor"> R$ 14,99 </span>
+                        <p><a href="" class="descricao" name="nome_produto"> Kit 10 Copos Recicláveis</a></p>
+                        <input type="submit" name="comprar" value="Comprar">
                     </div>  
-            </div>
+                </div>
+            
+            </form>
 
         </section>
 
