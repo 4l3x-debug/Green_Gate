@@ -136,7 +136,7 @@
 
             while($dados_produto = mysqli_fetch_array($sql_query)){
                 echo ('<div class="container-produtos"> <div class="info">  
-                <img src="../IMG/'.$dados_produto['imagem'].'" alt="'.$dados_produto['imagem'].'">  
+                <img src="../IMG/Produtos/'.$dados_produto['imagem'].'" alt="'.$dados_produto['imagem'].'">  
                 <span class="preco"> R$'.$dados_produto['preco'].'</span>
                 <p><a href="produto.php?id_produto='.$dados_produto['id_produto'].'" class="descricao">'.$dados_produto['nome_produto'].'</a></p>
             </div> </div>');

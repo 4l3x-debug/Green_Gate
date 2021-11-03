@@ -1,0 +1,130 @@
+*{
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.main-cadastro{
+	background: #FFF;
+	height: 390px;
+	width: 500px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 2;
+	text-align: center;
+	border-radius: 15px;
+	box-shadow: 5px 5px 5px #B1B1B1;
+}
+
+.main-cadastro hr{
+	background-color: #000;
+}
+
+.titulo{
+	margin-top: 10px;
+}
+
+.titulo h1{
+	color: #000;
+	font-size: 20pt;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.nome-produto{
+	margin-top: 25px;
+}
+
+.nome-produto span{
+	padding-right: 10px;
+}
+
+.nome-produto input{
+	border-bottom: 1px solid #000;
+}
+
+.marca{
+	margin-top: 15px;
+}
+
+.marca span{
+	padding-right: 10px;
+}
+
+.marca input{
+	border-bottom: 1px solid #000;
+}
+
+.dt-validade{
+	margin-top: 15px;
+	margin-right: 107px;
+}
+
+.dt-validade span{
+	padding-right: 10px;
+}
+
+.dt-validade input{
+	border-bottom: 1px solid #000;
+}
+
+.preco{
+	margin-top: 15px;
+	margin-right: 89px;
+}
+
+.preco span{
+	padding-right: 10px;
+}
+
+.preco input{
+	border-bottom: 1px solid #000;
+}
+
+.descricao{
+	margin-top: 15px;
+	margin-right: 60px;
+}
+
+.descricao span{
+	padding-right: 10px;
+}
+
+.descricao input{
+	border-bottom: 1px solid #000;
+}
+
+.imagem{
+	margin-top: 15px;
+	margin-right: 18px;
+}
+
+.imagem span{
+	padding-right: 10px;
+}
+
+.imagem input{
+	font-size: 13px;
+}
+
+.btn{
+	margin-top: 25px;
+}
+
+.btn input{
+	width: 90px;
+	background: #75dd54;
+	border-radius: 15px;
+	color: #FFF;
+	font-weight: bold;
+	transition: 0.7s;
+}
+
+.btn input:hover{
+	background: #418f23;
+}

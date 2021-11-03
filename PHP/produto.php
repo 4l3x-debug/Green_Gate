@@ -60,7 +60,7 @@
 
         <div class="container-produto">
             <?php
-                echo('<img src="../IMG/'.$imagem.'" alt="'.$imagem.'">');
+                echo('<img src="../IMG/Produtos/'.$imagem.'" alt="'.$imagem.'">');
             ?>
         </div>
         
