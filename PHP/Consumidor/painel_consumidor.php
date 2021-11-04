@@ -77,8 +77,8 @@
 
         <aside id="menuOculto" class="menuOculto">
             <a href="javascript: void(0)" class="btnFechar" onclick="fecharNav()"><i class="fas fa-times"></i></a>
-            <a href="lojas.php" class="icon"><i class="fas fa-boxes"></i>Pedidos</a>
-            <a href="aprovacoes.php" class="icon"><i class="fas fa-headset"></i>Suporte</a>
+            <a href="pedidos.php" class="icon"><i class="fas fa-boxes"></i>Pedidos</a>
+            <a href="suporte.php" class="icon"><i class="fas fa-headset"></i>Suporte</a>
         </aside>
 
         <section id="principal">
