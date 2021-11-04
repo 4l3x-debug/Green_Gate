@@ -2,15 +2,16 @@
 
 	include('conexao.php');
 
-	$deletar = 'delete from empresa where id_empresa='.$_GET['del'].';';
+	$deletar = 'delete from pf_juridico where pf_juridico.id_pf_juridico='.$_GET['del'].';';
 
 	$apagar = mysqli_query($conectar,$deletar);
 
 
 	if($apagar){
-		echo ('<script>window.alert("Empresa apagada com sucesso!");window.location="deletar_produtor.php"</script>');
+
+		echo ('<script>window.alert("Empresa apagada com sucesso!");window.location="Administrador/lojas.php"</script>');
 	}else{
-		echo ('<script>window.alert("Erro ao apagada a empresa!");window.location="painel_produtor.php"</script>');
+		echo ('<script>window.alert("Erro ao apagar a empresa!");window.location="Administrador/lojas.php"</script>');
 	}
 
 ?>

@@ -81,8 +81,7 @@
         <aside id="menuOculto" class="menuOculto">
             <a href="javascript: void(0)" class="btnFechar" onclick="fecharNav()"><i class="fas fa-times"></i></a>
             <a href="lojas.php" class="icon"><i class="fas fa-store-alt"></i>Lojas</a>
-            <a href="aprovacoes.php" class="icon"><i class="far fa-check-square"></i>Aprovações</a>
-            <a href="avaliacoes.php" class="icon"><i class="fas fa-tasks"></i>Avaliações</a>
+            <a href="suporte.php" class="icon"><i class="fas fa-headset"></i>Suporte</a>
             <a href="../invalido.php" class="icon"><i class="fas fa-sign-out-alt"></i>Sair</a>
         </aside>
 
