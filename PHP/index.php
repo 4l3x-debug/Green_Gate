@@ -1,3 +1,8 @@
+<?php
+    include('conexao.php');
+    include ('barra_rolagem.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pr-br">
 
@@ -74,7 +79,9 @@
     </section>
 
     <div class="box-anuncio">
-        <div class="anuncio"></div>
+        <div class="anuncio">
+            <img src="../IMG/anuncio.png">
+        </div>
     </div>
 
     <section class="imagem_2">

@@ -1,3 +1,8 @@
+<?php
+    include('../verifica_login.php');
+    include ('../barra_rolagem.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -22,8 +27,6 @@
 
     <?php
         include('../conexao.php');
-
-        session_start();
         if(!isset($_SESSION['entrar'])){
 
         $id = $_SESSION['id_usuario'];

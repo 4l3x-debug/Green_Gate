@@ -1,4 +1,9 @@
 <?php
+	include ('barra_rolagem.php');
+?>
+
+
+<?php
 include('conexao.php');
 
 ?>

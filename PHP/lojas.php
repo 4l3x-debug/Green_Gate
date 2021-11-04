@@ -1,3 +1,8 @@
+<?php
+    include ('barra_rolagem.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -46,7 +51,7 @@
 
     <!-- Banner -->
     <figure class="banner">    
-        <img src="../IMG/banner.png" align="banner">
+        <img src="../IMG/banner.png">
     </figure>
 
     <!-- Seção de Lojas -->
