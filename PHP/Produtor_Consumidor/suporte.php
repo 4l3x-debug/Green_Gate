@@ -93,7 +93,6 @@
                             <option selected value disabled="">Selecione</option>
                             <option value="1">Administrador</option>
                             <option value="2">Produtor</option>
-                            <option value="3">Consumidor</option>
                         </select>
                     </div>
 
@@ -169,7 +168,7 @@
                     echo ('<script>window.alert("Erro ao enviar a mensagem!");window.location="suporte.php"</script>');
                 }
 
-            }else if($usuario == 1 or $usuario == 3){
+            }else if($usuario == 1){
 
                 $sql_pf_fisico = 'select *from pf_fisico where email = "'.$email.'";';
                 $resul = mysqli_query($conectar, $sql_pf_fisico);

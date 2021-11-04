@@ -93,7 +93,6 @@
                             <option selected value disabled="">Selecione</option>
                             <option value="1">Administrador</option>
                             <option value="2">Produtor</option>
-                            <option value="3">Produtor Consumidor</option>
                         </select>
                     </div>
 
@@ -153,7 +152,7 @@
             $conteudo = $_POST['conteudo'];
             $data_envio = date("Y-m-d");
 
-            if($usuario == 2 or $usuario == 3){
+            if($usuario == 2){
 
                 $sql_pf_juridico = 'select *from pf_juridico where email = "'.$email.'";';
                 $resul = mysqli_query($conectar, $sql_pf_juridico);
