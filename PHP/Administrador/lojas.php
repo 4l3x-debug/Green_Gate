@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>Green Gate | Página Usuário</title>
+        <title>Green Gate | Página Lojas</title>
         <link rel="stylesheet" type="text/css" href="../../CSS/style-index.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-produtor.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-pagina-usuario.css">
@@ -89,8 +89,8 @@
 
         <aside id="menuOculto" class="menuOculto">
             <a href="javascript: void(0)" class="btnFechar" onclick="fecharNav()"><i class="fas fa-times"></i></a>
-            <a href="lojas.php" class="icon"><i class="fas fa-store-alt"></i>Lojas</a>
-            <a href="aprovacoes.php" class="icon"><i class="far fa-check-square"></i>Aprovações</a>
+            <a href="#" class="icon"><i class="fas fa-store-alt"></i>Lojas</a>
+            <a href="suporte.php" class="icon"><i class="fas fa-headset"></i>Suporte</a>
             <a href="../invalido.php" class="icon"><i class="fas fa-sign-out-alt"></i>Sair</a>
         </aside>
 
