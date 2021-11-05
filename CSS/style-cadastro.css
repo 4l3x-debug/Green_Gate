@@ -106,13 +106,13 @@ body{
 	display: none;
 }
 
-.tp-usuario, .data-nascimento, .genero, .cpf, .cnpj{
+.tp-usuario, .data-nascimento, .genero, .cpf, .cnpj, .razao{
     height: 75px;
 	position: relative;
 	top: 15px;
 }
 
-.tp-usuario select, .data-nascimento input, .genero select, .cpf input, .cnpj input{
+.tp-usuario select, .data-nascimento input, .genero select, .cpf input, .cnpj input, .razao input{
 	border: 0;
 	outline: 0;
 	height: 30px;
@@ -120,6 +120,7 @@ body{
 	border-bottom: 1px solid #ebebeb;
 	font-size: 15px;
 	top: 10px;
+	background-color: #FFF;
 }
 
 .col-sm-1.btn {
