@@ -146,7 +146,7 @@
                 <td>'.$con['logradouro'].'</td>
                 <td>'.$con['n_residencial'].'</td>
                 <td><a href="edita.php?edit='.$con['id_endereco'].'"><i class="fas fa-pen"></i></a></td>
-                <td><a href="../delete_endereco.php?del='.$con['id_endereco'].'"><i class="fas fa-trash"></i></a></td></tr>');
+                <td><a href="delete_endereco.php?del='.$con['id_endereco'].'"><i class="fas fa-trash"></i></a></td></tr>');
         }
 
         ?>

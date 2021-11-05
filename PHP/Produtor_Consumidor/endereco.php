@@ -6,14 +6,12 @@
         <link rel="stylesheet" type="text/css" href="../../CSS/style-index.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-adm.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-produtor.css">
-        <link rel="stylesheet" type="text/css" href="../../CSS/style-editar-perfil.css">
-        <link rel="stylesheet" type="text/css" href="../../CSS/style-alterar-senha.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-editar-perfil-produtor.css">
         <link rel="stylesheet" href="../../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-endereco.css">
 
     </head>
-
     <body class="corpo-painel-produtor">
 
     <?php
@@ -23,12 +21,11 @@
         if(!isset($_SESSION['entrar'])){
 
         function get_endereco($cep){
-        $cep = preg_replace("/[^0-9]/","",$cep);
-        $url = "http://viacep.com.br/ws/$cep/xml/";
+            $cep = preg_replace("/[^0-9]/","",$cep);
+            $url = "http://viacep.com.br/ws/$cep/xml/";
 
-        $xml = simplexml_load_file($url);
-        return $xml;
-
+            $xml = simplexml_load_file($url);
+            return $xml;
         }
 
         $id = $_SESSION['id_usuario'];
@@ -51,12 +48,12 @@
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="painel_produtor.php"><i class="fas fa-user-circle"></i>
+                    <a href="pagina_usuario_produtor.php"><i class="fas fa-user-circle"></i>
                         <div class="usuario">
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
                     </a>
-                    <a href="notificacoes.php"><i class="far fa-bell"></i></a>
+                    <a href="notificacoes_produtor.php"><i class="far fa-bell"></i></a>
                 </div>
             </nav>
         </section>
@@ -72,7 +69,7 @@
                 <a href="editar_perfil.php"><li><i class="fas fa-user-edit"></i>
                     Perfil
                 </li></a>
-                <a href="#"><li><i class="fas fa-user-lock"></i>
+                <a href="alterar_senha.php"><li><i class="fas fa-user-lock"></i>
                     Segurança
                 </li></a>
                 <a href="endereco.php"><li><i class="fas fa-map-marked-alt"></i>
@@ -91,35 +88,73 @@
     <!-- Conteúdo -->
 
         <section class="main adicionar-endereco">
-            <h3>Adicionar Endereço</h3>
+
+        <div class="adicionar">
+            <h2>Adicionar Endereço</h2>
 
             <form method="POST">
 
                 <div class="linha primeira">
                     CEP: <input type="text" name="cep">
-                    Bairro: <input type="text" name="bairro">
                 </div>
 
                 <div class="linha segunda">
-                    Logradouro: <input type="text" name="logradouro">
-                    Número Residencial: <input type="text" name="n_residencial">
+                    Bairro: <input type="text" name="bairro">
                 </div>
 
                 <div class="linha terceira">
-                    Complemento: <input type="text" name="complemento">
+                    Logradouro: <input type="text" name="logradouro">
                 </div>
 
                 <div class="linha quarta">
+                    Número Residencial: <input type="text" name="n_residencial">
+                </div>
+
+                <div class="linha quinta">
+                    Complemento: <input type="text" name="complemento">
+                </div>
+
+                <div class="linha sexta">
                     <div class="btn">
                         <i class="fas fa-plus"> 
                             <input type="submit" name="adicionar" value="">                
                         </i>
                     </div>
                 </div>
-
             </form>
+        </div>
+        
+
+        <table align="center" class="enderecos">
+            
+            <tr>
+                <td>CEP</td>
+                <td>Logradouro</td>
+                <td>Número</td>
+                <td>Editar</td>
+                <td>Excluir</td>
+            </tr>
+
+        <?php
+
+        $sql_enderecos = 'select * from endereco where id_pf_juridico='.$id.';';
+        $resul = mysqli_query($conectar,$sql_enderecos);
+
+        while($con = mysqli_fetch_array($resul)){
+            echo('<tr class="dados">
+                <td>'.$con['cep'].'</td>
+                <td>'.$con['logradouro'].'</td>
+                <td>'.$con['n_residencial'].'</td>
+                <td><a href="edita.php?edit='.$con['id_endereco'].'"><i class="fas fa-pen"></i></a></td>
+                <td><a href="delete_endereco.php?del='.$con['id_endereco'].'"><i class="fas fa-trash"></i></a></td></tr>');
+        }
+
+        ?>
+
+        </table>
 
         </section>
+    
     </main>
 
     <?php
@@ -127,7 +162,6 @@
     if(isset($_POST['adicionar'])){
 
         if(empty($_POST['cep']) or empty($_POST['bairro']) or empty($_POST['logradouro']) or empty($_POST['n_residencial'])){
-
             echo ('<script>window.alert("Preencha os campos!");window.location="endereco.php"</script>');
 
         }else{
@@ -143,9 +177,9 @@
 
         $sql_adiciona_endereco = 'insert into endereco(cep, estado, cidade, bairro, logradouro, n_residencial, complemento, tp_usuario, id_pf_fisico, id_pf_juridico) values ("'.$cep_usuario.'", "'.$estado.'", "'.$cidade.'", "'.$bairro.'", "'.$logradouro.'", '.$n_residencial.', "'.$complemento.'", '.$dados_usuario['tp_usuario'].', null, '.$dados_usuario['id_pf_juridico'].');';
 
-        $endereco = mysqli_query($conectar, $sql_adiciona_endereco);
+        $adiciona_endereco = mysqli_query($conectar, $sql_adiciona_endereco);
 
-            if($endereco){
+            if($adiciona_endereco){
                 echo ('<script>window.alert("Endereço adicionado com sucesso!");window.location="endereco.php"</script>');
             }else{
                echo ('<script>window.alert("Erro ao adicionar o endereço!");window.location="endereco.php"</script>'); 
@@ -177,9 +211,7 @@
         <div class="direitos">
             <p>© Green Gate 2021</p>
         </div>
-    </footer>
-
-
+    </footer>  
 
     <?php
 
