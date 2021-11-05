@@ -1,8 +1,3 @@
-<?php
-    include ('../barra_rolagem.php');
-?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -77,6 +72,9 @@
                 <a href="#"><li><i class="fas fa-user-lock"></i>
                     Segurança
                 </li></a>
+                <a href="endereco.php"><li><i class="fas fa-map-marked-alt"></i>
+                    Endereços
+                </li></a> 
                 <a href="deletar.php"><li><i class="fas fa-user-times"></i>
                     Deletar
                 </li></a>

@@ -2,14 +2,18 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>Green Gate | Editar Perfil</title>
+        <title>Green Gate | Endereços</title>
         <link rel="stylesheet" type="text/css" href="../../CSS/style-index.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-adm.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-produtor.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-editar-perfil.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-alterar-senha.css">
         <link rel="stylesheet" href="../../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-endereco.css">
+
     </head>
+
     <body class="corpo-painel-produtor">
 
     <?php
@@ -17,6 +21,15 @@
 
         session_start();
         if(!isset($_SESSION['entrar'])){
+
+        function get_endereco($cep){
+        $cep = preg_replace("/[^0-9]/","",$cep);
+        $url = "http://viacep.com.br/ws/$cep/xml/";
+
+        $xml = simplexml_load_file($url);
+        return $xml;
+
+        }
 
         $id = $_SESSION['id_usuario'];
         $sql_usuario = 'select * from pf_fisico where id_pf_fisico = '.$id.';';
@@ -38,12 +51,12 @@
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="painel_consumidor.php"><i class="fas fa-user-circle"></i>
+                    <a href="painel_produtor.php"><i class="fas fa-user-circle"></i>
                         <div class="usuario">
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
                     </a>
-                    <a href="../notificacoes.php"><i class="far fa-bell"></i></a>
+                    <a href="notificacoes.php"><i class="far fa-bell"></i></a>
                 </div>
             </nav>
         </section>
@@ -56,15 +69,15 @@
         <nav>
             <ul class="icon-aside">
                 <strong>Categorias</strong>
-                <a href="#"><li><i class="fas fa-user-edit"></i>
+                <a href="editar_perfil.php"><li><i class="fas fa-user-edit"></i>
                     Perfil
                 </li></a>
-                <a href="alterar_senha.php"><li><i class="fas fa-user-lock"></i>
+                <a href="#"><li><i class="fas fa-user-lock"></i>
                     Segurança
                 </li></a>
                 <a href="endereco.php"><li><i class="fas fa-map-marked-alt"></i>
                     Endereços
-                </li></a> 
+                </li></a>  
                 <a href="deletar.php"><li><i class="fas fa-user-times"></i>
                     Deletar
                 </li></a>
@@ -77,82 +90,72 @@
 
     <!-- Conteúdo -->
 
-        <section class="main editar-perfil">
+        <section class="main adicionar-endereco">
+            <h3>Adicionar Endereço</h3>
 
-            <form action="#" method="POST">
+            <form method="POST">
 
-                <table class="fundo-editar-perfil">
+                <div class="linha primeira">
+                    CEP: <input type="text" name="cep">
+                    Bairro: <input type="text" name="bairro">
+                </div>
 
-                <tr>
-                    <td>Nome:</td>
-                    <td><input type="text" name="nome" value="<?php echo $dados_usuario['nome']; ?>"></td>
-                </tr>
+                <div class="linha segunda">
+                    Logradouro: <input type="text" name="logradouro">
+                    Número Residencial: <input type="text" name="n_residencial">
+                </div>
 
-                <tr>
-                    <td>E-mail:</td> 
-                    <td><input type="text" name="email" value="<?php echo $dados_usuario['email']; ?>"></td>
-                </tr>
-                
-                <tr>
-                    <td>Telefone:</td>
-                    <td><input type="text" name="telefone" value="<?php echo $dados_usuario['celular'] ?>"></td>
-                </tr>
+                <div class="linha terceira">
+                    Complemento: <input type="text" name="complemento">
+                </div>
 
-                <tr>
-                    <td>Data de Nascimento:</td> 
-                    <td><input type="date" name="data_nascimento" value="<?php echo $dados_usuario['data_nascimento']; ?>"></td>
-                </tr>
-
-                <tr>
-                    <td>Gênero:</td> 
-                    <td><select name="genero">
-                        <option value="<?php echo $dados_usuario['genero']; ?>">
-                            <?php if($dados_usuario['genero'] == 'M'){ echo ("Masculino"); }else { echo("Feminino");} ?>
-                        </option>
-                        <option value="F">Feminino</option>
-                        <option value="M">Masculino</option>
-                    </select></td>
-                </tr>
-
-                <tr>
-                    <td>CPF:</td>
-                    <td><input type="text" name="cpf" value="<?php echo $dados_usuario['cpf']; ?>"></td>
-                </tr>
-
-                <tr>
-                    <td class="botao" colspan="2" align="center"><input type="submit" name="salvar" value="Salvar"></td>
-                </tr>
-
-                </table>
+                <div class="linha quarta">
+                    <div class="btn">
+                        <i class="fas fa-plus"> 
+                            <input type="submit" name="adicionar" value="">                
+                        </i>
+                    </div>
+                </div>
 
             </form>
 
         </section>
-
     </main>
 
     <?php
 
-    if(isset($_POST['salvar'])){
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $telefone = $_POST['telefone'];
-        $data_nascimento = $_POST['data_nascimento'];
-        $genero = $_POST['genero'];
-        $cpf = $_POST['cpf'];
+    if(isset($_POST['adicionar'])){
 
-        $sql_update = 'update pf_fisico set nome="'.$nome.'", email="'.$email.'", celular="'.$telefone.'", data_nascimento="'.$data_nascimento.'", genero="'.$genero.'", cpf="'.$cpf.'" where pf_fisico.id_pf_fisico='.$id.';';
-        $update = mysqli_query($conectar, $sql_update);
+        if(empty($_POST['cep']) or empty($_POST['bairro']) or empty($_POST['logradouro']) or empty($_POST['n_residencial'])){
 
-        if($update){
-            echo ('<script>window.alert("Mudança feita com sucesso!");window.location="editar_perfil.php"</script>');
+            echo ('<script>window.alert("Preencha os campos!");window.location="endereco.php"</script>');
+
         }else{
-            echo ('<script>window.alert("Erro ao salvar!");window.location="editar_perfil.php"</script>');
+
+        $cep_usuario = $_POST['cep'];
+        $endereco = (get_endereco($cep_usuario));
+        $estado = $endereco->uf;
+        $cidade = $endereco->localidade;
+        $bairro = $_POST['bairro'];
+        $logradouro = $_POST['logradouro'];
+        $n_residencial = $_POST['n_residencial'];
+        $complemento = $_POST['complemento'];
+
+        $sql_adiciona_endereco = 'insert into endereco(cep, estado, cidade, bairro, logradouro, n_residencial, complemento, tp_usuario, id_pf_fisico, id_pf_juridico) values ("'.$cep_usuario.'", "'.$estado.'", "'.$cidade.'", "'.$bairro.'", "'.$logradouro.'", '.$n_residencial.', "'.$complemento.'", '.$dados_usuario['tp_usuario'].', '.$dados_usuario['id_pf_fisico'].', null);';
+
+        $endereco = mysqli_query($conectar, $sql_adiciona_endereco);
+
+            if($endereco){
+                echo ('<script>window.alert("Endereço adicionado com sucesso!");window.location="endereco.php"</script>');
+            }else{
+               echo ('<script>window.alert("Erro ao adicionar o endereço!");window.location="endereco.php"</script>'); 
+            }
+
         }
 
-    }
+    }else{}
 
-    ?>    
+    ?>
 
     <!-- Rodapé -->
 
@@ -174,7 +177,9 @@
         <div class="direitos">
             <p>© Green Gate 2021</p>
         </div>
-    </footer>  
+    </footer>
+
+
 
     <?php
 
