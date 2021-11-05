@@ -1,73 +1,121 @@
-input{
-    outline: 0;
-    padding: 0 0 5px 3px;
-    font-size: 16px;
+.main-aside-produtor {
+    height: 830px;
+}
+
+.main.adicionar-endereco{
+    width: 80%;
+    height: 832px;
+    position: absolute;
     font-family: Caviar Dreams;
 }
 
-.adicionar-endereco{
-    font-family: Caviar Dreams;
-    width: 60%;
+.adicionar-endereco table{
+    box-shadow: 3px 3px 3px 3px #DCDCDC;
+    border-radius: 15px;
+    width: 55%;
     height: 220px;
     background-color: #FFF;
     position: relative;
-    left: 10%;
-    bottom: 100px;
+    top:200px;
+    left: 250px;
+    overflow: auto;
+    border-collapse: collapse;
+}
+
+.adicionar-endereco td{
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
     text-align: center;
-    padding: 20px;
-    border-radius: 20px;
+    width: 80px;
+}
+
+.adicionar-endereco td i{
     font-size: 18px;
+    color: #dee69b;
+}
+
+.adicionar{
+    box-shadow: 3px 3px 3px 3px #DCDCDC;
+    border-radius: 15px;
+    width: 51.2%;
+    height: 220px;
+    position: relative;
+    top: 100px;
+    left: 250px;
+    padding: 20px;
+    background-color: #FFF;
+}
+
+.adicionar-endereco h2{
+    text-align: center;
 }
 
 .adicionar-endereco form{
-    line-height: 50px;
-    position: relative;
-    top: 20px;
+    font-size: 17px;
+    line-height: 35px;
+}
+
+input{
+    outline: 0;
+}
+
+.primeira input, .segunda input, .terceira input, .quarta input, .quinta input{
+    border-bottom: 1px solid #ebebeb;
+    font-family: Caviar Dreams;
+    padding: 0 0 5px 3px;
+    font-size: 16px;
 }
 
 .primeira input{
-    width: 310px;
-    border-bottom: 1px solid #ebebeb;
-}  
-
-.segunda input{
-    width: 220px;
-    border-bottom: 1px solid #ebebeb;
-}  
-
-.terceira input{
-    width: 600px;
-    border-bottom: 1px solid #ebebeb;
+    width: 90%;
 }
 
-.quarta{
+.segunda input{
+    width: 87.5%;
+}
+
+.terceira input{
+    width: 79%;
+}
+
+.quarta input{
+    width: 68.6%;
+}
+
+.quinta input{
+    width: 76.6%;
+}
+
+.sexta{
     display: flex;
     justify-content: center;
+    position: relative;
+    top: 10px;
 }
 
 .btn{
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
     background-color: #c3ce64;
-    border-radius: 50px;
     color: #FFF;
-    position: relative;
-    top: 18px
 }
 
 .btn i{
     position: relative;
-    top: 15px;
+    top: 12.5px;
+    left: 14px;
     font-size: 20px;
 }
 
 .btn input{
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    position: relative;
-    bottom: 35px;
-    opacity: 0%;
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
     z-index: 1;
+    position: relative;
+    bottom: 33px;
+    right: 14px;
+    opacity: 0;
     cursor: pointer;
 }
