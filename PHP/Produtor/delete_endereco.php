@@ -1,6 +1,6 @@
 <?php
 
-	include('conexao.php');
+	include('../conexao.php');
 
 	$deletar = 'delete from endereco WHERE endereco.id_endereco = '.$_GET['del'].';';
 
