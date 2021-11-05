@@ -2,8 +2,6 @@
     include ('../barra_rolagem.php');
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
