@@ -1,0 +1,73 @@
+input{
+    outline: 0;
+    padding: 0 0 5px 3px;
+    font-size: 16px;
+    font-family: Caviar Dreams;
+}
+
+.adicionar-endereco{
+    font-family: Caviar Dreams;
+    width: 60%;
+    height: 220px;
+    background-color: #FFF;
+    position: relative;
+    left: 10%;
+    bottom: 100px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+.adicionar-endereco form{
+    line-height: 50px;
+    position: relative;
+    top: 20px;
+}
+
+.primeira input{
+    width: 310px;
+    border-bottom: 1px solid #ebebeb;
+}  
+
+.segunda input{
+    width: 220px;
+    border-bottom: 1px solid #ebebeb;
+}  
+
+.terceira input{
+    width: 600px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.quarta{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    width: 50px;
+    height: 50px;
+    background-color: #c3ce64;
+    border-radius: 50px;
+    color: #FFF;
+    position: relative;
+    top: 18px
+}
+
+.btn i{
+    position: relative;
+    top: 15px;
+    font-size: 20px;
+}
+
+.btn input{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    position: relative;
+    bottom: 35px;
+    opacity: 0%;
+    z-index: 1;
+    cursor: pointer;
+}
