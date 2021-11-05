@@ -1,8 +1,3 @@
-<?php
-    include ('../barra_rolagem.php');
-?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -67,9 +62,12 @@
                 <a href="alterar_senha.php"><li><i class="fas fa-user-lock"></i>
                     Segurança
                 </li></a>
+                <a href="endereco.php"><li><i class="fas fa-map-marked-alt"></i>
+                    Endereços
+                </li></a>  
                 <a href="deletar_adm.php"><li><i class="fas fa-user-times"></i>
                     Deletar
-                </li></a>
+                </li></a> 
                 <a href="../invalido.php"><li><i class="fas fa-sign-out-alt"></i>
                     Sair
                 </li></a>         
