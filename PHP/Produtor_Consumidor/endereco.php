@@ -10,8 +10,10 @@
         <link rel="stylesheet" href="../../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-endereco.css">
+        <script type="text/javascript" src="../../JS/script_editar_endereco.js"></script>
 
     </head>
+
     <body class="corpo-painel-produtor">
 
     <?php
@@ -48,7 +50,7 @@
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="painel_produtor_consumidor.php"><i class="fas fa-user-circle"></i>
+                    <a href="painel_produtor.php"><i class="fas fa-user-circle"></i>
                         <div class="usuario">
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
@@ -72,7 +74,7 @@
                 <a href="alterar_senha.php"><li><i class="fas fa-user-lock"></i>
                     Segurança
                 </li></a>
-                <a href="endereco.php"><li><i class="fas fa-map-marked-alt"></i>
+                <a href="endereco.php?edit=0"><li><i class="fas fa-map-marked-alt"></i>
                     Endereços
                 </li></a>  
                 <a href="deletar.php"><li><i class="fas fa-user-times"></i>
@@ -145,7 +147,7 @@
                 <td>'.$con['cep'].'</td>
                 <td>'.$con['logradouro'].'</td>
                 <td>'.$con['n_residencial'].'</td>
-                <td><a href="edita.php?edit='.$con['id_endereco'].'"><i class="fas fa-pen"></i></a></td>
+                <td><a href="endereco.php?edit='.$con['id_endereco'].'"><i class="fas fa-pen"></i></a></td>
                 <td><a href="delete_endereco.php?del='.$con['id_endereco'].'"><i class="fas fa-trash"></i></a></td></tr>');
         }
 
@@ -162,7 +164,7 @@
     if(isset($_POST['adicionar'])){
 
         if(empty($_POST['cep']) or empty($_POST['bairro']) or empty($_POST['logradouro']) or empty($_POST['n_residencial'])){
-            echo ('<script>window.alert("Preencha os campos!");window.location="endereco.php"</script>');
+            echo ('<script>window.alert("Preencha os campos!");window.location="endereco.php?edit=0"</script>');
 
         }else{
 
@@ -180,9 +182,9 @@
         $adiciona_endereco = mysqli_query($conectar, $sql_adiciona_endereco);
 
             if($adiciona_endereco){
-                echo ('<script>window.alert("Endereço adicionado com sucesso!");window.location="endereco.php"</script>');
+                echo ('<script>window.alert("Endereço adicionado com sucesso!");window.location="endereco.php?edit=0"</script>');
             }else{
-               echo ('<script>window.alert("Erro ao adicionar o endereço!");window.location="endereco.php"</script>'); 
+               echo ('<script>window.alert("Erro ao adicionar o endereço!");window.location="endereco.php?edit=0"</script>'); 
             }
 
         }
@@ -211,9 +213,84 @@
         <div class="direitos">
             <p>© Green Gate 2021</p>
         </div>
-    </footer>  
+    </footer>
 
     <?php
+
+    $sql = 'select * from endereco where id_endereco='.$_GET['edit'].';';
+    $resul_editar = mysqli_query($conectar, $sql);
+    $editar = mysqli_fetch_array($resul_editar);
+
+    ?>
+
+    <section id="editar">
+        <a href="#" onclick="editar()"><i class="fas fa-times"></i></a>
+        <div class="editar-endereco">
+
+            <h2>Endereço</h2>
+
+            <form method="POST">
+
+                <div class="edit um">
+                    CEP: <input type="text" name="cep-edit" value="<?php echo $editar['cep'];?>">
+                </div>
+
+                <div class="edit dois">
+                    Bairro: <input type="text" name="bairro-edit" value="<?php echo $editar['bairro'];?>">
+                </div>
+
+                <div class="edit tres">
+                    Logradouro: <input type="text" name="logradouro-edit" value="<?php echo $editar['logradouro'];?>">
+                </div>
+
+                <div class="edit quatro">
+                    Número Residencial: <input type="text" name="n_residencial-edit" value="<?php echo $editar['n_residencial'];?>">
+                </div>
+
+                <div class="edit cinco">
+                    Complemento: <input type="text" name="complemento-edit" value="<?php echo $editar['complemento'];?>">
+                </div>
+
+                <div class="btn-edit">
+                    <div class="btn">
+                        <i class="far fa-save"> 
+                            <input type="submit" name="salvar" value="">                
+                        </i>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </section>
+
+    <?php
+
+    if(isset($_POST['salvar'])){
+
+        if(empty($_POST['cep-edit']) or empty($_POST['bairro-edit']) or empty($_POST['logradouro-edit']) or empty($_POST['n_residencial-edit'])){
+                echo ('<script>window.alert("Preencha os campos!");window.location="endereco.php?edit=0"</script>');
+        }else{
+
+        $cep_edit = $_POST['cep-edit'];
+        $endereco_edit = (get_endereco($cep_edit));
+        $estado_edit = $endereco_edit->uf;
+        $cidade_edit = $endereco_edit->localidade;
+        $bairro_edit = $_POST['bairro-edit'];
+        $logradouro_edit = $_POST['logradouro-edit'];
+        $n_residencial_edit = $_POST['n_residencial-edit'];
+        $complemento_edit = $_POST['complemento-edit'];
+
+        $sql_update = 'update endereco set cep="'.$cep_edit.'", estado="'.$estado_edit.'", cidade="'.$cidade_edit.'", bairro="'.$bairro_edit.'", logradouro="'.$logradouro_edit.'", n_residencial='.$n_residencial_edit.', complemento="'.$complemento_edit.'" where endereco.id_endereco='.$_GET['edit'].';';
+        $update = mysqli_query($conectar, $sql_update);
+
+        if($update){
+            echo ('<script>window.alert("Mudanças realizadas com sucesso!");window.location="endereco.php?edit=0"</script>');
+        }else{
+           echo ('<script>window.alert("Erro ao efetuar a mudança do endereço!");window.location="endereco.php?edit=0"</script>');
+        }
+
+        }
+    }
 
     }else{
         header('location:../invalido.php');

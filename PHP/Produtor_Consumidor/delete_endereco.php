@@ -9,9 +9,9 @@
 
 	if($apagar){
 
-		echo ('<script>window.alert("Endereço apagado com sucesso!");window.location="endereco.php"</script>');
+		echo ('<script>window.alert("Endereço apagado com sucesso!");window.location="endereco.php?edit=0"</script>');
 	}else{
-		echo ('<script>window.alert("Erro ao apagar o endereço!");window.location="endereco.php"</script>');
+		echo ('<script>window.alert("Erro ao apagar o endereço!");window.location="endereco.php?edit=0"</script>');
 	}
 
 ?>
