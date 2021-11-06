@@ -29,6 +29,8 @@
     width: 80px;
 }
 
+
+
 .adicionar-endereco td i{
     font-size: 18px;
     color: #dee69b;
@@ -118,4 +120,75 @@ input{
     right: 14px;
     opacity: 0;
     cursor: pointer;
+}
+
+#editar{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #0000009e;
+    z-index: 1;
+    display: block;
+}
+
+.editar-endereco{
+    width: 500px;
+    height: 235px;
+    border-radius: 15px;
+    background-color: #FFF;
+    padding: 20px 20px 20px 40px;
+    font-family: Caviar Dreams;
+    left: 30%;
+    top: 30%;
+    position: fixed;
+}
+
+.editar-endereco h2{
+    text-align: center;
+}
+
+.editar-endereco form{
+    font-size: 17px;
+    line-height: 39px;
+}
+
+.editar-endereco .edit input{
+    font-family: Caviar Dreams;
+    border-bottom: 1px solid #ebebeb;
+    padding: 0 0 5px 3px;
+    font-size: 16px;
+}
+
+    .btn-edit{
+     display: flex;
+    justify-content: center;
+}
+
+.um input{
+    width: 430px;
+}
+
+.dois input{
+    width: 418px;
+}
+
+.tres input{
+        width: 370px;
+}
+
+.quatro input{
+    width: 315px;
+}
+
+.cinco input{
+    width: 360px;
+}
+
+#editar a{
+    color: #FFF;
+    font-size: 28px;
+    position: fixed;
+    float: right;
+    right: 25px;
+    top: 25px;
 }
