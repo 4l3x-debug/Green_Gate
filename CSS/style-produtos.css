@@ -75,6 +75,10 @@
     justify-content: center;
 }
 
+input{
+    outline: 0;
+}
+
 .um input{
     width: 430px;
 }
