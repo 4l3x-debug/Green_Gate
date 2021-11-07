@@ -63,7 +63,7 @@
                 <a href="alterar_senha.php"><li><i class="fas fa-user-lock"></i>
                     Segurança
                 </li></a>
-                <a href="endereco.php"><li><i class="fas fa-map-marked-alt"></i>
+                <a href="endereco.php?edit=0"><li><i class="fas fa-map-marked-alt"></i>
                     Endereços
                 </li></a> 
                 <a href="#"><li><i class="fas fa-user-times"></i>
