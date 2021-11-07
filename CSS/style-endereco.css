@@ -34,6 +34,10 @@
     color: #dee69b;
 }
 
+.adicionar-endereco td i:hover{
+    color: #000;
+}
+
 .adicionar{
     box-shadow: 3px 3px 3px 3px #DCDCDC;
     border-radius: 15px;
