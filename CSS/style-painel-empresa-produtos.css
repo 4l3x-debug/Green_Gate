@@ -14,7 +14,6 @@
 .adicionar-produtos h3{
 	position: absolute;
 	top: 20px;
-	z-index: 2;
 	font-size: 140%;
 }
 
@@ -127,3 +126,4 @@ form{
 .tabela-produto i:hover{
 	color: #000;
 }
+

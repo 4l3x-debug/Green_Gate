@@ -1,0 +1,105 @@
+.pagina-usuario{
+    height: 950px;
+}
+
+.menuOculto{
+    height: 96.9%;
+}
+
+.btn{
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    background-color: #c3ce64;
+    color: #FFF;
+}
+
+.btn i{
+    position: relative;
+    top: 12.5px;
+    left: 14px;
+    font-size: 20px;
+}
+
+.btn input{
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    z-index: 1;
+    position: relative;
+    bottom: 33px;
+    right: 14px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#editar{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #0000009e;
+    z-index: 1;
+    display: block;
+}
+
+.editar-produtos{
+    width: 500px;
+    height: 280px;
+    border-radius: 15px;
+    background-color: #FFF;
+    padding: 20px 20px 20px 40px;
+    font-family: Caviar Dreams;
+    left: 30%;
+    top: 30%;
+    position: fixed;
+}
+
+.editar-produtos h2{
+    text-align: center;
+}
+
+.editar-produtos form{
+    font-size: 17px;
+    line-height: 39px;
+}
+
+.editar-produtos .edit input{
+    font-family: Caviar Dreams;
+    border-bottom: 1px solid #ebebeb;
+    padding: 0 0 5px 3px;
+    font-size: 16px;
+}
+
+.btn-edit{
+    display: flex;
+    justify-content: center;
+}
+
+.um input{
+    width: 430px;
+}
+
+.dois input{
+    width: 421px;
+}
+
+.tres input{
+    width: 330px;
+}
+
+.quatro input{
+    width: 397px;
+}
+
+.cinco input{
+    width: 360px;
+}
+
+#editar a{
+    color: #FFF;
+    font-size: 28px;
+    position: fixed;
+    float: right;
+    right: 25px;
+    top: 25px;
+}

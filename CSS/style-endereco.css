@@ -29,8 +29,6 @@
     width: 80px;
 }
 
-
-
 .adicionar-endereco td i{
     font-size: 18px;
     color: #dee69b;
@@ -159,8 +157,8 @@ input{
     font-size: 16px;
 }
 
-    .btn-edit{
-     display: flex;
+.btn-edit{
+    display: flex;
     justify-content: center;
 }
 
@@ -173,7 +171,7 @@ input{
 }
 
 .tres input{
-        width: 370px;
+    width: 370px;
 }
 
 .quatro input{
