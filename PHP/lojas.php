@@ -65,7 +65,7 @@
 
                 while($dados_empresa = mysqli_fetch_array($resul_empresa)){
                     echo ('<div class="espacamento-lojas"><a href=""><article class="lojas">
-                    <img src="../IMG/Imagem_Empresa/Logo_Empresa/'.$dados_empresa['imagem'].'" alt="'.$dados_empresa['nome'].'">
+                    <img src="../IMG/Imagem_Usuario/'.$dados_empresa['imagem'].'" alt="'.$dados_empresa['nome'].'">
                     </article></a></div>');
                 }
 
