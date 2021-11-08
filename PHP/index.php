@@ -71,7 +71,7 @@
 
         while($produto = mysqli_fetch_array($resul_produto)){
 
-            echo('<div class="espacamento-produtos"><div class="box-shadow-imagem"><a href=""><article class="produtos">
+            echo('<div class="espacamento-produtos"><div class="box-shadow-imagem"><a href="produto.php?id_produto='.$produto['id_produto'].'"><article class="produtos">
                     <img src="../IMG/Imagem_Produtos/'.$produto['imagem'].'" alt="'.$produto['nome_produto'].'">
             </article></a></div></div>');
 
@@ -96,7 +96,7 @@
 
         while($produto_um = mysqli_fetch_array($resul_produto_um)){
 
-            echo('<div class="espacamento-produtos"><div class="box-shadow-imagem"><a href=""><article class="produtos">
+            echo('<div class="espacamento-produtos"><div class="box-shadow-imagem"><a href="produto.php?id_produto='.$produto_um['id_produto'].'"><article class="produtos">
                     <img src="../IMG/Imagem_Produtos/'.$produto_um['imagem'].'" alt="'.$produto_um['nome_produto'].'">
             </article></a></div></div>');
 
