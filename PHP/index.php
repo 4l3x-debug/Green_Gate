@@ -25,8 +25,7 @@
             <nav>
                 <div class="logo">
                     <figure>
-                        <a href="../HTML/index
-                        .html"><img src="../IMG/logotipo.png" alt="Logotipo"></a>
+                        <a href="index.php"><img src="../IMG/logotipo.png" alt="Logotipo"></a>
                     </figure>
                 </div>
 
@@ -65,17 +64,21 @@
     </section>
 
     <section class="imagem_1">
-        <div id="box-imagem_1">
-            <div class="box-shadow-imagem">
-                <a href="#"><img src="../IMG/Imagem1.png" alt="Imagem sabonete" id="img1"></a>
-            </div>
-            <div class="box-shadow-imagem">
-                <a href="#"><img src="../IMG/Imagem2.png" alt="Imagem Sabonete" id="img2"></a>
-            </div>
-            <div class="box-shadow-imagem">
-                <a href="#"><img src="../IMG/Imagem3.png" alt="Imagem Sabonete sustentavél" id="img3"></a>
-            </div>
-        </div>
+
+        <?php
+            $sql_produto = 'select * from produto limit 0,3;';
+            $resul_produto = mysqli_query($conectar,$sql_produto);
+
+        while($produto = mysqli_fetch_array($resul_produto)){
+
+            echo('<div class="espacamento-produtos"><div class="box-shadow-imagem"><a href=""><article class="produtos">
+                    <img src="../IMG/Imagem_Produtos/'.$produto['imagem'].'" alt="'.$produto['nome_produto'].'">
+            </article></a></div></div>');
+
+        }
+
+        ?>
+
     </section>
 
     <div class="box-anuncio">
@@ -84,18 +87,23 @@
         </div>
     </div>
 
-    <section class="imagem_2">
-        <div id="box-imagem_2">
-            <div class="box-shadow-imagem">
-                <a href="#"><img src="../IMG/Imagem4.png" alt="Imagem sabonete" id="img1"></a>
-            </div>
-            <div class="box-shadow-imagem">
-                <a href="#"><img src="../IMG/Imagem5.png" alt="Imagem Sabonete" id="img2"></a>
-            </div>
-            <div class="box-shadow-imagem">
-                <a href="#"><img src="../IMG/Imagem6.png" alt="Imagem Sabonete sustentavél" id="img3"></a>
-            </div>
-        </div>
+    <section class="imagem_1">
+    
+    <?php
+
+        $sql_produto_um = 'select * from produto limit 3,3;';
+        $resul_produto_um = mysqli_query($conectar,$sql_produto_um);
+
+        while($produto_um = mysqli_fetch_array($resul_produto_um)){
+
+            echo('<div class="espacamento-produtos"><div class="box-shadow-imagem"><a href=""><article class="produtos">
+                    <img src="../IMG/Imagem_Produtos/'.$produto_um['imagem'].'" alt="'.$produto_um['nome_produto'].'">
+            </article></a></div></div>');
+
+        }
+
+    ?>
+
     </section>
 
     <!-- Rodapé -->

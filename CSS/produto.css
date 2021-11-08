@@ -11,74 +11,12 @@ a{
     text-decoration: none;
 }
 
-/*Barra-Navegação*/
-.main-nav{
-    max-width: 1600px;
-    width: 100%;
-}
-.main-nav nav{
-    width: 100%;
-    background-color: #FFF;
-    height: 100px;
-    margin: 0;
-    border: 0;
-    padding: 0;
-    z-index: 20;
-}
-
-.logo {
-    position: absolute;
-    top: 15px;
-    left: 20px;
-}
-
-.lista-menu ul{
-    list-style: none;
-    position: absolute;
-    top: 40px;
-    left: 300px;
-}
-
-.lista-menu ul li{
-    float: left;
-    padding-right: 25px;
-}
-
-.lista-menu ul li a {
-    color: #000;
-    font-family: 'Gowun Batang', serif;
-    font-weight: bolder;
-    font-size: 15pt;
-}
-
-.lista-menu ul li a:hover {
-    color: #8082e2;
-}
-
-.figuras {
-    position: absolute;
-    float: right;
-    right: 25px;
-    top: 40px;
-}
-.figuras a{
-    color: #000;
-}
-.figuras a:hover, .figuras-empresa a:hover{
-    color: #8082e2;
-
-}
-.figuras a i{
-    font-size: 25px;
-    padding-right: 25px;
-}
-
 #all{
     max-width: 1600px;
     height: 700px;
     width: 100%;
     background: #fdfaef;
-    position: absolute;
+    position: relative;
 }
 
 #fundo{
@@ -89,6 +27,8 @@ a{
     margin-left: 1em;
     margin-top: 50px;
     background: rgb(255, 255, 255);
+    position: relative;
+    top: 40px;
 }
 
 .sessao-produto{
@@ -110,13 +50,14 @@ a{
 .container-produto img{
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
 .container-info{
     height: 100%;
     width: 500px;
     border: 1px solid #ebebeb;
-    background: #ffffff;
+    background: #fff;
 }
 
 #nome-produto{
@@ -218,14 +159,14 @@ a{
 }
 
 #carro:hover{
-    color: #a4fd3e;
-    border: 1px solid #a4fd3e;
+    color: #000;
+    border: 1px solid #000;
 }
 
 input[type="checkbox"]:checked + .espaco-carrinho #carro{
     color: white;
-    background: #c1ff7a;
-    border: 1px solid #c1ff7a;
+    background: #000;
+    border: 1px solid #000;
 }
 
 .detalhes{

@@ -21,8 +21,9 @@
 
     ?>
 
-        <!-- Cabeçalho -->
+    <!-- Cabeçalho -->
 
+    <header>
         <section class="main-nav">
             <nav>
                 <div class="logo">
@@ -136,12 +137,12 @@
     <h2 id="todos-produtos"> Todos os Produtos </h2> <br>
     <section class="sessao-produtos">
         <?php
-            $sql_select = 'SELECT * FROM produto ORDER BY id_produto ASC;';
+            $sql_select = 'select * from produto order by id_produto ASC;';
             $sql_query = mysqli_query($conectar, $sql_select);
 
             while($dados_produto = mysqli_fetch_array($sql_query)){
                 echo ('<div class="container-produtos"> <div class="info">  
-                <img src="../IMG/Produtos/'.$dados_produto['imagem'].'" alt="'.$dados_produto['imagem'].'">  
+                <img src="../IMG/Imagem_Produtos/'.$dados_produto['imagem'].'" alt="'.$dados_produto['nome_produto'].'">  
                 <span class="preco"> R$'.$dados_produto['preco'].'</span>
                 <p><a href="produto.php?id_produto='.$dados_produto['id_produto'].'" class="descricao">'.$dados_produto['nome_produto'].'</a></p>
             </div> </div>');

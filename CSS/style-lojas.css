@@ -1,5 +1,5 @@
 body{
-	background-color: #C4E17C;
+	background-color: #fefae0;
 }
 
 
@@ -41,7 +41,7 @@ body{
 	display: flex;
 	justify-content: center;
 	width: 19%;
-	height: 200px;
+	height: 430px;
 }
 
 .lojas img:hover, .lojas:hover{
@@ -174,9 +174,10 @@ body{
 }
 
 .container-produtos img {
-    height: 150px;
+    height: 280px;
     width: 250px;
     margin-bottom: 40px;
+    object-fit: cover;
 }
 
 .container-produtos img:hover {
