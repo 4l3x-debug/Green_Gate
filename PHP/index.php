@@ -1,10 +1,19 @@
 <?php
     session_start();
     include('conexao.php');
+    include ('barra_rolagem.php');
+
+    if($_SESSION){
+        $tp_usuario = $_GET['tp_usuario'];
+        $id_usuario = $_GET['id_usuario'];
+    }else{
+        $tp_usuario = 0;
+        $id_usuario = 0;
+    }
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pr-br">
 
 <head>
     <meta charset="UTF-8">
