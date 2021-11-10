@@ -1,10 +1,10 @@
 <?php
+    session_start();
     include('conexao.php');
-    include ('barra_rolagem.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="pr-br">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
