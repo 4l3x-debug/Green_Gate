@@ -87,7 +87,7 @@
             if ($rows == 1) {
               $dados = mysqli_fetch_array($query_select);
               $_SESSION['id_usuario'] = $dados['id_pf_fisico'];
-              header('location: index.php?id_usuario='.$dados['id_pf_juridico'].'&tp_usuario='.$usuario.'');
+              header('location: Administrador/painel_adm.php');
             }else{
               header('location: login.php');
             }
@@ -102,7 +102,6 @@
             if ($rows == 1) {
               $dados = mysqli_fetch_array($query_select);
               $_SESSION['id_usuario'] = $dados['id_pf_juridico'];
-              $_SESSION['tp_usuario'] = $dados['tp_usuario'];
               header('location: index.php?id_usuario='.$dados['id_pf_juridico'].'&tp_usuario='.$usuario.'');
             }else{
               header('location: login.php');

@@ -27,7 +27,10 @@
     <?php
         include('../conexao.php');
 
-        if(!isset($_SESSION['entrar'])){
+        if(!isset($_SESSION['id_usuario'])){
+            unset($_SESSION['id_usuario']);
+            header('location:../invalido.php');
+        }
 
         $id = $_SESSION['id_usuario'];
         $sql_usuario = 'select * from pf_fisico where id_pf_fisico = '.$id.';';
@@ -170,10 +173,6 @@
             header('location:../invalido.php');
         }
 
-        }else{
-            unset($_SESSION['entrar']);
-            header('location:../invalido.php');
-        }
 
         ?>
 
