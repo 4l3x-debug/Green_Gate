@@ -23,7 +23,10 @@
     
     session_start();
     
-    if(!isset($_SESSION['entrar'])){
+    if(!isset($_SESSION['id_usuario'])){
+        unset($_SESSION['id_usuario']);
+        header('location:../invalido.php');
+    }
 
         $id = $_SESSION['id_usuario'];
 
@@ -311,11 +314,6 @@
             }else{
                 header('location:invalido.php');
             }
-
-        }else{
-          unset($_SESSION['entrar']);
-          header('location:invalido.php');
-        }
     ?>
 
     </body>
