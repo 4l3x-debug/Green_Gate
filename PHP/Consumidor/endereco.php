@@ -20,7 +20,10 @@
         include('../conexao.php');
 
         session_start();
-        if(!isset($_SESSION['entrar'])){
+        if(!isset($_SESSION['id_usuario'])){
+            unset($_SESSION['id_usuario']);
+            header('location:../invalido.php');
+        }
 
         function get_endereco($cep){
             $cep = preg_replace("/[^0-9]/","",$cep);
@@ -293,11 +296,6 @@
     }
 
     }else{
-        header('location:../invalido.php');
-    }
-
-    }else{
-        unset($_SESSION['entrar']);
         header('location:../invalido.php');
     }
 
