@@ -159,7 +159,7 @@
                 $resul = mysqli_query($conectar, $sql_pf_juridico);
                 $dados = mysqli_fetch_array($resul);
 
-                $sql_suporte = 'insert into suporte(assunto, conteudo, data_envio, id_pf_fisico, id_pf_juridico) values ("'.$assunto.'", "'.$conteudo.'", "'.$data_envio.'", null, '.$dados['id_pf_juridico'].');';
+                $sql_suporte = 'insert into suporte(assunto, conteudo, data_envio, id_pf_fisico, id_pf_juridico, id_remetente, tp_usuario_remetente) values ("'.$assunto.'", "'.$conteudo.'", "'.$data_envio.'", null, '.$dados['id_pf_juridico'].', '.$id.', '.$dados_usuario['tp_usuario'].');';
 
                 $suporte = mysqli_query($conectar, $sql_suporte);
 
@@ -175,7 +175,7 @@
                 $resul = mysqli_query($conectar, $sql_pf_fisico);
                 $dados = mysqli_fetch_array($resul);
 
-                $sql_suporte = 'insert into suporte(assunto, conteudo, data_envio, id_pf_fisico, id_pf_juridico) values ("'.$assunto.'", "'.$conteudo.'", "'.$data_envio.'", '.$dados['id_pf_fisico'].', null);';
+                $sql_suporte = 'insert into suporte(assunto, conteudo, data_envio, id_pf_fisico, id_pf_juridico, id_remetente, tp_usuario_remetente) values ("'.$assunto.'", "'.$conteudo.'", "'.$data_envio.'", '.$dados['id_pf_fisico'].', null, '.$id.', '.$dados_usuario['tp_usuario'].');';
 
                 $suporte = mysqli_query($conectar, $sql_suporte);
 

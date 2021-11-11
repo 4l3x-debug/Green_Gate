@@ -21,11 +21,11 @@
         if(!isset($_SESSION['entrar'])){ // if entrar
 
         $id = $_SESSION['id_usuario'];
-        $sql_usuario = 'select * from pf_fisico where id_pf_fisico = '.$id.';';
+        $sql_usuario = 'select * from pf_juridico where id_pf_juridico = '.$id.';';
         $resul_usuario = mysqli_query($conectar, $sql_usuario);
         $dados_usuario = mysqli_fetch_array($resul_usuario);
 
-        if($dados_usuario['tp_usuario'] == 0){ // if tp_usuario
+        if($dados_usuario['tp_usuario'] == 3){ // if tp_usuario
 
     ?>
 
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="painel_adm.php"><i class="fas fa-user-circle"></i>
+                    <a href="painel_produtor_consumidor"><i class="fas fa-user-circle"></i>
                         <div class="usuario">
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
@@ -71,8 +71,8 @@
 
         <aside id="menuOculto" class="menuOculto">
             <a href="javascript: void(0)" class="btnFechar" onclick="fecharNav()"><i class="fas fa-times"></i></a>
-            <a href="lojas.php" class="icon"><i class="fas fa-store-alt"></i>Lojas</a>
-            <a href="#" class="icon"><i class="fas fa-headset"></i>Suporte</a>
+            <a href="pedidos.php" class="icon"><i class="fas fa-boxes"></i>Pedidos</a>
+            <a href="suporte.php" class="icon"><i class="fas fa-headset"></i>Suporte</a>
             <a href="../invalido.php" class="icon"><i class="fas fa-sign-out-alt"></i>Sair</a>
         </aside>
 
@@ -91,9 +91,8 @@
                         Tipo de Usuário:
                         <select name="usuario">
                             <option selected value disabled="">Selecione</option>
-                            <option value="2">Consumidor</option>
-                            <option value="1">Produtor</option>
-                            <option value="3">Produtor Consumidor</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Produtor</option>
                         </select>
                     </div>
 
@@ -153,13 +152,13 @@
             $conteudo = $_POST['conteudo'];
             $data_envio = date("Y-m-d");
 
-            if($usuario == 1 or $usuario == 3){
+            if($usuario == 2){
 
                 $sql_pf_juridico = 'select *from pf_juridico where email = "'.$email.'";';
                 $resul = mysqli_query($conectar, $sql_pf_juridico);
                 $dados = mysqli_fetch_array($resul);
 
-                $sql_suporte = 'insert into suporte(assunto, conteudo, data_envio, id_pf_fisico, id_pf_juridico) values ("'.$assunto.'", "'.$conteudo.'", "'.$data_envio.'", null, '.$dados['id_pf_juridico'].');';
+                $sql_suporte = 'insert into suporte(assunto, conteudo, data_envio, id_pf_fisico, id_pf_juridico, id_remetente, tp_usuario_remetente) values ("'.$assunto.'", "'.$conteudo.'", "'.$data_envio.'", null, '.$dados['id_pf_juridico'].', '.$id.', '.$dados_usuario['tp_usuario'].');';
 
                 $suporte = mysqli_query($conectar, $sql_suporte);
 
@@ -169,13 +168,13 @@
                     echo ('<script>window.alert("Erro ao enviar a mensagem!");window.location="suporte.php"</script>');
                 }
 
-            }else if($usuario == 2){
+            }else if($usuario == 1){
 
                 $sql_pf_fisico = 'select *from pf_fisico where email = "'.$email.'";';
                 $resul = mysqli_query($conectar, $sql_pf_fisico);
                 $dados = mysqli_fetch_array($resul);
 
-                $sql_suporte = 'insert into suporte(assunto, conteudo, data_envio, id_pf_fisico, id_pf_juridico) values ("'.$assunto.'", "'.$conteudo.'", "'.$data_envio.'", '.$dados['id_pf_fisico'].', null);';
+                $sql_suporte = 'insert into suporte(assunto, conteudo, data_envio, id_pf_fisico, id_pf_juridico, id_remetente, tp_usuario_remetente) values ("'.$assunto.'", "'.$conteudo.'", "'.$data_envio.'", '.$dados['id_pf_fisico'].', null, '.$id.', '.$dados_usuario['tp_usuario'].');';
 
                 $suporte = mysqli_query($conectar, $sql_suporte);
 
