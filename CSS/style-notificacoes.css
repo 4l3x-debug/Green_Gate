@@ -27,7 +27,6 @@ span {
     height: 15%;
     position: relative;
     top: 69.1px;
-    line-height: 56px;
     font-size: 18px
 }
 
@@ -38,7 +37,6 @@ span {
 .foto-usuario img{
     width: 60px;
     height: 60px;
-    object-fit: cover;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -59,9 +57,10 @@ span {
 }
 
 .notificacao{
-    height: 100%;
+    height: 50%;
     width: 72%;
     left: 100px;
+    top: 15px;
 }
 
 .pagina-usuario{
