@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="painel_produtor.php"><i class="fas fa-user-circle"></i>
+                    <a href="painel_produtor_consumidor.php"><i class="fas fa-user-circle"></i>
                         <div class="usuario">
                             <?php echo $dados_usuario['nome']; ?>        
                         </div>
