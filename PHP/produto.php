@@ -5,7 +5,7 @@
     <title> Green Gate | Loja | Produto </title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../CSS/style-index.css">
-    <link rel="stylesheet" href="../CSS/produto.css">
+    <link rel="stylesheet" href="../CSS/style-produto.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="icone.ico" type="image/x-icon">
     <link rel="stylesheet" href="../FONTAW/css/all.css">
