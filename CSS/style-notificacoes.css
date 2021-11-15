@@ -1,0 +1,69 @@
+.pagina-usuario{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.notificacoes {
+    width: 32%;
+    height: 90%;
+    background-color: #FFF;
+    border-radius: 15px;
+    top: 5%;
+    position: absolute;
+    overflow: auto;
+}
+
+span {
+    position: absolute;
+    font-size: 23px;
+    width: 88%;
+    height: 8%;
+    padding: 20px 20px 0 30px;
+    border-bottom: 1px solid #ebebeb;
+}
+        
+.fundo-notificacoes {
+    height: 15%;
+    position: relative;
+    top: 69.1px;
+    line-height: 56px;
+    font-size: 18px
+}
+
+.fundo-notificacoes:hover{
+    background-color: #efefef;
+}
+
+.foto-usuario img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.foto-usuario, .notificacao{
+    display: inline-block;
+    position: absolute;
+    padding: 10px;
+}
+
+.foto-usuario{
+    height: 40px;
+    width: 40px;
+    position: relative;
+    top: 15px;
+    left: 15px
+}
+
+.notificacao{
+    height: 100%;
+    width: 72%;
+    left: 100px;
+}
+
+.pagina-usuario{
+    height: 670px;
+}
