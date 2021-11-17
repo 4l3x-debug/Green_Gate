@@ -27,10 +27,6 @@
 	background-color: #FFF;
 }
 
-.main-aside-produtor{
-	height: 710px;
-}
-
 .botao input{
 	color: #FFF;
 	background-color: #C3CE64;
@@ -38,9 +34,46 @@
 	width: 96%;
 	height: 34px;
 	cursor: pointer;
-	transition: box-shadow 0.3s cubic-bezier(0, 1.01, 0.37, 1.01);
+	transition: background-color .2s;
 }
 
 .botao input:hover{
-	box-shadow: 0 0 0 2px #C3CE64;
+	background-color: #333;
+}
+
+.fas.fa-camera{
+    position: relative;
+    right: 0px;
+    bottom: 23px;
+    color: #fff;
+}
+
+#tamanho {
+    position: absolute;
+    background: #696969;
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    top: 88px;
+    right: 472px;
+}
+
+#tamanho:hover{
+    cursor: pointer;
+    background: #333;
+    transition: background .2s;
+}
+
+.main-aside-produtor {
+    height: 870px;
+}
+
+.foto-usuario img{
+    width: 130px;
+    height: 130px;
+    border-radius: 100px;
+}
+
+input[type='file']{
+    display: none;
 }
