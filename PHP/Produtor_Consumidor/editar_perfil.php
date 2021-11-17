@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="../../CSS/style-editar-perfil.css">
         <link rel="stylesheet" href="../../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
+        <script type="text/javascript" src="../../JS/script_editar_perfil.js"></script>
     </head>
     <body class="corpo-painel-produtor">
 
@@ -82,9 +83,20 @@
 
         <section class="main editar-perfil">
 
-            <form action="#" method="POST">
+            <form action="#" method="POST" enctype="multipart/form-data">
 
                 <table class="fundo-editar-perfil">
+
+                <tr class="foto-usuario">
+                   <td colspan="2" align="center">
+                       
+                        <?php echo ('<img src="../../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">'); ?>
+                        
+                        <div id="tamanho" onclick="foto()"><i class="fas fa-camera" onclick="foto()"></i></div>
+                    </td> 
+                </tr>
+
+                <input type="file" name="imagem" id="imagem">
 
                 <tr>
                     <td>Nome:</td>
@@ -93,7 +105,7 @@
 
                 <tr>
                     <td>E-mail:</td> 
-                    <td><input type="text" name="email" value="<?php echo $dados_usuario['email']; ?>"></td>
+                    <td><input type="email" name="email" value="<?php echo $dados_usuario['email']; ?>"></td>
                 </tr>
                 
                 <tr>
@@ -102,15 +114,15 @@
                 </tr>
 
                 <tr>
-                    <td>Razão Social:</td> 
-                    <td><input type="text" name="razao" value="<?php echo $dados_usuario['razao']; ?>"></td>
+                    <td>Razão Social:</td>
+                    <td><input type="text" name="razao" value="<?php echo $dados_usuario['razao'] ?>"></td>
                 </tr>
 
                 <tr>
                     <td>Gênero:</td> 
                     <td><select name="genero">
                         <option value="<?php echo $dados_usuario['genero']; ?>">
-                            <?php if($dados_usuario['genero'] == 'M'){ echo ("Masculino"); }else if($dados_usuario['genero'] == 'F') { echo("Feminino");} else{ echo ('');} ?>
+                            <?php if($dados_usuario['genero'] == 'M'){ echo ("Masculino"); }else { echo("Feminino");} ?>
                         </option>
                         <option value="F">Feminino</option>
                         <option value="M">Masculino</option>
@@ -123,7 +135,7 @@
                 </tr>
 
                 <tr>
-                    <td class="botao" colspan="2" align="center"><input type="submit" name="salvar" value="Salvar"></td>
+                    <td class="botao" colspan="2" align="center"><input type="submit" name="Salvar" value="Salvar"></td>
                 </tr>
 
                 </table>
@@ -133,29 +145,6 @@
         </section>
 
     </main>
-
-    <?php
-
-    if(isset($_POST['salvar'])){
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $telefone = $_POST['telefone'];
-        $razao = $_POST['razao'];
-        $genero = $_POST['genero'];
-        $cnpj = $_POST['cnpj'];
-
-        $sql_update = 'update pf_juridico set nome="'.$nome.'", email="'.$email.'", celular="'.$telefone.'", razao="'.$razao.'", genero="'.$genero.'", cnpj="'.$cnpj.'" where pf_juridico.id_pf_juridico='.$id.';';
-        $update = mysqli_query($conectar, $sql_update);
-
-        if($update){
-            echo ('<script>window.alert("Mudança feita com sucesso!");window.location="editar_perfil.php"</script>');
-        }else{
-            echo ('<script>window.alert("Erro ao salvar!");window.location="editar_perfil.php"</script>');
-        }
-
-    }
-
-    ?>    
 
     <!-- Rodapé -->
 
@@ -180,6 +169,35 @@
     </footer>  
 
     <?php
+
+    if(isset($_POST['Salvar'])){
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $telefone = $_POST['telefone'];
+        $razao = $_POST['razao'];
+        $genero = $_POST['genero'];
+        $cnpj = $_POST['cnpj'];
+        $imagem = $_FILES['imagem'];
+
+        $extencao = strtolower(substr($imagem['name'], -4));
+        $nome_img = md5(time()) . $extencao;
+        $diretorio = "../../IMG/Imagem_Usuario/";
+        echo 'imagem=>'.$imagem;
+        var_dump($imagem);
+
+        move_uploaded_file($imagem['tmp_name'], $diretorio.$nome_img);
+
+        $sql_update = 'update pf_juridico set nome="'.$nome.'", email="'.$email.'", celular="'.$telefone.'", razao="'.$razao.'", genero="'.$genero.'", cnpj="'.$cnpj.'", imagem="'.$nome_img.'" where id_pf_juridico='.$id.';';
+
+        $update = mysqli_query($conectar, $sql_update);
+
+        if($update){
+            echo ('<script>window.alert("Mudança feita com sucesso!");window.location="editar_perfil.php"</script>');
+        }else{
+            echo ('<script>window.alert("Erro ao salvar!");window.location="editar_perfil.php"</script>');
+        }
+
+    }
 
     }else{
         header('location:../invalido.php');
