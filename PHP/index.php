@@ -3,7 +3,7 @@
     include('conexao.php');
     include ('barra_rolagem.php');
 
-    if($_SESSION['id_usuario']){
+    if($_SESSION){
         $tp_usuario = $_GET['tp_usuario'];
         $id_usuario = $_GET['id_usuario'];
     }else{
