@@ -13,7 +13,7 @@
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
 
         <style type="text/css">
-            span{
+            .box-user span{
                 padding: 0;
                 border: 0;
             }
