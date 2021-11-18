@@ -10,8 +10,27 @@
         <link rel="stylesheet" href="../../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
         <script type="text/javascript" src="../../JS/script_editar_perfil.js"></script>
+        <script type="text/javascript" src="../../JS/script_box_user.js"></script>
     </head>
     <body class="corpo-painel-produtor">
+
+    <section id="background-box">
+        <div id="abrir">
+            <nav class="box-user">
+                <ul>
+                    <a href="painel_adm.php"><li class="list um">
+                        <span><i class="fas fa-user-circle"></i>Perfil</span>
+                    </li></a>
+                    <a href="#"><li class="list">
+                        <span><i class="fas fa-cog"></i>Configurações</span>
+                    </li></a>
+                    <a href="../invalido.php"><li style="border-top: 1px solid #ebebeb;" class="list dois">
+                        <span>Sair</span>
+                    </li></a>
+                </ul>
+            </nav>
+        </div>
+    </section>
 
     <?php
         include('../conexao.php');
@@ -42,9 +61,9 @@
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="painel_adm.php"><i class="fas fa-user-circle"></i>
+                    <a href="#" onclick="box()">
                         <div class="usuario">
-                            <?php echo $dados_usuario['nome']; ?>        
+                            <?php echo ('<img src="../../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">'); ?>     
                         </div>
                     </a>
                     <a href="notificacoes.php"><i class="far fa-bell"></i></a>
@@ -56,7 +75,7 @@
     <!-- Menu para Administrar -->
 
     <main>
-    <aside class="main-aside-produtor">
+    <aside class="main-aside-produtor" onclick="boxFechar()">
         <nav>
             <ul class="icon-aside">
                 <strong>Categorias</strong>
@@ -78,7 +97,7 @@
 
     <!-- Conteúdo -->
 
-        <section class="main editar-perfil">
+        <section class="main editar-perfil" onclick="boxFechar()">
 
             <form action="#" method="POST" enctype="multipart/form-data">
 
