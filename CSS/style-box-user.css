@@ -31,7 +31,6 @@
 .box-user ul a{
     font-family: Caviar Dreams;
     color: #000;
-    font-size: 16px;
 }
 
 .box-user i{
@@ -42,6 +41,7 @@
 .box-user span{
     position: relative;
     left: 15px;
+    font-size: 16px;
 }
 
 .list:hover{
