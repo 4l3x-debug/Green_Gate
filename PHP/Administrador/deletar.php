@@ -42,7 +42,7 @@
                         <a href="painel_adm.php"><li class="list um">
                             <span><i class="fas fa-user-circle"></i>Perfil</span>
                         </li></a>
-                        <a href="#"><li class="list">
+                        <a href="editar_perfil.php"><li class="list">
                             <span><i class="fas fa-cog"></i>Configurações</span>
                         </li></a>
                         <a href="../invalido.php"><li style="border-top: 1px solid #ebebeb;" class="list dois">
