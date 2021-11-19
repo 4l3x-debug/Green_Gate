@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="../../CSS/style-box-user.css">
         <link rel="stylesheet" href="../../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
+        <script type="text/javascript" src="../../JS/script_editar_perfil.js"></script>
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
     </head>
     <body class="corpo-painel-produtor">

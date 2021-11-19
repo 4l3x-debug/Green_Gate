@@ -9,11 +9,12 @@
         <link rel="stylesheet" type="text/css" href="../../CSS/style-pagina-usuario.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-consumidor.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-empresa-produtos.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-produtos.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-box-user.css">
         <link rel="stylesheet" href="../../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
-        <link rel="stylesheet" type="text/css" href="../../CSS/style-produtos.css">
         <script type="text/javascript" src="../../JS/script_editar_endereco.js"></script>
-
+        <script type="text/javascript" src="../../JS/script_box_user.js"></script>
     </head>
     <body class="corpo-pagina-adm">
 
@@ -42,6 +43,24 @@
 
     <!-- Cabeçalho -->
 
+        <section id="background-box">
+            <div id="abrir">
+                <nav class="box-user">
+                    <ul>
+                        <a href="painel_produtor.php"><li class="list um">
+                            <span><i class="fas fa-user-circle"></i>Perfil</span>
+                        </li></a>
+                        <a href="editar_perfil.php"><li class="list">
+                            <span><i class="fas fa-cog"></i>Configurações</span>
+                        </li></a>
+                        <a href="../invalido.php"><li style="border-top: 1px solid #ebebeb;" class="list dois">
+                            <span>Sair</span>
+                        </li></a>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
         <section class="main-nav">
             <nav>
                 <div class="logo">
@@ -50,11 +69,13 @@
                     </figure>
                 </div>
 
-                <div class="figuras-empresa">
-                    <a href="painel_produtor.php"><i class="fas fa-user-circle"></i>
-                        <div class="empresa">
-                            <?php echo $dados_usuario['nome']; ?>        
-                        </div></a>
+                <div class="figuras-produtor">
+                    <a href="#" onclick="box()">
+                        <div class="usuario">
+                        <?php echo ('<img src="../../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">'); 
+                        ?>         
+                        </div>
+                    </a>
                     <a href="notificacoes.php"><i class="far fa-bell"></i></a>
                 </div>
             </nav>
@@ -63,7 +84,7 @@
 
     <!-- Conteúdo -->
 
-        <section class="pagina-usuario">
+        <section class="pagina-usuario" onclick="boxFechar()">
 
     <!-- Menu para Administrar -->
 

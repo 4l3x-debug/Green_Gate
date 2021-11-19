@@ -7,10 +7,12 @@
         <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-adm.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-produtor.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-editar-perfil-produtor.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-endereco.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-box-user.css">
         <link rel="stylesheet" href="../../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
-        <link rel="stylesheet" type="text/css" href="../../CSS/style-endereco.css">
         <script type="text/javascript" src="../../JS/script_editar_endereco.js"></script>
+        <script type="text/javascript" src="../../JS/script_box_user.js"></script>
 
     </head>
 
@@ -44,6 +46,24 @@
 
     <!-- Cabeçalho -->
 
+        <section id="background-box">
+            <div id="abrir">
+                <nav class="box-user">
+                    <ul>
+                        <a href="painel_produtor.php"><li class="list um">
+                            <span><i class="fas fa-user-circle"></i>Perfil</span>
+                        </li></a>
+                        <a href="editar_perfil.php"><li class="list">
+                            <span><i class="fas fa-cog"></i>Configurações</span>
+                        </li></a>
+                        <a href="../invalido.php"><li style="border-top: 1px solid #ebebeb;" class="list dois">
+                            <span>Sair</span>
+                        </li></a>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
         <section class="main-nav-produtor">
             <nav>
                 <div class="logo">
@@ -53,9 +73,9 @@
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="painel_produtor.php"><i class="fas fa-user-circle"></i>
+                    <a href="#" onclick="box()">
                         <div class="usuario">
-                            <?php echo $dados_usuario['nome']; ?>        
+                            <?php echo ('<img src="../../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">'); ?>     
                         </div>
                     </a>
                     <a href="notificacoes.php"><i class="far fa-bell"></i></a>
@@ -67,7 +87,7 @@
     <!-- Menu para Administrar -->
 
     <main>
-    <aside class="main-aside-produtor">
+    <aside class="main-aside-produtor" onclick="boxFechar()">
         <nav>
             <ul class="icon-aside">
                 <strong>Categorias</strong>
@@ -92,7 +112,7 @@
 
     <!-- Conteúdo -->
 
-        <section class="main adicionar-endereco">
+        <section class="main adicionar-endereco" onclick="boxFechar()">
 
         <div class="adicionar">
             <h2>Adicionar Endereço</h2>
