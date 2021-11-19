@@ -102,25 +102,15 @@
                     </ul>
                 </div>
 
-                <div class="figuras">
-                    <a href=""><i class="fas fa-search"></i></a>
-
                     <?php
                         if(!isset($_SESSION['id_usuario'])){
-                            echo('<a href="login.php"><i class="fas fa-user-circle"></i></a>');
+                            echo('<div class="figuras" style="top: 40%;"><a href=""><i class="fas fa-search"></i></a><a href="login.php"><i class="fas fa-user-circle"></i></a><a href=""><i class="fas fa-shopping-bag"></i></a></div>');
                         }
 
                         else{
-                            echo ('<a href="#" onclick="box()">
-                            <div class="usuario">
-                                <img src="../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">     
-                            </div>
-                            </a>');
+                            echo ('<div class="figuras" style="top: 30%;"><a href=""><i class="fas fa-search"></i></a><a href="#" onclick="box()"><div class="usuario"><img src="../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'"></div></a><a href=""><i class="fas fa-shopping-bag"></i></a></div>');
                         }    
                     ?>
-
-                    <a href=""><i class="fas fa-shopping-bag"></i></a>
-                </div>
             </nav>
         </section>
     </header>

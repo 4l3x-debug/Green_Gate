@@ -54,10 +54,9 @@ a{
 }
 
 .figuras {
-    position: absolute;
+    position: relative;
     float: right;
     right: 25px;
-    top: 30px;
 }
 
 .figuras a{
