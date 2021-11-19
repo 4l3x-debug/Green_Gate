@@ -38,6 +38,8 @@
         $resul_usuario = mysqli_query($conectar, $sql_usuario);
         $dados_usuario = mysqli_fetch_array($resul_usuario);
 
+        $caminho = '?id_usuario='.$dados_usuario['id_pf_juridico'].'&tp_usuario='.$dados_usuario['tp_usuario'].'';
+
         if($dados_usuario['tp_usuario'] == 3){
 
     ?>
@@ -66,16 +68,20 @@
             <nav>
                 <div class="logo">
                     <figure>
-                        <a href="../index.php"><img src="../../IMG/logotipo.png" alt="Logotipo"></a>
+                        <?php
+                            echo ('<a href="../index.php'.$caminho.'"><img src="../../IMG/logotipo.png" alt="Logotipo"></a>');
+                        ?>
                     </figure>
                 </div>
 
                 <div class="lista-menu">
                     <ul>
-                        <li><a href="../index.php">Home</a></li>
-                        <li><a href="../lojas.php">Loja</a></li>
-                        <li><a href="../sobre.php">Sobre</a></li>
-                        <li><a href="../suporte.php">Suporte</a></li>
+                        <?php
+                            echo ('<li><a href="../index.php'.$caminho.'">Home</a></li>
+                            <li><a href="../lojas.php">Loja</a></li>
+                            <li><a href="../sobre.php">Sobre</a></li>
+                            <li><a href="../suporte.php">Suporte</a></li>');
+                        ?>
                     </ul>
                 </div>
 
