@@ -94,7 +94,6 @@
             <a href="javascript: void(0)" class="btnFechar" onclick="fecharNav()"><i class="fas fa-times"></i></a>
             <a href="#" class="icon"><i class="fas fa-tags"></i>Produtos</a>
             <a href="suporte.php" class="icon"><i class="fas fa-headset"></i>Suporte</a>
-            <a href="../invalido.php" class="icon"><i class="fas fa-sign-out-alt"></i>Sair</a>
         </aside>
 
         <section id="principal">

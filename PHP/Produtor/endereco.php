@@ -102,10 +102,7 @@
                 </li></a>  
                 <a href="deletar.php"><li><i class="fas fa-user-times"></i>
                     Deletar
-                </li></a>
-                <a href="../invalido.php"><li><i class="fas fa-sign-out-alt"></i>
-                    Sair
-                </li></a>         
+                </li></a>        
             </ul>
         </nav>
     </aside>
