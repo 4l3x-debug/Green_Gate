@@ -59,13 +59,16 @@ a{
     right: 25px;
     top: 40px;
 }
+
 .figuras a{
     color: #000;
+    display: inline-block;
 }
+
 .figuras a:hover, .figuras-empresa a:hover{
     color: #8082e2;
-
 }
+
 .figuras a i{
     font-size: 25px;
     padding-right: 25px;
