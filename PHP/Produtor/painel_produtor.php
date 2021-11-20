@@ -69,7 +69,7 @@
             <nav>
                 <div class="logo">
                     <figure>
-                        <a href="../index.php"><img src="../../IMG/logotipo.png" alt="Logotipo"></a>');
+                        <a href="../index.php"><img src="../../IMG/logotipo.png" alt="Logotipo"></a>
                     </figure>
                 </div>
 
