@@ -68,20 +68,16 @@
             <nav>
                 <div class="logo">
                     <figure>
-                        <?php
-                            echo ('<a href="../index.php'.$caminho.'"><img src="../../IMG/logotipo.png" alt="Logotipo"></a>');
-                        ?>
+                        <a href="../index.php"><img src="../../IMG/logotipo.png" alt="Logotipo"></a>
                     </figure>
                 </div>
 
                 <div class="lista-menu">
                     <ul>
-                        <?php
-                            echo ('<li><a href="../index.php'.$caminho.'">Home</a></li>
-                            <li><a href="../lojas.php">Loja</a></li>
-                            <li><a href="../sobre.php">Sobre</a></li>
-                            <li><a href="../suporte.php">Suporte</a></li>');
-                        ?>
+                        <li><a href="../index.php">Home</a></li>
+                        <li><a href="../lojas.php">Loja</a></li>
+                        <li><a href="../sobre.php">Sobre</a></li>
+                        <li><a href="../suporte.php">Suporte</a></li>
                     </ul>
                 </div>
 
