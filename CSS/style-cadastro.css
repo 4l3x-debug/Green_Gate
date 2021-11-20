@@ -107,7 +107,7 @@ body{
 }
 
 .tp-usuario, .data-nascimento, .genero, .cpf, .cnpj, .razao{
-    height: 75px;
+    height: 60px;
 	position: relative;
 	top: 15px;
 }
@@ -125,4 +125,19 @@ body{
 
 .col-sm-1.btn {
 	    margin: 0 15px;
+}
+
+.genero a:not([href]):not([class]){
+	text-decoration: none;
+	color: #007bff;
+}
+
+.genero a:not([href]):not([class]):hover{
+	color: #0056b3;
+	cursor: pointer;
+}
+
+.genero span{
+	font-size: 15px; 
+	padding: 0 14px;
 }

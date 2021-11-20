@@ -142,6 +142,10 @@
 							</div>
 						</div>
 
+						<div class="row genero">
+							<span>Ao clicar no botão direito, você estará concordando com nossos <a href="termos_de_uso.php">Termos de Uso</a>, <a href="politica_de_privacidade.php">Política de Privacidade</a> e <a href="politica_de_cookies.php">Política de Cookies.</a></span>
+						</div>
+
 						<div class="row btn-parte1">
 							<div class="col-sm-1 btn" onclick="Voltar()">
 								<i class="fas fa-arrow-left"></i>
