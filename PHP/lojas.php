@@ -3,9 +3,9 @@
     include ('conexao.php');
     include ('barra_rolagem.php');
 
-    if($_SESSION){
-        $tp_usuario = $_GET['tp_usuario'];
-        $id_usuario = $_GET['id_usuario'];
+    if(isset($_SESSION['id_usuario'])){
+        $tp_usuario = $_SESSION['tp_usuario'];
+        $id_usuario = $_SESSION['id_usuario'];
 
         if($tp_usuario == 0 or $tp_usuario == 2){
             $sql_usuario = 'select * from pf_fisico where id_pf_fisico = '.$id_usuario.';';
@@ -39,10 +39,7 @@
             }
         }else{}
 
-    }else{
-        $tp_usuario = 0;
-        $id_usuario = 0;
-    }
+    }else{}
 ?>
 
 
@@ -94,9 +91,6 @@
     <header>
         <section class="main-nav">
             <nav>
-                <?php
-                    if(!isset($_SESSION['id_usuario'])){
-                ?>
 
                 <div class="logo">
                     <figure>
@@ -111,7 +105,11 @@
                         <li><a href="sobre.php">Sobre</a></li>
                         <li><a href="suporte.php">Suporte</a></li>
                     </ul>
-                </div>                    
+                </div>
+
+                <?php
+                    if(!isset($_SESSION['id_usuario'])){
+                ?>                    
 
                 <div class="figuras" style="top: 40%;">
                     <a href=""><i class="fas fa-search"></i></a>
@@ -122,22 +120,7 @@
                 <?php
                     }else{  
 
-                echo ('<div class="logo">
-                    <figure>
-                        <a href="index.php'.$caminho.'"><img src="../IMG/logotipo.png" alt="Logotipo"></a>
-                    </figure>
-                </div>
-
-                <div class="lista-menu">
-                    <ul>
-                        <li><a href="index.php'.$caminho.'">Home</a></li>
-                        <li><a href="lojas.php'.$caminho.'">Loja</a></li>
-                        <li><a href="sobre.php'.$caminho.'">Sobre</a></li>
-                        <li><a href="suporte.php'.$caminho.'">Suporte</a></li>
-                    </ul>
-                </div>  
-                        
-                <div class="figuras" style="top: 30%;">
+                echo ('<div class="figuras" style="top: 30%;">
                     <a href=""><i class="fas fa-search"></i></a>
                     <a href="#" onclick="box()"><div class="usuario">
                         <img src="../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">

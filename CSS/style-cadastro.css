@@ -106,7 +106,7 @@ body{
 	display: none;
 }
 
-.tp-usuario, .data-nascimento, .genero, .cpf, .cnpj, .razao{
+.tp-usuario, .data-nascimento, .genero, .cpf, .cnpj, .razao, .termos{
     height: 60px;
 	position: relative;
 	top: 15px;
@@ -127,17 +127,28 @@ body{
 	    margin: 0 15px;
 }
 
-.genero a:not([href]):not([class]){
+.termos a:not([href]):not([class]){
 	text-decoration: none;
 	color: #007bff;
 }
 
-.genero a:not([href]):not([class]):hover{
+.termos a:hover{
 	color: #0056b3;
 	cursor: pointer;
+	text-decoration: none;
 }
 
-.genero span{
+.termos span{
 	font-size: 15px; 
-	padding: 0 14px;
+	width: 90%;
+	position: relative;
+	left: 40px;
+}
+
+.termos input{
+	width: 15px;
+	position: relative;
+	height: 15px;
+	top: 5px;
+	left: 20px;
 }

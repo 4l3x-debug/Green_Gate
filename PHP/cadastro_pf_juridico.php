@@ -143,8 +143,9 @@
 							</div>
 						</div>
 
-						<div class="row genero">
-							<span>Ao clicar no botão direito, você estará concordando com nossos <a>Termos de Uso</a>, <a>Política de Privacidade</a> e <a>Política de Cookies</a>.</span>
+						<div class="row termos">
+							<input type="checkbox" name="termos">
+							<span for="termos">Eu concordo com os <a href="termos_de_uso.php">Termos de Uso</a>, <a href="politica_de_privacidade.php">Política de Privacidade</a> e <a href="politica_de_cookies.php">Política de Cookies.</a></span>
 						</div>
 
 						<div class="row btn-parte1">
@@ -173,6 +174,10 @@
 
 			echo ('<script>window.alert("Preencha os campos!");window.location="cadastro_pf_juridico.php"</script>');
 		} else {
+
+			if(!isset($_POST['termos'])){
+				echo ('<script>window.alert("É preciso aceitar os termos para se cadastrar!");window.location="cadastro_pf_fisico.php"</script>');
+			}else{
 
 			$nome = $_POST['nome'];
 			$email = $_POST['email'];
@@ -208,6 +213,8 @@
 			} else {
 				echo ('<script>window.alert("As senhas estão incompatíveis!");window.location="cadastro_pf_juridico.php"</script>');
 			} // else senha
+
+			}
 
 		} // else empty
 
