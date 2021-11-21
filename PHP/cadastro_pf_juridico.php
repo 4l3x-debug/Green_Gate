@@ -145,7 +145,7 @@
 
 						<div class="row termos">
 							<input type="checkbox" name="termos">
-							<span for="termos">Eu concordo com os <a href="termos_de_uso.php">Termos de Uso</a>, <a href="politica_de_privacidade.php">Política de Privacidade</a> e <a href="politica_de_cookies.php">Política de Cookies.</a></span>
+							<span for="termos">Eu concordo com os <a href="termos_de_uso.php" target="_blank">Termos de Uso</a>, <a href="politica_de_privacidade.php" target="_blank">Política de Privacidade</a> e <a href="politica_de_cookies.php" target="_blank">Política de Cookies.</a></span>
 						</div>
 
 						<div class="row btn-parte1">
