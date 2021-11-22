@@ -70,7 +70,7 @@
 
     <!-- Cabeçalho -->
 
-    <section id="background-box">
+        <section id="background-box">
             <div id="abrir">
                 <nav class="box-user">
                     <ul>
@@ -224,11 +224,11 @@
             $sql_query = mysqli_query($conectar, $sql_select);
 
             while($dados_produto = mysqli_fetch_array($sql_query)){
-                echo ('<div class="container-produtos"> <div class="info">  
+                echo ('<div class="container-produtos"><a href="produto.php?id_produto='.$dados_produto['id_produto'].'" class="descricao"><div class="info">  
                 <img src="../IMG/Imagem_Produtos/'.$dados_produto['imagem'].'" alt="'.$dados_produto['nome_produto'].'">  
                 <span class="preco"> R$'.$dados_produto['preco'].'</span>
-                <p><a href="produto.php?id_produto='.$dados_produto['id_produto'].'" class="descricao">'.$dados_produto['nome_produto'].'</a></p>
-            </div> </div>');
+                <p>'.$dados_produto['nome_produto'].'</p>
+            </div></a></div>');
             }
         ?>
         <div class="paginas">

@@ -15,7 +15,6 @@ a{
     max-width: 1600px;
     height: 700px;
     width: 100%;
-    background: #fdfaef;
     position: relative;
 }
 
@@ -164,7 +163,7 @@ a{
 }
 
 input[type="checkbox"]:checked + .espaco-carrinho #carro{
-    color: white;
+    color: #FFF;
     background: #000;
     border: 1px solid #000;
 }
