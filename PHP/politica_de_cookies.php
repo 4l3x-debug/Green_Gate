@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>Green Gate | Segurança</title>
+        <title>Green Gate | Política de Cookies</title>
         <link rel="stylesheet" type="text/css" href="../CSS/style-index.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-adm.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-painel-produtor.css">
@@ -80,13 +80,13 @@
         <nav>
             <ul class="icon-aside">
                 <strong>Privacidade e Termos</strong>
-                <a href="#"><li>
+                <a href="termos_de_uso.php"><li>
                     Termos de Uso
                 </li></a>
                 <a href="politica_de_privacidade.php"><li>
                     Política de Privacidade
                 </li></a>
-                <a href="politica_de_cookies.php"><li>
+                <a href="#"><li>
                     Política de Cookies
                 </li></a>    
             </ul>
