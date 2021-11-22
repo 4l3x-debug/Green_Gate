@@ -141,7 +141,7 @@ a{
 .section-valores{
     height: 850px;
     width: 100%;
-    background-color: #f8fbd3;
+    background-color: #f9fdc5;
     text-align: center;
     justify-content: center;
 }
@@ -347,6 +347,55 @@ a{
 
 .box-shadow-imagem:hover{
     background-color: #000;
+}
+.imagem_1 {
+    background-color: #fefae0;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    padding: 100px 0 100px 0;
+}
+
+.espacamento-produtos {
+   display: flex;
+    justify-content: center;
+    width: 35%;
+    height: 250px;
+}
+
+.produtos{
+    height: 250px;
+    width: 400px;
+    border-radius: 20px;
+}
+
+.produtos img{
+    border-radius: 20px;
+    width: 407px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.box-shadow-imagem {
+    width: 407px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+.box-shadow-imagem a img {
+    width: 407px;
+    height: 250px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px 0 #e5e4e2;
+}
+
+.box-shadow-imagem:hover{
+    background-color: #000;
+}
+
+.box-shadow-imagem a img:hover{
+    opacity: 50%;
 }
 
 /*Rodapé*/
