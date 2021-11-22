@@ -126,7 +126,10 @@
 
                 while($dados_empresa = mysqli_fetch_array($resul_empresa)){
 
-                echo ('   
+                echo ('
+                
+            <img src="../../IMG/Imagem_Usuario/'.$dados_empresa['imagem'].'">
+
             <div class="fundo-loja">
                 
                 <section>
@@ -140,7 +143,7 @@
                     </tr>
 
                     <tr>
-                        <td>Razão Social: ' . $dados_empresa['razao'] . '</td>
+                        <td style="line-height: 20px;">Razão Social: ' . $dados_empresa['razao'] . '</td>
                         <td>CNPJ: ' . $dados_empresa['cnpj'] . '</td>
                         <td>Data de Cadastro: ' . $dados_empresa['data_cadastro'] . '</td>
                     </tr>

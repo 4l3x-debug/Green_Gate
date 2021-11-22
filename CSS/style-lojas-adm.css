@@ -8,13 +8,15 @@
     height: 50%;
     left: 15%;
     top: 8%;
-    padding-top: 5px; 
+    padding-top: 5px;
     padding-bottom: 50px;
+    bottom: 55px;
 }
 
 .fundo-loja section{
     background-color: #FFF;
     border-radius: 20px;
+    height: 300px;
 }
 
 .paginacao{
@@ -33,7 +35,7 @@
     background-color: #c3ce64;
     position: relative;
     float: right;
-    bottom: 40px;
+    bottom: 60px;
     left: 20px;
 }
 
@@ -53,5 +55,14 @@
 }
 
 table{
-    top: 0;
+    top: 52px;
+}
+
+.lojas img{
+    position: relative;
+    z-index: 20;
+    width: 100px;
+    left: 46%;
+    border-radius: 100px;
+    box-shadow: 0 0 0 1px rgba(64,87,109,.07),0 2px 12px rgba(151, 151, 151, 0.2)
 }
