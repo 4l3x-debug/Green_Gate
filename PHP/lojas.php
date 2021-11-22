@@ -114,7 +114,7 @@
                 <div class="figuras" style="top: 40%;">
                     <a href=""><i class="fas fa-search"></i></a>
                     <a href="login.php"><i class="fas fa-user-circle"></i></a>
-                    <a href=""><i class="fas fa-shopping-bag"></i></a>
+                    <a href=""><i class="fas fa-shopping-cart"></i></a>
                 </div>
                 
                 <?php
@@ -125,7 +125,7 @@
                     <a href="#" onclick="box()"><div class="usuario">
                         <img src="../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">
                     </div></a>
-                    <a href=""><i class="fas fa-shopping-bag"></i></a></div>');
+                    <a href=""><i class="fas fa-shopping-cart"></i></a></div>');
                 
                     }    
                 ?>
