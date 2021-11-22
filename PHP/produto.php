@@ -170,7 +170,7 @@
                 <img src=""> <a href="compra.php" > Comprar </a>
             </div>
 
-            <input id="checkbox" type="checkbox">   
+            <input id="checkbox" type="checkbox">  
             
             <div class="espaco-carrinho"> 
                 <label id="carrinho" for="checkbox"> <span id="carro"> Carrinho </span> </label> <br> 
@@ -188,6 +188,13 @@
         </div>
     </section>
     </div></div>
+
+    <?php
+        if(!isset($_SESSION['id_usuario'])){
+            echo ('<script>window.alert("Faça o login primeiro!");window.location="login.php"</script>');
+        }else{
+        }
+    ?>
 
     <!-- Rodapé -->
 

@@ -176,14 +176,14 @@ input[type="checkbox"]:checked + .espaco-carrinho #carro{
 }
 
 .detalhes h2{
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 400;
     font-family: sans-serif;
     text-align: center;
 }
 
 .detalhes span{
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-family: sans-serif;
     line-height: 17pt;
 }

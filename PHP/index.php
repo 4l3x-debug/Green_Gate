@@ -138,41 +138,61 @@
 
     <section class="main-conteudo" onclick="boxFechar()">
         <div class="conteudo">
-
-            <section class="slide">
-                <img class="foto" src="../IMG/slider_1.png">
-                <img class="foto" src="../IMG/slider_2.png">
-                <img class="foto" src="../IMG/slider_3.png">
-            </section>
-
-            <a href="#"><button>Saiba Mais</button></a>
+            <div>
+                <h1 class="slogan"> PARA QUEM SE COMPROMETE COM O MEIO AMBIENTE </h1> <br> <br>
+                <span class="msg-fundo"> Muitos produtos sustentáveis para se comprar, visite uma de nossas lojas agora mesmo </span> <br> <br> <br> <br>
+                <a class="button-lojas" href="lojas.php"> Ir para Lojas </a>
+            </div>
         </div>
-
     </section>
 
-    <section class="imagem_1" onclick="boxFechar()">
-
-        <?php
-            $sql_produto = 'select * from produto limit 0,3;';
-            $resul_produto = mysqli_query($conectar,$sql_produto);
-
-        while($produto = mysqli_fetch_array($resul_produto)){
-
-            echo('<div class="espacamento-produtos"><div class="box-shadow-imagem"><a href="produto.php?id_produto='.$produto['id_produto'].'"><article class="produtos">
-                    <img src="../IMG/Imagem_Produtos/'.$produto['imagem'].'" alt="'.$produto['nome_produto'].'">
-            </article></a></div></div>');
-
-        }
-
-        ?>
-
+    <section class="section-valores" onclick="boxFechar()">
+        <div class="container-titulo">
+            <h1>QUEM SOMOS?</h1>
+        </div> 
+        
+        <strong><p> Nossos Objetivos </p></strong>
+   
+        <div class="espaco-obj">
+            <div class="container-obj">
+                <p>
+                    Garantir o Suporte Necessário para os Clientes.
+                </p> <br>
+               <div> <i id="obj1" class="far fa-handshake"></i> </div>    
+            </div>
+            <div class="container-obj">
+                
+                <p>
+                    Popularizar o Consumo Sustentável.
+                </p> <br> <br>
+                <div class="space-2"> <i id="obj2" class="fas fa-comments-dollar"></i> </div>
+            </div>
+            <div class="container-obj">
+                <p>
+                    Colaborar com Preservação do Meio Ambiente.
+                </p> <br>
+                <div> <i id="obj3" class="fas fa-frog"></i> </div>
+            </div>
+        </div>
     </section>
 
-    <div class="box-anuncio" onclick="boxFechar()">
-        <div class="anuncio">
-            <img src="../IMG/anuncio.png">
+    <section class="sessao1" onclick="boxFechar()"> 
+        <div class="space-img">
+            <i class="fas fa-crown"></i>
         </div>
-    </div>
+        <div class="space-string">
+            <span class="string-sessao"> CONHEÇA NOSSOS PLANOS </span> <br> <a href=""> Planos </a>
+        </div>
+    </section>
+
+    <section class="sessao2" onclick="boxFechar()"> 
+        <div class="space-string2">
+            <span class="string-sessao2"> SAIBA MAIS SOBRE O PROJETO GREEN GATE</span> <br> <a href=""> Sobre Nós </a>
+        </div>
+        <div class="space-img">
+            <i class="fas fa-book-open" id="book"></i>
+        </div>
+    </section>
 
     <section class="imagem_1" onclick="boxFechar()">
     
