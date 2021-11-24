@@ -192,6 +192,34 @@
 			$data_cadastro = date("Y-m-d");
 			$data_americana = date("Y-m-d", strtotime($data_nascimento));
 
+			function isCpf($cpf) {
+			$cpf = preg_replace("/[^0-9]/","", $cpf);
+			$digitoUm = 0;
+			$digitoDois = 0;
+
+			for($i = 0, $x = 10; $i <= 8; $i++, $x--) {
+				$digitoUm += $cpf[$i] * $x; 
+			}
+			for($i = 0, $x = 11; $i <= 9; $i++, $x--){
+				if(str_repeat($i, 11) == $cpf) {
+					return false;
+				}
+				$digitoDois += $cpf[$i] * $x;
+			}
+
+			$calculoUm = (($digitoUm%11) < 2) ? 0 : 11-($digitoUm%11);
+			$calculoDois = (($digitoDois%11) < 2) ? 0 : 11- ($digitoDois%11);
+
+			if($calculoUm <> $cpf[9] and $calculoDois <> $cpf[10]){
+				return false;
+			}
+
+			return true;
+
+			}
+
+			if(isCpf($cpf)) {
+
 			if ($genero == "F") {
 
 				$nome_imagem = 'girl.png';
@@ -214,7 +242,11 @@
 				echo ('<script>window.alert("As senhas estão incompatíveis!");window.location="cadastro_pf_fisico.php"</script>');
 			} // else senha
 
-			}
+			}else{
+				echo ('<script>window.alert("O CPF inválido!");window.location="cadastro_pf_fisico.php"</script>');
+			} // cpf
+
+			} // termos
 
 		} // else empty
 
