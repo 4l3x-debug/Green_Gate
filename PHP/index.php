@@ -181,7 +181,7 @@
             <i class="fas fa-crown"></i>
         </div>
         <div class="space-string">
-            <span class="string-sessao"> CONHEÇA NOSSOS PLANOS </span> <br> <a href=""> Planos </a>
+            <span class="string-sessao"> CONHEÇA NOSSOS PLANOS </span> <br> <a href="planos.php"> Planos </a>
         </div>
     </section>
 
