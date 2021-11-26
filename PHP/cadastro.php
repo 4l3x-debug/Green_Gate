@@ -12,7 +12,8 @@
 
 		include('fundo_ondas.php');
 	?>
-
+	
+		<link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
 		<link rel="stylesheet" href="../FONTAW/css/all.css">
 
 	<style type="text/css">
