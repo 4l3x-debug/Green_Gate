@@ -38,8 +38,7 @@ body{
 .pagina-usuario a {
     color: #000;
     position: absolute;
-    top: 5px;
-    left: 8px;
+    width: 100%;
     z-index: 1;
 }
 

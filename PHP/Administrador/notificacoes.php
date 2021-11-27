@@ -17,6 +17,23 @@
                 padding: 0;
                 border: 0;
             }
+
+            .figuras-produtor{
+                right: 50px;
+            }
+
+            .figuras-produtor a i{
+                padding: 0;
+            }
+
+            .pagina-usuario a{
+                color: #000;
+                position: relative;
+                width: 100%;
+                z-index: 1;
+                display: block;
+                cursor: pointer;
+            }
         </style>
     </head>
     <body class="corpo-painel-produtor">
@@ -71,11 +88,11 @@
                 </div>
 
                 <div class="figuras-produtor">
-                    <a href="#" onclick="box()">
                         <div class="usuario">
-                            <?php echo ('<img src="../../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">'); ?>     
+                        <a href="#" onclick="box()">
+                            <?php echo ('<img src="../../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">'); ?>
+                        </a>     
                         </div>
-                    </a>
                     <a href="#"><i class="far fa-bell"></i></a>
                 </div>
             </nav>
@@ -95,11 +112,7 @@
 
         while($suporte = mysqli_fetch_array($query_suporte)){
 
-        ?>
-
-        <div class="fundo-notificacoes">
-
-        <?php
+        echo ('<a href="mensagem_notificacao.php?suporte='.$suporte['id_suporte'].'" class="fundo-notificacoes">');
             
             if($suporte['tp_usuario_remetente'] == 2){
                 $sql_remetente = 'select * from pf_fisico where id_pf_fisico='.$suporte['id_remetente'].';';
@@ -115,7 +128,7 @@
 
         ?>
 
-        </div>
+        </a>
 
         <?php
 
