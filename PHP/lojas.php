@@ -144,7 +144,7 @@
 
             <?php
 
-                $sql_empresa = 'select * from pf_juridico order by id_pf_juridico ASC;';
+                $sql_empresa = 'select * from pf_juridico where tp_usuario=1 order by id_pf_juridico ASC;';
                 $resul_empresa = mysqli_query($conectar, $sql_empresa);
 
                 while($dados_empresa = mysqli_fetch_array($resul_empresa)){
