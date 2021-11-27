@@ -63,7 +63,6 @@
 
 
 .botao-excluir:hover{
-	transition: ease-out;
-    transition-duration: 0.1s;
-    transform: scale(105%);
+	background-color: #333;
+	transition: background-color .2s;
 }

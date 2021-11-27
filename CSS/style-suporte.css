@@ -85,7 +85,9 @@ input, select{
     font-size: 21px;
     position: absolute;
     top: 13px;
-    left: 0;
+    left: 13px;
+    width: 20px;
+    height: 22px;
 }
 
 .botao input{
@@ -98,4 +100,9 @@ input, select{
     opacity: 0%;
     cursor: pointer;
     z-index: 1;
+}
+
+.botao:hover{
+    background-color: #333;
+    transition: background-color .2s;
 }
