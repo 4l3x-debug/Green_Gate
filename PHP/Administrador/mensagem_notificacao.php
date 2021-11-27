@@ -7,10 +7,10 @@
         <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-produtor.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-consumidor.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-box-user.css">
-        <link rel="stylesheet" href="../../FONTAW/css/all.css">
-        <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-suporte.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-mensagem-notificacao.css">
+        <link rel="stylesheet" href="../../FONTAW/css/all.css">
+        <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
     </head>
 

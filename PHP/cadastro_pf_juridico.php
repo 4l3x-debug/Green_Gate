@@ -15,9 +15,9 @@
 	include('fundo_ondas.php');
 	?>
 
+	<link rel="stylesheet" type="text/css" href="../CSS/style-cadastro.css">
 	<link rel="stylesheet" href="../FONTAW/css/all.css">
 	<link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="../CSS/style-cadastro.css">
 
 </head>
 
