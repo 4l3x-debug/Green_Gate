@@ -94,7 +94,7 @@
 
         $caminho = '?id_usuario='.$dados_usuario['id_pf_juridico'].'&tp_usuario='.$dados_usuario['tp_usuario'].'';
 
-        if($dados_usuario['tp_usuario'] == 1){ // if tp_usuario
+        if($dados_usuario['tp_usuario'] == 3){ // if tp_usuario
 
         $id_suporte = $_GET['suporte'];
 
@@ -113,11 +113,7 @@
             $resul_remetente = mysqli_query($conectar,$sql_remetente);
             $remetente = mysqli_fetch_array($resul_remetente);
 
-            if($dados_mensagem['tp_usuario_remetente'] == 1){
-                $tp_usuario = 'Produtor';
-            }else{
-                $tp_usuario = 'Produtor Consumidor';
-            }
+            $tp_usuario = 'Produtor';
         }else{}
 
     ?>
