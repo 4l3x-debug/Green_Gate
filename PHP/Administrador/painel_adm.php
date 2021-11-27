@@ -21,6 +21,11 @@
                 display: flex;
                 justify-content: center;
             }
+            
+            .pagina-usuario a {
+                text-align: center;
+                top: 5px;
+            }
         </style>
         
     </head>
