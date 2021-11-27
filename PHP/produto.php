@@ -67,13 +67,15 @@
 </head>
 <body bgcolor="#fdfaef">
 
+    <!-- Dados do Produto -->
+    
     <?php
-
         $sql = 'select * from produto where id_produto = '.$_GET['id_produto'].';';
         $query = mysqli_query($conectar, $sql);
         $dados_produto = mysqli_fetch_array($query);
-
     ?>
+
+        <!-- Box User Oculto -->
 
         <section id="background-box">
             <div id="abrir">
@@ -93,6 +95,7 @@
             </div>
         </section>
 
+        <!-- Cabeçalho -->
 
         <header>
             <section class="main-nav">
@@ -139,6 +142,7 @@
         </header>
 
     <!--Produto-->
+
     <div id="all">
     <div id="fundo">
     <section class="sessao-produto">

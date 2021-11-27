@@ -9,6 +9,8 @@
 
     <body bgcolor="#f9fdc5">
 
+    <!-- Planos -->
+
     <h2>Escolha o seu Plano!</h2>  
 
         <section>
