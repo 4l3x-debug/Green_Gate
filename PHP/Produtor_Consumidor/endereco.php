@@ -17,6 +17,8 @@
 
     <body class="corpo-painel-produtor">
 
+    <!-- Dados do Usuário -->
+    
     <?php
         include('../conexao.php');
 
@@ -156,7 +158,9 @@
                 <td>Excluir</td>
             </tr>
 
-        <?php
+    <!-- Exibir Endereço -->
+    
+    <?php
 
         $sql_enderecos = 'select * from endereco where id_pf_juridico='.$id.';';
         $resul = mysqli_query($conectar,$sql_enderecos);
@@ -170,7 +174,7 @@
                 <td><a href="delete_endereco.php?del='.$con['id_endereco'].'"><i class="fas fa-trash"></i></a></td></tr>');
         }
 
-        ?>
+    ?>
 
         </table>
 
@@ -178,6 +182,8 @@
     
     </main>
 
+    <!-- Adicionar Endereço -->
+    
     <?php
 
     if(isset($_POST['adicionar'])){
@@ -234,6 +240,8 @@
         </div>
     </footer>
 
+    <!-- Dados do Endereço -->
+
     <?php
 
     $sql = 'select * from endereco where id_endereco='.$_GET['edit'].';';
@@ -282,6 +290,8 @@
         </div>
     </section>
 
+    <!-- Editar Endereço -->
+    
     <?php
 
     if(isset($_POST['salvar'])){
