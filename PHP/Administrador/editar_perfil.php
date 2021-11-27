@@ -15,6 +15,8 @@
     </head>
     <body class="corpo-painel-produtor">
 
+    <!-- Cabeçalho -->
+
     <section id="background-box">
         <div id="abrir">
             <nav class="box-user">
@@ -33,6 +35,8 @@
         </div>
     </section>
 
+    <!-- Dados do Usuário -->
+
     <?php
         include('../conexao.php');
 
@@ -50,8 +54,6 @@
         if($dados_usuario['tp_usuario'] == 0){
 
     ?>
-
-    <!-- Cabeçalho -->
 
         <section class="main-nav-produtor">
             <nav>
@@ -180,7 +182,9 @@
         <div class="direitos">
             <p>© Green Gate 2021</p>
         </div>
-    </footer>  
+    </footer> 
+    
+    <!-- Editar Perfil -->
 
     <?php
 
