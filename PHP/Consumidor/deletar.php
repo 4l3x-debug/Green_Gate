@@ -13,7 +13,10 @@
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
     </head>
+
     <body class="corpo-painel-produtor">
+
+    <!-- Dados do Usuário -->
 
     <?php
         include('../conexao.php');
@@ -117,21 +120,24 @@
 
         </section>
     </main>
-        <?php
 
-        if(isset($_POST['deletar'])){
+    <!-- Deletar Perfil -->
+    
+    <?php
 
-            $sql_deletar_conta = 'delete from pf_fisico where pf_fisico.id_pf_fisico='.$id.';';
-            $deletar_conta = mysqli_query($conectar, $sql_deletar_conta);
+    if(isset($_POST['deletar'])){
 
-            if($deletar_conta){
-                echo ('<script>window.alert("Apagado com sucesso!");window.location="../index.php"</script>');
-            }else{
-                echo ('<script>window.alert("Erro ao apagar!");window.location="deletar.php"</script>');
-            }
+        $sql_deletar_conta = 'delete from pf_fisico where pf_fisico.id_pf_fisico='.$id.';';
+        $deletar_conta = mysqli_query($conectar, $sql_deletar_conta);
+
+        if($deletar_conta){
+            echo ('<script>window.alert("Apagado com sucesso!");window.location="../index.php"</script>');
+        }else{
+            echo ('<script>window.alert("Erro ao apagar!");window.location="deletar.php"</script>');
         }
+    }
 
-        ?>
+    ?>
 
     <!-- Rodapé -->
 

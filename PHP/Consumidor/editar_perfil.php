@@ -13,7 +13,10 @@
         <script type="text/javascript" src="../../JS/script_editar_perfil.js"></script>
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
     </head>
+    
     <body class="corpo-painel-produtor">
+
+    <!-- Dados do Usuário -->
 
     <?php
         include('../conexao.php');
@@ -183,7 +186,9 @@
         <div class="direitos">
             <p>© Green Gate 2021</p>
         </div>
-    </footer>  
+    </footer>
+
+    <!-- Editar o Perfil -->
 
     <?php
 

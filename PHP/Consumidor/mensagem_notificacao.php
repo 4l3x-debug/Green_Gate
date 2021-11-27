@@ -7,76 +7,16 @@
         <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-produtor.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-painel-consumidor.css">
         <link rel="stylesheet" type="text/css" href="../../CSS/style-box-user.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-suporte.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/style-mensagem-notificacao.css">
         <link rel="stylesheet" href="../../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
-        <link rel="stylesheet" type="text/css" href="../../CSS/style-suporte.css">
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
-        
-        <style type="text/css">
-            *{
-                font-family: Caviar Dreams;
-            }
-
-            .suporte{
-                top: 9%;
-            }
-
-            .suporte span{
-                border-bottom: 1px solid #ebebeb;
-            }
-
-            .linha{
-                font-size: 17px;
-                margin-bottom: 16px;
-            }
-
-            .primeira{
-                top: 0;
-                display: inline-block;
-                border-bottom: 1px solid #ebebeb;
-                text-align: left;
-            }
-
-            .segunda{
-                top: 0;
-                display: inline-block;
-            }
-
-            .terceira{
-                height: 250px;
-                font-size: 16px;
-                width: 720px;
-                border: 1px solid #ebebeb;
-                border-radius: 20px;
-                padding: 10px;
-            }
-
-            form, button{
-                display: inline;
-                font-size: 16px;
-                margin-left: 10px;
-            }
-
-            input, button{
-                border: 0;
-                width: 100px;
-                height: 30px;
-                background-color: #c3c65b;
-                color: #FFF;
-                border-radius: 20px;
-                cursor: pointer;
-            }
-
-            a{
-                color: #FFF;
-            }
-
-            input:hover, button:hover{
-                background-color: #000;
-            }
-        </style>
     </head>
+
     <body class="corpo-painel-produtor">
+
+    <!-- Dados do Usuário -->
 
     <?php
         include('../conexao.php');
@@ -211,25 +151,27 @@
         </div>
     </footer>
 
-        <?php
+    <!-- Excluir Suporte -->
+
+    <?php
         
-        if(isset($_POST['excluir'])){
+    if(isset($_POST['excluir'])){
 
-            $sql_deletar_conta = 'delete from suporte where suporte.id_suporte='.$id_suporte.';';
-            $deletar_conta = mysqli_query($conectar, $sql_deletar_conta);
+        $sql_deletar_conta = 'delete from suporte where suporte.id_suporte='.$id_suporte.';';
+        $deletar_conta = mysqli_query($conectar, $sql_deletar_conta);
 
-            if($deletar_conta){
-                echo ('<script>window.alert("Apagado com sucesso!");window.location="notificacoes.php"</script>');
-            }else{
-                echo ('<script>window.alert("Erro ao apagar!");window.location="mensagem_notificacao.php"</script>');
-            }
+        if($deletar_conta){
+            echo ('<script>window.alert("Apagado com sucesso!");window.location="notificacoes.php"</script>');
+        }else{
+            echo ('<script>window.alert("Erro ao apagar!");window.location="mensagem_notificacao.php"</script>');
         }
+    }
 
-        }else{ // else tp_usuario
-            header('location:../invalido.php');
-        }
+    }else{ // else tp_usuario
+        header('location:../invalido.php');
+    }
 
-        ?>
+    ?>
 
     </body>
 </html>

@@ -18,6 +18,8 @@
 
     <body class="corpo-painel-produtor">
 
+    <!-- Dados do Usuário -->
+    
     <?php
         include('../conexao.php');
 
@@ -157,6 +159,8 @@
                 <td>Excluir</td>
             </tr>
 
+        <!-- Exibir os Endereços -->
+        
         <?php
 
         $sql_enderecos = 'select * from endereco where id_pf_fisico='.$id.';';
@@ -178,6 +182,8 @@
         </section>
     
     </main>
+
+    <!-- Adicionar Endereço -->
 
     <?php
 
@@ -235,6 +241,8 @@
         </div>
     </footer>
 
+    <!-- Dados do Endereço -->
+
     <?php
 
     $sql = 'select * from endereco where id_endereco='.$_GET['edit'].';';
@@ -282,6 +290,8 @@
             
         </div>
     </section>
+
+    <!-- Editar Endereço -->
 
     <?php
 
