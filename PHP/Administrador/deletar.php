@@ -15,6 +15,8 @@
     </head>
     <body class="corpo-painel-produtor">
 
+    <!-- Dados do Usuário -->
+
     <?php
         include('../conexao.php');
 
@@ -99,9 +101,10 @@
 
         <div class="deletar-perfil">
 
-
             <p>Deletar Perfil</p>
+            
             <span>Ao excluir o perfil os dados serão apagados, ou seja não será possível recuperar as informações.</span>
+            
             <div class="botao-excluir">
                 <i class="fas fa-eraser">
                     <form action="#" method="POST">
@@ -114,21 +117,24 @@
 
         </section>
     </main>
-        <?php
 
-        if(isset($_POST['deletar'])){
+    <!-- Deletar o Perfil -->
 
-            $sql_deletar_conta = 'delete from pf_fisico where pf_fisico.id_pf_fisico='.$id.';';
-            $deletar_conta = mysqli_query($conectar, $sql_deletar_conta);
+    <?php
 
-            if($deletar_conta){
-                echo ('<script>window.alert("Apagado com sucesso!");window.location="../index.php"</script>');
-            }else{
-                echo ('<script>window.alert("Erro ao apagar!");window.location="deletar.php"</script>');
-            }
+    if(isset($_POST['deletar'])){
+
+        $sql_deletar_conta = 'delete from pf_fisico where pf_fisico.id_pf_fisico='.$id.';';
+        $deletar_conta = mysqli_query($conectar, $sql_deletar_conta);
+
+        if($deletar_conta){
+            echo ('<script>window.alert("Apagado com sucesso!");window.location="../index.php"</script>');
+        }else{
+            echo ('<script>window.alert("Erro ao apagar!");window.location="deletar.php"</script>');
         }
+    }
 
-        ?>
+    ?>
 
     <!-- Rodapé -->
 

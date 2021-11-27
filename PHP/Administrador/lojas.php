@@ -15,6 +15,8 @@
         
     </head>
     <body class="corpo-painel-produtor">
+        
+    <!-- Dados do Usuário e Paginação -->
 
     <?php
         include('../conexao.php');
@@ -53,7 +55,7 @@
     ?>
 
     <!-- Cabeçalho -->
-
+        
         <section id="background-box">
             <div id="abrir">
                 <nav class="box-user">
@@ -102,7 +104,6 @@
     </header>
 
     <!-- Conteúdo -->
-
 
     <section class="pagina-usuario" onclick="boxFechar()">
 
