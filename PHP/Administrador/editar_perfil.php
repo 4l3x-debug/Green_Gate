@@ -174,8 +174,8 @@
         <div id="linha-vert"></div>
 
         <div class="footer-icon">
-            <a href="https://www.facebook.com/Green-Gate-103711395206238"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/green.gate_/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/Green-Gate-103711395206238" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/green.gate_/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fas fa-envelope"></i></a>
         </div>
 
