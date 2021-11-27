@@ -24,6 +24,8 @@
 
     <body class="corpo-painel-produtor">
 
+    <!-- Dados do Usuário -->
+
     <?php
         include('../conexao.php');
 
@@ -43,7 +45,6 @@
     ?>
 
     <!-- Cabeçalho -->
-
 
         <section id="background-box">
             <div id="abrir">
@@ -136,7 +137,9 @@
 
         </section>
     </main>    
-
+    
+    <!-- Mudar a Senha -->
+    
     <?php
 
     if(isset($_POST['salvar'])){

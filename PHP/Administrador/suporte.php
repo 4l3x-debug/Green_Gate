@@ -14,8 +14,11 @@
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
         
     </head>
+    
     <body class="corpo-painel-produtor">
 
+    <!-- Dados do Usuário -->
+    
     <?php
         include('../conexao.php');
 
@@ -161,7 +164,9 @@
         </div>
     </footer>
 
-        <?php
+    <!-- Enviar o Suporte -->
+
+    <?php
 
         if(isset($_POST['enviar'])){
 
@@ -179,19 +184,19 @@
 
             if($usuario == 2){
 
-                $sql_pf_fisico = 'select *from pf_fisico where email = "'.$email.'";';
-                $resul = mysqli_query($conectar, $sql_pf_fisico);
-                $dados = mysqli_fetch_array($resul);
+            $sql_pf_fisico = 'select *from pf_fisico where email = "'.$email.'";';
+            $resul = mysqli_query($conectar, $sql_pf_fisico);
+            $dados = mysqli_fetch_array($resul);
 
-                $sql_suporte = 'insert into suporte(assunto, conteudo, data_envio, id_pf_fisico, id_pf_juridico, id_remetente, tp_usuario_remetente) values ("'.$assunto.'", "'.$conteudo.'", "'.$data_envio.'", '.$dados['id_pf_fisico'].', null, '.$id.', '.$dados_usuario['tp_usuario'].');';
+            $sql_suporte = 'insert into suporte(assunto, conteudo, data_envio, id_pf_fisico, id_pf_juridico, id_remetente, tp_usuario_remetente) values ("'.$assunto.'", "'.$conteudo.'", "'.$data_envio.'", '.$dados['id_pf_fisico'].', null, '.$id.', '.$dados_usuario['tp_usuario'].');';
 
-                $suporte = mysqli_query($conectar, $sql_suporte);
+            $suporte = mysqli_query($conectar, $sql_suporte);
 
                 if($suporte){
                     echo ('<script>window.alert("Mensagem enviada com sucesso!");window.location="suporte.php"</script>');
                 }else{
                     echo ('<script>window.alert("Erro ao enviar a mensagem!");window.location="suporte.php"</script>');
-                }
+                    }
 
             }else if($usuario == 1 or $usuario == 3){
 
@@ -207,12 +212,9 @@
                     echo ('<script>window.alert("Mensagem enviada com sucesso!");window.location="suporte.php"</script>');
                 }else{
                     echo ('<script>window.alert("Erro ao enviar a mensagem!");window.location="suporte.php"</script>');
+                    }
                 }
-
-
-            }
-            
-
+                
             } // else empty
 
         } // else enviar
@@ -221,7 +223,7 @@
             header('location:../invalido.php');
         }
 
-        ?>
+    ?>
 
     </body>
 </html>

@@ -29,8 +29,11 @@
         </style>
         
     </head>
-    <body class="corpo-painel-produtor">
 
+    <body class="corpo-painel-produtor">
+    
+    <!-- Dados do Usuário -->
+    
     <?php
         include('../conexao.php');
 

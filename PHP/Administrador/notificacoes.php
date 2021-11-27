@@ -36,7 +36,10 @@
             }
         </style>
     </head>
+
     <body class="corpo-painel-produtor">
+    
+    <!-- Dados do Usuário -->
 
     <?php
 
@@ -57,7 +60,7 @@
         $sql_suporte = 'select * from suporte where id_pf_fisico='.$id.';';
         $query_suporte = mysqli_query($conectar,$sql_suporte);
 
-?>
+    ?>
 
     <!-- Cabeçalho -->
 
