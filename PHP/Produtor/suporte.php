@@ -13,7 +13,10 @@
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
     </head>
+    
     <body class="corpo-painel-produtor">
+
+    <!-- Dados do Usuário -->
 
     <?php
         include('../conexao.php');
@@ -160,7 +163,9 @@
         </div>
     </footer>
 
-        <?php
+    <!-- Enviar Suporte -->
+    
+    <?php
 
         if(isset($_POST['enviar'])){
 
@@ -220,7 +225,7 @@
             header('location:../invalido.php');
         }
 
-        ?>
+    ?>
 
     </body>
 </html>

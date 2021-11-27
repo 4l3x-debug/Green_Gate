@@ -24,6 +24,8 @@
 
     <body class="corpo-painel-produtor">
 
+    <!-- Dados do Usuário -->
+
     <?php
         include('../conexao.php');
 
@@ -138,7 +140,9 @@
             </form>
 
         </section>
-    </main>    
+    </main>
+    
+    <!-- Alterar Senha -->
 
     <?php
 

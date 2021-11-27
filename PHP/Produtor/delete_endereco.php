@@ -1,3 +1,5 @@
+<!-- Deletar Endereço -->
+
 <?php
 
 	include('../conexao.php');

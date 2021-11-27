@@ -16,7 +16,10 @@
         <script type="text/javascript" src="../../JS/script_editar_endereco.js"></script>
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
     </head>
+    
     <body class="corpo-pagina-adm">
+
+    <!-- Dados do Usuário -->
 
     <?php
 
@@ -211,7 +214,9 @@
             <p>© Green Gate 2021</p>
         </div>
     </footer>
-
+    
+    <!-- Inserir Produtos -->
+    
     <?php
 
         if(isset($_POST['inserir'])){
@@ -300,6 +305,8 @@
         </div>
     </section>
 
+    <!-- Editar Produto -->
+    
     <?php
     
     if(isset($_POST['salvar'])){
