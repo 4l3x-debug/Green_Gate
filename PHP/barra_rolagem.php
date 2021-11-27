@@ -1,3 +1,5 @@
+<!-- Barra de Rolagem -->
+
 <style type="text/css">
 	body::-webkit-scrollbar{
 		width: 7px;

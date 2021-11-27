@@ -1,3 +1,5 @@
+<!-- Deletando Perfil -->
+
 <?php
 
 	include('conexao.php');

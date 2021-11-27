@@ -166,6 +166,8 @@
 		</div>
 	</div>
 
+	<!-- Cadastrar Perfil Físico -->
+
 	<?php
 
 	if (isset($_POST['cadastrar'])) { // if cadastrar

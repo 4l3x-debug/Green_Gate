@@ -166,6 +166,8 @@
 		</div>
 	</div>
 
+	<!-- Cadastro Perfil Jurídico -->
+
 	<?php
 
 	if (isset($_POST['cadastrar'])) { // if cadastrar

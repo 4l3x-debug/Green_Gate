@@ -67,6 +67,8 @@
       </div> <!-- FIM - Tamanho Login-->
     </div> <!-- FIM - Tamanho da página-->
 
+    <!-- Logar -->
+    
     <?php
 
     session_start();
