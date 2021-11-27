@@ -11,7 +11,6 @@
         <link rel="stylesheet" type="text/css" href="../../CSS/style-box-user.css">
         <link rel="stylesheet" href="../../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
-        <script type="text/javascript" src="../../JS/script_editar_endereco.js"></script>
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
     </head>
 
@@ -244,6 +243,8 @@
 
     <?php
 
+    if($_GET['edit']){
+
     $sql = 'select * from endereco where id_endereco='.$_GET['edit'].';';
     $resul_editar = mysqli_query($conectar, $sql);
     $editar = mysqli_fetch_array($resul_editar);
@@ -251,7 +252,7 @@
     ?>
 
     <section id="editar">
-        <a href="#" onclick="editar()"><i class="fas fa-times"></i></a>
+        <a href="endereco.php?edit=0"><i class="fas fa-times"></i></a>
         <div class="editar-endereco">
 
             <h2>Endereço</h2>
@@ -294,6 +295,8 @@
     
     <?php
 
+    }else{
+
     if(isset($_POST['salvar'])){
 
         if(empty($_POST['cep-edit']) or empty($_POST['bairro-edit']) or empty($_POST['logradouro-edit']) or empty($_POST['n_residencial-edit'])){
@@ -319,6 +322,8 @@
         }
 
         }
+    }
+
     }
 
     }else{

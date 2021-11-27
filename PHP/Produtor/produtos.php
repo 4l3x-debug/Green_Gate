@@ -255,6 +255,8 @@
 
         }else{}
 
+    if($_GET['edit']){
+
     $sql = 'select * from produto where id_produto='.$_GET['edit'].';';
     $resul_editar = mysqli_query($conectar, $sql);
     $editar = mysqli_fetch_array($resul_editar);
@@ -262,7 +264,7 @@
     ?>
 
     <section id="editar">
-        <a href="#" onclick="editar()"><i class="fas fa-times"></i></a>
+        <a href="produtos.php?edit=0"><i class="fas fa-times"></i></a>
         <div class="editar-produtos">
 
             <h2>Produto</h2>
@@ -308,6 +310,8 @@
     <!-- Editar Produto -->
     
     <?php
+
+    }else{
     
     if(isset($_POST['salvar'])){
 
@@ -348,6 +352,7 @@
     ?>
 
     <?php
+    }
             }else{
                 header('location:invalido.php');
             }

@@ -110,6 +110,8 @@ input{
     top: 12.5px;
     left: 14px;
     font-size: 20px;
+    width: 18px;
+    height: 20px;
 }
 
 .btn input{
@@ -193,4 +195,9 @@ input{
     float: right;
     right: 25px;
     top: 25px;
+}
+
+.btn:hover{
+    background-color: #333;
+    transition: background-color .2s;
 }
