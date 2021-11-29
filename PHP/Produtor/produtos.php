@@ -16,10 +16,7 @@
         <script type="text/javascript" src="../../JS/script_editar_endereco.js"></script>
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
     </head>
-    
     <body class="corpo-pagina-adm">
-
-    <!-- Dados do Usuário -->
 
     <?php
 
@@ -69,16 +66,20 @@
             <nav>
                 <div class="logo">
                     <figure>
-                        <a href="../index.php"><img src="../../IMG/logotipo.png" alt="Logotipo"></a>
+                        <?php
+                            echo ('<a href="../index.php'.$caminho.'"><img src="../../IMG/logotipo.png" alt="Logotipo"></a>');
+                        ?>
                     </figure>
                 </div>
 
                 <div class="lista-menu">
                     <ul>
-                        <li><a href="../index.php">Home</a></li>
-                        <li><a href="../lojas.php">Loja</a></li>
-                        <li><a href="../sobre.php">Sobre</a></li>
-                        <li><a href="../suporte.php">Suporte</a></li>
+                        <?php
+                            echo ('<li><a href="../index.php'.$caminho.'">Home</a></li>
+                            <li><a href="../lojas.php">Loja</a></li>
+                            <li><a href="../sobre.php">Sobre</a></li>
+                            <li><a href="../suporte.php">Suporte</a></li>');
+                        ?>
                     </ul>
                 </div>
 
@@ -205,8 +206,8 @@
         <div id="linha-vert"></div>
 
         <div class="footer-icon">
-            <a href="https://www.facebook.com/Green-Gate-103711395206238" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/green.gate_/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/Green-Gate-103711395206238"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/green.gate_/"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fas fa-envelope"></i></a>
         </div>
 
@@ -214,9 +215,7 @@
             <p>© Green Gate 2021</p>
         </div>
     </footer>
-    
-    <!-- Inserir Produtos -->
-    
+
     <?php
 
         if(isset($_POST['inserir'])){
@@ -255,8 +254,6 @@
 
         }else{}
 
-    if($_GET['edit']){
-
     $sql = 'select * from produto where id_produto='.$_GET['edit'].';';
     $resul_editar = mysqli_query($conectar, $sql);
     $editar = mysqli_fetch_array($resul_editar);
@@ -264,7 +261,7 @@
     ?>
 
     <section id="editar">
-        <a href="produtos.php?edit=0"><i class="fas fa-times"></i></a>
+        <a href="#" onclick="editar()"><i class="fas fa-times"></i></a>
         <div class="editar-produtos">
 
             <h2>Produto</h2>
@@ -307,11 +304,7 @@
         </div>
     </section>
 
-    <!-- Editar Produto -->
-    
     <?php
-
-    }else{
     
     if(isset($_POST['salvar'])){
 
@@ -352,7 +345,6 @@
     ?>
 
     <?php
-    }
             }else{
                 header('location:invalido.php');
             }

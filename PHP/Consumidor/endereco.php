@@ -11,14 +11,13 @@
         <link rel="stylesheet" type="text/css" href="../../CSS/style-box-user.css">
         <link rel="stylesheet" href="../../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
+        <script type="text/javascript" src="../../JS/script_editar_endereco.js"></script>
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
 
     </head>
 
     <body class="corpo-painel-produtor">
 
-    <!-- Dados do Usuário -->
-    
     <?php
         include('../conexao.php');
 
@@ -54,7 +53,7 @@
                         <a href="painel_consumidor.php"><li class="list um">
                             <span><i class="fas fa-user-circle"></i>Perfil</span>
                         </li></a>
-                        <a href="editar_perfil.php"><li class="list">
+                        <a href="#"><li class="list">
                             <span><i class="fas fa-cog"></i>Configurações</span>
                         </li></a>
                         <a href="../invalido.php"><li style="border-top: 1px solid #ebebeb;" class="list dois">
@@ -158,8 +157,6 @@
                 <td>Excluir</td>
             </tr>
 
-        <!-- Exibir os Endereços -->
-        
         <?php
 
         $sql_enderecos = 'select * from endereco where id_pf_fisico='.$id.';';
@@ -181,8 +178,6 @@
         </section>
     
     </main>
-
-    <!-- Adicionar Endereço -->
 
     <?php
 
@@ -230,8 +225,8 @@
         <div id="linha-vert"></div>
 
         <div class="footer-icon">
-            <a href="https://www.facebook.com/Green-Gate-103711395206238" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/green.gate_/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/Green-Gate-103711395206238"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/green.gate_/"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fas fa-envelope"></i></a>
         </div>
 
@@ -240,11 +235,7 @@
         </div>
     </footer>
 
-    <!-- Dados do Endereço -->
-
     <?php
-
-    if($_GET['edit']){
 
     $sql = 'select * from endereco where id_endereco='.$_GET['edit'].';';
     $resul_editar = mysqli_query($conectar, $sql);
@@ -253,7 +244,7 @@
     ?>
 
     <section id="editar">
-        <a href="endereco.php?edit=0"><i class="fas fa-times"></i></a>
+        <a href="#" onclick="editar()"><i class="fas fa-times"></i></a>
         <div class="editar-endereco">
 
             <h2>Endereço</h2>
@@ -292,11 +283,7 @@
         </div>
     </section>
 
-    <!-- Editar Endereço -->
-
     <?php
-
-    }else{
 
     if(isset($_POST['salvar'])){
 
@@ -323,8 +310,6 @@
         }
 
         }
-    }
-
     }
 
     }else{

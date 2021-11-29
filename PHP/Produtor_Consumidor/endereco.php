@@ -11,13 +11,12 @@
         <link rel="stylesheet" type="text/css" href="../../CSS/style-box-user.css">
         <link rel="stylesheet" href="../../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
+        <script type="text/javascript" src="../../JS/script_editar_endereco.js"></script>
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
     </head>
 
     <body class="corpo-painel-produtor">
 
-    <!-- Dados do Usuário -->
-    
     <?php
         include('../conexao.php');
 
@@ -157,9 +156,7 @@
                 <td>Excluir</td>
             </tr>
 
-    <!-- Exibir Endereço -->
-    
-    <?php
+        <?php
 
         $sql_enderecos = 'select * from endereco where id_pf_juridico='.$id.';';
         $resul = mysqli_query($conectar,$sql_enderecos);
@@ -173,7 +170,7 @@
                 <td><a href="delete_endereco.php?del='.$con['id_endereco'].'"><i class="fas fa-trash"></i></a></td></tr>');
         }
 
-    ?>
+        ?>
 
         </table>
 
@@ -181,8 +178,6 @@
     
     </main>
 
-    <!-- Adicionar Endereço -->
-    
     <?php
 
     if(isset($_POST['adicionar'])){
@@ -229,8 +224,8 @@
         <div id="linha-vert"></div>
 
         <div class="footer-icon">
-            <a href="https://www.facebook.com/Green-Gate-103711395206238" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/green.gate_/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/Green-Gate-103711395206238"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/green.gate_/"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fas fa-envelope"></i></a>
         </div>
 
@@ -239,11 +234,7 @@
         </div>
     </footer>
 
-    <!-- Dados do Endereço -->
-
     <?php
-
-    if($_GET['edit']){
 
     $sql = 'select * from endereco where id_endereco='.$_GET['edit'].';';
     $resul_editar = mysqli_query($conectar, $sql);
@@ -252,7 +243,7 @@
     ?>
 
     <section id="editar">
-        <a href="endereco.php?edit=0"><i class="fas fa-times"></i></a>
+        <a href="#" onclick="editar()"><i class="fas fa-times"></i></a>
         <div class="editar-endereco">
 
             <h2>Endereço</h2>
@@ -291,11 +282,7 @@
         </div>
     </section>
 
-    <!-- Editar Endereço -->
-    
     <?php
-
-    }else{
 
     if(isset($_POST['salvar'])){
 
@@ -322,8 +309,6 @@
         }
 
         }
-    }
-
     }
 
     }else{
