@@ -16,7 +16,7 @@
         <section>
             <article class="planos">
                 <div class="preco">
-                    <h3>Plano Simples</h3>
+                    <h3>Plano Básico</h3>
                     <p class="cifrao">R$</p>
                     <p class="preco_plano">0</p>
                     <span>Perfeito para iniciantes</span>
