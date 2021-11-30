@@ -51,6 +51,7 @@
 	<link rel="stylesheet" type="text/css" href="../CSS/style-index.css">
     <link rel="stylesheet" type="text/css" href="../CSS/style-lojas.css">
     <link rel="stylesheet" type="text/css" href="../CSS/style-box-user.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style-pesquisar.css">
     <link rel="stylesheet" href="../FONTAW/css/all.css">
     <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
     <script type="text/javascript" src="../JS/script_box_user.js"></script>
@@ -112,7 +113,12 @@
                 ?>                    
 
                 <div class="figuras" style="top: 40%;">
-                    <a href=""><i class="fas fa-search"></i></a>
+                    <div class="search-box">
+                        <form method="GET">
+                            <input type="text" name="conteudo" placeholder="Pesquisar...">
+                            <input type="submit" name="pesquisar" value=""><i class="fas fa-search"></i>
+                        </form>
+                    </div>
                     <a href="login.php"><i class="fas fa-user-circle"></i></a>
                     <a href=""><i class="fas fa-shopping-cart"></i></a>
                 </div>
@@ -121,7 +127,12 @@
                     }else{  
 
                 echo ('<div class="figuras" style="top: 30%;">
-                    <a href=""><i class="fas fa-search"></i></a>
+                    <div class="search-box">
+                        <form action="" method="GET">
+                            <input type="text" name="conteudo" placeholder="Pesquisar...">
+                            <input type="submit" name="pesquisar" value=""><i class="fas fa-search"></i>
+                        </form>
+                    </div>
                     <a href="#" onclick="box()"><div class="usuario">
                         <img src="../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">
                     </div></a>
@@ -134,6 +145,11 @@
     </header>
 
     <!-- Banner -->
+
+    <?php
+        if(!isset($_GET['pesquisar'])){
+    ?>
+
     <figure class="banner">    
         <img src="../IMG/banner.png">
     </figure>
@@ -235,6 +251,56 @@
             
         </div>
         </section>
+
+        <?php
+            }else{
+
+                $conteudo_lojas = $_GET['conteudo'];
+                $sql_pesquisar_lojas = 'select * from pf_juridico where tp_usuario = 1 and nome LIKE "'.$conteudo_lojas.'%" ORDER by nome ASC;';
+                $resul_pesquisar_lojas = mysqli_query($conectar,$sql_pesquisar_lojas);
+
+                $conteudo_produtos = $_GET['conteudo'];
+                $sql_pesquisar_produtos = 'select * from produto where nome_produto LIKE "'.$conteudo_produtos.'%" ORDER by nome_produto ASC;';
+                $resul_pesquisar_produtos = mysqli_query($conectar,$sql_pesquisar_produtos);
+            ?>
+
+            <section class="conteudo-pesquisar">
+
+            <h2>Lojas</h2>
+
+            <div class="lojas-pesquisadas">
+            
+            <?php
+                while($dados_pesquisar_lojas = mysqli_fetch_array($resul_pesquisar_lojas)){
+                    echo ('<div class="espacamento-lojas"><a href=""><article class="lojas">
+                    <img src="../IMG/Imagem_Usuario/'.$dados_pesquisar_lojas['imagem'].'" alt="'.$dados_pesquisar_lojas['nome'].'">
+                    </article></a></div>');
+                }
+            ?>
+
+            </div>
+
+            <h2>Produtos</h2>
+
+            <div class="produtos_pesquisados">
+
+            <?php
+                while($dados_produto = mysqli_fetch_array($resul_pesquisar_produtos)){
+                    echo ('<div class="container-produtos"><a href="produto.php?id_produto='.$dados_produto['id_produto'].'" class="descricao"><div class="info">  
+                    <img src="../IMG/Imagem_Produtos/'.$dados_produto['imagem'].'" alt="'.$dados_produto['nome_produto'].'">  
+                    <span class="preco"> R$'.$dados_produto['preco'].'</span>
+                    <p>'.$dados_produto['nome_produto'].'</p>
+                </div></a></div>');
+                }
+            ?>
+
+            </div>
+
+            </section>
+
+        <?php
+            }
+        ?>
 
     <!-- Rodapé -->
     <footer class="main-footer">
