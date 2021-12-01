@@ -188,7 +188,29 @@
                         echo("Marca: ".$dados_produto['marca']);
                     ?>
                 </span>
-            </div>      
+            </div>
+            
+            <div class="espaco-titulo-qtd"> <p> Quantidade </p> </div>
+
+            <div class="espaco-qtd">
+
+                <div><input type="button" value="-" name="btn_menos" id="btn-menos" onclick="Counter(-1)"></div> 
+
+                <div><input value="1" type="text" id="contador"></div>
+
+                <div><input type="button" value="+" name="btn_mais" id="btn-mais" onclick="Counter(1)"></div> 
+
+            </div>
+            
+            <?php
+                $sql_quantidade = 'select * from produto where id_produto='.$_GET['id_produto'].';';
+
+                $qnt_query = mysqli_query($conectar, $sql_quantidade);
+
+                $dados = mysqli_fetch_array($qnt_query);
+            ?>
+
+            <div class="rest-unidades"> <p><?php echo($dados['quantidade']) ?> Produtos restantes</p></div>
         </div>
     </section>
     </div></div>
@@ -221,6 +243,27 @@
             <p>© Green Gate 2021</p>
         </div>
     </footer>
+
+    <script type="text/javascript">
+        function Counter(op){
+            let contador = document.querySelector('#contador');
+            let valorContador = parseInt(contador.value);
+
+            if(op == -1){
+                contador.value = valorContador - 1;
+            }
+            if(op == 1){
+                contador.value = valorContador + 1;
+            }
+        }
+
+        function changeRoute(){
+            let link = document.querySelector('#link_comprar');
+            let currentProductCount = document.querySelector('#contador').value;
+
+            link.href = `compra.php?id_produto=<?php echo $dados_produto['id_produto'];?>&qtd=${currentProductCount}`;
+        }
+    </script>
 
 </body>
 </html>
