@@ -1,6 +1,6 @@
 .adicionar-produtos{
 	background-color: #FFF;
-	height: 310px;
+	height: 323px;
 	width: 602px;
 	position: relative;
 	top: 30px;
@@ -23,11 +23,11 @@ form{
     position: absolute;
     font-size: 19px;
     left: 6%;
-    top: 20%;
+    top: 15%;
     line-height: 50px;
 }
 
-.primeira input, .segunda input, .terceira input{
+.primeira input, .segunda input, .terceira input, .quarta input{
 	border-bottom: 1px solid #ebebeb;
 	outline: 0;
 	height: 25px;
@@ -48,10 +48,14 @@ form{
 }
 
 .terceira input{
-	width: 27.5%;
+	width: 67%;
 }
 
-.quinta{
+.quarta input{
+	width: 32%;
+}
+
+.sexta{
 	width: 530px;
 	height: 50px;
 }
@@ -65,7 +69,8 @@ form{
 	float: right;
 	left: 64px;
 	color: #FFF;
-	bottom: 30px;
+	bottom: 85px;
+	transition: background-color .2s;
 }
 
 .botao i{
@@ -88,9 +93,8 @@ form{
 
 
 .botao:hover{
-	transition: ease-out;
-    transition-duration: 0.2s;
-    transform: scale(105%);
+	background-color: #333;
+	transition: background-color .2s;
 }
 
 .tabela-produto table{

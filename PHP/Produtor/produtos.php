@@ -142,19 +142,26 @@
                         Data de Validade:
                         <input type="date" name="data_validade">
 
-                        Preço:
-                        <input type="text" name="preco">
-
                     </div>
 
                     <div class="quarta">
+
+                        Preço:
+                        <input type="text" name="preco">
+
+                        Quantidade:
+                        <input type="text" name="quantidade">
+
+                    </div>
+
+                    <div class="quinta">
 
                         Imagem:
                         <input type="file" name="imagem">
                         
                     </div>
 
-                    <div class="quinta">
+                    <div class="sexta">
 
                         <div class="botao"><i class="fas fa-leaf">
                             <input type="submit" name="inserir" value="">
@@ -229,6 +236,7 @@
             $data_validade = $_POST['data_validade'];
             $preco = $_POST['preco'];
             $descricao = $_POST['descricao'];
+            $quantidade = $_POST['quantidade'];
             $imagem = $_FILES['imagem'];
             $date = date("Y-m-d", strtotime($data_validade));
 
@@ -240,7 +248,7 @@
 
             move_uploaded_file($imagem['tmp_name'], $diretorio . $nome_img);
 
-            $sql = 'insert into produto (nome_produto, marca, dt_validade, preco, descricao, imagem, id_produtor) values ("'.$nome_produto.'","'.$marca .'","'.$date .'",'.$preco.',"'.$descricao.'","'.$nome_img.'", '.$id.');';
+            $sql = 'insert into produto (nome_produto, marca, dt_validade, descricao, preco, quantidade, imagem, id_produtor) values ("'.$nome_produto.'","'.$marca .'","'.$date .'","'.$descricao.'",'.$preco.','.$quantidade.',"'.$nome_img.'", '.$id.');';
 
             $sql_query = mysqli_query($conectar, $sql);
 
@@ -288,6 +296,10 @@
                     Preço: <input type="text" name="preco-edit" value="<?php echo $editar['preco']; ?>">
                 </div>
 
+                <div class="edit seis">
+                    Quantidade: <input type="text" name="quantidade-edit" value="<?php echo $editar['quantidade']; ?>">
+                </div>
+
                 <div>
                     Imagem: <input type="file" name="imagem-edit" value="<?php echo $editar['imagem']; ?>">
                 </div>
@@ -317,6 +329,7 @@
             $data_validade_edit = $_POST['data-edit'];
             $preco_edit = $_POST['preco-edit'];
             $descricao_edit = $_POST['descricao-edit'];
+            $quantidade_edit = $_POST['quantidade-edit'];
             $imagem_edit = $_FILES['imagem-edit'];
             $date_edit = date("Y-m-d", strtotime($data_validade_edit));
 
@@ -328,7 +341,7 @@
 
             move_uploaded_file($imagem['tmp_name'], $diretorio . $nome_img);
 
-            $sql_update = 'update produto set nome_produto="'.$nome_edit.'", marca="'.$marca_edit .'", dt_validade="'.$date_edit .'", preco='.$preco_edit.', descricao="'.$descricao_edit.'", imagem="'.$nome_img.'" where produto.id_produto='.$_GET['edit'].';';
+            $sql_update = 'update produto set nome_produto="'.$nome_edit.'", marca="'.$marca_edit .'", dt_validade="'.$date_edit .'", descricao="'.$descricao_edit.'", preco='.$preco_edit.', quantidade='.$quantidade_edit.', imagem="'.$nome_img.'" where produto.id_produto='.$_GET['edit'].';';
 
             $sql_query = mysqli_query($conectar, $sql_update);
 

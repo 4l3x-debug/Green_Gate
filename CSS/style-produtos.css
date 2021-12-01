@@ -12,6 +12,7 @@
     border-radius: 45px;
     background-color: #c3ce64;
     color: #FFF;
+    transition: background-color .2s;
 }
 
 .btn i{
@@ -44,7 +45,7 @@
 
 .editar-produtos{
     width: 500px;
-    height: 280px;
+    height: 308px;
     border-radius: 15px;
     background-color: #FFF;
     padding: 20px 20px 20px 40px;
@@ -96,7 +97,11 @@ input{
 }
 
 .cinco input{
-    width: 360px;
+    width: 430px;
+}
+
+.seis input{
+    width: 375px;
 }
 
 #editar a{
@@ -106,4 +111,9 @@ input{
     float: right;
     right: 25px;
     top: 25px;
+}
+
+.btn:hover{
+    background-color: #333;
+    transition: background-color .2s;
 }

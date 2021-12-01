@@ -234,9 +234,19 @@
 
 			if ($senha == $confimacao) { // if senha
 
-				$adicionar = 'insert into pf_juridico (nome, email, senha, tp_usuario, cnpj, celular, razao, data_cadastro, genero, imagem) values ("' . $nome . '", "' . $email . '", "' . md5($senha) . '", ' . $usuario . ', "' . $cnpj . '", "' . $celular . '", "' . $razao . '", "' . $data_cadastro . '", "' . $genero . '", "' . $nome_imagem . '");';
+				if($usuario == 1){
 
-				$query_cadastro = mysqli_query($conectar, $adicionar);
+					$adicionar = 'insert into pf_juridico (nome, email, senha, tp_usuario, cnpj, celular, razao, data_cadastro, genero, imagem, plano) values ("' . $nome . '", "' . $email . '", "' . md5($senha) . '", ' . $usuario . ', "' . $cnpj . '", "' . $celular . '", "' . $razao . '", "' . $data_cadastro . '", "' . $genero . '", "' . $nome_imagem . '", 0);';
+
+					$query_cadastro = mysqli_query($conectar, $adicionar);
+
+				} else if($usuario == 3){
+
+					$adicionar = 'insert into pf_juridico (nome, email, senha, tp_usuario, cnpj, celular, razao, data_cadastro, genero, imagem, plano) values ("' . $nome . '", "' . $email . '", "' . md5($senha) . '", ' . $usuario . ', "' . $cnpj . '", "' . $celular . '", "' . $razao . '", "' . $data_cadastro . '", "' . $genero . '", "' . $nome_imagem . '", null);';
+
+					$query_cadastro = mysqli_query($conectar, $adicionar);
+
+				}else{}
 
 				if ($query_cadastro) {
 					echo ('<script>window.alert("Cadastro efetuado com sucesso!");window.location="login.php"</script>');
