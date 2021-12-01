@@ -160,7 +160,10 @@
     </section>
     <section class="sessao-confirmar">
         <div class="container-confirmar">
-            <div class="espaco-total"> <span class="valor-total"> Valor total: R$ <?php echo $dados_produto['preco']; ?> </span> </div> <br>
+            <?php
+                $valor_total = $dados_produto['preco'] * $_GET['qtd'];
+            ?>
+            <div class="espaco-total"> <span class="valor-total"> Valor total: R$ <?php echo ($valor_total); ?> </span> </div> <br>
             <div class="espaco-continuar"> <a href="confirma.php"> Continuar </a> </div>
         </div>
     </section>

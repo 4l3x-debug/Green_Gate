@@ -171,7 +171,7 @@
             </div>
 
             <div class="espaco-botao" href="compra.php">
-                <img src=""> <a href="compra.php" > Comprar </a>
+                <img src=""> <a href="#" onclick="changeRoute()" id="link_comprar"> Comprar </a>
             </div>
 
             <input id="checkbox" type="checkbox">  
