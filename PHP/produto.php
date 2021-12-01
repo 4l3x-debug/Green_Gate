@@ -155,12 +155,11 @@
         
         <div class="container-info"> 
 
-            <br><br>
             <span id="nome-produto">
                  <?php
                     echo($dados_produto['nome_produto']);
                  ?>
-            </span><br>
+            </span>
 
             <div id="preco-space">
                 <span id="cifra"> R$ </span> <span id="preco">
@@ -171,37 +170,34 @@
             </div>
 
             <div class="espaco-botao" href="compra.php">
-                <img src=""> <a href="#" onclick="changeRoute()" id="link_comprar"> Comprar </a>
+                <img src=""> <a href="compra.php" > Comprar </a>
             </div>
 
             <input id="checkbox" type="checkbox">  
             
             <div class="espaco-carrinho"> 
-                <label id="carrinho" for="checkbox"> <span id="carro"> Carrinho </span> </label> <br> 
+                <label id="carrinho" for="checkbox"> <span id="carro"> Carrinho </span> </label>
             </div>
 
             <div class="detalhes"> 
-                <h2> Detalhes do produto </h2> <br>
+                <h2> Detalhes do produto </h2>
                 <span> 
                     <?php
-                        echo($dados_produto['descricao']."<br>");
-                        echo("Marca: ".$dados_produto['marca']);
+                        echo($dados_produto['descricao']);
+                        echo("<p>Marca: ".$dados_produto['marca'].'</p>');
                     ?>
                 </span>
             </div>
             
-            <div class="espaco-titulo-qtd"> <p> Quantidade </p> </div>
+            <div class="quantidade"> 
+                <p class="qtd" style="margin-right: 13px;">Quantidade</p>
 
-            <div class="espaco-qtd">
+                <div class="qtd" style="border: 1px solid #c4c4c4;">
+                    <input  style="margin-left: 5px;" type="button" value="-" name="btn_menos" id="btn-menos" onclick="Counter(-1)">
+                    <input value="1" type="text" id="contador">
+                    <input style="margin-right: 5px;" type="button" value="+" name="btn_mais" id="btn-mais" onclick="Counter(1)">
+                </div> 
 
-                <div><input type="button" value="-" name="btn_menos" id="btn-menos" onclick="Counter(-1)"></div> 
-
-                <div><input value="1" type="text" id="contador"></div>
-
-                <div><input type="button" value="+" name="btn_mais" id="btn-mais" onclick="Counter(1)"></div> 
-
-            </div>
-            
             <?php
                 $sql_quantidade = 'select * from produto where id_produto='.$_GET['id_produto'].';';
 
@@ -210,8 +206,11 @@
                 $dados = mysqli_fetch_array($qnt_query);
             ?>
 
-            <div class="rest-unidades"> <p><?php echo($dados['quantidade']) ?> Produtos restantes</p></div>
-        </div>
+                <div class="rest-unidades"> 
+                    <p><?php echo($dados['quantidade']) ?> produtos restantes</p>
+                </div>
+            </div>
+
     </section>
     </div></div>
 
