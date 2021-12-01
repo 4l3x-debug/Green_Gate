@@ -150,17 +150,7 @@
     </a>
 <br>
 
-    <center>
-        <div id="centro">
-            <script  src="https://www.paypal.com/sdk/js?client-id=sb"></script>
-        </div>
-    
-     <script>
-        paypal.Buttons().render('body');
-    </script>
-    </center>
-
-    
+        
 
 </body>
 </html>

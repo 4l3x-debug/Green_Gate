@@ -164,7 +164,13 @@
                 $valor_total = $dados_produto['preco'] * $_GET['qtd'];
             ?>
             <div class="espaco-total"> <span class="valor-total"> Valor total: R$ <?php echo ($valor_total); ?> </span> </div> <br>
-            <div class="espaco-continuar"> <a href="confirma.php"> Continuar </a> </div>
+            <div class="espaco-continuar"> 
+                <?php
+                    echo(
+                        "<a href='boleto.php?user=".$_SESSION['id_usuario']."&id_produto=".$dados_produto['id'].">Comprar</a>"
+                    );
+                ?>
+            </div>
         </div>
     </section>
     
