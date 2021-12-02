@@ -277,31 +277,31 @@
             <form method="POST">
 
                 <div class="edit um">
-                    Nome: <input type="text" name="nome-edit" value="<?php echo $editar['nome_produto']; ?>">
+                    Nome: <input type="text" name="nome-edit" value="<?php echo ($editar['nome_produto']); ?>">
                 </div>
 
                 <div class="edit dois">
-                    Marca: <input type="text" name="marca-edit" value="<?php echo $editar['marca']; ?>">
+                    Marca: <input type="text" name="marca-edit" value="<?php echo ($editar['marca']); ?>">
                 </div>
 
                 <div class="edit tres">
-                    Data de Validade: <input type="date" name="data-edit" value="<?php echo $editar['dt_validade']; ?>">
+                    Data de Validade: <input type="date" name="data-edit" value="<?php echo ($editar['dt_validade']); ?>">
                 </div>
 
                 <div class="edit quatro">
-                    Descrição: <input type="text" name="descricao-edit" value="<?php echo $editar['descricao']; ?>">
+                    Descrição: <input type="text" name="descricao-edit" value="<?php echo ($editar['descricao']); ?>">
                 </div>
 
                 <div class="edit cinco">
-                    Preço: <input type="text" name="preco-edit" value="<?php echo $editar['preco']; ?>">
+                    Preço: <input type="text" name="preco-edit" value="<?php echo ($editar['preco']); ?>">
                 </div>
 
                 <div class="edit seis">
-                    Quantidade: <input type="text" name="quantidade-edit" value="<?php echo $editar['quantidade']; ?>">
+                    Quantidade: <input type="text" name="quantidade-edit" value="<?php echo ($editar['quantidade']); ?>">
                 </div>
 
                 <div>
-                    Imagem: <input type="file" name="imagem-edit" value="<?php echo $editar['imagem']; ?>">
+                    Imagem: <input type="file" name="imagem-edit">
                 </div>
 
                 <div class="btn-edit">
@@ -320,40 +320,40 @@
     
     if(isset($_POST['salvar'])){
 
-            if(empty($_POST['nome-edit']) or empty($_POST['marca-edit']) or empty($_POST['descricao-edit']) or empty($_POST['preco-edit'])){
-                echo ('<script>window.alert("Preencha os campos!");window.location="produtos.php?edit=0"</script>');
+        if(empty($_POST['nome-edit']) or empty($_POST['marca-edit']) or empty($_POST['descricao-edit']) or empty($_POST['preco-edit'])){
+            echo ('<script>window.alert("Preencha os campos!");window.location="produtos.php?edit=0"</script>');
+        }else{
+
+        $nome_edit = $_POST['nome-edit'];
+        $marca_edit = $_POST['marca-edit'];
+        $data_validade_edit = $_POST['data-edit'];
+        $preco_edit = $_POST['preco-edit'];
+        $descricao_edit = $_POST['descricao-edit'];
+        $quantidade_edit = $_POST['quantidade-edit'];
+        $imagem_edit = $_FILES['imagem-edit'];
+        $date_edit = date("Y-m-d", strtotime($data_validade_edit));
+
+        $preco_edit = str_replace(',','.', $preco_edit);
+
+        $extensao_edit = strtolower(substr($imagem_edit['name'], -4));
+        $nome_img_edit = md5(time()) . $extensao_edit;
+        $diretorio = "../../IMG/Imagem_Produtos/";
+
+        move_uploaded_file($imagem_edit['tmp_name'], $diretorio . $nome_img_edit);
+
+        $sql_update = 'update produto set nome_produto="'.$nome_edit.'", marca="'.$marca_edit .'", dt_validade="'.$date_edit .'", descricao="'.$descricao_edit.'", preco='.$preco_edit.', quantidade='.$quantidade_edit.', imagem="'.$nome_img_edit.'" where produto.id_produto='.$_GET['edit'].';';
+
+        $sql_query = mysqli_query($conectar, $sql_update);
+
+            if($sql_query){
+                echo ('<script>window.alert("Mudança realizada com sucesso!");window.location="produtos.php?edit=0"</script>');
             }else{
-
-            $nome_edit = $_POST['nome-edit'];
-            $marca_edit = $_POST['marca-edit'];
-            $data_validade_edit = $_POST['data-edit'];
-            $preco_edit = $_POST['preco-edit'];
-            $descricao_edit = $_POST['descricao-edit'];
-            $quantidade_edit = $_POST['quantidade-edit'];
-            $imagem_edit = $_FILES['imagem-edit'];
-            $date_edit = date("Y-m-d", strtotime($data_validade_edit));
-
-            $preco_edit = str_replace(',','.', $preco_edit);
-
-            $extensao = strtolower(substr($imagem_edit['name'], -4));
-            $nome_img = md5(time()) . $extensao;
-            $diretorio = "../../IMG/Imagem_Produtos/";
-
-            move_uploaded_file($imagem['tmp_name'], $diretorio . $nome_img);
-
-            $sql_update = 'update produto set nome_produto="'.$nome_edit.'", marca="'.$marca_edit .'", dt_validade="'.$date_edit .'", descricao="'.$descricao_edit.'", preco='.$preco_edit.', quantidade='.$quantidade_edit.', imagem="'.$nome_img.'" where produto.id_produto='.$_GET['edit'].';';
-
-            $sql_query = mysqli_query($conectar, $sql_update);
-
-                if($sql_query){
-                    echo ('<script>window.alert("Mudança realizada com sucesso!");window.location="produtos.php?edit=0"</script>');
-                }else{
-                    echo ('<script>window.alert("Erro ao editar o produto!");window.location="produtos.php?edit=0"</script>');
-                }
-
+                echo ('<script>window.alert("Erro ao editar o produto!");window.location="produtos.php?edit=0"</script>');
             }
 
-        }else{}
+        }
+
+    }else{}
 
     ?>
 
