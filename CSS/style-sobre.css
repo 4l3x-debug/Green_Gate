@@ -84,7 +84,7 @@
     margin-top: 8px;
 }
 
-.descricao{
+.texto-sobre{
     width: 100%;
     background-color: #f9fdc5;
     display: flex;
@@ -92,7 +92,7 @@
     height: 566px;
 }
 
-.descricao svg{
+.texto-sobre svg{
     position: absolute;
     bottom: -593px;
 }
