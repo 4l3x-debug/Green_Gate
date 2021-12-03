@@ -116,7 +116,7 @@
                 <?php
                     }else{
                         
-                echo ('<div class="figuras" style="top: 30%;">
+                    echo ('<div class="figuras" style="top: 30%;">
                         <div class="search-box">
                             <form action="" method="GET">
                                 <input type="text" name="conteudo" placeholder="Pesquisar...">

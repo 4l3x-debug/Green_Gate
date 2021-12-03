@@ -60,11 +60,6 @@
         .box-user{
             height: 17%;
         }
-        .usuario {
-            position: relative;
-            top: 6px;
-            right: 12px;
-        }
     </style>
 </head>
 <body>
