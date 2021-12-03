@@ -203,7 +203,7 @@
     
     <?php
 
-        $sql_produto_um = 'select * from produto limit 3,3;';
+        $sql_produto_um = 'select * from produto limit 0,3;';
         $resul_produto_um = mysqli_query($conectar,$sql_produto_um);
 
         while($produto_um = mysqli_fetch_array($resul_produto_um)){

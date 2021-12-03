@@ -1,0 +1,156 @@
+*{
+    font-family: Caviar Dreams;
+}
+
+.main-fundo-sobre{
+    height: 570px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.main-fundo-sobre p{
+    max-width: 500px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.main-fundo-sobre h1{
+    color: rgb(30, 32, 27);
+    margin-bottom: 10px;
+}
+
+.enfase{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(40, 46, 29);
+}
+
+.container-sobre{
+    width: 500px;
+    height: 28%;
+    position: relative;
+    top: 120px;
+    right: 129px;
+    text-align: justify;
+}
+
+.container-sobre, .img{
+    display: inline-block;
+}
+
+.img img{
+    width: 330px;
+    position: relative;
+    top: 65px;
+    left: 35px;
+}
+
+.main-fundo-sobre .slogan-center{
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.container-sobre a{
+    color: rgb(109, 218, 1);
+    padding: 20px 5px;
+}
+
+.container-sobre a:hover{
+    color: rgb(91, 182, 0);
+}
+
+.container-info{
+    padding-top: 100px;
+    width: 500px;
+    text-align: left;
+}
+
+.container-info span{
+    font-size: 1.3rem;
+    color: rgb(34, 70, 0);
+    font-weight: 600;
+}
+
+.container-info div a{
+    color: rgb(109, 218, 1);
+}
+
+.container-info div a:hover{
+    color: rgb(91, 182, 0);
+}
+
+.container-info div{
+    margin-top: 8px;
+}
+
+.descricao{
+    width: 100%;
+    background-color: #f9fdc5;
+    display: flex;
+    justify-content: center;
+    height: 566px;
+}
+
+.descricao svg{
+    position: absolute;
+    bottom: -593px;
+}
+
+.explicacao{
+    font-size: 30px;
+    color: rgb(25, 36, 0);
+    font-weight: 900;
+    max-width: 800px;
+    line-height: 75px;
+    text-align: center;
+    height: 40%;
+    position: relative;
+    top: 60px;
+}
+
+.objetivos{
+    width: 100%;
+    background-color: #FFF;
+    z-index: 15;
+    text-align: center;
+}
+
+.objetivos h2{
+    font-size: 35px;
+}
+
+.objetivo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 385px;
+}
+
+.objetivo .icon{
+    width: 150px;
+    height: 150px;
+    background-color: #f9fdc5;
+    border-radius: 100px;
+    font-size: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    left: 50px;
+}
+
+.objetivo .icon i{
+    position: relative;
+    top: 45px;
+}
+
+.geral{
+    margin: 40px;
+    line-height: 40px;
+}
+
+.geral span{
+    width: 247px; 
+    display: block; 
+    line-height: 25px;
+}
+

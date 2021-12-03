@@ -213,7 +213,7 @@
     <!-- Seção Produtos -->
 
     <section class="secao-produtos">
-        <h2>Produtos mais pesquisados</h2>
+        <h2>Produtos mais recentes</h2>
         
         <div class="tamanho-produtos">
             <div class="espacamento-produtos">
