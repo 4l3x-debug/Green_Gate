@@ -53,12 +53,23 @@
     <link rel="stylesheet" type="text/css" href="../CSS/style-produto.css">
     <link rel="stylesheet" type="text/css" href="../CSS/style-box-user.css">
     <link rel="stylesheet" type="text/css" href="../CSS/style-pesquisar.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style-suporte.css">
     <link rel="stylesheet" href="../FONTAW/css/all.css">
     <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
     <script type="text/javascript" src="../JS/script_box_user.js"></script>
 
+    <style type="text/css">
+        .suporte{
+            height: 60%;
+            top: 2%;
+        }
+
+        .botao{
+            bottom: 145px;
+        }
+    </style>
 </head>
-<body bgcolor="#fdfaef">
+<body bgcolor="#f9fdc5">
 
         <!-- Box User Oculto -->
 
@@ -137,97 +148,37 @@
             </section>
         </header>
 
-    <!--Produto-->
+    <!-- Conteúdo -->
 
     <?php
         if(!isset($_GET['pesquisar'])){
-
-        $sql = 'select * from produto where id_produto = '.$_GET['id_produto'].';';
-        $query = mysqli_query($conectar, $sql);
-        $dados_produto = mysqli_fetch_array($query);
     ?>
 
-    <div id="all">
-    <div id="fundo">
-    <section class="sessao-produto">
+    <section  style="padding: 50px 0px;" class="pagina-usuario" onclick="boxFechar()">
 
-        <div class="container-produto">
-            <?php
-                echo('<img src="../IMG/Imagem_Produtos/'.$dados_produto['imagem'].'" alt="'.$dados_produto['nome_produto'].'">');
-            ?>
-        </div>
+        <section class="suporte">
+                <h1>Suporte</h1>
+                <form action="#" method="POST">
+
+                    <div class="linha segunda">
+                        Assunto:
+                        <input type="text" name="assunto">
+                    </div>
+
+                    <div class="linha terceira">
+                        <textarea name="conteudo" style="resize: none"></textarea>
+                    </div>
+
+                    <div class="botao">
+                        <i class="fas fa-paper-plane"><input type="submit" name="enviar" value=""></i>
+                    </div>
+
+                </form>
+            </section>
         
-        <div class="container-info"> 
-
-            <span id="nome-produto">
-                 <?php
-                    echo($dados_produto['nome_produto']);
-                 ?>
-            </span>
-
-            <div id="preco-space">
-                <span id="cifra"> R$ </span> <span id="preco">
-                    <?php
-                        echo($dados_produto['preco']);
-                    ?> 
-                </span> 
-            </div>
-
-            <div class="espaco-botao" href="compra.php">
-                <?php 
-                    echo('<a href="compra.php?id_produto='.$_GET['id_produto'].'">Comprar</a>');
-                ?>
-            </div>
-
-            <input id="checkbox" type="checkbox">  
-            
-            <div class="espaco-carrinho"> 
-                <label id="carrinho" for="checkbox"> <span id="carro"> Carrinho </span> </label>
-            </div>
-
-            <div class="detalhes"> 
-                <h2> Detalhes do produto </h2>
-                <span> 
-                    <?php
-                        echo($dados_produto['descricao']);
-                        echo("<p>Marca: ".$dados_produto['marca'].'</p>');
-                    ?>
-                </span>
-            </div>
-            
-            <div class="quantidade"> 
-                <p class="qtd" style="margin-right: 13px;">Quantidade</p>
-
-                <div class="qtd" style="border: 1px solid #c4c4c4;">
-                    <input  style="margin-left: 5px;" type="button" value="-" name="btn_menos" id="btn-menos" onclick="Counter(-1)">
-                    <input value="1" type="text" id="contador" name="qtd">
-                    <input style="margin-right: 5px;" type="button" value="+" name="btn_mais" id="btn-mais" onclick="Counter(1)">
-                </div> 
-
-            <?php
-                $sql_quantidade = 'select * from produto where id_produto='.$_GET['id_produto'].';';
-
-                $qnt_query = mysqli_query($conectar, $sql_quantidade);
-
-                $dados = mysqli_fetch_array($qnt_query);
-            ?>
-
-                <div class="rest-unidades"> 
-                    <p><?php echo($dados['quantidade']); ?> produtos restantes</p>
-                </div>
-            </div>
-
     </section>
-    </div></div>
 
     <?php
-        if(!isset($_SESSION['id_usuario'])){
-            echo ('<script>window.alert("Faça o login primeiro!");window.location="login.php"</script>');
-        }else{
-        }
-    ?>
-
-<?php
     }else{
 
         $conteudo_lojas = $_GET['conteudo'];
@@ -276,7 +227,7 @@
     <?php
     }
     ?>
-
+    
     <!-- Rodapé -->
 
     <footer class="main-footer">
@@ -299,26 +250,35 @@
         </div>
     </footer>
 
-    <script type="text/javascript">
-        function Counter(op){
-            let contador = document.querySelector('#contador');
-            let valorContador = parseInt(contador.value);
+    <?php
+    
+    if(isset($_POST['enviar'])){
 
-            if(op == -1){
-                contador.value = valorContador - 1;
+        if(empty($_POST['assunto']) or empty($_POST['conteudo'])){
+
+            echo ('<script>window.alert("Preencha os campos do formulário!");window.location="suporte.php"</script>');
+
+        }else{
+
+        $assunto = $_POST['assunto'];
+        $conteudo = $_POST['conteudo'];
+        $data_envio = date("Y-m-d");
+
+        $sql_suporte = 'insert into suporte(assunto, conteudo, data_envio, id_pf_fisico, id_pf_juridico, id_remetente, tp_usuario_remetente) values ("'.$assunto.'", "'.$conteudo.'", "'.$data_envio.'", 22, null, null, null);';
+
+        $suporte = mysqli_query($conectar, $sql_suporte);
+
+            if($suporte){
+                echo ('<script>window.alert("Mensagem enviada com sucesso!");window.location="suporte.php"</script>');
+            }else{
+                echo ('<script>window.alert("Erro ao enviar a mensagem!");window.location="suporte.php"</script>');
             }
-            if(op == 1){
-                contador.value = valorContador + 1;
-            }
-        }
 
-        function changeRoute(){
-            let link = document.querySelector('#link_comprar');
-            let currentProductCount = document.querySelector('#contador').value;
+        } // else empty
 
-            link.href = `compra.php?id_produto=<?php echo $dados_produto['id_produto'];?>&qtd=${currentProductCount}`;
-        }
-    </script>
-
+    }
+    ?>
+    
 </body>
+
 </html>
