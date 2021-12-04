@@ -159,7 +159,7 @@
                 $resul_empresa = mysqli_query($conectar, $sql_empresa);
 
                 while($dados_empresa = mysqli_fetch_array($resul_empresa)){
-                    echo ('<div class="espacamento-lojas"><a href=""><article class="lojas">
+                    echo ('<div class="espacamento-lojas"><a href="loja.php?id_empresa='.$dados_empresa['id_pf_juridico'].'"><article class="lojas">
                     <img src="../IMG/Imagem_Usuario/'.$dados_empresa['imagem'].'" alt="'.$dados_empresa['nome'].'">
                     </article></a></div>');
                 }
@@ -229,6 +229,7 @@
         </div>
     </section>
     <h2 id="todos-produtos"> Todos os Produtos </h2> <br>
+    
     <section class="sessao-produtos">
         <?php
             $sql_select = 'select * from produto order by id_produto ASC;';
@@ -242,10 +243,8 @@
             </div></a></div>');
             }
         ?>
-        <div class="paginas">
             
-        </div>
-        </section>
+    </section>
 
         <?php
             }else{
