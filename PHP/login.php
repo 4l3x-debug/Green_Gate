@@ -79,7 +79,7 @@
     $senha = mysqli_real_escape_string($conectar, md5($_POST['senha']));
 
         if ($usuario == 0) {
-          $select = "select id_pf_fisico, nome, tp_usuario from pf_fisico where email = '".$email."' and senha = '".$senha."';";
+          $select = "select id_pf_fisico, nome, tp_usuario from pf_fisico where email = '".$email."' and senha = '".$senha."' and tp_usuario=0;";
 
             $query_select = mysqli_query($conectar, $select);
 
@@ -95,7 +95,7 @@
             }
 
         }else if ($usuario == 1) {
-          $select = "select id_pf_juridico, nome, tp_usuario from pf_juridico where email = '".$email."' and senha = '".$senha."';";
+          $select = "select id_pf_juridico, nome, tp_usuario from pf_juridico where email = '".$email."' and senha = '".$senha."' and tp_usuario=1;";
 
             $query_select = mysqli_query($conectar, $select);
 
@@ -111,7 +111,7 @@
             }
 
         }else if ($usuario == 2) {
-          $select = "select id_pf_fisico, nome, tp_usuario from pf_fisico where email = '".$email."' and senha = '".$senha."';";
+          $select = "select id_pf_fisico, nome, tp_usuario from pf_fisico where email = '".$email."' and senha = '".$senha."' and tp_usuario=2;";
 
           $query_select = mysqli_query($conectar, $select);
 
@@ -127,7 +127,7 @@
           }
 
         }else if($usuario == 3) {
-          $select = "select id_pf_juridico, nome, tp_usuario from pf_juridico where email = '".$email."' and senha = '".$senha."';";
+          $select = "select id_pf_juridico, nome, tp_usuario from pf_juridico where email = '".$email."' and senha = '".$senha."' and tp_usuario=3;";
 
           $query_select = mysqli_query($conectar, $select);
 

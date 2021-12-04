@@ -72,6 +72,7 @@
                 justify-content: left;
                 margin: 50px 90px;
                 margin-top: 0;
+                flex-wrap: wrap;
             }
 
             #titulo-produtos{
@@ -127,10 +128,10 @@
 
                 <div class="lista-menu">
                     <ul>
-                        <li><a href="../index.php">Home</a></li>
-                        <li><a href="../lojas.php">Loja</a></li>
-                        <li><a href="../sobre.php">Sobre</a></li>
-                        <li><a href="../suporte.php">Suporte</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="lojas.php">Loja</a></li>
+                        <li><a href="sobre.php">Sobre</a></li>
+                        <li><a href="suporte.php">Suporte</a></li>
                     </ul>
                 </div>
 
