@@ -12,7 +12,7 @@
             $resul_usuario = mysqli_query($conectar, $sql_usuario);
             $dados_usuario = mysqli_fetch_array($resul_usuario);
 
-            $caminho = '?id_usuario='.$dados_usuario['id_pf_fisico'].'&tp_usuario='.$dados_usuario['tp_usuario'].';';
+            $caminho = '?id_usuario='.$dados_usuario['id_pf_fisico'].'&tp_usuario='.$dados_usuario['tp_usuario'].'';
 
             if($tp_usuario == 0){
                 $usuario = 'Administrador';
@@ -27,7 +27,7 @@
             $resul_usuario = mysqli_query($conectar, $sql_usuario);
             $dados_usuario = mysqli_fetch_array($resul_usuario);
 
-            $caminho = '?id_usuario='.$dados_usuario['id_pf_juridico'].'&tp_usuario='.$dados_usuario['tp_usuario'].';';
+            $caminho = '?id_usuario='.$dados_usuario['id_pf_juridico'].'&tp_usuario='.$dados_usuario['tp_usuario'].'';
 
             if($tp_usuario == 1){
                 $usuario = 'Produtor';

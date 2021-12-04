@@ -112,8 +112,11 @@
 
             while($dados_pedido = mysqli_fetch_array($pedido)){
 
-        $sql_produtor = 'select nome from pf_juridico where id_pf_juridico = '.$dados_pedido['id_produtor'].';';
-            $nome = mysqli_query($conectar,$sql_produtor);
+            $sql_produtor = 'select * from pf_juridico where id_pf_juridico = '.$dados_pedido['id_produtor'].';';
+            $produtor = mysqli_query($conectar,$sql_produtor);
+            $dados_produtor = mysqli_fetch_array($produtor);
+
+            echo($dados_produtor['nome']);
 
             }
         ?>
