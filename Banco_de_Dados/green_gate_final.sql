@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 04-Dez-2021 às 18:20
+-- Tempo de geração: 04-Dez-2021 às 19:02
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -98,10 +98,12 @@ CREATE TABLE IF NOT EXISTS `pedido` (
   `id_pedido` int(11) NOT NULL AUTO_INCREMENT,
   `dt_pedido` date DEFAULT NULL,
   `status` int(1) DEFAULT NULL,
-  `id_consumidor` int(11) DEFAULT NULL,
+  `id_consumidor` int(11) NOT NULL,
+  `id_produtor` int(11) NOT NULL,
   PRIMARY KEY (`id_pedido`),
-  KEY `fk_pedido_consumidor` (`id_consumidor`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  KEY `fk_produtor_pedido` (`id_produtor`),
+  KEY `fk_consumidor_pedido` (`id_consumidor`) USING BTREE
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -119,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `pedido_produto` (
   PRIMARY KEY (`id_pedido_produto`),
   KEY `fk_produto_pedido` (`id_produto`),
   KEY `fk_pedido_produto` (`id_pedido`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 

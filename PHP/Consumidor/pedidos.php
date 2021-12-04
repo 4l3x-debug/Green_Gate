@@ -107,14 +107,25 @@
             <span style="font-size: 30px; cursor:pointer; color: #ADAD7B;" onclick="abrirNav()">&#9776;</span>
         </section>
 
-            <div class="fundo-pedido">
+        <?php
+
+        $sql_pedido = 'select * from pedido where id_consumidor = '.$id.';';
+        $pedido = mysqli_query($conectar,$sql_pedido);
+
+            while($dados_pedido = mysqli_fetch_array($pedido)){
+
+            $sql_produtos = 'select * from pedido_produto where id_pedido='.$dados_pedido['id_pedido'].';';
+
+            echo ('
+                
+            <div class="fundo-loja">
                 
                 <section>
 
                     <table>
 
                     <tr>
-                        <td>: ' . $dados_empresa['nome'] . '</td>
+                        <td>Nome: ' . $dados_empresa['nome'] . '</td>
                         <td>Email: ' . $dados_empresa['email'] . '</td>
                         <td>Telefone: ' . $dados_empresa['celular'] . '</td>
                     </tr>
@@ -122,14 +133,21 @@
                     <tr>
                         <td style="line-height: 20px;">Razão Social: ' . $dados_empresa['razao'] . '</td>
                         <td>CNPJ: ' . $dados_empresa['cnpj'] . '</td>
-                        <td>Data do Pedido:</td>
+                        <td>Data de Cadastro: ' . $dados_empresa['data_cadastro'] . '</td>
                     </tr>
                         
                     </table>
 
+                    <div class="botao">
+                        <a href="../delete.php?del='.$dados_empresa['id_pf_juridico'].'"><i class="fas fa-trash"></i></a>
+                    </div>
+
                 </section>
 
-            </div>
+            </div>');
+
+                }
+            ?>
 
     </section>
 
