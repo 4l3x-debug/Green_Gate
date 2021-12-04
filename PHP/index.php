@@ -192,7 +192,7 @@
 
     <section class="sessao2" onclick="boxFechar()"> 
         <div class="space-string2">
-            <span class="string-sessao2"> SAIBA MAIS SOBRE O PROJETO GREEN GATE</span> <br> <a href=""> Sobre Nós </a>
+            <span class="string-sessao2"> SAIBA MAIS SOBRE O PROJETO GREEN GATE</span> <br> <a href="sobre.php"> Sobre Nós </a>
         </div>
         <div class="space-img">
             <i class="fas fa-book-open" id="book"></i>

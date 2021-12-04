@@ -208,24 +208,20 @@
     <!-- Seção Produtos -->
 
     <section class="secao-produtos">
-        <h2>Produtos mais recentes</h2>
+        <h2>Produtos Recentes</h2>
         
         <div class="tamanho-produtos">
-            <div class="espacamento-produtos">
-                <a href="#"><article class="produtos">
-                    <img src="../IMG/produto_1.png" alt="escova_de_dente">
-                </article></a>
-            </div>
-            <div class="espacamento-produtos">
-                <a href="#"><article class="produtos">
-                    <img src="../IMG/produto_2.png" alt="sabonete">
-                </article></a>
-            </div>
-            <div class="espacamento-produtos">
-                <a href="#"><article class="produtos">
-                    <img src="../IMG/produto_3.png" alt="eco_bag">
-                </article></a>
-            </div>
+
+            <?php
+                $sql_produtos_recentes = 'select * from produto order by id_produto ASC limit 3,3;';
+                $produtos_recentes = mysqli_query($conectar, $sql_produtos_recentes);
+
+                while($dados_produtos_recentes = mysqli_fetch_array($produtos_recentes)){
+                    echo ('<div class="espacamento-produtos"><a href="produto.php?id_produto='.$dados_produtos_recentes['id_produto'].'"><article class="produtos">  
+                    <img src="../IMG/Imagem_Produtos/'.$dados_produtos_recentes['imagem'].'" alt="'.$dados_produtos_recentes['nome_produto'].'"></article></a></div>');
+                }
+            ?>
+
         </div>
     </section>
     <h2 id="todos-produtos"> Todos os Produtos </h2> <br>
