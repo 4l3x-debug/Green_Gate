@@ -33,8 +33,6 @@
         $resul_usuario = mysqli_query($conectar, $sql_usuario);
         $dados_usuario = mysqli_fetch_array($resul_usuario);
 
-        $caminho = '?id_usuario='.$dados_usuario['id_pf_fisico'].'&tp_usuario='.$dados_usuario['tp_usuario'].'';
-
         if($dados_usuario['tp_usuario'] == 2){ // if tp_usuario
 
     ?>
@@ -114,40 +112,11 @@
 
             while($dados_pedido = mysqli_fetch_array($pedido)){
 
-            $sql_produtos = 'select * from pedido_produto where id_pedido='.$dados_pedido['id_pedido'].';';
+        $sql_produtor = 'select nome from pf_juridico where id_pf_juridico = '.$dados_pedido['id_produtor'].';';
+            $nome = mysqli_query($conectar,$sql_produtor);
 
-            echo ('
-                
-            <div class="fundo-loja">
-                
-                <section>
-
-                    <table>
-
-                    <tr>
-                        <td>Nome: ' . $dados_empresa['nome'] . '</td>
-                        <td>Email: ' . $dados_empresa['email'] . '</td>
-                        <td>Telefone: ' . $dados_empresa['celular'] . '</td>
-                    </tr>
-
-                    <tr>
-                        <td style="line-height: 20px;">Razão Social: ' . $dados_empresa['razao'] . '</td>
-                        <td>CNPJ: ' . $dados_empresa['cnpj'] . '</td>
-                        <td>Data de Cadastro: ' . $dados_empresa['data_cadastro'] . '</td>
-                    </tr>
-                        
-                    </table>
-
-                    <div class="botao">
-                        <a href="../delete.php?del='.$dados_empresa['id_pf_juridico'].'"><i class="fas fa-trash"></i></a>
-                    </div>
-
-                </section>
-
-            </div>');
-
-                }
-            ?>
+            }
+        ?>
 
     </section>
 
