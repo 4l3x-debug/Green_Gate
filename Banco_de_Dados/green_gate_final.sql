@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 01-Dez-2021 às 13:59
+-- Tempo de geração: 04-Dez-2021 às 18:20
 -- Versão do servidor: 5.7.31
 -- versão do PHP: 7.3.21
 
@@ -62,7 +62,15 @@ CREATE TABLE IF NOT EXISTS `endereco` (
   PRIMARY KEY (`id_endereco`),
   KEY `fk_pf_fisico_endereco` (`id_pf_fisico`),
   KEY `fk_pf_juridico_endereco` (`id_pf_juridico`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `endereco`
+--
+
+INSERT INTO `endereco` (`id_endereco`, `cep`, `estado`, `cidade`, `bairro`, `logradouro`, `n_residencial`, `complemento`, `tp_usuario`, `id_pf_fisico`, `id_pf_juridico`) VALUES
+(26, '07411220', 'SP', 'ArujÃ¡', 'JordanÃ³polis', 'Rua Santo AntÃ´nio do CatigerÃ³', 332, 'Casa Branca', 1, NULL, 27),
+(24, '07411220', 'SP', 'ArujÃ¡', 'JordanÃ³polis', 'Rua Santo AntÃ´nio do CatigerÃ³', 332, 'Casa Verde', 1, NULL, 25);
 
 -- --------------------------------------------------------
 
@@ -91,12 +99,8 @@ CREATE TABLE IF NOT EXISTS `pedido` (
   `dt_pedido` date DEFAULT NULL,
   `status` int(1) DEFAULT NULL,
   `id_consumidor` int(11) DEFAULT NULL,
-  `id_prod_cons` int(11) DEFAULT NULL,
-  `id_produto` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_pedido`),
-  KEY `fk_pedido_consumidor` (`id_consumidor`),
-  KEY `fk_pedido_prod_cons` (`id_prod_cons`),
-  KEY `fk_pedido_produto` (`id_produto`)
+  KEY `fk_pedido_consumidor` (`id_consumidor`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -111,8 +115,10 @@ CREATE TABLE IF NOT EXISTS `pedido_produto` (
   `id_produto` int(11) NOT NULL,
   `quantidade` int(11) DEFAULT NULL,
   `valor` decimal(6,2) DEFAULT NULL,
+  `id_pedido` int(11) NOT NULL,
   PRIMARY KEY (`id_pedido_produto`),
-  KEY `fk_produto_pedido` (`id_produto`)
+  KEY `fk_produto_pedido` (`id_produto`),
+  KEY `fk_pedido_produto` (`id_pedido`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -137,7 +143,15 @@ CREATE TABLE IF NOT EXISTS `pf_fisico` (
   PRIMARY KEY (`id_pf_fisico`),
   UNIQUE KEY `cpf` (`cpf`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `pf_fisico`
+--
+
+INSERT INTO `pf_fisico` (`id_pf_fisico`, `nome`, `email`, `senha`, `tp_usuario`, `cpf`, `celular`, `data_nascimento`, `data_cadastro`, `genero`, `imagem`) VALUES
+(21, 'Nathalia dos Santos', 'nathalia@hotmail.com', '202cb962ac59075b964b07152d234b70', 2, '40956907806', '11954945225', '2003-08-21', '2021-12-03', 'F', '8f7b1081f96679ccdfcc38c071c96d27.png'),
+(22, 'Green Gato', 'green_gate@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 0, '40956907810', '11954945226', '2003-08-21', '2021-12-04', 'F', 'ac974c54eb1204a4431cd2dddabc2618.png');
 
 -- --------------------------------------------------------
 
@@ -162,7 +176,16 @@ CREATE TABLE IF NOT EXISTS `pf_juridico` (
   PRIMARY KEY (`id_pf_juridico`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `cnpj` (`cnpj`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `pf_juridico`
+--
+
+INSERT INTO `pf_juridico` (`id_pf_juridico`, `nome`, `email`, `senha`, `tp_usuario`, `cnpj`, `celular`, `razao`, `data_cadastro`, `genero`, `imagem`, `plano`) VALUES
+(27, 'Marcelo Rodrigues', 'marcelo@hotmail.com', '202cb962ac59075b964b07152d234b70', 1, '25.534.696/0001-67', '11954945225', 'Venda de Eco Bags', '2021-12-03', 'M', '29ea60dd372e15b1e4b09d08475d035b.png', 0),
+(28, 'Meu Eco BebÃª', 'meu_eco@hotmail.com', '202cb962ac59075b964b07152d234b70', 1, '337.534.300/0013-3', '11954945225', 'Fraldas EcolÃ³gicas', '2021-12-03', 'F', 'b34ff626eb85b04858b083b31ec72e0e.png', 0),
+(30, 'Oi', 'oi1@hotmail.com', '202cb962ac59075b964b07152d234b70', 3, '47508411-0225-59', '11954945225', 'Produtos SustentÃ¡veis', '2021-12-04', 'F', 'girl.png', NULL);
 
 -- --------------------------------------------------------
 
@@ -183,7 +206,19 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `id_produtor` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_produto`),
   KEY `fk_produtor_produto` (`id_produtor`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `produto`
+--
+
+INSERT INTO `produto` (`id_produto`, `nome_produto`, `marca`, `dt_validade`, `descricao`, `preco`, `quantidade`, `imagem`, `id_produtor`) VALUES
+(34, 'Bolsa SustentÃ¡vel', 'Eco Bags', '1970-01-01', 'Bolsa feita de pano', '25.00', 12, '4b0bb10e1612f6ea9fef943819f5130d.png', 25),
+(33, 'Sabonete DepilatÃ³rio', 'Eco Soap', '1970-01-01', 'Sabonete para pelos faciais', '20.00', 13, '901c5a791d15538e1ee01f1103e10d83.png', 25),
+(29, 'Eco Bag', 'Eco Bags', '1970-01-01', 'Bolsa SustentÃ¡vel', '7.00', 20, '91a54d99ed92b4308005d9f47c5797ee.png', 27),
+(31, 'Ã“leo Vegetal', 'Eco Oil', '1970-01-01', 'OlÃ©o vegetal', '60.00', 5, '9f10901a3b00d28af6d22cb5bf58ae70.png', 25),
+(30, 'Shampo SÃ³lido', 'Eco Soap', '1970-01-01', 'Shampo em barra', '10.00', 15, 'cfe3c88960800c8b0bf3000f0d532566.png', 25),
+(32, 'Escova EcolÃ³gica', 'Eco ToothBrush', '1970-01-01', 'Escova feita de madeira e cerdas ecolÃ³gicas', '10.00', 13, 'a8efe8e663d04fd6d1b5b292587ec3fe.png', 25);
 
 -- --------------------------------------------------------
 
@@ -199,12 +234,20 @@ CREATE TABLE IF NOT EXISTS `suporte` (
   `data_envio` date DEFAULT NULL,
   `id_pf_fisico` int(11) DEFAULT NULL,
   `id_pf_juridico` int(11) DEFAULT NULL,
-  `id_remetente` int(11) NOT NULL,
-  `tp_usuario_remetente` int(1) NOT NULL,
+  `id_remetente` int(11) DEFAULT NULL,
+  `tp_usuario_remetente` int(1) DEFAULT NULL,
   PRIMARY KEY (`id_suporte`),
   KEY `fk_suporte_pf_fisico` (`id_pf_fisico`),
   KEY `fk_suporte_pf_juridico` (`id_pf_juridico`)
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `suporte`
+--
+
+INSERT INTO `suporte` (`id_suporte`, `assunto`, `conteudo`, `data_envio`, `id_pf_fisico`, `id_pf_juridico`, `id_remetente`, `tp_usuario_remetente`) VALUES
+(43, 'Bem-vinda', 'Bem-vindo ao Green Gate!', '2021-12-04', NULL, 25, 20, 0),
+(46, 'dasdas', 'dasdasdas', '2021-12-04', 22, NULL, NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
