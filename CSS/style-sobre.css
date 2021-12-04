@@ -90,11 +90,13 @@
     display: flex;
     justify-content: center;
     height: 566px;
+    position: relative;
 }
 
 .texto-sobre svg{
     position: absolute;
-    bottom: -593px;
+    bottom: 0;
+    z-index: 15;
 }
 
 .explicacao{
@@ -114,6 +116,7 @@
     background-color: #FFF;
     z-index: 15;
     text-align: center;
+    position: relative;
 }
 
 .objetivos h2{
@@ -128,19 +131,41 @@
 }
 
 .objetivo .icon{
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     background-color: #f9fdc5;
     border-radius: 100px;
-    font-size: 50px;
+    font-size: 55px;
     margin-bottom: 20px;
     position: relative;
-    left: 50px;
+    left: 30px;
 }
 
 .objetivo .icon i{
     position: relative;
-    top: 45px;
+    top: 65px;
+}
+
+.objetivos svg{
+    position: relative;
+    top: 0;
+}
+
+.slogan{
+    background-color: #f9fdc5;
+    display: flex;
+    justify-content: center;
+    height: 365px;
+}
+
+.slogan p{
+    font-size: 30px;
+    color: rgb(25, 36, 0);
+    font-weight: 900;
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    top: 115px;
 }
 
 .geral{

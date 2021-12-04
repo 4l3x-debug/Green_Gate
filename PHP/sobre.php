@@ -196,6 +196,14 @@
                 <span>Visibiliza o trabalho dos produtores</span>
             </div>
         </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f9fdc5" fill-opacity="1" d="M0,160L60,149.3C120,139,240,117,360,133.3C480,149,600,203,720,234.7C840,267,960,277,1080,261.3C1200,245,1320,203,1380,181.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+    </section>
+
+    <section class="slogan">
+        <div style="height: 350px; margin-bottom: 15px;">
+            <p>"Green Gate, para quem se compromete com o Meio Ambiente"</p>
+        </div>
     </section>
 
     <?php
