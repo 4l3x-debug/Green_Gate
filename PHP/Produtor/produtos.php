@@ -16,6 +16,12 @@
     <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
     <script type="text/javascript" src="../../JS/script_editar_endereco.js"></script>
     <script type="text/javascript" src="../../JS/script_box_user.js"></script>
+
+    <style type="text/css">
+        .tabela-produto td{
+            line-height: 40px;
+        }
+    </style>
 </head>
 
 <body class="corpo-pagina-adm">
@@ -72,22 +78,18 @@
 
         <section class="main-nav">
             <nav>
-                <div class="logo">
+            <div class="logo">
                     <figure>
-                        <?php
-                        echo ('<a href="../index.php' . $caminho . '"><img src="../../IMG/logotipo.png" alt="Logotipo"></a>');
-                        ?>
+                        <a href="../index.php"><img src="../../IMG/logotipo.png" alt="Logotipo"></a>
                     </figure>
                 </div>
 
                 <div class="lista-menu">
                     <ul>
-                        <?php
-                        echo ('<li><a href="../index.php' . $caminho . '">Home</a></li>
-                            <li><a href="../lojas.php">Loja</a></li>
-                            <li><a href="../sobre.php">Sobre</a></li>
-                            <li><a href="../suporte.php">Suporte</a></li>');
-                        ?>
+                        <li><a href="../index.php">Home</a></li>
+                        <li><a href="../lojas.php">Loja</a></li>
+                        <li><a href="../sobre.php">Sobre</a></li>
+                        <li><a href="../suporte.php">Suporte</a></li>
                     </ul>
                 </div>
 
@@ -326,7 +328,7 @@
                 $nome_img = md5(time()) . $extensao;
                 $diretorio = "../../IMG/Imagem_Produtos/";
 
-                move_uploaded_file($imagem['tmp_name'], $diretorio . $nome_img);
+                move_uploaded_file($imagem_edit['tmp_name'], $diretorio . $nome_img);
 
                 $sql_update = 'update produto set nome_produto="' . $nome_edit . '", marca="' . $marca_edit . '", dt_validade="' . $date_edit . '", descricao="' . $descricao_edit . '", preco=' . $preco_edit . ', quantidade=' . $quantidade_edit . ', imagem="' . $nome_img . '" where produto.id_produto=' . $_GET['edit'] . ';';
 
