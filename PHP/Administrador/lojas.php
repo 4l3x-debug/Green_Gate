@@ -12,6 +12,12 @@
         <link rel="stylesheet" href="../../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../../IMG/icone.ico" type="image/x-icon">
         <script type="text/javascript" src="../../JS/script_box_user.js"></script>
+
+        <style type="text/css">
+            .anterior, .proximo{
+                width: 100%;
+            }
+        </style>
         
     </head>
     <body class="corpo-painel-produtor">
@@ -34,23 +40,23 @@
 
         if($dados_usuario['tp_usuario'] == 0){
 
-        $limite = 2;
+        // $limite = 2;
 
-        if(!isset($_GET['pag'])){
-            $pagina = 1;
-        }else{
-            $pagina = $_GET['pag'];
-        }
+        // if(!isset($_GET['pag'])){
+        //     $pagina = 1;
+        // }else{
+        //     $pagina = $_GET['pag'];
+        // }
 
-        $inicio = ($pagina * $limite) - $limite;
+        // $inicio = ($pagina * $limite) - $limite;
 
 
-        $sql_empresa = 'select * from pf_juridico where tp_usuario = 1 order by nome ASC limit '.$inicio.', '.$limite.';';
+        $sql_empresa = 'select * from pf_juridico where tp_usuario = 1 order by nome ASC;';
         $resul_empresa = mysqli_query($conectar, $sql_empresa);
 
-        $sql_total = 'select * from pf_juridico where tp_usuario = 1;';
-        $resul_total = mysqli_query($conectar, $sql_total);
-        $total_registros = mysqli_num_rows($resul_total);
+        // $sql_total = 'select * from pf_juridico where tp_usuario = 1;';
+        // $resul_total = mysqli_query($conectar, $sql_total);
+        // $total_registros = mysqli_num_rows($resul_total);
 
     ?>
 
@@ -164,29 +170,25 @@
 
         </section>
 
-        <div class="paginacao">
+        <!-- <div class="paginacao">
 
             <?php
 
-                $total_paginas = $total_registros / $limite;
+                // $total_paginas = $total_registros / $limite;
 
-                $anterior = $pagina - 1;
-                $proximo = $pagina + 1;
+                // $anterior = $pagina - 1;
+                // $proximo = $pagina + 1;
 
-                if($pagina>1){
-                    echo ('<a href="lojas.php?pag='.$anterior.'"><</a>');
-                }
+                // if($pagina>1){
+                    // echo ('<div class="anterior"><a href="lojas.php?pag='.$anterior.'"><i class="fas fa-arrow-alt-circle-left"></i></a></div>');
+                // }
 
-                for($cont=1;$cont<=$total_paginas;$cont++){
-                    echo('<a href="lojas.php?pag='.$cont.'">'.$cont.'</a>');
-                }
-
-                if($pagina<$total_paginas){
-                    echo ('<a href="lojas.php?pag='.$proximo.'">></a>');
-                }
+                // if($pagina<$total_paginas){
+                    // echo ('<div class="proximo"><a href="lojas.php?pag='.$proximo.'"><i class="fas fa-arrow-alt-circle-right"></i></a></div>');
+                // }
             ?>
 
-            </div>
+            </div> -->
         
     </section>
 

@@ -1,0 +1,93 @@
+.pedidos .imagem img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    position: relative;
+    top: 20px;
+}
+
+.pedidos td, .titulos td{
+    width: 180px;
+}
+
+.pedidos tr{
+    border-bottom: 1px solid #ddd;
+}
+
+.pedidos table{
+    top: 0;
+    margin-bottom: 20px;
+    background-color: #FFF;
+    width: 80%;
+    box-shadow: 1px 2px 5px #b9b194;
+    border-collapse: collapse;
+}
+
+.pagina-usuario {
+    height: auto;
+    padding-bottom: 40px;
+}
+
+.pedidos{
+    display: flex;
+    justify-content: center;
+}
+
+.pedidos i{
+    color: #dee69b;
+}
+
+.pedidos i:hover{
+    color: #000;
+    cursor: pointer;
+}
+
+.titulos{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.titulos table{
+    top: 0;
+    margin-bottom: 20px;
+    background-color: #FFF;
+    width: 80%;
+    box-shadow: 1px 2px 5px #b9b194;
+}
+
+.titulos tbody{
+    width: 100%;
+}
+
+.titulos tr{
+    width: 100%;
+    display: block;
+}
+
+strong{
+    margin-right: 10px;
+}
+
+table{
+    border-radius: 3px;
+}
+
+.menuOculto{
+    height: 95.25%;
+}
+
+button{
+    border: 0;
+    width: 100px;
+    height: 30px;
+    background-color: #c3c65b;
+    color: #FFF;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: Caviar Dreams;
+}
+
+button:hover{
+    background-color: #000;
+}

@@ -110,13 +110,13 @@
                         </form>
                     </div>
                     <a href="login.php"><i class="fas fa-user-circle"></i></a>
-                    <a href=""><i class="fas fa-shopping-cart"></i></a>
+                    <a href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                 </div>
                 
                 <?php
                     }else{
                         
-                echo ('<div class="figuras" style="top: 30%;">
+                    echo ('<div class="figuras" style="top: 30%;">
                         <div class="search-box">
                             <form action="" method="GET">
                                 <input type="text" name="conteudo" placeholder="Pesquisar...">
@@ -126,7 +126,7 @@
                         <a href="#" onclick="box()"><div class="usuario">
                             <img src="../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">
                         </div></a>
-                        <a href=""><i class="fas fa-shopping-cart"></i></a>
+                        <a href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                     </div>');
 
                     }    
@@ -192,7 +192,7 @@
 
     <section class="sessao2" onclick="boxFechar()"> 
         <div class="space-string2">
-            <span class="string-sessao2"> SAIBA MAIS SOBRE O PROJETO GREEN GATE</span> <br> <a href=""> Sobre Nós </a>
+            <span class="string-sessao2"> SAIBA MAIS SOBRE O PROJETO GREEN GATE</span> <br> <a href="sobre.php"> Sobre Nós </a>
         </div>
         <div class="space-img">
             <i class="fas fa-book-open" id="book"></i>
@@ -203,7 +203,7 @@
     
     <?php
 
-        $sql_produto_um = 'select * from produto limit 3,3;';
+        $sql_produto_um = 'select * from produto limit 0,3;';
         $resul_produto_um = mysqli_query($conectar,$sql_produto_um);
 
         while($produto_um = mysqli_fetch_array($resul_produto_um)){

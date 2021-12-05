@@ -60,11 +60,6 @@
         .box-user{
             height: 17%;
         }
-        .usuario {
-            position: relative;
-            top: 6px;
-            right: 12px;
-        }
     </style>
 </head>
 <body>
@@ -120,7 +115,7 @@
                         </form>
                     </div>
                     <a href="login.php"><i class="fas fa-user-circle"></i></a>
-                    <a href=""><i class="fas fa-shopping-cart"></i></a>
+                    <a href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                 </div>
                 
                 <?php
@@ -136,7 +131,7 @@
                     <a href="#" onclick="box()"><div class="usuario">
                         <img src="../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">
                     </div></a>
-                    <a href=""><i class="fas fa-shopping-cart"></i></a></div>');
+                    <a href="carrinho.php"><i class="fas fa-shopping-cart"></i></a></div>');
                 
                     }    
                 ?>
@@ -160,11 +155,11 @@
 
             <?php
 
-                $sql_empresa = 'select * from pf_juridico where tp_usuario=1 order by id_pf_juridico ASC;';
+                $sql_empresa = 'select * from pf_juridico where tp_usuario=1 order by nome ASC;';
                 $resul_empresa = mysqli_query($conectar, $sql_empresa);
 
                 while($dados_empresa = mysqli_fetch_array($resul_empresa)){
-                    echo ('<div class="espacamento-lojas"><a href=""><article class="lojas">
+                    echo ('<div class="espacamento-lojas"><a href="loja.php?id_empresa='.$dados_empresa['id_pf_juridico'].'"><article class="lojas">
                     <img src="../IMG/Imagem_Usuario/'.$dados_empresa['imagem'].'" alt="'.$dados_empresa['nome'].'">
                     </article></a></div>');
                 }
@@ -213,27 +208,24 @@
     <!-- Seção Produtos -->
 
     <section class="secao-produtos">
-        <h2>Produtos mais pesquisados</h2>
+        <h2>Produtos Recentes</h2>
         
         <div class="tamanho-produtos">
-            <div class="espacamento-produtos">
-                <a href="#"><article class="produtos">
-                    <img src="../IMG/produto_1.png" alt="escova_de_dente">
-                </article></a>
-            </div>
-            <div class="espacamento-produtos">
-                <a href="#"><article class="produtos">
-                    <img src="../IMG/produto_2.png" alt="sabonete">
-                </article></a>
-            </div>
-            <div class="espacamento-produtos">
-                <a href="#"><article class="produtos">
-                    <img src="../IMG/produto_3.png" alt="eco_bag">
-                </article></a>
-            </div>
+
+            <?php
+                $sql_produtos_recentes = 'select * from produto order by id_produto ASC limit 3,3;';
+                $produtos_recentes = mysqli_query($conectar, $sql_produtos_recentes);
+
+                while($dados_produtos_recentes = mysqli_fetch_array($produtos_recentes)){
+                    echo ('<div class="espacamento-produtos"><a href="produto.php?id_produto='.$dados_produtos_recentes['id_produto'].'"><article class="produtos">  
+                    <img src="../IMG/Imagem_Produtos/'.$dados_produtos_recentes['imagem'].'" alt="'.$dados_produtos_recentes['nome_produto'].'"></article></a></div>');
+                }
+            ?>
+
         </div>
     </section>
     <h2 id="todos-produtos"> Todos os Produtos </h2> <br>
+    
     <section class="sessao-produtos">
         <?php
             $sql_select = 'select * from produto order by id_produto ASC;';
@@ -247,10 +239,8 @@
             </div></a></div>');
             }
         ?>
-        <div class="paginas">
             
-        </div>
-        </section>
+    </section>
 
         <?php
             }else{

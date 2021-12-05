@@ -32,8 +32,6 @@
         $resul_usuario = mysqli_query($conectar, $sql_usuario);
         $dados_usuario = mysqli_fetch_array($resul_usuario);
 
-        $caminho = '?id_usuario='.$dados_usuario['id_pf_juridico'].'&tp_usuario='.$dados_usuario['tp_usuario'].'';
-
         if($dados_usuario['tp_usuario'] == 1){ // if tp_usuario
 
     ?>
@@ -98,7 +96,7 @@
 
         <aside id="menuOculto" class="menuOculto">
             <a href="javascript: void(0)" class="btnFechar" onclick="fecharNav()"><i class="fas fa-times"></i></a>
-            <a href="produtos.php?edit=0" class="icon"><i class="fas fa-store-alt"></i>Produtos</a>
+            <a href="produtos.php?edit=0" class="icon"><i class="fas fa-tags"></i>Produtos</a>
             <a href="#" class="icon"><i class="fas fa-headset"></i>Suporte</a>
         </aside>
 

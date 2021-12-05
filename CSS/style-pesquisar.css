@@ -139,12 +139,6 @@ h2 {
     border-bottom-right-radius: 4px;
     box-shadow: 0 0 3px 3px rgba(64,87,109,.07),0 2px 12px rgba(53,71,90,.2);
     transform: scale(100%);
-    transition-duration: 0.5s;
-}
-
-.info:hover{
-    transform: scale(105%);
-    font-size: 1em;
     transition-duration: 0.2s;
 }
 
@@ -189,4 +183,9 @@ h2 {
     max-width: 1200px;
     margin: auto;
     flex-wrap: wrap;
+}
+
+.info img:hover{
+    object-fit: cover;
+    transition-duration: 0.2s; 
 }

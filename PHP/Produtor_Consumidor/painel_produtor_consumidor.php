@@ -46,8 +46,6 @@
         $resul_usuario = mysqli_query($conectar, $sql_usuario);
         $dados_usuario = mysqli_fetch_array($resul_usuario);
 
-        $caminho = '?id_usuario='.$dados_usuario['id_pf_juridico'].'&tp_usuario='.$dados_usuario['tp_usuario'].'';
-
         if($dados_usuario['tp_usuario'] == 3){
 
     ?>
@@ -137,6 +135,8 @@
 
     echo $dados_usuario['nome'];
 
+    $data_cadastro = date("d/m/Y", strtotime($dados_usuario['data_cadastro']));
+
     ?>
 
     </div>
@@ -149,7 +149,7 @@
 
             <td> Email: <?php echo $dados_usuario['email']; ?> </td>
             <td> CNPJ: <?php echo $dados_usuario['cnpj']; ?> </td>
-            <td> Data de Cadastro: <?php echo $dados_usuario['data_cadastro']; ?> </td>    
+            <td> Data de Cadastro: <?php echo $data_cadastro; ?> </td>    
 
             </div>
 

@@ -166,9 +166,8 @@
 
 .paginacao{
     line-height: 60px;
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
+    font-size: 45px;
+    display: block;
 }
 
 .paginacao a{
@@ -216,4 +215,8 @@
 
 .dados:hover{
     background-color:#f5f5f5;
+}
+
+.botao:hover{
+    background-color: #333;
 }
