@@ -7,35 +7,25 @@
         $tp_usuario = $_SESSION['tp_usuario'];
         $id_usuario = $_SESSION['id_usuario'];
 
-        if($tp_usuario == 0 or $tp_usuario == 2){
+        if($tp_usuario == 2){
             $sql_usuario = 'select * from pf_fisico where id_pf_fisico = '.$id_usuario.';';
             $resul_usuario = mysqli_query($conectar, $sql_usuario);
             $dados_usuario = mysqli_fetch_array($resul_usuario);
 
             $caminho = '?id_usuario='.$dados_usuario['id_pf_fisico'].'&tp_usuario='.$dados_usuario['tp_usuario'].'';
-
-            if($tp_usuario == 0){
-                $usuario = 'Administrador';
-                $caminho_painel = ''.$usuario.'/painel_adm';
-            }else{
-                $usuario = 'Consumidor';
-                $caminho_painel = ''.$usuario.'/painel_consumidor';
-            }
+                
+            $usuario = 'Consumidor';
+            $caminho_painel = ''.$usuario.'/painel_consumidor';
         }
-        elseif($tp_usuario == 1 or $tp_usuario == 3){
+        elseif($tp_usuario == 3){
             $sql_usuario = 'select * from pf_juridico where id_pf_juridico = '.$id_usuario.';';
             $resul_usuario = mysqli_query($conectar, $sql_usuario);
             $dados_usuario = mysqli_fetch_array($resul_usuario);
 
             $caminho = '?id_usuario='.$dados_usuario['id_pf_juridico'].'&tp_usuario='.$dados_usuario['tp_usuario'].'';
 
-            if($tp_usuario == 1){
-                $usuario = 'Produtor';
-                $caminho_painel = ''.$usuario.'/painel_produtor';
-            }else{
-                $usuario = 'Produtor_Consumidor';
-                $caminho_painel = ''.$usuario.'/painel_produtor_consumidor';
-            }
+            $usuario = 'Produtor_Consumidor';
+            $caminho_painel = ''.$usuario.'/painel_produtor_consumidor';
         }else{}
 
     }else{}
@@ -74,19 +64,8 @@
                 top: 0;
             }
 
-            button{
-                border: 0;
-                width: 100px;
-                height: 30px;
-                background-color: #c3c65b;
-                color: #FFF;
-                border-radius: 20px;
-                cursor: pointer;
-                font-family: Caviar Dreams;
-            }
-
-            button:hover{
-                background-color: #000;
+            footer{
+                margin-top: 40px;
             }
         </style>
     </head>
@@ -96,19 +75,7 @@
     <!-- Dados do Usuário -->
 
     <?php
-        include('conexao.php');
-
-        if(!isset($_SESSION['id_usuario'])){
-            unset($_SESSION['id_usuario']);
-            header('location:invalido.php');
-        }
-
-        $id = $_SESSION['id_usuario'];
-        $sql_usuario = 'select * from pf_fisico where id_pf_fisico = '.$id.';';
-        $resul_usuario = mysqli_query($conectar, $sql_usuario);
-        $dados_usuario = mysqli_fetch_array($resul_usuario);
-
-        if($dados_usuario['tp_usuario'] == 2 or $dados_usuario['tp_usuario'] == 2){ // if tp_usuario
+        if($dados_usuario['tp_usuario'] == 2 or $dados_usuario['tp_usuario'] == 3){ // if tp_usuario
 
     ?>
 
@@ -180,7 +147,7 @@
 
         <?php
 
-        $sql_pedido = 'select * from pedido where id_consumidor = '.$id.';';
+        $sql_pedido = 'select * from pedido where id_consumidor = '.$id_usuario.' and tp_usuario = '.$tp_usuario.';';
         $pedido = mysqli_query($conectar,$sql_pedido);
 
             while($dados_pedido = mysqli_fetch_array($pedido)){
@@ -241,23 +208,25 @@
                     <?php echo ($preco_total); ?>
                 </td>
                 <td>
-                    <i class="fas fa-trash"></i>
+                    <?php echo('<a href="delete_pedido_produto.php?del='.$dados_pedido_produto['id_pedido_produto'].'"><i class="fas fa-trash"></i></a>'); ?>
                 </td>
             </tr>
-            
+
+        <?php
+            }
+            }
+        ?>
+
             <tr style="height: 100px">
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td><button>Cancelar</button></td>
-                <td><button>Comprar</button></td>
+                <td>
+                    <?php echo ('<a href="delete_pedido.php?del'.$dados_pedido['id_pedido'].'"><button>Comprar</button></a>'); ?>
+                </td>
             </tr>
-
-        <?php
-            }
-        }
-        ?>
 
         </table>
 

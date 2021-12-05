@@ -33,7 +33,7 @@
         $resul_usuario = mysqli_query($conectar, $sql_usuario);
         $dados_usuario = mysqli_fetch_array($resul_usuario);
 
-        if($dados_usuario['tp_usuario'] == 2){ // if tp_usuario
+        if($dados_usuario['tp_usuario'] == 3){ // if tp_usuario
 
     ?>
 

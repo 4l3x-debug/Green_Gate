@@ -25,6 +25,7 @@
 
 .pagina-usuario {
     height: auto;
+    padding-bottom: 40px;
 }
 
 .pedidos{
@@ -72,6 +73,21 @@ table{
     border-radius: 3px;
 }
 
-footer{
-    margin-top: 40px;
+.menuOculto{
+    height: 95.25%;
+}
+
+button{
+    border: 0;
+    width: 100px;
+    height: 30px;
+    background-color: #c3c65b;
+    color: #FFF;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: Caviar Dreams;
+}
+
+button:hover{
+    background-color: #000;
 }
