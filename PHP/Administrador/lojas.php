@@ -17,6 +17,10 @@
             .anterior, .proximo{
                 width: 100%;
             }
+
+            .botao:hover{
+                background-color: #333;
+            }
         </style>
         
     </head>
