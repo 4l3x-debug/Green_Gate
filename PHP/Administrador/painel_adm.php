@@ -136,6 +136,8 @@
 
     echo $dados_usuario['nome'];
 
+    $data_cadastro = date("d/m/Y", strtotime($dados_usuario['data_cadastro']));
+
     ?>
 
     </div>
@@ -148,7 +150,7 @@
 
             <td> Email: <?php echo $dados_usuario['email']; ?> </td>
             <td> CPF: <?php echo $dados_usuario['cpf']; ?> </td>
-            <td> Data de Cadastro: <?php echo $dados_usuario['data_cadastro']; ?> </td>    
+            <td> Data de Cadastro: <?php echo $data_cadastro; ?> </td>    
 
             </div>
 
