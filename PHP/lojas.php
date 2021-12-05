@@ -216,22 +216,20 @@ if (isset($_SESSION['id_usuario'])) {
         <section class="secao-produtos">
             <h2>Produtos Recentes</h2>
 
-<<<<<<< HEAD
-
-            <div class="tamanho-produtos">
-
-                <?php
-                    $sql_produtos_recentes = 'select * from produto order by id_produto ASC limit 3,3;';
-                ?>
-            <?php
-                $sql_produtos_recentes = 'select * from produto order by id_produto DESC limit 0,3;';
-
-=======
             <div class="tamanho-produtos">
 
             <?php
+                $sql_produtos_recentes = 'select * from produto order by id_produto ASC limit 3,3;';
+            ?>
+            
+            <?php
                 $sql_produtos_recentes = 'select * from produto order by id_produto DESC limit 0,3;';
->>>>>>> 4f44ef6a06c5efcbe2da398e6ccfd82d3367aa60
+            ?>
+
+            <div class="tamanho-produtos">
+
+            <?php
+                $sql_produtos_recentes = 'select * from produto order by id_produto DESC limit 0,3;';
                 $produtos_recentes = mysqli_query($conectar, $sql_produtos_recentes);
 
                 while ($dados_produtos_recentes = mysqli_fetch_array($produtos_recentes)) {
