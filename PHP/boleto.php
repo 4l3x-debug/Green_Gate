@@ -1,20 +1,25 @@
 <?php
 session_start();
-$dias_de_prazo_para_pagamento = 5;
+include('conexao.php');
+$sql = "select * from produto where id_produto= " . $_GET['id_prod'] . ";";
+$query = mysqli_query($conectar, $sql);
+$dados_prod = mysqli_fetch_array($query);
+
+$dias_de_prazo_para_pagamento = 6;
 $taxa_boleto = 2.95;
 $data_venc = date("d/m/Y", time() + ($dias_de_prazo_para_pagamento * 86400));  // Prazo de X dias OU informe data: "13/04/2006"; 
 $valor_cobrado = "2950,00"; // Valor - REGRA: Sem pontos na milhar e tanto faz com "." ou "," ou com 1 ou 2 ou sem casa decimal
-$valor_cobrado = str_replace(",", ".",$valor_cobrado);
-$valor_boleto=number_format($valor_cobrado+$taxa_boleto, 2, ',', '');
+$valor_cobrado = str_replace(",", ".", $valor_cobrado);
+$valor_boleto = number_format($valor_cobrado + $taxa_boleto, 2, ',', '');
 
 $dadosboleto["campo_fixo_obrigatorio"] = "1";       // campo fixo obrigatorio - valor = 1 
 $dadosboleto["inicio_nosso_numero"] = "9";          // Inicio do Nosso numero - obrigatoriamente deve começar com 9;
 $dadosboleto["nosso_numero"] = "19525086";  // Nosso numero sem o DV - REGRA: Máximo de 16 caracteres! (Pode ser um número sequencial do sistema, o cpf ou o cnpj)
-$dadosboleto["numero_documento"] = "27.030195.10";	// Num do pedido ou do documento
+$dadosboleto["numero_documento"] = "27.030195.10";    // Num do pedido ou do documento
 $dadosboleto["data_vencimento"] = $data_venc; // Data de Vencimento do Boleto - REGRA: Formato DD/MM/AAAA
 $dadosboleto["data_documento"] = date("d/m/Y"); // Data de emissão do Boleto
 $dadosboleto["data_processamento"] = date("d/m/Y"); // Data de processamento do boleto (opcional)
-$dadosboleto["valor_boleto"] = $valor_boleto; 	// Valor do Boleto - REGRA: Com vírgula e sempre com duas casas depois da virgula
+$dadosboleto["valor_boleto"] = $valor_boleto;     // Valor do Boleto - REGRA: Com vírgula e sempre com duas casas depois da virgula
 
 // DADOS DO SEU CLIENTE
 $dadosboleto["sacado"] = "Nome do seu Cliente";
@@ -23,7 +28,7 @@ $dadosboleto["endereco2"] = "Cidade - Estado -  CEP: 00000-000";
 
 // INFORMACOES PARA O CLIENTE
 $dadosboleto["demonstrativo1"] = "Pagamento de Compra na Loja Nonononono";
-$dadosboleto["demonstrativo2"] = "Mensalidade referente a nonon nonooon nononon<br>Taxa bancária - R$ ".number_format($taxa_boleto, 2, ',', '');
+$dadosboleto["demonstrativo2"] = "Mensalidade referente a nonon nonooon nononon<br>Taxa bancária - R$ " . number_format($taxa_boleto, 2, ',', '');
 $dadosboleto["demonstrativo3"] = "BoletoPhp - http://www.boletophp.com.br";
 
 // INSTRUÇÕES PARA O CAIXA
@@ -35,7 +40,7 @@ $dadosboleto["instrucoes4"] = "&nbsp; Emitido pelo sistema Projeto BoletoPhp - w
 // DADOS OPCIONAIS DE ACORDO COM O BANCO OU CLIENTE
 $dadosboleto["quantidade"] = "";
 $dadosboleto["valor_unitario"] = "";
-$dadosboleto["aceite"] = "";		
+$dadosboleto["aceite"] = "";
 $dadosboleto["especie"] = "R$";
 $dadosboleto["especie_doc"] = "";
 
@@ -45,8 +50,8 @@ $dadosboleto["especie_doc"] = "";
 
 // DADOS DA SUA CONTA - CEF
 $dadosboleto["agencia"] = "1565"; // Num da agencia, sem digito
-$dadosboleto["conta"] = "13877"; 	// Num da conta, sem digito
-$dadosboleto["conta_dv"] = "4"; 	// Digito do Num da conta
+$dadosboleto["conta"] = "13877";     // Num da conta, sem digito
+$dadosboleto["conta_dv"] = "4";     // Digito do Num da conta
 
 // DADOS PERSONALIZADOS - CEF
 $dadosboleto["conta_cedente"] = "057335"; // ContaCedente do Cliente, sem digito (Somente Números)
@@ -61,6 +66,5 @@ $dadosboleto["cidade_uf"] = "Cidade / Estado";
 $dadosboleto["cedente"] = "Coloque a Razão Social da sua empresa aqui";
 
 // NÃO ALTERAR!
-include("funcoes_cef_sinco.php"); 
+include("funcoes_cef_sinco.php");
 include("layout_cef_sinco.php");
-?>
