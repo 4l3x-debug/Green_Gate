@@ -203,7 +203,12 @@
     
     <?php
 
-        $sql_produto_um = 'select * from produto limit 0,3;';
+        $sql_lojas_premium = 'select *from pf_juridico where tp_usuario = 1 and plano = 1;';
+        $lojas_premium = mysqli_query($conectar,$sql_lojas_premium);
+        
+        while($dados_lojas_premium = mysqli_fetch_array($lojas_premium)){
+
+        $sql_produto_um = 'select * from produto where id_produtor = '.$dados_lojas_premium['id_pf_juridico'].' limit 0,3;';
         $resul_produto_um = mysqli_query($conectar,$sql_produto_um);
 
         while($produto_um = mysqli_fetch_array($resul_produto_um)){
@@ -211,6 +216,8 @@
             echo('<div class="espacamento-produtos"><div class="box-shadow-imagem"><a href="produto.php?id_produto='.$produto_um['id_produto'].'"><article class="produtos">
                     <img src="../IMG/Imagem_Produtos/'.$produto_um['imagem'].'" alt="'.$produto_um['nome_produto'].'">
             </article></a></div></div>');
+
+        }
 
         }
 
