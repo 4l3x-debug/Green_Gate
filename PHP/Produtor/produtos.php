@@ -188,7 +188,7 @@
                 $resul = mysqli_query($conectar,$sql_empresas);
 
                 while($con = mysqli_fetch_array($resul)){
-                    echo('<tr class="dados"><td>'.$con['nome_produto'].'</td><td>'.$con['preco'].'</td><td><a href="produtos.php?edit='.$con['id_produto'].'"><i class="fas fa-pen"></i></a></td><td><a href="delete_produto.php?del='.$con['id_produto'].'"><i class="fas fa-trash"></i></a></td></tr>');
+                    echo('<tr class="dados"><td style="line-height: 20px;">'.$con['nome_produto'].'</td><td>'.$con['preco'].'</td><td><a href="produtos.php?edit='.$con['id_produto'].'"><i class="fas fa-pen"></i></a></td><td><a href="delete_produto.php?del='.$con['id_produto'].'"><i class="fas fa-trash"></i></a></td></tr>');
                 }    
         
                 ?>
@@ -272,7 +272,7 @@
 
             <h2>Produto</h2>
 
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
 
                 <div class="edit um">
                     Nome: <input type="text" name="nome-edit" value="<?php echo ($editar['nome_produto']); ?>">
