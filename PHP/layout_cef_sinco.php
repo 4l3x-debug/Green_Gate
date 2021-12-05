@@ -99,12 +99,7 @@ Valor cobrado</td></tr><tr><td class=cp valign=top width=7 height=12><img height
   <span class="campo">
   <?php echo $dadosboleto["sacado"]?>
   </span></td>
-</tr><tr><td valign=top width=7 height=1><img height=1 src=imagens/2.png width=7 border=0></td><td valign=top width=659 height=1><img height=1 src=imagens/2.png width=659 border=0></td></tr></tbody></table><table cellspacing=0 cellpadding=0 border=0><tbody><tr><td class=ct  width=7 height=12></td><td class=ct  width=564 >Demonstrativo</td><td class=ct  width=7 height=12></td><td class=ct  width=88 >Autenticação 
-mecânica</td></tr><tr><td  width=7 ></td><td class=cp width=564 >
-<span class="campo">
-  <?php echo $dadosboleto["demonstrativo1"]?><br>
-  <?php echo $dadosboleto["demonstrativo3"]?><br>
-  </span>
+</tr>
   </td><td  width=7 ></td><td  width=88 ></td></tr></tbody></table><table cellspacing=0 cellpadding=0 width=666 border=0><tbody><tr><td width=7></td><td  width=500 class=cp> 
 <br><br><br> 
 </td><td width=159></td></tr></tbody></table><table cellspacing=0 cellpadding=0 width=666 border=0><tr><td class=ct width=666></td></tr><tbody><tr><td class=ct width=666> 
@@ -200,12 +195,7 @@ Valor documento</td></tr><tr> <td class=cp valign=top width=7 height=12><img hei
 <tr> <td class=ct valign=top width=7 height=13><img height=13 src=imagens/1.png width=1 border=0></td></tr><tr> 
 <td class=cp valign=top width=7 height=12><img height=12 src=imagens/1.png width=1 border=0></td></tr><tr> 
 <td valign=top width=7 height=1><img height=1 src=imagens/2.png width=1 border=0></td></tr></tbody></table></td><td valign=top width=468 rowspan=5><font class=ct>Instruções 
-(Texto de responsabilidade do cedente)</font><br><br><span class=cp> <FONT class=campo>
-<?php echo $dadosboleto["instrucoes1"]; ?><br>
-<?php echo $dadosboleto["instrucoes2"]; ?><br>
-<?php echo $dadosboleto["instrucoes3"]; ?><br>
-<?php echo $dadosboleto["instrucoes4"]; ?></FONT><br><br> 
-</span></td>
+(Texto de responsabilidade do cedente)</font><br><br></td>
 <td align=right width=188><table cellspacing=0 cellpadding=0 border=0><tbody><tr><td class=ct valign=top width=7 height=13><img height=13 src=imagens/1.png width=1 border=0></td><td class=ct valign=top width=180 height=13>(-) 
 Desconto / Abatimentos</td></tr><tr> <td class=cp valign=top width=7 height=12><img height=12 src=imagens/1.png width=1 border=0></td><td class=cp valign=top align=right width=180 height=12></td></tr><tr> 
 <td valign=top width=7 height=1><img height=1 src=imagens/2.png width=7 border=0></td><td valign=top width=180 height=1><img height=1 src=imagens/2.png width=180 border=0></td></tr></tbody></table></td></tr><tr><td align=right width=10> 

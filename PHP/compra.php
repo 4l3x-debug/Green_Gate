@@ -146,10 +146,11 @@
         <div class="container-confirmar">
             <?php
 
-            $numero = number_format($dados_produto['preco']);
-            $valor_total = $numero * $_GET['qtd'];
-            $_SESSION['valorTotal'] = $valor_total;
-
+                $numero = number_format($dados_produto['preco']);
+                $valor_total = $numero * $_GET['qtd'];
+                $_SESSION['valorTotal'] = $valor_total;
+                $qtd = $_GET['qtd'];
+                $_SESSION['qtd'] = $qtd;
             ?>
             <div class="espaco-total">
                 <span class="valor-total" id="valorTotal"> Valor total: R$ <?php echo ($valor_total); ?> </span>

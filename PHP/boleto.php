@@ -33,19 +33,10 @@ $dadosboleto["sacado"] = $dadosUser['nome'];
 $dadosboleto["endereco1"] = "Endereço do seu Cliente";
 $dadosboleto["endereco2"] = "Cidade - Estado -  CEP: 00000-000";
 
-// INFORMACOES PARA O CLIENTE
-$dadosboleto["demonstrativo1"] = "Pagamento de Compra na Loja Nonononono";
-$dadosboleto["demonstrativo3"] = "BoletoPhp - http://www.boletophp.com.br";
-
-// INSTRUÇÕES PARA O CAIXA
-$dadosboleto["instrucoes1"] = "- Sr. Caixa, cobrar multa de 2% após o vencimento";
-$dadosboleto["instrucoes2"] = "- Receber até 10 dias após o vencimento";
-$dadosboleto["instrucoes3"] = "- Em caso de dúvidas entre em contato conosco: xxxx@xxxx.com.br";
-$dadosboleto["instrucoes4"] = "&nbsp; Emitido pelo sistema Projeto BoletoPhp - www.boletophp.com.br";
 
 // DADOS OPCIONAIS DE ACORDO COM O BANCO OU CLIENTE
 $dadosboleto["quantidade"] = "";
-$dadosboleto["valor_unitario"] = "";
+$dadosboleto["valor_unitario"] = $dados_prod['preco'];
 $dadosboleto["aceite"] = "";
 $dadosboleto["especie"] = "R$";
 $dadosboleto["especie_doc"] = "";
