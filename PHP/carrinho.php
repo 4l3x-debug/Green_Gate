@@ -1,3 +1,46 @@
+<?php
+    session_start();
+    include ('conexao.php');
+    include ('barra_rolagem.php');
+
+    if(isset($_SESSION['id_usuario'])){
+        $tp_usuario = $_SESSION['tp_usuario'];
+        $id_usuario = $_SESSION['id_usuario'];
+
+        if($tp_usuario == 0 or $tp_usuario == 2){
+            $sql_usuario = 'select * from pf_fisico where id_pf_fisico = '.$id_usuario.';';
+            $resul_usuario = mysqli_query($conectar, $sql_usuario);
+            $dados_usuario = mysqli_fetch_array($resul_usuario);
+
+            $caminho = '?id_usuario='.$dados_usuario['id_pf_fisico'].'&tp_usuario='.$dados_usuario['tp_usuario'].'';
+
+            if($tp_usuario == 0){
+                $usuario = 'Administrador';
+                $caminho_painel = ''.$usuario.'/painel_adm';
+            }else{
+                $usuario = 'Consumidor';
+                $caminho_painel = ''.$usuario.'/painel_consumidor';
+            }
+        }
+        elseif($tp_usuario == 1 or $tp_usuario == 3){
+            $sql_usuario = 'select * from pf_juridico where id_pf_juridico = '.$id_usuario.';';
+            $resul_usuario = mysqli_query($conectar, $sql_usuario);
+            $dados_usuario = mysqli_fetch_array($resul_usuario);
+
+            $caminho = '?id_usuario='.$dados_usuario['id_pf_juridico'].'&tp_usuario='.$dados_usuario['tp_usuario'].'';
+
+            if($tp_usuario == 1){
+                $usuario = 'Produtor';
+                $caminho_painel = ''.$usuario.'/painel_produtor';
+            }else{
+                $usuario = 'Produtor_Consumidor';
+                $caminho_painel = ''.$usuario.'/painel_produtor_consumidor';
+            }
+        }else{}
+
+    }else{}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -13,6 +56,39 @@
         <link rel="stylesheet" href="../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
         <script type="text/javascript" src="../JS/script_box_user.js"></script>
+
+        <style type="text/css">
+            .figuras-produtor{
+                top: 36px;
+            }
+
+            .box-user{
+                height: 17%;
+            }
+
+            .pedidos tr{
+                height: 130px;
+            }
+
+            .pedidos .imagem img{
+                top: 0;
+            }
+
+            button{
+                border: 0;
+                width: 100px;
+                height: 30px;
+                background-color: #c3c65b;
+                color: #FFF;
+                border-radius: 20px;
+                cursor: pointer;
+                font-family: Caviar Dreams;
+            }
+
+            button:hover{
+                background-color: #000;
+            }
+        </style>
     </head>
     
     <body class="corpo-painel-produtor">
@@ -22,7 +98,6 @@
     <?php
         include('conexao.php');
 
-        session_start();
         if(!isset($_SESSION['id_usuario'])){
             unset($_SESSION['id_usuario']);
             header('location:invalido.php');
@@ -43,10 +118,10 @@
             <div id="abrir">
                 <nav class="box-user">
                     <ul>
-                        <a href="painel_consumidor.php"><li class="list um">
+                        <a href=" <?php echo($caminho_painel); ?>.php"><li class="list um">
                             <span><i class="fas fa-user-circle"></i>Perfil</span>
                         </li></a>
-                        <a href="editar_perfil.php"><li class="list">
+                        <a href="<?php echo($usuario); ?>/editar_perfil.php"><li class="list">
                             <span><i class="fas fa-cog"></i>Configurações</span>
                         </li></a>
                         <a href="invalido.php"><li style="border-top: 1px solid #ebebeb;" class="list dois">
@@ -80,7 +155,7 @@
                             <?php echo ('<img src="../IMG/Imagem_Usuario/'.$dados_usuario['imagem'].'">'); ?>     
                         </div>
                     </a>
-                    <a href="notificacoes.php"><i class="far fa-bell"></i></a>
+                    <a href="<?php echo($usuario); ?>/notificacoes.php"><i class="far fa-bell"></i></a>
                 </div>
             </nav>
         </section>
@@ -168,6 +243,15 @@
                 <td>
                     <i class="fas fa-trash"></i>
                 </td>
+            </tr>
+            
+            <tr style="height: 100px">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button>Cancelar</button></td>
+                <td><button>Comprar</button></td>
             </tr>
 
         <?php
