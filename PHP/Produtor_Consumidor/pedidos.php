@@ -29,7 +29,7 @@
         }
 
         $id = $_SESSION['id_usuario'];
-        $sql_usuario = 'select * from pf_fisico where id_pf_fisico = '.$id.';';
+        $sql_usuario = 'select * from pf_juridico where id_pf_juridico = '.$id.';';
         $resul_usuario = mysqli_query($conectar, $sql_usuario);
         $dados_usuario = mysqli_fetch_array($resul_usuario);
 
@@ -138,13 +138,13 @@
 
         <table>
             <tr>
-                <td colspan="3">
+                <td style="width: 540px;">
                     <?php
                         echo('<strong>Loja: </strong>'.$dados_produtor['nome']);
                     ?>
 
                 </td>
-                <td colspan="3">
+                <td style="width: 540px;">
                     <?php
                         echo('<strong>Data do Pedido: </strong>'.$data_pedido);
                     ?>
@@ -187,6 +187,12 @@
                     <i class="fas fa-trash"></i>
                 </td>
             </tr>
+
+        <?php
+            }
+        }
+        ?>
+
             <tr>
                 <td></td>
                 <td></td>
@@ -195,11 +201,6 @@
                 <td><button>Cancelar</button></td>
                 <td><button>Comprar</button></td>
             </tr>
-
-        <?php
-            }
-        }
-        ?>
 
         </table>
 

@@ -20,7 +20,9 @@
                     <p class="cifrao">R$</p>
                     <p class="preco_plano">0</p>
                     <span>Perfeito para iniciantes</span>
-                    <button style="top: 48px;">Adquira agora</button>
+                    <button style="top: 35px;">
+                        <a href="cadastro_pf_juridico.php" class="link-btn"><span>Adquira agora</span></a>
+                    </button>
                 </div>
 
                 <div class="descricao">
@@ -35,7 +37,9 @@
                     <p class="cifrao">R$</p>
                     <p class="preco_plano">10</p>
                     <span style="line-height:27px; padding: 0 35px;">Divulgação da sua marca na plaltaforma</span>
-                    <button style="top: 34px;">Adquira agora</button>
+                    <button style="top: 21px;">
+                        <a href="#" class="link-btn"><span>Adquira agora</span></a>
+                    </button>
                 </div>
 
                 <div class="descricao">

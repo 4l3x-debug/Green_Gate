@@ -111,7 +111,7 @@
 
         <aside id="menuOculto" class="menuOculto">
             <a href="javascript: void(0)" class="btnFechar" onclick="fecharNav()"><i class="fas fa-times"></i></a>
-            <a href="produtos.php?edit=0" class="icon"><i class="fas fa-store-alt"></i>Produtos</a>
+            <a href="produtos.php?edit=0" class="icon"><i class="fas fa-tags"></i>Produtos</a>
             <a href="suporte.php" class="icon"><i class="fas fa-headset"></i>Suporte</a>
         </aside>
 
