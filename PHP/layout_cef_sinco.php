@@ -103,7 +103,6 @@ Valor cobrado</td></tr><tr><td class=cp valign=top width=7 height=12><img height
 mecânica</td></tr><tr><td  width=7 ></td><td class=cp width=564 >
 <span class="campo">
   <?php echo $dadosboleto["demonstrativo1"]?><br>
-  <?php echo $dadosboleto["demonstrativo2"]?><br>
   <?php echo $dadosboleto["demonstrativo3"]?><br>
   </span>
   </td><td  width=7 ></td><td  width=88 ></td></tr></tbody></table><table cellspacing=0 cellpadding=0 width=666 border=0><tbody><tr><td width=7></td><td  width=500 class=cp> 

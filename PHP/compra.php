@@ -146,7 +146,8 @@
         <div class="container-confirmar">
             <?php
 
-            $valor_total = $dados_produto['preco'] * $_GET['qtd'];
+            $numero = number_format($dados_produto['preco']);
+            $valor_total = $numero * $_GET['qtd'];
             $_SESSION['valorTotal'] = $valor_total;
 
             ?>

@@ -283,6 +283,7 @@ if (isset($_SESSION['id_usuario'])) {
 
     <?php
     }
+
     ?>
 
     <!-- Rodapé -->
@@ -325,7 +326,7 @@ if (isset($_SESSION['id_usuario'])) {
             let link = document.querySelector('#link_comprar');
             let currentProductCount = document.querySelector('#contador').value;
 
-            link.href = `compra.php?id_produto=<?php echo $dados_produto['id_produto']; ?>&qtd=${currentProductCount}`;
+            link.href = `compra.php?id_produto=<?php echo $dados_produto['id_produto']; ?>&qtd=${currentProductCount}&user=<?php echo ('');?>`;
         }
     </script>
 
