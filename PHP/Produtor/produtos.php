@@ -209,28 +209,6 @@
 
         </section>
 
-        <!-- Rodapé -->
-
-        <footer class="main-footer">
-            <section class="cont-footer">
-                <div>
-                    <p>Para quem se compromete com o meio ambiente.</p>
-                </div>
-            </section>
-
-            <div id="linha-vert"></div>
-
-            <div class="footer-icon">
-                <a href="https://www.facebook.com/Green-Gate-103711395206238"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/green.gate_/"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-            </div>
-
-            <div class="direitos">
-                <p>© Green Gate 2021</p>
-            </div>
-        </footer>
-
         <?php
 
         if (isset($_POST['inserir'])) {
@@ -273,6 +251,8 @@
         $resul_editar = mysqli_query($conectar, $sql);
         $editar = mysqli_fetch_array($resul_editar);
 
+        if($_GET['edit'] != 0){
+
         ?>
 
         <section id="editar">
@@ -281,7 +261,7 @@
 
                 <h2>Produto</h2>
 
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
 
                     <div class="edit um">
                         Nome: <input type="text" name="nome-edit" value="<?php echo $editar['nome_produto']; ?>">
@@ -358,16 +338,36 @@
                     echo ('<script>window.alert("Erro ao editar o produto!");window.location="produtos.php?edit=0"</script>');
                 }
             }
-        } else {
-        }
+        } else {}
+        } else {}
 
-        ?>
 
-    <?php
     } else {
         header('location:invalido.php');
     }
     ?>
+
+    <!-- Rodapé -->
+
+    <footer class="main-footer">
+        <section class="cont-footer">
+            <div>
+                <p>Para quem se compromete com o meio ambiente.</p>
+            </div>
+        </section>
+
+        <div id="linha-vert"></div>
+
+        <div class="footer-icon">
+            <a href="https://www.facebook.com/Green-Gate-103711395206238"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/green.gate_/"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="direitos">
+            <p>© Green Gate 2021</p>
+        </div>
+    </footer>
 
 </body>
 
