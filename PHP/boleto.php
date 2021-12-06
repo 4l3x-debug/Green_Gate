@@ -24,13 +24,27 @@
 
     }else{}
 ?>
-
+<link rel="stylesheet" href="../FONTAW/css/all.css">
 <style>
     body{
         position: absolute;
         left: 25%;
     }
+
+    button{
+        position: absolute;
+        right: -197px;
+        font-size: 30px;
+        top: 27px;
+        width: 50px;
+        height: 50px;
+        border-radius: 44px;
+        border: 0;
+        cursor: pointer;
+    }
 </style>
+
+<button value="imprimir" onclick="window.print()"><i class="fas fa-print"></i></button>
 
 <?php
 

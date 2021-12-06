@@ -364,6 +364,10 @@ if (isset($_SESSION['id_usuario'])) {
             }
         }
 
+        if($inserir_pedido_produto){
+            echo ('<script>window.alert("Produto inserido com sucesso!");window.location="#"</script>');
+        }
+        
         }else{}
     ?>
 

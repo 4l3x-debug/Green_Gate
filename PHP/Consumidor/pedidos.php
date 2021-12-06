@@ -194,10 +194,7 @@
         ?>
 
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td colspan="4"></td>
                 <td><button>Cancelar</button></td>
                 <td><button>Comprar</button></td>
             </tr>

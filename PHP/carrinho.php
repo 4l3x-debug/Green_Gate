@@ -55,7 +55,7 @@
             }
 
             .box-user{
-                height: 17%;
+                height: 110px;
             }
 
             .pedidos tr{
@@ -70,9 +70,6 @@
                 margin-top: 40px;
             }
 
-            .box-user {
-                height: 11.5%;
-            }
         </style>
     </head>
     

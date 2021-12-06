@@ -174,43 +174,6 @@ if (isset($_SESSION['id_usuario'])) {
 
         </section>
 
-        <!-- Categorias Lojas -->
-
-        <section class="secao-categorias">
-            <div class="categorias">
-                <div class="espacamento-categoria">
-                    <a href="#">
-                        <i class="fas fa-tshirt"></i>
-                    </a>
-                </div>
-                <div class="espacamento-categoria">
-                    <a href="#">
-                        <i class="fas fa-air-freshener"></i>
-                    </a>
-                </div>
-                <div class="espacamento-categoria">
-                    <a href="#">
-                        <i class="fas fa-mug-hot"></i>
-                    </a>
-                </div>
-                <div class="espacamento-categoria">
-                    <a href="#">
-                        <i class="fas fa-leaf"></i>
-                    </a>
-                </div>
-                <div class="espacamento-categoria">
-                    <a href="#">
-                        <i class="fas fa-soap"></i>
-                    </a>
-                </div>
-                <div class="espacamento-categoria">
-                    <a href="#">
-                        <i class="fas fa-home"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
         <!-- Seção Produtos -->
 
         <section class="secao-produtos">

@@ -43,19 +43,6 @@
     } else {
     }
     ?>
-
-    <style type="text/css">
-        .box-user {
-            height: 17%;
-        }
-
-        .usuario {
-            position: relative;
-            top: 6px;
-            right: 12px;
-        }
-
-    </style>
     <link rel="stylesheet" type="text/css" href="../CSS/style-compra.css">
     <link rel="stylesheet" type="text/css" href="../CSS/style-index.css">
     <link rel="stylesheet" type="text/css" href="../CSS/style-lojas.css">
@@ -67,9 +54,40 @@
     <script type="text/javascript" src="../JS/script_escolher_endereco.js"></script>
 </head>
 
+    <style type="text/css">
+        .box-user {
+            height: 110px;
+        }
+
+        .usuario {
+            position: relative;
+            top: 6px;
+            right: 12px;
+        }
+
+    </style>
+
 <body>
 
-<section id="endereco">
+    <section id="background-box">
+            <div id="abrir">
+                <nav class="box-user">
+                    <ul>
+                        <a href=" <?php echo($caminho_painel); ?>.php"><li class="list um">
+                            <span><i class="fas fa-user-circle"></i>Perfil</span>
+                        </li></a>
+                        <a href="<?php echo($usuario); ?>/editar_perfil.php"><li class="list">
+                            <span><i class="fas fa-cog"></i>Configurações</span>
+                        </li></a>
+                        <a href="invalido.php"><li style="border-top: 1px solid #ebebeb;" class="list dois">
+                            <span>Sair</span>
+                        </li></a>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+    <section id="endereco">
         <a href="#" onclick="fechar()"><i class="fas fa-times"></i></a>
         <div class="escolher-endereco">
             <h2>Escolha o Endereço</h2>
@@ -136,7 +154,6 @@
                 ?>
 
                     <div class="figuras" style="top: 40%;">
-                        <a href=""><i class="fas fa-search"></i></a>
                         <a href="login.php"><i class="fas fa-user-circle"></i></a>
                         <a href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                     </div>
@@ -145,7 +162,6 @@
                 } else {
 
                     echo ('<div class="figuras" style="top: 30%;">
-                    <a href=""><i class="fas fa-search"></i></a>
                     <a href="#" onclick="box()"><div class="usuario">
                         <img src="../IMG/Imagem_Usuario/' . $dados_usuario['imagem'] . '">
                     </div></a>
