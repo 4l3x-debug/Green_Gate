@@ -43,6 +43,7 @@
         <link rel="stylesheet" type="text/css" href="../CSS/style-suporte.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-box-user.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style-pedidos.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style-escolher-endereco.css">
         <link rel="stylesheet" href="../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
         <script type="text/javascript" src="../JS/script_box_user.js"></script>
@@ -67,72 +68,6 @@
 
             footer{
                 margin-top: 40px;
-            }
-
-            #endereco{
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                background-color: #0000009e;
-                z-index: 1;
-                display: none;
-            }
-
-            #endereco a{
-                color: #FFF;
-                font-size: 28px;
-                position: fixed;
-                float: right;
-                right: 25px;
-                top: 25px;
-            }
-
-            .escolher-endereco{
-                width: 32%;
-                height: 23%;
-                border-radius: 15px;
-                background-color: #FFF;
-                padding: 29px;
-                font-family: Caviar Dreams;
-                left: 33%;
-                top: 36.5%;
-                position: fixed;
-            }
-
-            .escolher-endereco h2{
-                text-align: center;
-            }
-
-            .escolher-endereco span, .escolher-endereco select{
-                display: inline;
-                font-size: 18px;
-                height: 30px;
-                position: relative;
-                top: 30px;
-                margin-right: 14px;
-                padding-top: 1px;
-            }
-
-            .alinhamento{
-                display: flex;
-            }
-
-            .alinhamento input{
-                float: right;
-                position: relative;
-                border: 0;
-                width: 100px;
-                height: 30px;
-                background-color: #c3c65b;
-                color: #FFF;
-                border-radius: 20px;
-                cursor: pointer;
-                font-family: Caviar Dreams;
-                top: 61px;
-            }
-
-            .alinhamento input:hover{
-                background-color: #333;
             }
 
             .box-user {

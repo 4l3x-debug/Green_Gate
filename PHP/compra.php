@@ -54,17 +54,63 @@
             top: 6px;
             right: 12px;
         }
+
     </style>
     <link rel="stylesheet" type="text/css" href="../CSS/style-compra.css">
     <link rel="stylesheet" type="text/css" href="../CSS/style-index.css">
     <link rel="stylesheet" type="text/css" href="../CSS/style-lojas.css">
     <link rel="stylesheet" type="text/css" href="../CSS/style-box-user.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style-escolher-endereco.css">
     <link rel="stylesheet" href="../FONTAW/css/all.css">
     <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
     <script type="text/javascript" src="../JS/script_box_user.js"></script>
+    <script type="text/javascript" src="../JS/script_escolher_endereco.js"></script>
 </head>
 
 <body>
+
+<section id="endereco">
+        <a href="#" onclick="fechar()"><i class="fas fa-times"></i></a>
+        <div class="escolher-endereco">
+            <h2>Escolha o Endereço</h2>
+            
+            <?php
+            
+            if($tp_usuario == 2){
+            
+            $sql_endereco = 'select * from endereco where id_pf_fisico='.$id_usuario.';';
+            $endereco = mysqli_query($conectar,$sql_endereco);
+
+            } elseif($tp_usuario == 3){
+        
+            $sql_endereco = 'select * from endereco where id_pf_fisico='.$id_usuario.';';
+            $endereco = mysqli_query($conectar,$sql_endereco);
+    
+            } else{}
+
+            echo('<div class="alinhamento">
+
+            <span>Endereço:</span>
+            <form action="boleto.php?id_prod='.$_GET['id_produto'].'" method="POST">
+                <select name="endereco">
+                    <option selected value disabled="">Selecione</option>');
+            
+            
+                while($dados_endereco = mysqli_fetch_array($endereco)){
+                    echo('<option value="'.$dados_endereco['n_residencial'].'">');
+                    echo($dados_endereco['logradouro']);
+                    echo(', ');
+                    echo($dados_endereco['n_residencial']);
+                }
+            ?>
+                </select>
+                <input type="submit" name="continuar" value="Continuar">
+            </form>
+
+            </div>
+            
+        </div>
+    </section>
 
     <header>
         <section class="main-nav">
@@ -92,7 +138,7 @@
                     <div class="figuras" style="top: 40%;">
                         <a href=""><i class="fas fa-search"></i></a>
                         <a href="login.php"><i class="fas fa-user-circle"></i></a>
-                        <a href=""><i class="fas fa-shopping-cart"></i></a>
+                        <a href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                     </div>
 
                 <?php
@@ -103,7 +149,7 @@
                     <a href="#" onclick="box()"><div class="usuario">
                         <img src="../IMG/Imagem_Usuario/' . $dados_usuario['imagem'] . '">
                     </div></a>
-                    <a href=""><i class="fas fa-shopping-cart"></i></a></div>');
+                    <a href="carrinho.php"><i class="fas fa-shopping-cart"></i></a></div>');
                 }
                 ?>
             </nav>
@@ -157,43 +203,36 @@
             </div>
             <br>
             <div class="espaco-continuar">
-                <?php echo ("<a href='boleto.php?id_prod=" . $dados_produto['id_produto'] . "'>Comprar</a>"); ?>
+                <?php echo ("<a onclick='abrir()'>Comprar</a>"); ?>
             </div>
         </div>
     </section>
 
+    
+
     <?php
-    $id1 = $dados_produto['id_produto']++;
-    $string = ('select * from produto;');
-    $sql = mysqli_query($conectar, $string);
-    $data = mysqli_fetch_array($sql);
+    $sql_produtos = 'select * from produto ORDER by nome_produto ASC limit 0,3;';
+    $resul_produtos = mysqli_query($conectar, $sql_produtos);
+
     ?>
     <section class="compre-tbm">
         <div class="espaco-titulo-compre"> <span> Compre Também </span> </div>
         <div class="container-compre-tbm">
-            <div> <img src="../IMG/Imagem_Produtos/<?php echo $dados_produto['imagem']; ?>" alt="<?php echo $dados_produto['nome_produto']; ?>"> </div>
-            <div class="compre-container-info">
-                <div class="compre-info"> <span id="nome-produto-compre"> <?php echo $dados_produto['nome_produto']; ?> </span> </div>
-                <div class="compre-info"> <span id="descricao-produto-compre"> <?php echo $dados_produto['descricao']; ?> </span> </div>
-                <div class="compre-info"> <span id="preco-produto-compre"> <?php echo 'R$ ' . $dados_produto['preco']; ?> </span> </div>
-                <div class="espaco-compre-tbm"> <a href=""> Ver Produto </a> </div>
+
+    <?php
+        while($produtos = mysqli_fetch_array($resul_produtos)){
+    ?>
+            <div> <img src="../IMG/Imagem_Produtos/<?php echo $produtos['imagem']; ?>" alt="<?php echo $produtos['nome_produto']; ?>"> </div>
+            <div class="compre-container-info" style="padding-right: 25px;">
+                <div class="compre-info"> <span id="nome-produto-compre"> <?php echo $produtos['nome_produto']; ?> </span> </div>
+                <div class="compre-info"> <span id="descricao-produto-compre"> <?php echo $produtos['descricao']; ?> </span> </div>
+                <div class="compre-info"> <span id="preco-produto-compre"> <?php echo 'R$ ' . $produtos['preco']; ?> </span> </div>
+                <div class="espaco-compre-tbm"> <?php echo ('<a href="produto.php?id_produto='.$produtos['id_produto'].'"> Ver Produto </a> </div>');?>
             </div>
 
-            <div> <img src="../IMG/Imagem_Produtos/<?php echo $dados_produto['imagem']; ?>" alt="<?php echo $dados_produto['nome_produto']; ?>"> </div>
-            <div class="compre-container-info">
-                <div class="compre-info"> <span id="nome-produto-compre"> <?php echo $dados_produto['nome_produto']; ?> </span> </div>
-                <div class="compre-info"> <span id="descricao-produto-compre"> <?php echo $dados_produto['descricao']; ?> </span> </div>
-                <div class="compre-info"> <span id="preco-produto-compre"> <?php echo 'R$ ' . $dados_produto['preco']; ?> </span> </div>
-                <div class="espaco-compre-tbm"> <a href=""> Ver Produto </a> </div>
-            </div>
-
-            <div> <img src="../IMG/Imagem_Produtos/<?php echo $dados_produto['imagem']; ?>" alt="<?php echo $dados_produto['nome_produto']; ?>"> </div>
-            <div class="compre-container-info">
-                <div class="compre-info"> <span id="nome-produto-compre"> <?php echo $dados_produto['nome_produto']; ?> </span> </div>
-                <div class="compre-info"> <span id="descricao-produto-compre"> <?php echo $dados_produto['descricao']; ?> </span> </div>
-                <div class="compre-info"> <span id="preco-produto-compre"> <?php echo 'R$ ' . $dados_produto['preco']; ?> </span> </div>
-                <div class="espaco-compre-tbm"> <a href=""> Ver Produto </a> </div>
-            </div>
+    <?php
+        }
+    ?>
 
         </div>
     </section>

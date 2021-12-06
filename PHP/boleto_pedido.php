@@ -1,3 +1,30 @@
+<?php
+    session_start();
+    include ('conexao.php');
+    include ('barra_rolagem.php');
+
+    if(isset($_SESSION['id_usuario'])){
+        $tp_usuario = $_SESSION['tp_usuario'];
+        $id_usuario = $_SESSION['id_usuario'];
+
+        if($tp_usuario == 2){
+            $sql_usuario = 'select * from pf_fisico where id_pf_fisico = '.$id_usuario.';';
+            $resul_usuario = mysqli_query($conectar, $sql_usuario);
+            $dados_usuario = mysqli_fetch_array($resul_usuario);
+            $cnpj_ou_cpf = $dados_usuario['cpf'];
+
+        }
+        elseif($tp_usuario == 3){
+            $sql_usuario = 'select * from pf_juridico where id_pf_juridico = '.$id_usuario.';';
+            $resul_usuario = mysqli_query($conectar, $sql_usuario);
+            $dados_usuario = mysqli_fetch_array($resul_usuario);
+            $cnpj_ou_cpf = $dados_usuario['cnpj'];
+
+        }else{}
+
+    }else{}
+?>
+
 <style>
     body{
         position: absolute;
@@ -6,8 +33,6 @@
 </style>
 
 <?php
-session_start();
-include('conexao.php');
 
 if(isset($_POST['continuar'])){
     $endereco = $_POST['endereco'];
@@ -26,10 +51,6 @@ $sqlProdutor = "select * from pf_juridico where id_pf_juridico = " . $dados_pedi
 $queryProdutor = mysqli_query($conectar, $sqlProdutor);
 $dadosProdutor = mysqli_fetch_array($queryProdutor);
 
-$sqlUser = "select * from pf_fisico where id_pf_fisico = " . $_SESSION['id_usuario'] . ";";
-$queryUsuario = mysqli_query($conectar, $sqlUser);
-$dadosUser = mysqli_fetch_array($queryUsuario);
-
 $dias_de_prazo_para_pagamento = 6;
 $data_venc = date("d/m/Y", time() + ($dias_de_prazo_para_pagamento * 86400));  // Prazo de X dias OU informe data: "13/04/2006"; 
 $valor_cobrado = $preco; // Valor - REGRA: Sem pontos na milhar e tanto faz com "." ou "," ou com 1 ou 2 ou sem casa decimal
@@ -46,7 +67,7 @@ $dadosboleto["data_processamento"] = date("d/m/Y"); // Data de processamento do 
 $dadosboleto["valor_boleto"] = $valor_boleto;     // Valor do Boleto - REGRA: Com vírgula e sempre com duas casas depois da virgula
 
 // DADOS DO SEU CLIENTE
-$dadosboleto["sacado"] = $dadosUser['nome'];
+$dadosboleto["sacado"] = $dados_usuario['nome'];
 $dadosboleto["endereco1"] = $dados_endereco['logradouro'];
 $dadosboleto["endereco2"] = $dados_endereco['cidade']."-".$dados_endereco['estado']."-".$dados_endereco['cep'];
 
@@ -74,7 +95,7 @@ $dadosboleto["carteira"] = "SR";  // Código da Carteira: pode ser SR (Sem Regis
 
 // SEUS DADOS
 $dadosboleto["identificacao"] = "BoletoPhp - Código Aberto de Sistema de Boletos";
-$dadosboleto["cpf_cnpj"] = $dadosUser['cpf'];
+$dadosboleto["cpf_cnpj"] = $cnpj_ou_cpf;
 $dadosboleto["endereco"] = "Coloque o endereço da sua empresa aqui";
 $dadosboleto["cidade_uf"] = "Cidade / Estado";
 $dadosboleto["cedente"] = $dadosProdutor['razao'];
