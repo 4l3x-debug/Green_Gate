@@ -164,7 +164,12 @@
 
             if($dados_usuario['genero'] == 'M'){ echo ("Masculino"); }else { echo("Feminino");} ?> </td>
             <td> Telefone: <?php echo $dados_usuario['celular']; ?> </td>
-            <td> Data de Nascimento: <?php echo $dados_usuario['data_nascimento']; ?> </td>
+
+            <?php
+                $dataNascimento = date("d/m/Y", strtotime($dados_usuario['data_nascimento']));
+            ?>
+
+            <td> Data de Nascimento: <?php echo $dataNascimento; ?> </td>
                 
             </div>
 

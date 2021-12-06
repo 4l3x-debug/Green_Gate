@@ -350,7 +350,7 @@ if (isset($_SESSION['id_usuario'])) {
 
                 $sql_inserir_pedido_produto = 'insert into pedido_produto (id_produto, quantidade, id_pedido) values ('.$_GET['id_produto'].', '.$qtd.', '.$dados_pedido_produto['id_pedido'].');';
                 $inserir_pedido_produto = mysqli_query($conectar,$sql_inserir_pedido_produto);
-            
+
             }else{
                 $sql_pedido = 'insert into pedido (dt_pedido, status, id_consumidor, tp_usuario, id_produtor) values ("'.$data_pedido.'", 0, '.$id_usuario.', '.$tp_usuario.', '.$dados_produto['id_produtor'].');';
                 $pedido = mysqli_query($conectar,$sql_pedido);
@@ -361,11 +361,8 @@ if (isset($_SESSION['id_usuario'])) {
 
                 $sql_inserir_pedido_produto = 'insert into pedido_produto (id_produto, quantidade, id_pedido) values ('.$_GET['id_produto'].', '.$qtd.', '.$dados_pedido_produto['id_pedido'].');';
                 $inserir_pedido_produto = mysqli_query($conectar,$sql_inserir_pedido_produto);
-            }
-        }
 
-        if($inserir_pedido_produto){
-            echo ('<script>window.alert("Produto inserido com sucesso!");window.location="#"</script>');
+            }
         }
         
         }else{}

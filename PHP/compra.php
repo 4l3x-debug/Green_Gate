@@ -69,24 +69,6 @@
 
 <body>
 
-    <section id="background-box">
-            <div id="abrir">
-                <nav class="box-user">
-                    <ul>
-                        <a href=" <?php echo($caminho_painel); ?>.php"><li class="list um">
-                            <span><i class="fas fa-user-circle"></i>Perfil</span>
-                        </li></a>
-                        <a href="<?php echo($usuario); ?>/editar_perfil.php"><li class="list">
-                            <span><i class="fas fa-cog"></i>Configurações</span>
-                        </li></a>
-                        <a href="invalido.php"><li style="border-top: 1px solid #ebebeb;" class="list dois">
-                            <span>Sair</span>
-                        </li></a>
-                    </ul>
-                </nav>
-            </div>
-        </section>
-
     <section id="endereco">
         <a href="#" onclick="fechar()"><i class="fas fa-times"></i></a>
         <div class="escolher-endereco">

@@ -45,7 +45,11 @@
             $resul_remetente = mysqli_query($conectar,$sql_remetente);
             $remetente = mysqli_fetch_array($resul_remetente);
 
-            $tp_usuario = 'Consumidor';
+            if($dados_mensagem['tp_usuario_remetente'] == 0){
+                $tp_usuario = 'Administrador';
+            }else{
+                $tp_usuario = 'Consumidor';
+            }
         }else if($dados_mensagem['tp_usuario_remetente'] == 3){
             $sql_remetente = 'select * from pf_juridico where id_pf_juridico='.$dados_mensagem['id_remetente'].';';
             $resul_remetente = mysqli_query($conectar,$sql_remetente);

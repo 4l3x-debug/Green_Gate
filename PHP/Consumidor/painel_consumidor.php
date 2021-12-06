@@ -110,7 +110,7 @@
 
         <aside id="menuOculto" class="menuOculto">
             <a href="javascript: void(0)" class="btnFechar" onclick="fecharNav()"><i class="fas fa-times"></i></a>
-            <a href="pedidos.php" class="icon"><i class="fas fa-boxes"></i>Pedidos</a>
+            <a href="../carrinho.php" class="icon"><i class="fas fa-boxes"></i>Pedidos</a>
             <a href="suporte.php" class="icon"><i class="fas fa-headset"></i>Suporte</a>
         </aside>
 
@@ -163,7 +163,12 @@
 
             if($dados_usuario['genero'] == 'M'){ echo ("Masculino"); }else { echo("Feminino");} ?> </td>
             <td> Telefone: <?php echo $dados_usuario['celular']; ?> </td>
-            <td> Data de Nascimento: <?php echo $dados_usuario['data_nascimento']; ?> </td>
+
+            <?php
+                $dataNascimento = date("d/m/Y", strtotime($dados_usuario['data_nascimento']));
+            ?>
+
+            <td> Data de Nascimento: <?php echo $dataNascimento; ?> </td>
                 
             </div>
 

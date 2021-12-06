@@ -237,28 +237,6 @@
 
     </section>
 
-    <!-- Rodapé -->
-
-    <footer class="main-footer">
-        <section class="cont-footer">
-            <div>
-                <p>Para quem se compromete com o meio ambiente.</p>
-            </div>
-        </section>
-
-        <div id="linha-vert"></div>
-
-        <div class="footer-icon">
-            <a href="https://www.facebook.com/Green-Gate-103711395206238" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/green.gate_/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
-        </div>
-
-        <div class="direitos">
-            <p>© Green Gate 2021</p>
-        </div>
-    </footer>
-
     <section id="endereco">
         <a href="#" onclick="fechar()"><i class="fas fa-times"></i></a>
         <div class="escolher-endereco">
@@ -301,10 +279,33 @@
             
         </div>
     </section>
-
+    
     <?php
         }
     ?>
+
+
+    <!-- Rodapé -->
+
+    <footer class="main-footer">
+        <section class="cont-footer">
+            <div>
+                <p>Para quem se compromete com o meio ambiente.</p>
+            </div>
+        </section>
+
+        <div id="linha-vert"></div>
+
+        <div class="footer-icon">
+            <a href="https://www.facebook.com/Green-Gate-103711395206238" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/green.gate_/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <div class="direitos">
+            <p>© Green Gate 2021</p>
+        </div>
+    </footer>
 
     <!-- Enviar Suporte -->
 
