@@ -46,6 +46,7 @@
         <link rel="stylesheet" href="../FONTAW/css/all.css">
         <link rel="shortcut icon" href="../IMG/icone.ico" type="image/x-icon">
         <script type="text/javascript" src="../JS/script_box_user.js"></script>
+        <script type="text/javascript" src="../JS/script_escolher_endereco.js"></script>
 
         <style type="text/css">
             .figuras-produtor{
@@ -67,6 +68,76 @@
             footer{
                 margin-top: 40px;
             }
+
+            #endereco{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background-color: #0000009e;
+                z-index: 1;
+                display: none;
+            }
+
+            #endereco a{
+                color: #FFF;
+                font-size: 28px;
+                position: fixed;
+                float: right;
+                right: 25px;
+                top: 25px;
+            }
+
+            .escolher-endereco{
+                width: 32%;
+                height: 23%;
+                border-radius: 15px;
+                background-color: #FFF;
+                padding: 29px;
+                font-family: Caviar Dreams;
+                left: 33%;
+                top: 36.5%;
+                position: fixed;
+            }
+
+            .escolher-endereco h2{
+                text-align: center;
+            }
+
+            .escolher-endereco span, .escolher-endereco select{
+                display: inline;
+                font-size: 18px;
+                height: 30px;
+                position: relative;
+                top: 30px;
+                margin-right: 14px;
+                padding-top: 1px;
+            }
+
+            .alinhamento{
+                display: flex;
+            }
+
+            .alinhamento input{
+                float: right;
+                position: relative;
+                border: 0;
+                width: 100px;
+                height: 30px;
+                background-color: #c3c65b;
+                color: #FFF;
+                border-radius: 20px;
+                cursor: pointer;
+                font-family: Caviar Dreams;
+                top: 61px;
+            }
+
+            .alinhamento input:hover{
+                background-color: #333;
+            }
+
+            .box-user {
+                height: 11.5%;
+            }
         </style>
     </head>
     
@@ -81,7 +152,7 @@
 
     <!-- Cabeçalho -->
 
-        <section id="background-box">
+        <section id="background-box" onclick="boxFechar()">
             <div id="abrir">
                 <nav class="box-user">
                     <ul>
@@ -222,17 +293,15 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><button>Cancelar</button></td>
                 <td>
-                    <?php echo ('<a href="delete_pedido.php?del'.$dados_pedido['id_pedido'].'"><button>Comprar</button></a>'); ?>
+                    <?php echo ('<a href="delete_pedido.php?del='.$dados_pedido['id_pedido'].'"><button>Cancelar</button></a>'); ?>
+                </td>
+                <td>
+                    <?php echo ('<button onclick="abrir()">Comprar</button>'); ?>
                 </td>
             </tr>
 
         </table>
-
-        <?php
-            }
-        ?>
 
     </section>
 
@@ -257,6 +326,53 @@
             <p>© Green Gate 2021</p>
         </div>
     </footer>
+
+    <section id="endereco">
+        <a href="#" onclick="fechar()"><i class="fas fa-times"></i></a>
+        <div class="escolher-endereco">
+            <h2>Escolha o Endereço</h2>
+            
+            <?php
+            
+            if($tp_usuario == 2){
+            
+            $sql_endereco = 'select * from endereco where id_pf_fisico='.$id_usuario.';';
+            $endereco = mysqli_query($conectar,$sql_endereco);
+
+            } elseif($tp_usuario == 3){
+        
+            $sql_endereco = 'select * from endereco where id_pf_fisico='.$id_usuario.';';
+            $endereco = mysqli_query($conectar,$sql_endereco);
+    
+            } else{}
+
+            echo('<div class="alinhamento">
+
+            <span>Endereço:</span>
+            <form action="boleto_pedido.php?id_pedido='.$dados_pedido['id_pedido'].'&preco='.$preco_total.'" method="POST">
+                <select name="endereco">
+                    <option selected value disabled="">Selecione</option>');
+            
+            
+                while($dados_endereco = mysqli_fetch_array($endereco)){
+                    echo('<option value="'.$dados_endereco['n_residencial'].'">');
+                    echo($dados_endereco['logradouro']);
+                    echo(', ');
+                    echo($dados_endereco['n_residencial']);
+                }
+            ?>
+                </select>
+                <input type="submit" name="continuar" value="Continuar">
+            </form>
+
+            </div>
+            
+        </div>
+    </section>
+
+    <?php
+        }
+    ?>
 
     <!-- Enviar Suporte -->
 

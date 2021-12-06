@@ -132,6 +132,23 @@ a{
     height: 40px;
     align-content: center;
     cursor: pointer;
+    border: 1px solid #000;
+}
+
+.espaco-carrinho input{
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    background-color: #FFF;
+    transition: background-color .2s;
+}
+
+.espaco-carrinho input:hover{
+    color: #FFF;
+    background-color: #000;
+    cursor: pointer;
+    transition: background-color .2s;
 }
 
 #carro{
@@ -152,10 +169,6 @@ a{
     color: #94c759;
     transition: ease-in 0.2s;
     cursor: pointer;
-}
-
-#checkbox{
-    display: none;
 }
 
 #carro:hover{

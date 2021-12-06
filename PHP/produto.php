@@ -120,7 +120,7 @@ if (isset($_SESSION['id_usuario'])) {
                             </form>
                         </div>
                         <a href="login.php"><i class="fas fa-user-circle"></i></a>
-                        <a href=""><i class="fas fa-shopping-cart"></i></a>
+                        <a href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                     </div>
 
                 <?php
@@ -136,7 +136,7 @@ if (isset($_SESSION['id_usuario'])) {
                         <a href="#" onclick="box()"><div class="usuario">
                             <img src="../IMG/Imagem_Usuario/' . $dados_usuario['imagem'] . '">
                         </div></a>
-                        <a href=""><i class="fas fa-shopping-cart"></i></a>
+                        <a href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
                     </div>');
                 }
                 ?>
@@ -186,10 +186,9 @@ if (isset($_SESSION['id_usuario'])) {
                             ?>
                         </div>
 
-                        <input id="checkbox" type="checkbox">
-
                         <div class="espaco-carrinho">
-                            <label id="carrinho" for="checkbox"> <span id="carro"> Carrinho </span> </label>
+                            <form action="#" method="POST">
+                                <input type="submit" name="carrinho" value="Carrinho">
                         </div>
 
                         <div class="detalhes">
@@ -208,6 +207,7 @@ if (isset($_SESSION['id_usuario'])) {
                             <div class="qtd" style="border: 1px solid #c4c4c4;">
                                 <input style="margin-left: 5px;" type="button" value="-" name="btn_menos" id="btn-menos" onclick="Counter(-1)">
                                 <input value="1" type="text" id="contador" name="qtd">
+                                </form>
                                 <input style="margin-right: 5px;" type="button" value="+" name="btn_mais" id="btn-mais" onclick="Counter(1)">
                             </div>
 
@@ -329,6 +329,43 @@ if (isset($_SESSION['id_usuario'])) {
             link.href = `compra.php?id_produto=<?php echo $dados_produto['id_produto']; ?>&qtd=${currentProductCount}`;
         }
     </script>
+    
+    <?php
+
+        if(isset($_POST['carrinho'])){
+
+        $data_pedido = date("Y-m-d");
+        $qtd = $_POST['qtd'];
+
+        $sql_verificar = 'select * from pedido;';
+        $verificar = mysqli_query($conectar,$sql_verificar);
+        
+        while($dados_verificar = mysqli_fetch_array($verificar)){
+            
+            if($dados_verificar['id_consumidor'] == $id_usuario & $dados_verificar['id_produtor'] == $dados_produto['id_produtor']){
+
+                $sql_pedido_produto = 'select * from pedido where id_produtor='.$dados_produto['id_produtor'].' and id_consumidor='.$id_usuario.';';
+                $pedido_produto = mysqli_query($conectar,$sql_pedido_produto);
+                $dados_pedido_produto = mysqli_fetch_array($pedido_produto);
+
+                $sql_inserir_pedido_produto = 'insert into pedido_produto (id_produto, quantidade, id_pedido) values ('.$_GET['id_produto'].', '.$qtd.', '.$dados_pedido_produto['id_pedido'].');';
+                $inserir_pedido_produto = mysqli_query($conectar,$sql_inserir_pedido_produto);
+            
+            }else{
+                $sql_pedido = 'insert into pedido (dt_pedido, status, id_consumidor, tp_usuario, id_produtor) values ("'.$data_pedido.'", 0, '.$id_usuario.', '.$tp_usuario.', '.$dados_produto['id_produtor'].');';
+                $pedido = mysqli_query($conectar,$sql_pedido);
+                
+                $sql_pedido_produto = 'select * from pedido where id_produtor='.$dados_produto['id_produtor'].' and id_consumidor='.$id_usuario.';';
+                $pedido_produto = mysqli_query($conectar,$sql_pedido_produto);
+                $dados_pedido_produto = mysqli_fetch_array($pedido_produto);
+
+                $sql_inserir_pedido_produto = 'insert into pedido_produto (id_produto, quantidade, id_pedido) values ('.$_GET['id_produto'].', '.$qtd.', '.$dados_pedido_produto['id_pedido'].');';
+                $inserir_pedido_produto = mysqli_query($conectar,$sql_inserir_pedido_produto);
+            }
+        }
+
+        }else{}
+    ?>
 
 </body>
 

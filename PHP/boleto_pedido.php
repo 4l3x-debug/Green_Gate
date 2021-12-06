@@ -1,11 +1,28 @@
+<style>
+    body{
+        position: absolute;
+        left: 25%;
+    }
+</style>
+
 <?php
 session_start();
 include('conexao.php');
-$sql = "select * from produto where id_produto= " . $_GET['id_prod'] . ";";
-$query = mysqli_query($conectar, $sql);
-$dados_prod = mysqli_fetch_array($query);
 
-$sqlProdutor = "select * from pf_juridico where id_pf_juridico = " . $dados_prod['id_produtor'] . ";";
+if(isset($_POST['continuar'])){
+    $endereco = $_POST['endereco'];
+
+    $sql_endereco = 'select * from endereco where n_residencial='.$endereco.';';
+    $resul_endereco = mysqli_query($conectar,$sql_endereco);
+    $dados_endereco = mysqli_fetch_array($resul_endereco);
+}
+
+$preco = $_GET['preco'];
+$sql = "select * from pedido where id_pedido= " . $_GET['id_pedido'] . ";";
+$query = mysqli_query($conectar, $sql);
+$dados_pedido = mysqli_fetch_array($query);
+
+$sqlProdutor = "select * from pf_juridico where id_pf_juridico = " . $dados_pedido['id_produtor'] . ";";
 $queryProdutor = mysqli_query($conectar, $sqlProdutor);
 $dadosProdutor = mysqli_fetch_array($queryProdutor);
 
@@ -15,7 +32,7 @@ $dadosUser = mysqli_fetch_array($queryUsuario);
 
 $dias_de_prazo_para_pagamento = 6;
 $data_venc = date("d/m/Y", time() + ($dias_de_prazo_para_pagamento * 86400));  // Prazo de X dias OU informe data: "13/04/2006"; 
-$valor_cobrado = $_SESSION['valorTotal']; // Valor - REGRA: Sem pontos na milhar e tanto faz com "." ou "," ou com 1 ou 2 ou sem casa decimal
+$valor_cobrado = $preco; // Valor - REGRA: Sem pontos na milhar e tanto faz com "." ou "," ou com 1 ou 2 ou sem casa decimal
 $valor_cobrado = str_replace(",", ".", $valor_cobrado);
 $valor_boleto = $valor_cobrado;
 
@@ -30,13 +47,13 @@ $dadosboleto["valor_boleto"] = $valor_boleto;     // Valor do Boleto - REGRA: Co
 
 // DADOS DO SEU CLIENTE
 $dadosboleto["sacado"] = $dadosUser['nome'];
-$dadosboleto["endereco1"] = "Endereço do seu Cliente";
-$dadosboleto["endereco2"] = "Cidade - Estado -  CEP: 00000-000";
+$dadosboleto["endereco1"] = $dados_endereco['logradouro'];
+$dadosboleto["endereco2"] = $dados_endereco['cidade']."-".$dados_endereco['estado']."-".$dados_endereco['cep'];
 
 
 // DADOS OPCIONAIS DE ACORDO COM O BANCO OU CLIENTE
 $dadosboleto["quantidade"] = "";
-$dadosboleto["valor_unitario"] = $dados_prod['preco'];
+$dadosboleto["valor_unitario"] = $preco;
 $dadosboleto["aceite"] = "";
 $dadosboleto["especie"] = "R$";
 $dadosboleto["especie_doc"] = "";
@@ -57,7 +74,7 @@ $dadosboleto["carteira"] = "SR";  // Código da Carteira: pode ser SR (Sem Regis
 
 // SEUS DADOS
 $dadosboleto["identificacao"] = "BoletoPhp - Código Aberto de Sistema de Boletos";
-$dadosboleto["cpf_cnpj"] = "";
+$dadosboleto["cpf_cnpj"] = $dadosUser['cpf'];
 $dadosboleto["endereco"] = "Coloque o endereço da sua empresa aqui";
 $dadosboleto["cidade_uf"] = "Cidade / Estado";
 $dadosboleto["cedente"] = $dadosProdutor['razao'];
